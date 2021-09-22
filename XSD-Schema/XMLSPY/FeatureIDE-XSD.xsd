@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- W3C Schema erstellt mit XMLSpy v2021 rel. 3 (x64) (http://www.altova.com) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="alt">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="and" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:element ref="feature"/>
+						<xs:element ref="alt"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="feature" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element ref="alt"/>
+							<xs:element ref="feature"/>
+						</xs:sequence>
+						<xs:element ref="and"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="description"/>
+					<xs:element ref="feature" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="or" minOccurs="0"/>
+					<xs:element ref="alt" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="and">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="or"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element ref="alt"/>
+							<xs:element ref="feature"/>
+							<xs:element ref="alt"/>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="and" maxOccurs="unbounded"/>
+							<xs:choice>
+								<xs:sequence>
+									<xs:element ref="feature"/>
+									<xs:sequence minOccurs="0">
+										<xs:element ref="and" maxOccurs="unbounded"/>
+										<xs:element ref="feature" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:sequence>
+								<xs:element ref="or" maxOccurs="unbounded"/>
+							</xs:choice>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="feature" maxOccurs="unbounded"/>
+							<xs:element ref="alt" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="alt" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element ref="or"/>
+							<xs:sequence minOccurs="0">
+								<xs:element ref="feature"/>
+								<xs:element ref="and"/>
+								<xs:element ref="alt" maxOccurs="unbounded"/>
+								<xs:element ref="or"/>
+								<xs:element ref="alt"/>
+							</xs:sequence>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="feature" maxOccurs="unbounded"/>
+							<xs:choice minOccurs="0">
+								<xs:sequence>
+									<xs:element ref="or"/>
+									<xs:choice minOccurs="0">
+										<xs:sequence>
+											<xs:element ref="alt" maxOccurs="unbounded"/>
+											<xs:sequence minOccurs="0">
+												<xs:element ref="and"/>
+												<xs:element ref="alt" maxOccurs="unbounded"/>
+											</xs:sequence>
+											<xs:element ref="feature"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element ref="and"/>
+											<xs:element ref="alt" maxOccurs="unbounded"/>
+											<xs:element ref="and"/>
+										</xs:sequence>
+									</xs:choice>
+								</xs:sequence>
+								<xs:sequence>
+									<xs:element ref="alt"/>
+									<xs:element ref="or"/>
+								</xs:sequence>
+							</xs:choice>
+						</xs:sequence>
+						<xs:element ref="and"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="and" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element ref="alt" maxOccurs="unbounded"/>
+							<xs:sequence minOccurs="0">
+								<xs:element ref="or"/>
+								<xs:element ref="and" minOccurs="0"/>
+							</xs:sequence>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="feature"/>
+							<xs:sequence minOccurs="0">
+								<xs:element ref="alt"/>
+								<xs:element ref="and" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:sequence>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="feature" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element ref="or"/>
+							<xs:element ref="alt" maxOccurs="unbounded"/>
+							<xs:element ref="feature"/>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="alt"/>
+							<xs:choice minOccurs="0">
+								<xs:sequence>
+									<xs:element ref="or"/>
+									<xs:element ref="feature" minOccurs="0"/>
+								</xs:sequence>
+								<xs:sequence>
+									<xs:element ref="feature"/>
+									<xs:sequence minOccurs="0">
+										<xs:element ref="and"/>
+										<xs:element ref="feature" maxOccurs="unbounded"/>
+										<xs:element ref="and"/>
+									</xs:sequence>
+								</xs:sequence>
+								<xs:element ref="and" maxOccurs="unbounded"/>
+							</xs:choice>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="and"/>
+							<xs:choice minOccurs="0">
+								<xs:sequence>
+									<xs:element ref="alt"/>
+									<xs:element ref="feature"/>
+								</xs:sequence>
+								<xs:sequence>
+									<xs:element ref="feature" maxOccurs="unbounded"/>
+									<xs:element ref="and" minOccurs="0"/>
+								</xs:sequence>
+							</xs:choice>
+						</xs:sequence>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="description"/>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element ref="or"/>
+							<xs:sequence minOccurs="0">
+								<xs:element ref="feature"/>
+								<xs:element ref="or"/>
+							</xs:sequence>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="alt"/>
+							<xs:element ref="feature"/>
+							<xs:element ref="or"/>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="and"/>
+							<xs:element ref="feature"/>
+							<xs:element ref="alt"/>
+							<xs:element ref="and" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:element ref="feature"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="c" type="xs:string"/>
+	<xs:element name="calculations">
+		<xs:complexType>
+			<xs:attribute name="Auto" use="required" type="xs:boolean"/>
+			<xs:attribute name="Constraints" use="required" type="xs:boolean"/>
+			<xs:attribute name="Features" use="required" type="xs:boolean"/>
+			<xs:attribute name="Redundant" use="required" type="xs:boolean"/>
+			<xs:attribute name="Tautology" use="required" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="comments">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="c" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="conj">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="not"/>
+					<xs:element ref="var"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="var" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:element ref="conj"/>
+						<xs:element ref="not"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="constraints">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rule" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="description" type="xs:string"/>
+	<xs:element name="disj">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="var" maxOccurs="unbounded"/>
+				<xs:element ref="disj" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="eq">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="var" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:element ref="disj"/>
+						<xs:element ref="conj"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="conj"/>
+					<xs:element ref="var"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="feature">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="description" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="featureModel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="properties"/>
+				<xs:element ref="struct"/>
+				<xs:sequence minOccurs="0">
+					<xs:element ref="constraints"/>
+					<xs:sequence minOccurs="0">
+						<xs:element ref="calculations"/>
+						<xs:element ref="comments"/>
+						<xs:element ref="featureOrder"/>
+					</xs:sequence>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="featureOrder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="userDefined" use="required" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="graphics">
+		<xs:complexType>
+			<xs:attribute name="key" use="required" type="xs:string"/>
+			<xs:attribute name="value" use="required" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="imp">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="var" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:element ref="disj"/>
+						<xs:element ref="conj"/>
+						<xs:element ref="not"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="conj"/>
+					<xs:choice>
+						<xs:element ref="disj"/>
+						<xs:element ref="var"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="disj"/>
+					<xs:choice>
+						<xs:element ref="conj"/>
+						<xs:element ref="var"/>
+						<xs:element ref="not"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="not">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="conj"/>
+				<xs:element ref="var"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="or">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="feature" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element ref="and"/>
+							<xs:element ref="feature" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:element ref="or"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="description"/>
+					<xs:element ref="feature" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:choice>
+						<xs:element ref="and" maxOccurs="unbounded"/>
+						<xs:element ref="alt"/>
+						<xs:element ref="or" maxOccurs="unbounded"/>
+					</xs:choice>
+					<xs:element ref="feature" minOccurs="0"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="properties">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="graphics" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rule">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="description"/>
+					<xs:choice>
+						<xs:element ref="disj"/>
+						<xs:element ref="imp"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:element ref="disj"/>
+				<xs:element ref="conj"/>
+				<xs:element ref="imp"/>
+				<xs:element ref="eq"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="struct">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="and"/>
+				<xs:element ref="alt"/>
+				<xs:element ref="or"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="var" type="xs:string"/>
+</xs:schema>

@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- W3C Schema erstellt mit XMLSpy v2021 rel. 3 (x64) (http://www.altova.com) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="alt">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="and" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:element ref="feature"/>
+						<xs:element ref="alt"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="feature" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element ref="alt"/>
+							<xs:element ref="feature"/>
+						</xs:sequence>
+						<xs:element ref="and"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="description"/>
+					<xs:element ref="feature" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:element ref="alt" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="name" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="AI"/>
+						<xs:enumeration value="Background"/>
+						<xs:enumeration value="Base"/>
+						<xs:enumeration value="BottomClothing"/>
+						<xs:enumeration value="CallButtons"/>
+						<xs:enumeration value="Cards"/>
+						<xs:enumeration value="Clothes"/>
+						<xs:enumeration value="Comparison"/>
+						<xs:enumeration value="Costume"/>
+						<xs:enumeration value="DefaultGenerator"/>
+						<xs:enumeration value="DigitalCards"/>
+						<xs:enumeration value="Dir"/>
+						<xs:enumeration value="Direction"/>
+						<xs:enumeration value="Elevator mit FIFO"/>
+						<xs:enumeration value="Elevator mit Sabbath"/>
+						<xs:enumeration value="Feature"/>
+						<xs:enumeration value="GPL"/>
+						<xs:enumeration value="Gamefield"/>
+						<xs:enumeration value="Gearbox"/>
+						<xs:enumeration value="Gpl"/>
+						<xs:enumeration value="GraphType"/>
+						<xs:enumeration value="GraphTypeReal"/>
+						<xs:enumeration value="Gtp"/>
+						<xs:enumeration value="HiddenGtp"/>
+						<xs:enumeration value="HiddenWgt"/>
+						<xs:enumeration value="IIO"/>
+						<xs:enumeration value="Implementation"/>
+						<xs:enumeration value="Index"/>
+						<xs:enumeration value="IntegerSet"/>
+						<xs:enumeration value="Language"/>
+						<xs:enumeration value="Map"/>
+						<xs:enumeration value="Modes"/>
+						<xs:enumeration value="NIOAccess"/>
+						<xs:enumeration value="OS"/>
+						<xs:enumeration value="PLayer1_Sound_Movement"/>
+						<xs:enumeration value="Platform"/>
+						<xs:enumeration value="Player1_Sound_Rotation"/>
+						<xs:enumeration value="Player2_Sound_Movement"/>
+						<xs:enumeration value="Player2_Sound_Rotation"/>
+						<xs:enumeration value="Produktgruppen"/>
+						<xs:enumeration value="QU_Weighted_Modifications"/>
+						<xs:enumeration value="Record"/>
+						<xs:enumeration value="SPL"/>
+						<xs:enumeration value="Search"/>
+						<xs:enumeration value="Snake"/>
+						<xs:enumeration value="Soundeffekt"/>
+						<xs:enumeration value="Src"/>
+						<xs:enumeration value="Tank_Player1"/>
+						<xs:enumeration value="Tank_Player2"/>
+						<xs:enumeration value="Test"/>
+						<xs:enumeration value="TopClothing"/>
+						<xs:enumeration value="Undir"/>
+						<xs:enumeration value="UnionFind"/>
+						<xs:enumeration value="User_Interface"/>
+						<xs:enumeration value="View"/>
+						<xs:enumeration value="Weight"/>
+						<xs:enumeration value="WeightReal"/>
+						<xs:enumeration value="Wgt"/>
+						<xs:enumeration value="libssh"/>
+						<xs:enumeration value="mov"/>
+						<xs:enumeration value="rocketStyle"/>
+						<xs:enumeration value="substring"/>
+						<xs:enumeration value="tests"/>
+						<xs:enumeration value="tracing"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="and">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="or"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element ref="and" maxOccurs="unbounded"/>
+							<xs:choice>
+								<xs:sequence>
+									<xs:element ref="feature"/>
+									<xs:sequence minOccurs="0">
+										<xs:element ref="and" maxOccurs="unbounded"/>
+										<xs:element ref="feature" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:sequence>
+								<xs:element ref="or" maxOccurs="unbounded"/>
+							</xs:choice>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="alt" minOccurs="0"/>
+							<xs:element ref="feature"/>
+							<xs:element ref="alt" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="alt" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element ref="or"/>
+							<xs:sequence minOccurs="0">
+								<xs:element ref="feature"/>
+								<xs:element ref="and"/>
+								<xs:element ref="alt" maxOccurs="unbounded"/>
+								<xs:element ref="or"/>
+								<xs:element ref="alt"/>
+							</xs:sequence>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="feature" maxOccurs="unbounded"/>
+							<xs:choice minOccurs="0">
+								<xs:sequence>
+									<xs:element ref="or"/>
+									<xs:choice minOccurs="0">
+										<xs:sequence>
+											<xs:element ref="alt" maxOccurs="unbounded"/>
+											<xs:sequence minOccurs="0">
+												<xs:element ref="and"/>
+												<xs:element ref="alt" maxOccurs="unbounded"/>
+											</xs:sequence>
+											<xs:element ref="feature"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element ref="and"/>
+											<xs:element ref="alt" maxOccurs="unbounded"/>
+											<xs:element ref="and"/>
+										</xs:sequence>
+									</xs:choice>
+								</xs:sequence>
+								<xs:sequence>
+									<xs:element ref="alt"/>
+									<xs:element ref="or"/>
+								</xs:sequence>
+							</xs:choice>
+						</xs:sequence>
+						<xs:element ref="and"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="and" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element ref="alt" maxOccurs="unbounded"/>
+							<xs:sequence minOccurs="0">
+								<xs:element ref="or"/>
+								<xs:element ref="and" minOccurs="0"/>
+							</xs:sequence>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="feature"/>
+							<xs:sequence minOccurs="0">
+								<xs:element ref="alt"/>
+								<xs:element ref="and" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:sequence>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="feature" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:sequence>
+							<xs:element ref="or"/>
+							<xs:element ref="alt" maxOccurs="unbounded"/>
+							<xs:element ref="feature"/>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="alt"/>
+							<xs:choice minOccurs="0">
+								<xs:sequence>
+									<xs:element ref="or"/>
+									<xs:element ref="feature" minOccurs="0"/>
+								</xs:sequence>
+								<xs:sequence>
+									<xs:element ref="feature"/>
+									<xs:sequence minOccurs="0">
+										<xs:element ref="and"/>
+										<xs:element ref="feature" maxOccurs="unbounded"/>
+										<xs:element ref="and"/>
+									</xs:sequence>
+								</xs:sequence>
+								<xs:element ref="and" maxOccurs="unbounded"/>
+							</xs:choice>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="and"/>
+							<xs:choice minOccurs="0">
+								<xs:sequence>
+									<xs:element ref="alt"/>
+									<xs:element ref="feature"/>
+								</xs:sequence>
+								<xs:sequence>
+									<xs:element ref="feature" maxOccurs="unbounded"/>
+									<xs:element ref="and" minOccurs="0"/>
+								</xs:sequence>
+							</xs:choice>
+						</xs:sequence>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="description"/>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element ref="or"/>
+							<xs:sequence minOccurs="0">
+								<xs:element ref="feature"/>
+								<xs:element ref="or"/>
+							</xs:sequence>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="alt"/>
+							<xs:element ref="feature"/>
+							<xs:element ref="or"/>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="and"/>
+							<xs:element ref="feature"/>
+							<xs:element ref="alt"/>
+							<xs:element ref="and" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:element ref="feature"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="name" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="ATM"/>
+						<xs:enumeration value="Activate_Power_Up"/>
+						<xs:enumeration value="Algorithm"/>
+						<xs:enumeration value="ApoGame"/>
+						<xs:enumeration value="ApoSnake"/>
+						<xs:enumeration value="Arith"/>
+						<xs:enumeration value="BTree"/>
+						<xs:enumeration value="BankAccount"/>
+						<xs:enumeration value="Base"/>
+						<xs:enumeration value="Behavior"/>
+						<xs:enumeration value="Blinds"/>
+						<xs:enumeration value="Car"/>
+						<xs:enumeration value="Character"/>
+						<xs:enumeration value="Checkpointer"/>
+						<xs:enumeration value="ComplexExplicitContracting"/>
+						<xs:enumeration value="ConcurrTrans"/>
+						<xs:enumeration value="Conn"/>
+						<xs:enumeration value="Connection"/>
+						<xs:enumeration value="Cyc"/>
+						<xs:enumeration value="Cylinder_Valves_v2"/>
+						<xs:enumeration value="Cylinders_Valves"/>
+						<xs:enumeration value="Data"/>
+						<xs:enumeration value="DemoLevels"/>
+						<xs:enumeration value="Derivatives"/>
+						<xs:enumeration value="DiGraph"/>
+						<xs:enumeration value="DirType"/>
+						<xs:enumeration value="Display"/>
+						<xs:enumeration value="EPL"/>
+						<xs:enumeration value="Elevator"/>
+						<xs:enumeration value="Email"/>
+						<xs:enumeration value="EmailSystem"/>
+						<xs:enumeration value="Entities"/>
+						<xs:enumeration value="ExamDB"/>
+						<xs:enumeration value="ExpressionProductLine"/>
+						<xs:enumeration value="FGL"/>
+						<xs:enumeration value="GPLscratchFHJML"/>
+						<xs:enumeration value="GUI"/>
+						<xs:enumeration value="GameOfLife"/>
+						<xs:enumeration value="Generator"/>
+						<xs:enumeration value="Hello5"/>
+						<xs:enumeration value="HelloWorld"/>
+						<xs:enumeration value="HiddenWgt"/>
+						<xs:enumeration value="IEvictor"/>
+						<xs:enumeration value="IICleaner"/>
+						<xs:enumeration value="Image"/>
+						<xs:enumeration value="Interest"/>
+						<xs:enumeration value="Landing_Sets"/>
+						<xs:enumeration value="LevelEditor"/>
+						<xs:enumeration value="Lib"/>
+						<xs:enumeration value="Lock"/>
+						<xs:enumeration value="Logging"/>
+						<xs:enumeration value="MKrus"/>
+						<xs:enumeration value="MPrim"/>
+						<xs:enumeration value="MainGpl"/>
+						<xs:enumeration value="Module"/>
+						<xs:enumeration value="Navigation"/>
+						<xs:enumeration value="NewIO"/>
+						<xs:enumeration value="NormalOutfit"/>
+						<xs:enumeration value="Notepad"/>
+						<xs:enumeration value="Num"/>
+						<xs:enumeration value="OldIO"/>
+						<xs:enumeration value="Operations"/>
+						<xs:enumeration value="Ops"/>
+						<xs:enumeration value="Options"/>
+						<xs:enumeration value="Paycard"/>
+						<xs:enumeration value="Persistance"/>
+						<xs:enumeration value="Points"/>
+						<xs:enumeration value="PokerSPL"/>
+						<xs:enumeration value="QU_Weighted"/>
+						<xs:enumeration value="QuickUnion"/>
+						<xs:enumeration value="Radio"/>
+						<xs:enumeration value="Root"/>
+						<xs:enumeration value="Safety"/>
+						<xs:enumeration value="SayHello"/>
+						<xs:enumeration value="Security"/>
+						<xs:enumeration value="Sensors"/>
+						<xs:enumeration value="SnakeFOP"/>
+						<xs:enumeration value="Sounds"/>
+						<xs:enumeration value="SpaceWar"/>
+						<xs:enumeration value="Stack"/>
+						<xs:enumeration value="StandardLevels"/>
+						<xs:enumeration value="StartHere"/>
+						<xs:enumeration value="StringMatcher"/>
+						<xs:enumeration value="StrongC"/>
+						<xs:enumeration value="Structs"/>
+						<xs:enumeration value="Substring_a_b"/>
+						<xs:enumeration value="Substring_b_a"/>
+						<xs:enumeration value="TankWar"/>
+						<xs:enumeration value="UndirType"/>
+						<xs:enumeration value="UnionFindSPL"/>
+						<xs:enumeration value="UserLevels"/>
+						<xs:enumeration value="Version1"/>
+						<xs:enumeration value="Version2"/>
+						<xs:enumeration value="Version3"/>
+						<xs:enumeration value="WeightOptions"/>
+						<xs:enumeration value="Wgt"/>
+						<xs:enumeration value="generatedSPL"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="c">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value=" domain constraints"/>
+				<xs:enumeration value=" formatting"/>
+				<xs:enumeration value=" grammar of feature model"/>
+				<xs:enumeration value=" implementation constraints"/>
+				<xs:enumeration value="Conn { disp=&quot;Connected&quot; }"/>
+				<xs:enumeration value="Cyc { disp=&quot;Cycle&quot; }"/>
+				<xs:enumeration value="Directed { out=&quot;&quot; }"/>
+				<xs:enumeration value="Edges { out = &quot;&quot; }"/>
+				<xs:enumeration value="MKrus { disp=&quot;MSTKruskal&quot; }"/>
+				<xs:enumeration value="MPrim { disp=&quot;MSTPrim&quot; }"/>
+				<xs:enumeration value="NoEdges { out = &quot;&quot; }"/>
+				<xs:enumeration value="Num { disp=&quot;Number&quot; }"/>
+				<xs:enumeration value="OnlyNeighbors { out = &quot;&quot; }"/>
+				<xs:enumeration value="Ops { eqn }"/>
+				<xs:enumeration value="Prog { disp=&quot;Program&quot; }"/>
+				<xs:enumeration value="Semantic Dependencies"/>
+				<xs:enumeration value="StrongC { disp=&quot;StronglyConnected&quot; }"/>
+				<xs:enumeration value="Structs { eqn }"/>
+				<xs:enumeration value="UnWeighted { out=&quot;&quot; }"/>
+				<xs:enumeration value="Undirected { out=&quot;&quot; }"/>
+				<xs:enumeration value="Weighted { out=&quot;&quot; }"/>
+				<xs:enumeration value="Wgt { disp=&quot;Weighted&quot; }"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="calculations">
+		<xs:complexType>
+			<xs:attribute name="Auto" use="required" type="xs:boolean"/>
+			<xs:attribute name="Constraints" use="required" type="xs:boolean"/>
+			<xs:attribute name="Features" use="required" type="xs:boolean"/>
+			<xs:attribute name="Redundant" use="required" type="xs:boolean"/>
+			<xs:attribute name="Tautology" use="required" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="comments">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="c" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="conj">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="not"/>
+					<xs:element ref="var"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="var" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:element ref="conj"/>
+						<xs:element ref="not"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="constraints">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rule" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="description" type="xs:string"/>
+	<xs:element name="disj">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="var" maxOccurs="unbounded"/>
+				<xs:element ref="disj" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="eq">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="var" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:element ref="disj"/>
+						<xs:element ref="conj"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="conj"/>
+					<xs:element ref="var"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="feature">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="description" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="featureModel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="properties"/>
+				<xs:element ref="struct"/>
+				<xs:element ref="constraints"/>
+				<xs:sequence minOccurs="0">
+					<xs:element ref="calculations"/>
+					<xs:element ref="comments"/>
+					<xs:element ref="featureOrder"/>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="featureOrder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="userDefined" use="required" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="graphics">
+		<xs:complexType>
+			<xs:attribute name="key" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="layout"/>
+						<xs:enumeration value="layoutalgorithm"/>
+						<xs:enumeration value="legendautolayout"/>
+						<xs:enumeration value="legendhidden"/>
+						<xs:enumeration value="showcollapsedconstraints"/>
+						<xs:enumeration value="showhiddenfeatures"/>
+						<xs:enumeration value="showshortnames"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="value" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="false"/>
+						<xs:enumeration value="horizontal"/>
+						<xs:enumeration value="true"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="imp">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="var" maxOccurs="unbounded"/>
+					<xs:choice minOccurs="0">
+						<xs:element ref="disj"/>
+						<xs:element ref="conj"/>
+						<xs:element ref="not"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="conj"/>
+					<xs:choice>
+						<xs:element ref="disj"/>
+						<xs:element ref="var"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="disj"/>
+					<xs:choice>
+						<xs:element ref="conj"/>
+						<xs:element ref="var"/>
+						<xs:element ref="not"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="not">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="conj"/>
+				<xs:element ref="var"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="or">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="and" maxOccurs="unbounded"/>
+					<xs:element ref="feature" minOccurs="0"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="feature" maxOccurs="unbounded"/>
+					<xs:sequence minOccurs="0">
+						<xs:element ref="and"/>
+						<xs:element ref="feature" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="description"/>
+					<xs:element ref="feature" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:element ref="alt"/>
+			</xs:choice>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="name" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Alg"/>
+						<xs:enumeration value="Behavior"/>
+						<xs:enumeration value="ClockFHAsmetaL"/>
+						<xs:enumeration value="Composed"/>
+						<xs:enumeration value="ConcretGenerator"/>
+						<xs:enumeration value="ContentHandler"/>
+						<xs:enumeration value="DERIVATIVES"/>
+						<xs:enumeration value="Enemies"/>
+						<xs:enumeration value="History"/>
+						<xs:enumeration value="LandingGear"/>
+						<xs:enumeration value="Level"/>
+						<xs:enumeration value="Model"/>
+						<xs:enumeration value="Modes"/>
+						<xs:enumeration value="Objects"/>
+						<xs:enumeration value="Permission"/>
+						<xs:enumeration value="Ports"/>
+						<xs:enumeration value="Power_Ups"/>
+						<xs:enumeration value="Priorities"/>
+						<xs:enumeration value="Tanks"/>
+						<xs:enumeration value="Tools"/>
+						<xs:enumeration value="Unique"/>
+						<xs:enumeration value="View"/>
+						<xs:enumeration value="Wager"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="properties">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="graphics" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rule">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="description"/>
+					<xs:choice>
+						<xs:element ref="disj"/>
+						<xs:element ref="imp"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:element ref="disj"/>
+				<xs:element ref="conj"/>
+				<xs:element ref="imp"/>
+				<xs:element ref="eq"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="struct">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="and"/>
+				<xs:element ref="alt"/>
+				<xs:element ref="or"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="var" type="xs:string"/>
+</xs:schema>
