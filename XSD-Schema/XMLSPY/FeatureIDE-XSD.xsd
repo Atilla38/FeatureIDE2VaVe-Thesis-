@@ -1,37 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!-- Mit XMLSpy v2021 rel. 3 (x64) (http://www.altova.com) von Atilla (Karlsruher Institut für Technologie) bearbeitet -->
 <!-- W3C Schema erstellt mit XMLSpy v2021 rel. 3 (x64) (http://www.altova.com) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="alt">
 		<xs:complexType>
-			<xs:choice>
-				<xs:sequence>
-					<xs:element ref="and" maxOccurs="unbounded"/>
-					<xs:choice minOccurs="0">
-						<xs:element ref="feature"/>
-						<xs:element ref="alt"/>
-					</xs:choice>
-				</xs:sequence>
-				<xs:sequence>
-					<xs:element ref="feature" maxOccurs="unbounded"/>
-					<xs:choice minOccurs="0">
-						<xs:sequence>
-							<xs:element ref="alt"/>
-							<xs:element ref="feature"/>
-						</xs:sequence>
-						<xs:element ref="and"/>
-					</xs:choice>
-				</xs:sequence>
-				<xs:sequence>
-					<xs:element ref="description"/>
-					<xs:element ref="feature" maxOccurs="unbounded"/>
-				</xs:sequence>
-				<xs:sequence>
-					<xs:element ref="or" minOccurs="0"/>
-					<xs:element ref="alt" maxOccurs="unbounded"/>
-				</xs:sequence>
-			</xs:choice>
-			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:sequence>
+				<xs:element ref="description" minOccurs="0"/>
+				<xs:choice minOccurs="2" maxOccurs="unbounded">
+					<xs:element ref="feature"/>
+					<xs:element ref="alt"/>
+					<xs:element ref="or"/>
+					<xs:element ref="and"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
 			<xs:attribute name="abstract" type="xs:boolean"/>
 			<xs:attribute name="mandatory" type="xs:boolean"/>
 			<xs:attribute name="hidden" type="xs:boolean"/>
@@ -197,18 +179,18 @@
 			</xs:choice>
 			<xs:attribute name="abstract" type="xs:boolean"/>
 			<xs:attribute name="mandatory" type="xs:boolean"/>
-			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string" use="required"/>
 			<xs:attribute name="hidden" type="xs:boolean"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="c" type="xs:string"/>
 	<xs:element name="calculations">
 		<xs:complexType>
-			<xs:attribute name="Auto" use="required" type="xs:boolean"/>
-			<xs:attribute name="Constraints" use="required" type="xs:boolean"/>
-			<xs:attribute name="Features" use="required" type="xs:boolean"/>
-			<xs:attribute name="Redundant" use="required" type="xs:boolean"/>
-			<xs:attribute name="Tautology" use="required" type="xs:boolean"/>
+			<xs:attribute name="Auto" type="xs:boolean" use="required"/>
+			<xs:attribute name="Constraints" type="xs:boolean" use="required"/>
+			<xs:attribute name="Features" type="xs:boolean" use="required"/>
+			<xs:attribute name="Redundant" type="xs:boolean" use="required"/>
+			<xs:attribute name="Tautology" type="xs:boolean" use="required"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="comments">
@@ -273,7 +255,7 @@
 			<xs:sequence>
 				<xs:element ref="description" minOccurs="0"/>
 			</xs:sequence>
-			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string" use="required"/>
 			<xs:attribute name="abstract" type="xs:boolean"/>
 			<xs:attribute name="mandatory" type="xs:boolean"/>
 			<xs:attribute name="hidden" type="xs:boolean"/>
@@ -300,13 +282,13 @@
 			<xs:sequence>
 				<xs:element ref="feature" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
-			<xs:attribute name="userDefined" use="required" type="xs:boolean"/>
+			<xs:attribute name="userDefined" type="xs:boolean" use="required"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="graphics">
 		<xs:complexType>
-			<xs:attribute name="key" use="required" type="xs:string"/>
-			<xs:attribute name="value" use="required" type="xs:string"/>
+			<xs:attribute name="key" type="xs:string" use="required"/>
+			<xs:attribute name="value" type="xs:string" use="required"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="imp">
@@ -372,7 +354,7 @@
 					<xs:element ref="feature" minOccurs="0"/>
 				</xs:sequence>
 			</xs:choice>
-			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string" use="required"/>
 			<xs:attribute name="abstract" type="xs:boolean"/>
 			<xs:attribute name="mandatory" type="xs:boolean"/>
 			<xs:attribute name="hidden" type="xs:boolean"/>
