@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
 	<Folder FolderName="XML Files" ExtStr="xml;cml;math;rdf;smil;svg;wml">
+		<File FilePath="D:\Projekte\Feature\Test\After Or Alt.xml" HomeFolder="Yes"/>
+		<File FilePath="D:\Projekte\Feature\Test\Alt ends with feature.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\ApoGames-Android\ApoGames-Android.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\ATM-DeltaJ\ATM-DeltaJ.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\BankAccount-FH-JML\BankAccount-FH-JML.xml" HomeFolder="Yes"/>
@@ -53,6 +55,7 @@
 		<File FilePath="D:\Projekte\Feature\IntList-FH-JML\IntList-FH-JML.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\LandingGear-FH-AsmetaL\LandingGear-FH-AsmetaL.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\LibSSH-Colligens\LibSSH-Colligens.xml" HomeFolder="Yes"/>
+		<File FilePath="D:\Projekte\Feature\Test\MultipleOrs.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\Notepad-FH-Java\Notepad-FH-Java.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\Numbers-explicit-FH-JML\Number-explicit-FH-JML.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\Numbers-consecutive-FH-JML\Numbers-consecutive-FH-JML.xml" HomeFolder="Yes"/>
