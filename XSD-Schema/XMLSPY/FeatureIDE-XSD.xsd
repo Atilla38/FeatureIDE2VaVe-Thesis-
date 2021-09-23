@@ -39,11 +39,8 @@
 	<xs:element name="c" type="xs:string"/>
 	<xs:element name="calculations">
 		<xs:complexType>
-			<xs:attribute name="Auto" type="xs:boolean" use="required"/>
-			<xs:attribute name="Constraints" type="xs:boolean" use="required"/>
-			<xs:attribute name="Features" type="xs:boolean" use="required"/>
-			<xs:attribute name="Redundant" type="xs:boolean" use="required"/>
-			<xs:attribute name="Tautology" type="xs:boolean" use="required"/>
+			<xs:attribute name="key" type="xs:string" use="required"/>
+			<xs:attribute name="value" type="xs:string" use="required"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="comments">
@@ -200,9 +197,10 @@
 	</xs:element>
 	<xs:element name="properties">
 		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="graphics" minOccurs="0" maxOccurs="unbounded"/>
-			</xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="graphics"/>
+				<xs:element ref="calculations"/>
+			</xs:choice>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="rule">
