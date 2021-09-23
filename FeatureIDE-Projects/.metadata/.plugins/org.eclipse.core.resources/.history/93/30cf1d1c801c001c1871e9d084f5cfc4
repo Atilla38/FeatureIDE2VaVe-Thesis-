@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="NewRootFeature">
+			<and name="NewFeature">
+				<alt name="NewFeature4">
+					<and name="NewFeature5">
+						<feature name="NewFeature2"/>
+					</and>
+					<and name="NewFeature6">
+						<feature name="NewFeature3"/>
+					</and>
+					<and name="NewFeature7">
+						<feature name="NewFeature9"/>
+					</and>
+				</alt>
+			</and>
+		</and>
+	</struct>
+</featureModel>

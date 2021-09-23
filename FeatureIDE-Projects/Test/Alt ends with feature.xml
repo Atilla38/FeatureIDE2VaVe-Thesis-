@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Test">
+			<alt name="Base">
+				<feature name="NewFeature"/>
+				<alt name="NewFeature2">
+					<alt name="NewFeature5">
+						<alt name="NewFeature3">
+							<and name="NewFeature15">
+								<feature mandatory="true" name="NewFeature6"/>
+							</and>
+							<and name="NewFeature7">
+								<feature abstract="true" name="NewFeature16"/>
+							</and>
+						</alt>
+						<alt name="NewFeature8">
+							<feature name="NewFeature9"/>
+							<and name="NewFeature10">
+								<feature name="NewFeature14"/>
+							</and>
+						</alt>
+					</alt>
+					<feature name="NewFeature4"/>
+				</alt>
+			</alt>
+			<feature abstract="true" name="NewFeature11"/>
+			<feature mandatory="true" name="NewFeature12"/>
+			<feature abstract="true" mandatory="true" name="NewFeature13"/>
+		</and>
+	</struct>
+</featureModel>
