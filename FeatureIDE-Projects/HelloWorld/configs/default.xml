@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<configuration>
-	<feature automatic="selected" name="Car"/>
-	<feature automatic="selected" name="EngineType"/>
-	<feature name="Gasoline"/>
-	<feature name="SmogControl"/>
-</configuration>
