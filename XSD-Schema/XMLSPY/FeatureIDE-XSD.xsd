@@ -237,6 +237,7 @@
 				<xs:element ref="and"/>
 				<xs:element ref="alt"/>
 				<xs:element ref="or"/>
+				<xs:element ref="feature"/>
 			</xs:choice>
 		</xs:complexType>
 	</xs:element>
