@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Project ValidFileSet="Yes" ValidFile="FeatureIDE-XSD.xsd">
+<Project ValidFileSet="Yes" ValidFile="FeatureIDE-XSD - extended.xsd">
 	<Folder FolderName="XML Files" ExtStr="xml;cml;math;rdf;smil;svg;wml">
 		<File FilePath="D:\Projekte\Feature\Test\After Or Alt.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\Test\Alt ends with feature.xml" HomeFolder="Yes"/>
@@ -7,6 +7,7 @@
 		<File FilePath="D:\Projekte\Feature\ATM-DeltaJ\ATM-DeltaJ.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\BankAccount-FH-JML\BankAccount-FH-JML.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\BerkeleyDB-FH-Java\BarkeleyDB-FH-Java.xml" HomeFolder="Yes"/>
+		<File FilePath="D:\Projekte\Feature\BikeConfigurator\BikeConfigurator.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\FeatureModelAnalysis\car.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\Clock-FH-AsmetaL\Clock-FH-AsmetaL.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\CommandLineConfigurator\CommandLineConfigurator.xml" HomeFolder="Yes"/>
@@ -63,7 +64,9 @@
 		<File FilePath="D:\Projekte\Feature\Numbers-FH-JML\Numbers-FH-JML.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\Numbers-overriding-FH-JML\Numbers-overriding-FH-JML.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\Paycard-FH-JML\Paycard-FH-JML.xml" HomeFolder="Yes"/>
+		<File FilePath="D:\Projekte\Feature\PcConfigurator\PcConfigurator.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\PokerSPL-FH-JML\PokerSPL-FH-JML.xml" HomeFolder="Yes"/>
+		<File FilePath="D:\Projekte\Feature\Sandwich\Sandwich.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\SnakeFOP\SnakeFOP.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\Spacewar Example-AspectJ\Spacewar Example-AspectJ.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\Stack-FH-Java\Stack-FH-Java.xml" HomeFolder="Yes"/>
