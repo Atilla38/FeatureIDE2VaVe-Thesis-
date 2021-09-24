@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Project>
+<Project ValidFileSet="Yes" ValidFile="FeatureIDE-XSD.xsd">
 	<Folder FolderName="XML Files" ExtStr="xml;cml;math;rdf;smil;svg;wml">
 		<File FilePath="D:\Projekte\Feature\Test\After Or Alt.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\Test\Alt ends with feature.xml" HomeFolder="Yes"/>
@@ -33,6 +33,7 @@
 		<File FilePath="D:\Projekte\Feature\EPL-AHEAD\EPL-AHEAD.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\EPL-DeltaJ\EPL-DeltaJ.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\ExamDB-FH-JML\ExamDB-FH-JML.xml" HomeFolder="Yes"/>
+		<File FilePath="D:\Projekte\Feature\FeatureIDE\FeatureIDE.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\FGL-FH-Haskell\FGL-FH-Haskell.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\GameOfLife-FH-Java\GameOfLife-FH-Java.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\GPL-AHEAD\GPL-AHEAD.xml" HomeFolder="Yes"/>
@@ -77,6 +78,8 @@
 	<Folder FolderName="XSL Files" ExtStr="xsl;xslt"/>
 	<Folder FolderName="XQuery Files" ExtStr="xq;xql;xquery;xqu"/>
 	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp"/>
-	<Folder FolderName="DTD/Schemas" ExtStr="dtd;dcd;xdr;biz;xsd"/>
+	<Folder FolderName="DTD/Schemas" ExtStr="dtd;dcd;xdr;biz;xsd">
+		<File FilePath="FeatureIDE-XSD.xsd" HomeFolder="Yes"/>
+	</Folder>
 	<Folder FolderName="Entities" ExtStr="ent"/>
 </Project>
