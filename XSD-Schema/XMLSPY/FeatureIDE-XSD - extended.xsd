@@ -36,6 +36,7 @@
 			<xs:sequence>
 				<xs:element ref="description" minOccurs="0"/>
 				<xs:element ref="graphics" minOccurs="0"/>
+				<xs:element ref="attribute" minOccurs="0"/>
 				<xs:choice maxOccurs="unbounded">
 					<xs:element ref="feature"/>
 					<xs:element ref="alt"/>
@@ -118,6 +119,7 @@
 			<xs:sequence>
 				<xs:element ref="description" minOccurs="0"/>
 				<xs:element ref="graphics" minOccurs="0"/>
+				<xs:element ref="attribute" minOccurs="0"/>
 			</xs:sequence>
 			<xs:attribute name="name" type="xs:string" use="required"/>
 			<xs:attribute name="abstract" type="xs:boolean"/>
@@ -235,6 +237,7 @@
 			<xs:sequence>
 				<xs:element ref="description" minOccurs="0"/>
 				<xs:element ref="graphics" minOccurs="0"/>
+				<xs:element ref="attribute" minOccurs="0"/>
 				<xs:choice minOccurs="2" maxOccurs="unbounded">
 					<xs:element ref="feature"/>
 					<xs:element ref="alt"/>
