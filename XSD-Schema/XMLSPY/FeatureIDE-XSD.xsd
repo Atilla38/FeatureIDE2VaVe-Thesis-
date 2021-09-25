@@ -95,27 +95,12 @@
 	<xs:element name="featureModel">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="properties"/>
+				<xs:element ref="properties" minOccurs="0"/>
 				<xs:element ref="struct"/>
-				<xs:choice minOccurs="0">
-					<xs:sequence>
-						<xs:element ref="constraints"/>
-						<xs:choice minOccurs="0">
-							<xs:sequence>
-								<xs:element ref="comments"/>
-								<xs:element ref="featureOrder" minOccurs="0"/>
-							</xs:sequence>
-							<xs:sequence>
-								<xs:sequence minOccurs="0">
-									<xs:element ref="calculations"/>
-									<xs:element ref="comments"/>
-								</xs:sequence>
-								<xs:element ref="featureOrder"/>
-							</xs:sequence>
-						</xs:choice>
-					</xs:sequence>
-					<xs:element ref="featureOrder"/>
-				</xs:choice>
+				<xs:element ref="constraints" minOccurs="0"/>
+				<xs:element ref="calculations" minOccurs="0"/>
+				<xs:element ref="comments" minOccurs="0"/>
+				<xs:element ref="featureOrder" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
