@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2021 rel. 3 (x64) (http://www.altova.com) von Atilla (Karlsruher Institut für Technologie) bearbeitet -->
+<!-- W3C Schema erstellt mit XMLSpy v2021 rel. 3 (x64) (http://www.altova.com) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="alt">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="description" minOccurs="0"/>
+				<xs:element ref="graphics" minOccurs="0"/>
+				<xs:choice minOccurs="2" maxOccurs="unbounded">
+					<xs:element ref="feature"/>
+					<xs:element ref="alt"/>
+					<xs:element ref="or"/>
+					<xs:element ref="and"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="and">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="description" minOccurs="0"/>
+				<xs:element ref="graphics" minOccurs="0"/>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="feature"/>
+					<xs:element ref="alt"/>
+					<xs:element ref="or"/>
+					<xs:element ref="and"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="c" type="xs:string"/>
+	<xs:element name="calculations">
+		<xs:complexType>
+			<xs:attribute name="key" type="xs:string" use="required"/>
+			<xs:attribute name="value" type="xs:boolean" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="comments">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="c" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="constraints">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rule" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="description" type="xs:string"/>
+	<xs:group name="expression">
+		<xs:choice>
+			<xs:element name="disj" type="binaryExpressionType"/>
+			<xs:element name="conj" type="binaryExpressionType"/>
+			<xs:element name="imp" type="binaryExpressionType"/>
+			<xs:element name="eq" type="binaryExpressionType"/>
+			<xs:element name="not" type="unaryExpressionType"/>
+			<xs:element name="var" type="xs:string"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="unaryExpressionType">
+		<xs:choice>
+			<xs:group ref="expression"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="binaryExpressionType">
+		<xs:choice minOccurs="2" maxOccurs="2">
+			<xs:group ref="expression"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="feature">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="description" minOccurs="0"/>
+				<xs:element ref="graphics" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="featureModel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="properties" minOccurs="0"/>
+				<xs:element ref="struct"/>
+				<xs:element ref="constraints" minOccurs="0"/>
+				<xs:element ref="calculations" minOccurs="0"/>
+				<xs:element ref="comments" minOccurs="0"/>
+				<xs:element ref="featureOrder" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="featureOrder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="userDefined" type="xs:boolean" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="graphics">
+		<xs:complexType>
+			<xs:attribute name="key" type="xs:string" use="required"/>
+			<xs:attribute name="value" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="or">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="description" minOccurs="0"/>
+				<xs:element ref="graphics" minOccurs="0"/>
+				<xs:choice minOccurs="2" maxOccurs="unbounded">
+					<xs:element ref="feature"/>
+					<xs:element ref="alt"/>
+					<xs:element ref="or"/>
+					<xs:element ref="and"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="abstract" type="xs:boolean"/>
+			<xs:attribute name="mandatory" type="xs:boolean"/>
+			<xs:attribute name="hidden" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="properties">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="graphics"/>
+				<xs:element ref="calculations"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rule">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="description" minOccurs="0"/>
+				<xs:choice>
+					<xs:group ref="expression"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="struct">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="and"/>
+				<xs:element ref="alt"/>
+				<xs:element ref="or"/>
+				<xs:element ref="feature"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
