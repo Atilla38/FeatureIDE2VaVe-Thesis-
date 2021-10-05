@@ -3,37 +3,27 @@
 <!-- W3C Schema erstellt mit XMLSpy v2021 rel. 3 (x64) (http://www.altova.com) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:complexType name="unaryNodeType">
-		<xs:sequence>
-			<xs:element ref="description" minOccurs="0"/>
-			<xs:element ref="graphics" minOccurs="0"/>
-			<xs:group ref="node" maxOccurs="unbounded"/>
-		</xs:sequence>
-		<xs:attribute name="abstract" type="xs:boolean"/>
-		<xs:attribute name="mandatory" type="xs:boolean"/>
-		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="hidden" type="xs:boolean"/>
+		<xs:complexContent>
+			<xs:extension base="node">
+				<xs:sequence>
+					<xs:group ref="nodeGroup" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="leafType">
-		<xs:sequence>
-			<xs:element ref="description" minOccurs="0"/>
-			<xs:element ref="graphics" minOccurs="0"/>
-		</xs:sequence>
-		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="abstract" type="xs:boolean"/>
-		<xs:attribute name="mandatory" type="xs:boolean"/>
-		<xs:attribute name="hidden" type="xs:boolean"/>
+		<xs:complexContent>
+			<xs:extension base="node"/>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="binaryExtendedNodeType">
-		<xs:sequence>
-			<xs:element ref="description" minOccurs="0"/>
-			<xs:element ref="graphics" minOccurs="0"/>
-			<xs:element name="attribute" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:group ref="extendedNode" minOccurs="2" maxOccurs="unbounded"/>
-		</xs:sequence>
-		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="abstract" type="xs:boolean"/>
-		<xs:attribute name="mandatory" type="xs:boolean"/>
-		<xs:attribute name="hidden" type="xs:boolean"/>
+		<xs:complexContent>
+			<xs:extension base="extendedNode">
+				<xs:sequence>
+					<xs:group ref="extendedNodeGroup" minOccurs="2" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="extendedFeatureModel">
 		<xs:complexType>
@@ -41,7 +31,7 @@
 				<xs:element ref="properties" minOccurs="0"/>
 				<xs:element name="struct">
 					<xs:complexType>
-						<xs:group ref="extendedNode"/>
+						<xs:group ref="extendedNodeGroup"/>
 					</xs:complexType>
 				</xs:element>
 				<xs:element ref="constraints" minOccurs="0"/>
@@ -51,7 +41,7 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:group name="extendedNode">
+	<xs:group name="extendedNodeGroup">
 		<xs:choice>
 			<xs:element name="feature" type="extendedLeafType"/>
 			<xs:element name="alt" type="binaryExtendedNodeType"/>
@@ -60,40 +50,38 @@
 		</xs:choice>
 	</xs:group>
 	<xs:complexType name="extendedLeafType">
-		<xs:sequence>
-			<xs:element ref="description" minOccurs="0"/>
-			<xs:element ref="graphics" minOccurs="0"/>
-			<xs:element name="attribute" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="abstract" type="xs:boolean"/>
-		<xs:attribute name="mandatory" type="xs:boolean"/>
-		<xs:attribute name="hidden" type="xs:boolean"/>
+		<xs:complexContent>
+			<xs:extension base="extendedNode"/>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="unaryExtendedNodeType">
-		<xs:sequence>
-			<xs:element ref="description" minOccurs="0"/>
-			<xs:element ref="graphics" minOccurs="0"/>
-			<xs:element name="attribute" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:group ref="extendedNode" maxOccurs="unbounded"/>
-		</xs:sequence>
-		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="abstract" type="xs:boolean"/>
-		<xs:attribute name="mandatory" type="xs:boolean"/>
-		<xs:attribute name="hidden" type="xs:boolean"/>
+		<xs:complexContent>
+			<xs:extension base="extendedNode">
+				<xs:sequence>
+					<xs:group ref="extendedNodeGroup" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="extendedNode">
+		<xs:complexContent>
+			<xs:extension base="node">
+				<xs:sequence>
+					<xs:element name="attribute" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="binaryNodeType">
-		<xs:sequence>
-			<xs:element ref="description" minOccurs="0"/>
-			<xs:element ref="graphics" minOccurs="0"/>
-			<xs:group ref="node" minOccurs="2" maxOccurs="unbounded"/>
-		</xs:sequence>
-		<xs:attribute name="name" type="xs:string" use="required"/>
-		<xs:attribute name="abstract" type="xs:boolean"/>
-		<xs:attribute name="mandatory" type="xs:boolean"/>
-		<xs:attribute name="hidden" type="xs:boolean"/>
+		<xs:complexContent>
+			<xs:extension base="node">
+				<xs:sequence>
+					<xs:group ref="nodeGroup" minOccurs="2" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
-	<xs:group name="node">
+	<xs:group name="nodeGroup">
 		<xs:choice>
 			<xs:element name="feature" type="leafType"/>
 			<xs:element name="alt" type="binaryNodeType"/>
@@ -123,7 +111,7 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="description" type="xs:string"/>
-	<xs:group name="expression">
+	<xs:group name="expressionGroup">
 		<xs:choice>
 			<xs:element name="disj" type="binaryExpressionType"/>
 			<xs:element name="conj" type="binaryExpressionType"/>
@@ -134,14 +122,32 @@
 		</xs:choice>
 	</xs:group>
 	<xs:complexType name="unaryExpressionType">
-		<xs:choice>
-			<xs:group ref="expression"/>
-		</xs:choice>
+		<xs:complexContent>
+			<xs:extension base="expression">
+				<xs:choice>
+					<xs:group ref="expressionGroup"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="binaryExpressionType">
-		<xs:choice minOccurs="2" maxOccurs="2">
-			<xs:group ref="expression"/>
-		</xs:choice>
+		<xs:complexContent>
+			<xs:extension base="expression">
+				<xs:choice minOccurs="2" maxOccurs="2">
+					<xs:group ref="expressionGroup"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="node">
+		<xs:sequence>
+			<xs:element ref="description" minOccurs="0"/>
+			<xs:element ref="graphics" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="abstract" type="xs:boolean"/>
+		<xs:attribute name="mandatory" type="xs:boolean"/>
+		<xs:attribute name="hidden" type="xs:boolean"/>
 	</xs:complexType>
 	<xs:element name="featureModel">
 		<xs:complexType>
@@ -149,7 +155,7 @@
 				<xs:element ref="properties" minOccurs="0"/>
 				<xs:element name="struct">
 					<xs:complexType>
-						<xs:group ref="node"/>
+						<xs:group ref="extendedNodeGroup"/>
 					</xs:complexType>
 				</xs:element>
 				<xs:element ref="constraints" minOccurs="0"/>
@@ -181,12 +187,13 @@
 			</xs:choice>
 		</xs:complexType>
 	</xs:element>
+	<xs:complexType name="expression"/>
 	<xs:element name="rule">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="description" minOccurs="0"/>
 				<xs:choice>
-					<xs:group ref="expression"/>
+					<xs:group ref="expressionGroup"/>
 				</xs:choice>
 			</xs:sequence>
 		</xs:complexType>
