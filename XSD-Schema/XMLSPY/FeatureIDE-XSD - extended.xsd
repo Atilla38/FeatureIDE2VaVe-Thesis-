@@ -155,7 +155,7 @@
 				<xs:element ref="properties" minOccurs="0"/>
 				<xs:element name="struct">
 					<xs:complexType>
-						<xs:group ref="extendedNodeGroup"/>
+						<xs:group ref="nodeGroup"/>
 					</xs:complexType>
 				</xs:element>
 				<xs:element ref="constraints" minOccurs="0"/>
