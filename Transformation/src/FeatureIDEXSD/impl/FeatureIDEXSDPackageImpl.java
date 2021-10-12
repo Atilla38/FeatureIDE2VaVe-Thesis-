@@ -1,0 +1,2590 @@
+/**
+ */
+package FeatureIDEXSD.impl;
+
+import FeatureIDEXSD.BinaryExpressionType;
+import FeatureIDEXSD.BinaryExtendedNodeType;
+import FeatureIDEXSD.BinaryNodeType;
+import FeatureIDEXSD.CalculationsType;
+import FeatureIDEXSD.CommentsType;
+import FeatureIDEXSD.ConstraintsType;
+import FeatureIDEXSD.DocumentRoot;
+import FeatureIDEXSD.Expression;
+import FeatureIDEXSD.ExtendedFeatureModelType;
+import FeatureIDEXSD.ExtendedLeafType;
+import FeatureIDEXSD.ExtendedNode;
+import FeatureIDEXSD.ExtendedStructType;
+import FeatureIDEXSD.FeatureIDEXSDFactory;
+import FeatureIDEXSD.FeatureIDEXSDPackage;
+import FeatureIDEXSD.FeatureModelType;
+import FeatureIDEXSD.FeatureOrderType;
+import FeatureIDEXSD.GraphicsType;
+import FeatureIDEXSD.LeafType;
+import FeatureIDEXSD.Node;
+import FeatureIDEXSD.PropertiesType;
+import FeatureIDEXSD.RuleType;
+import FeatureIDEXSD.StructType;
+import FeatureIDEXSD.UnaryExpressionType;
+import FeatureIDEXSD.UnaryExtendedNodeType;
+import FeatureIDEXSD.UnaryNodeType;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Package</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDEXSDPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass binaryExpressionTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass binaryExtendedNodeTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass binaryNodeTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass calculationsTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass commentsTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass constraintsTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass documentRootEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass expressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass extendedFeatureModelTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass extendedLeafTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass extendedNodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass featureModelTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass featureOrderTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass graphicsTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass leafTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass nodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass propertiesTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ruleTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass structTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass extendedStructTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass unaryExpressionTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass unaryExtendedNodeTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass unaryNodeTypeEClass = null;
+
+	/**
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
+	private FeatureIDEXSDPackageImpl() {
+		super(eNS_URI, FeatureIDEXSDFactory.eINSTANCE);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private static boolean isInited = false;
+
+	/**
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>This method is used to initialize {@link FeatureIDEXSDPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
+	public static FeatureIDEXSDPackage init() {
+		if (isInited) return (FeatureIDEXSDPackage)EPackage.Registry.INSTANCE.getEPackage(FeatureIDEXSDPackage.eNS_URI);
+
+		// Obtain or create and register package
+		Object registeredFeatureIDEXSDPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		FeatureIDEXSDPackageImpl theFeatureIDEXSDPackage = registeredFeatureIDEXSDPackage instanceof FeatureIDEXSDPackageImpl ? (FeatureIDEXSDPackageImpl)registeredFeatureIDEXSDPackage : new FeatureIDEXSDPackageImpl();
+
+		isInited = true;
+
+		// Initialize simple dependencies
+		XMLTypePackage.eINSTANCE.eClass();
+
+		// Create package meta-data objects
+		theFeatureIDEXSDPackage.createPackageContents();
+
+		// Initialize created meta-data
+		theFeatureIDEXSDPackage.initializePackageContents();
+
+		// Mark meta-data to indicate it can't be changed
+		theFeatureIDEXSDPackage.freeze();
+
+		// Update the registry and return the package
+		EPackage.Registry.INSTANCE.put(FeatureIDEXSDPackage.eNS_URI, theFeatureIDEXSDPackage);
+		return theFeatureIDEXSDPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBinaryExpressionType() {
+		return binaryExpressionTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBinaryExpressionType_ExpressionGroup() {
+		return (EAttribute)binaryExpressionTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryExpressionType_Disj() {
+		return (EReference)binaryExpressionTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryExpressionType_Conj() {
+		return (EReference)binaryExpressionTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryExpressionType_Imp() {
+		return (EReference)binaryExpressionTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryExpressionType_Eq() {
+		return (EReference)binaryExpressionTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryExpressionType_Not() {
+		return (EReference)binaryExpressionTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBinaryExpressionType_Var() {
+		return (EAttribute)binaryExpressionTypeEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBinaryExtendedNodeType() {
+		return binaryExtendedNodeTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBinaryExtendedNodeType_ExtendedNodeGroup() {
+		return (EAttribute)binaryExtendedNodeTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryExtendedNodeType_Feature() {
+		return (EReference)binaryExtendedNodeTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryExtendedNodeType_Alt() {
+		return (EReference)binaryExtendedNodeTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryExtendedNodeType_Or() {
+		return (EReference)binaryExtendedNodeTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryExtendedNodeType_And() {
+		return (EReference)binaryExtendedNodeTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBinaryNodeType() {
+		return binaryNodeTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBinaryNodeType_NodeGroup() {
+		return (EAttribute)binaryNodeTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryNodeType_Feature() {
+		return (EReference)binaryNodeTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryNodeType_Alt() {
+		return (EReference)binaryNodeTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryNodeType_Or() {
+		return (EReference)binaryNodeTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryNodeType_And() {
+		return (EReference)binaryNodeTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCalculationsType() {
+		return calculationsTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCalculationsType_Key() {
+		return (EAttribute)calculationsTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCalculationsType_Value() {
+		return (EAttribute)calculationsTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCommentsType() {
+		return commentsTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCommentsType_C() {
+		return (EAttribute)commentsTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConstraintsType() {
+		return constraintsTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConstraintsType_Rule() {
+		return (EReference)constraintsTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDocumentRoot() {
+		return documentRootEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDocumentRoot_Mixed() {
+		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_XMLNSPrefixMap() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_XSISchemaLocation() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDocumentRoot_C() {
+		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Calculations() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Comments() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Constraints() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDocumentRoot_Description() {
+		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_ExtendedFeatureModel() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_FeatureModel() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_FeatureOrder() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Graphics() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Properties() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Rule() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExpression() {
+		return expressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExtendedFeatureModelType() {
+		return extendedFeatureModelTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtendedFeatureModelType_Properties() {
+		return (EReference)extendedFeatureModelTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtendedFeatureModelType_Struct() {
+		return (EReference)extendedFeatureModelTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtendedFeatureModelType_Constraints() {
+		return (EReference)extendedFeatureModelTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtendedFeatureModelType_Calculations() {
+		return (EReference)extendedFeatureModelTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtendedFeatureModelType_Comments() {
+		return (EReference)extendedFeatureModelTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtendedFeatureModelType_FeatureOrder() {
+		return (EReference)extendedFeatureModelTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExtendedLeafType() {
+		return extendedLeafTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExtendedNode() {
+		return extendedNodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtendedNode_Attribute() {
+		return (EReference)extendedNodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFeatureModelType() {
+		return featureModelTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeatureModelType_Properties() {
+		return (EReference)featureModelTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeatureModelType_Struct() {
+		return (EReference)featureModelTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeatureModelType_Constraints() {
+		return (EReference)featureModelTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeatureModelType_Calculations() {
+		return (EReference)featureModelTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeatureModelType_Comments() {
+		return (EReference)featureModelTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeatureModelType_FeatureOrder() {
+		return (EReference)featureModelTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFeatureOrderType() {
+		return featureOrderTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeatureOrderType_Feature() {
+		return (EReference)featureOrderTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeatureOrderType_UserDefined() {
+		return (EAttribute)featureOrderTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGraphicsType() {
+		return graphicsTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGraphicsType_Key() {
+		return (EAttribute)graphicsTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGraphicsType_Value() {
+		return (EAttribute)graphicsTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLeafType() {
+		return leafTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNode() {
+		return nodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNode_Description() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNode_Graphics() {
+		return (EReference)nodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNode_Abstract() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNode_Hidden() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNode_Mandatory() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNode_Name() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPropertiesType() {
+		return propertiesTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPropertiesType_Group() {
+		return (EAttribute)propertiesTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPropertiesType_Graphics() {
+		return (EReference)propertiesTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPropertiesType_Calculations() {
+		return (EReference)propertiesTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRuleType() {
+		return ruleTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRuleType_Description() {
+		return (EAttribute)ruleTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuleType_Disj() {
+		return (EReference)ruleTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuleType_Conj() {
+		return (EReference)ruleTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuleType_Imp() {
+		return (EReference)ruleTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuleType_Eq() {
+		return (EReference)ruleTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuleType_Not() {
+		return (EReference)ruleTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRuleType_Var() {
+		return (EAttribute)ruleTypeEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStructType() {
+		return structTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStructType_Feature() {
+		return (EReference)structTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStructType_Alt() {
+		return (EReference)structTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStructType_Or() {
+		return (EReference)structTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStructType_And() {
+		return (EReference)structTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExtendedStructType() {
+		return extendedStructTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtendedStructType_Feature() {
+		return (EReference)extendedStructTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtendedStructType_Alt() {
+		return (EReference)extendedStructTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtendedStructType_Or() {
+		return (EReference)extendedStructTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtendedStructType_And() {
+		return (EReference)extendedStructTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUnaryExpressionType() {
+		return unaryExpressionTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryExpressionType_Disj() {
+		return (EReference)unaryExpressionTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryExpressionType_Conj() {
+		return (EReference)unaryExpressionTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryExpressionType_Imp() {
+		return (EReference)unaryExpressionTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryExpressionType_Eq() {
+		return (EReference)unaryExpressionTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryExpressionType_Not() {
+		return (EReference)unaryExpressionTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnaryExpressionType_Var() {
+		return (EAttribute)unaryExpressionTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUnaryExtendedNodeType() {
+		return unaryExtendedNodeTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnaryExtendedNodeType_ExtendedNodeGroup() {
+		return (EAttribute)unaryExtendedNodeTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryExtendedNodeType_Feature() {
+		return (EReference)unaryExtendedNodeTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryExtendedNodeType_Alt() {
+		return (EReference)unaryExtendedNodeTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryExtendedNodeType_Or() {
+		return (EReference)unaryExtendedNodeTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryExtendedNodeType_And() {
+		return (EReference)unaryExtendedNodeTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUnaryNodeType() {
+		return unaryNodeTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnaryNodeType_NodeGroup() {
+		return (EAttribute)unaryNodeTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryNodeType_Feature() {
+		return (EReference)unaryNodeTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryNodeType_Alt() {
+		return (EReference)unaryNodeTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryNodeType_Or() {
+		return (EReference)unaryNodeTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnaryNodeType_And() {
+		return (EReference)unaryNodeTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeatureIDEXSDFactory getFeatureIDEXSDFactory() {
+		return (FeatureIDEXSDFactory)getEFactoryInstance();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private boolean isCreated = false;
+
+	/**
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void createPackageContents() {
+		if (isCreated) return;
+		isCreated = true;
+
+		// Create classes and their features
+		binaryExpressionTypeEClass = createEClass(BINARY_EXPRESSION_TYPE);
+		createEAttribute(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__EXPRESSION_GROUP);
+		createEReference(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__DISJ);
+		createEReference(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__CONJ);
+		createEReference(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__IMP);
+		createEReference(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__EQ);
+		createEReference(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__NOT);
+		createEAttribute(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__VAR);
+
+		binaryExtendedNodeTypeEClass = createEClass(BINARY_EXTENDED_NODE_TYPE);
+		createEAttribute(binaryExtendedNodeTypeEClass, BINARY_EXTENDED_NODE_TYPE__EXTENDED_NODE_GROUP);
+		createEReference(binaryExtendedNodeTypeEClass, BINARY_EXTENDED_NODE_TYPE__FEATURE);
+		createEReference(binaryExtendedNodeTypeEClass, BINARY_EXTENDED_NODE_TYPE__ALT);
+		createEReference(binaryExtendedNodeTypeEClass, BINARY_EXTENDED_NODE_TYPE__OR);
+		createEReference(binaryExtendedNodeTypeEClass, BINARY_EXTENDED_NODE_TYPE__AND);
+
+		binaryNodeTypeEClass = createEClass(BINARY_NODE_TYPE);
+		createEAttribute(binaryNodeTypeEClass, BINARY_NODE_TYPE__NODE_GROUP);
+		createEReference(binaryNodeTypeEClass, BINARY_NODE_TYPE__FEATURE);
+		createEReference(binaryNodeTypeEClass, BINARY_NODE_TYPE__ALT);
+		createEReference(binaryNodeTypeEClass, BINARY_NODE_TYPE__OR);
+		createEReference(binaryNodeTypeEClass, BINARY_NODE_TYPE__AND);
+
+		calculationsTypeEClass = createEClass(CALCULATIONS_TYPE);
+		createEAttribute(calculationsTypeEClass, CALCULATIONS_TYPE__KEY);
+		createEAttribute(calculationsTypeEClass, CALCULATIONS_TYPE__VALUE);
+
+		commentsTypeEClass = createEClass(COMMENTS_TYPE);
+		createEAttribute(commentsTypeEClass, COMMENTS_TYPE__C);
+
+		constraintsTypeEClass = createEClass(CONSTRAINTS_TYPE);
+		createEReference(constraintsTypeEClass, CONSTRAINTS_TYPE__RULE);
+
+		documentRootEClass = createEClass(DOCUMENT_ROOT);
+		createEAttribute(documentRootEClass, DOCUMENT_ROOT__MIXED);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+		createEAttribute(documentRootEClass, DOCUMENT_ROOT__C);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__CALCULATIONS);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__COMMENTS);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__CONSTRAINTS);
+		createEAttribute(documentRootEClass, DOCUMENT_ROOT__DESCRIPTION);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__FEATURE_MODEL);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__FEATURE_ORDER);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__GRAPHICS);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__PROPERTIES);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__RULE);
+
+		expressionEClass = createEClass(EXPRESSION);
+
+		extendedFeatureModelTypeEClass = createEClass(EXTENDED_FEATURE_MODEL_TYPE);
+		createEReference(extendedFeatureModelTypeEClass, EXTENDED_FEATURE_MODEL_TYPE__PROPERTIES);
+		createEReference(extendedFeatureModelTypeEClass, EXTENDED_FEATURE_MODEL_TYPE__STRUCT);
+		createEReference(extendedFeatureModelTypeEClass, EXTENDED_FEATURE_MODEL_TYPE__CONSTRAINTS);
+		createEReference(extendedFeatureModelTypeEClass, EXTENDED_FEATURE_MODEL_TYPE__CALCULATIONS);
+		createEReference(extendedFeatureModelTypeEClass, EXTENDED_FEATURE_MODEL_TYPE__COMMENTS);
+		createEReference(extendedFeatureModelTypeEClass, EXTENDED_FEATURE_MODEL_TYPE__FEATURE_ORDER);
+
+		extendedLeafTypeEClass = createEClass(EXTENDED_LEAF_TYPE);
+
+		extendedNodeEClass = createEClass(EXTENDED_NODE);
+		createEReference(extendedNodeEClass, EXTENDED_NODE__ATTRIBUTE);
+
+		featureModelTypeEClass = createEClass(FEATURE_MODEL_TYPE);
+		createEReference(featureModelTypeEClass, FEATURE_MODEL_TYPE__PROPERTIES);
+		createEReference(featureModelTypeEClass, FEATURE_MODEL_TYPE__STRUCT);
+		createEReference(featureModelTypeEClass, FEATURE_MODEL_TYPE__CONSTRAINTS);
+		createEReference(featureModelTypeEClass, FEATURE_MODEL_TYPE__CALCULATIONS);
+		createEReference(featureModelTypeEClass, FEATURE_MODEL_TYPE__COMMENTS);
+		createEReference(featureModelTypeEClass, FEATURE_MODEL_TYPE__FEATURE_ORDER);
+
+		featureOrderTypeEClass = createEClass(FEATURE_ORDER_TYPE);
+		createEReference(featureOrderTypeEClass, FEATURE_ORDER_TYPE__FEATURE);
+		createEAttribute(featureOrderTypeEClass, FEATURE_ORDER_TYPE__USER_DEFINED);
+
+		graphicsTypeEClass = createEClass(GRAPHICS_TYPE);
+		createEAttribute(graphicsTypeEClass, GRAPHICS_TYPE__KEY);
+		createEAttribute(graphicsTypeEClass, GRAPHICS_TYPE__VALUE);
+
+		leafTypeEClass = createEClass(LEAF_TYPE);
+
+		nodeEClass = createEClass(NODE);
+		createEAttribute(nodeEClass, NODE__DESCRIPTION);
+		createEReference(nodeEClass, NODE__GRAPHICS);
+		createEAttribute(nodeEClass, NODE__ABSTRACT);
+		createEAttribute(nodeEClass, NODE__HIDDEN);
+		createEAttribute(nodeEClass, NODE__MANDATORY);
+		createEAttribute(nodeEClass, NODE__NAME);
+
+		propertiesTypeEClass = createEClass(PROPERTIES_TYPE);
+		createEAttribute(propertiesTypeEClass, PROPERTIES_TYPE__GROUP);
+		createEReference(propertiesTypeEClass, PROPERTIES_TYPE__GRAPHICS);
+		createEReference(propertiesTypeEClass, PROPERTIES_TYPE__CALCULATIONS);
+
+		ruleTypeEClass = createEClass(RULE_TYPE);
+		createEAttribute(ruleTypeEClass, RULE_TYPE__DESCRIPTION);
+		createEReference(ruleTypeEClass, RULE_TYPE__DISJ);
+		createEReference(ruleTypeEClass, RULE_TYPE__CONJ);
+		createEReference(ruleTypeEClass, RULE_TYPE__IMP);
+		createEReference(ruleTypeEClass, RULE_TYPE__EQ);
+		createEReference(ruleTypeEClass, RULE_TYPE__NOT);
+		createEAttribute(ruleTypeEClass, RULE_TYPE__VAR);
+
+		structTypeEClass = createEClass(STRUCT_TYPE);
+		createEReference(structTypeEClass, STRUCT_TYPE__FEATURE);
+		createEReference(structTypeEClass, STRUCT_TYPE__ALT);
+		createEReference(structTypeEClass, STRUCT_TYPE__OR);
+		createEReference(structTypeEClass, STRUCT_TYPE__AND);
+
+		extendedStructTypeEClass = createEClass(EXTENDED_STRUCT_TYPE);
+		createEReference(extendedStructTypeEClass, EXTENDED_STRUCT_TYPE__FEATURE);
+		createEReference(extendedStructTypeEClass, EXTENDED_STRUCT_TYPE__ALT);
+		createEReference(extendedStructTypeEClass, EXTENDED_STRUCT_TYPE__OR);
+		createEReference(extendedStructTypeEClass, EXTENDED_STRUCT_TYPE__AND);
+
+		unaryExpressionTypeEClass = createEClass(UNARY_EXPRESSION_TYPE);
+		createEReference(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__DISJ);
+		createEReference(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__CONJ);
+		createEReference(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__IMP);
+		createEReference(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__EQ);
+		createEReference(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__NOT);
+		createEAttribute(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__VAR);
+
+		unaryExtendedNodeTypeEClass = createEClass(UNARY_EXTENDED_NODE_TYPE);
+		createEAttribute(unaryExtendedNodeTypeEClass, UNARY_EXTENDED_NODE_TYPE__EXTENDED_NODE_GROUP);
+		createEReference(unaryExtendedNodeTypeEClass, UNARY_EXTENDED_NODE_TYPE__FEATURE);
+		createEReference(unaryExtendedNodeTypeEClass, UNARY_EXTENDED_NODE_TYPE__ALT);
+		createEReference(unaryExtendedNodeTypeEClass, UNARY_EXTENDED_NODE_TYPE__OR);
+		createEReference(unaryExtendedNodeTypeEClass, UNARY_EXTENDED_NODE_TYPE__AND);
+
+		unaryNodeTypeEClass = createEClass(UNARY_NODE_TYPE);
+		createEAttribute(unaryNodeTypeEClass, UNARY_NODE_TYPE__NODE_GROUP);
+		createEReference(unaryNodeTypeEClass, UNARY_NODE_TYPE__FEATURE);
+		createEReference(unaryNodeTypeEClass, UNARY_NODE_TYPE__ALT);
+		createEReference(unaryNodeTypeEClass, UNARY_NODE_TYPE__OR);
+		createEReference(unaryNodeTypeEClass, UNARY_NODE_TYPE__AND);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private boolean isInitialized = false;
+
+	/**
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void initializePackageContents() {
+		if (isInitialized) return;
+		isInitialized = true;
+
+		// Initialize package
+		setName(eNAME);
+		setNsPrefix(eNS_PREFIX);
+		setNsURI(eNS_URI);
+
+		// Obtain other dependent packages
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
+
+		// Create type parameters
+
+		// Set bounds for type parameters
+
+		// Add supertypes to classes
+		binaryExpressionTypeEClass.getESuperTypes().add(this.getExpression());
+		binaryExtendedNodeTypeEClass.getESuperTypes().add(this.getExtendedNode());
+		binaryNodeTypeEClass.getESuperTypes().add(this.getNode());
+		extendedLeafTypeEClass.getESuperTypes().add(this.getExtendedNode());
+		extendedNodeEClass.getESuperTypes().add(this.getNode());
+		leafTypeEClass.getESuperTypes().add(this.getNode());
+		unaryExpressionTypeEClass.getESuperTypes().add(this.getExpression());
+		unaryExtendedNodeTypeEClass.getESuperTypes().add(this.getExtendedNode());
+		unaryNodeTypeEClass.getESuperTypes().add(this.getNode());
+
+		// Initialize classes, features, and operations; add parameters
+		initEClass(binaryExpressionTypeEClass, BinaryExpressionType.class, "BinaryExpressionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBinaryExpressionType_ExpressionGroup(), ecorePackage.getEFeatureMapEntry(), "expressionGroup", null, 0, -1, BinaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExpressionType_Disj(), this.getBinaryExpressionType(), null, "disj", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExpressionType_Conj(), this.getBinaryExpressionType(), null, "conj", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExpressionType_Imp(), this.getBinaryExpressionType(), null, "imp", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExpressionType_Eq(), this.getBinaryExpressionType(), null, "eq", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExpressionType_Not(), this.getUnaryExpressionType(), null, "not", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBinaryExpressionType_Var(), theXMLTypePackage.getString(), "var", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(binaryExtendedNodeTypeEClass, BinaryExtendedNodeType.class, "BinaryExtendedNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBinaryExtendedNodeType_ExtendedNodeGroup(), ecorePackage.getEFeatureMapEntry(), "extendedNodeGroup", null, 0, -1, BinaryExtendedNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExtendedNodeType_Feature(), this.getExtendedLeafType(), null, "feature", null, 0, -1, BinaryExtendedNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExtendedNodeType_Alt(), this.getBinaryExtendedNodeType(), null, "alt", null, 0, -1, BinaryExtendedNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExtendedNodeType_Or(), this.getBinaryExtendedNodeType(), null, "or", null, 0, -1, BinaryExtendedNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExtendedNodeType_And(), this.getUnaryExtendedNodeType(), null, "and", null, 0, -1, BinaryExtendedNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(binaryNodeTypeEClass, BinaryNodeType.class, "BinaryNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBinaryNodeType_NodeGroup(), ecorePackage.getEFeatureMapEntry(), "nodeGroup", null, 0, -1, BinaryNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryNodeType_Feature(), this.getLeafType(), null, "feature", null, 0, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryNodeType_Alt(), this.getBinaryNodeType(), null, "alt", null, 0, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryNodeType_Or(), this.getBinaryNodeType(), null, "or", null, 0, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryNodeType_And(), this.getUnaryNodeType(), null, "and", null, 0, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(calculationsTypeEClass, CalculationsType.class, "CalculationsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCalculationsType_Key(), theXMLTypePackage.getString(), "key", null, 1, 1, CalculationsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCalculationsType_Value(), theXMLTypePackage.getBoolean(), "value", null, 1, 1, CalculationsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(commentsTypeEClass, CommentsType.class, "CommentsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCommentsType_C(), theXMLTypePackage.getString(), "c", null, 0, -1, CommentsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(constraintsTypeEClass, ConstraintsType.class, "ConstraintsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConstraintsType_Rule(), this.getRuleType(), null, "rule", null, 0, -1, ConstraintsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(documentRootEClass, DocumentRoot.class, "DocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null, "xSISchemaLocation", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocumentRoot_C(), theXMLTypePackage.getString(), "c", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Calculations(), this.getCalculationsType(), null, "calculations", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Comments(), this.getCommentsType(), null, "comments", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Constraints(), this.getConstraintsType(), null, "constraints", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocumentRoot_Description(), theXMLTypePackage.getString(), "description", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_ExtendedFeatureModel(), this.getExtendedFeatureModelType(), null, "extendedFeatureModel", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_FeatureModel(), this.getFeatureModelType(), null, "featureModel", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_FeatureOrder(), this.getFeatureOrderType(), null, "featureOrder", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Graphics(), this.getGraphicsType(), null, "graphics", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Properties(), this.getPropertiesType(), null, "properties", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Rule(), this.getRuleType(), null, "rule", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(extendedFeatureModelTypeEClass, ExtendedFeatureModelType.class, "ExtendedFeatureModelType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExtendedFeatureModelType_Properties(), this.getPropertiesType(), null, "properties", null, 0, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtendedFeatureModelType_Struct(), this.getExtendedStructType(), null, "struct", null, 1, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtendedFeatureModelType_Constraints(), this.getConstraintsType(), null, "constraints", null, 0, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtendedFeatureModelType_Calculations(), this.getCalculationsType(), null, "calculations", null, 0, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtendedFeatureModelType_Comments(), this.getCommentsType(), null, "comments", null, 0, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtendedFeatureModelType_FeatureOrder(), this.getFeatureOrderType(), null, "featureOrder", null, 0, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(extendedLeafTypeEClass, ExtendedLeafType.class, "ExtendedLeafType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(extendedNodeEClass, ExtendedNode.class, "ExtendedNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExtendedNode_Attribute(), ecorePackage.getEObject(), null, "attribute", null, 0, -1, ExtendedNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(featureModelTypeEClass, FeatureModelType.class, "FeatureModelType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFeatureModelType_Properties(), this.getPropertiesType(), null, "properties", null, 0, 1, FeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureModelType_Struct(), this.getStructType(), null, "struct", null, 1, 1, FeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureModelType_Constraints(), this.getConstraintsType(), null, "constraints", null, 0, 1, FeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureModelType_Calculations(), this.getCalculationsType(), null, "calculations", null, 0, 1, FeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureModelType_Comments(), this.getCommentsType(), null, "comments", null, 0, 1, FeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureModelType_FeatureOrder(), this.getFeatureOrderType(), null, "featureOrder", null, 0, 1, FeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(featureOrderTypeEClass, FeatureOrderType.class, "FeatureOrderType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFeatureOrderType_Feature(), this.getLeafType(), null, "feature", null, 0, -1, FeatureOrderType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeatureOrderType_UserDefined(), theXMLTypePackage.getBoolean(), "userDefined", null, 1, 1, FeatureOrderType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(graphicsTypeEClass, GraphicsType.class, "GraphicsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGraphicsType_Key(), theXMLTypePackage.getString(), "key", null, 1, 1, GraphicsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGraphicsType_Value(), theXMLTypePackage.getString(), "value", null, 1, 1, GraphicsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(leafTypeEClass, LeafType.class, "LeafType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNode_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_Graphics(), this.getGraphicsType(), null, "graphics", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Abstract(), theXMLTypePackage.getBoolean(), "abstract", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Hidden(), theXMLTypePackage.getBoolean(), "hidden", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Mandatory(), theXMLTypePackage.getBoolean(), "mandatory", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(propertiesTypeEClass, PropertiesType.class, "PropertiesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPropertiesType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, PropertiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertiesType_Graphics(), this.getGraphicsType(), null, "graphics", null, 0, -1, PropertiesType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertiesType_Calculations(), this.getCalculationsType(), null, "calculations", null, 0, -1, PropertiesType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(ruleTypeEClass, RuleType.class, "RuleType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRuleType_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuleType_Disj(), this.getBinaryExpressionType(), null, "disj", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuleType_Conj(), this.getBinaryExpressionType(), null, "conj", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuleType_Imp(), this.getBinaryExpressionType(), null, "imp", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuleType_Eq(), this.getBinaryExpressionType(), null, "eq", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuleType_Not(), this.getUnaryExpressionType(), null, "not", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRuleType_Var(), theXMLTypePackage.getString(), "var", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(structTypeEClass, StructType.class, "StructType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStructType_Feature(), this.getLeafType(), null, "feature", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructType_Alt(), this.getBinaryNodeType(), null, "alt", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructType_Or(), this.getBinaryNodeType(), null, "or", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructType_And(), this.getUnaryNodeType(), null, "and", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(extendedStructTypeEClass, ExtendedStructType.class, "ExtendedStructType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExtendedStructType_Feature(), this.getExtendedLeafType(), null, "feature", null, 0, 1, ExtendedStructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtendedStructType_Alt(), this.getBinaryExtendedNodeType(), null, "alt", null, 0, 1, ExtendedStructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtendedStructType_Or(), this.getBinaryExtendedNodeType(), null, "or", null, 0, 1, ExtendedStructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtendedStructType_And(), this.getUnaryExtendedNodeType(), null, "and", null, 0, 1, ExtendedStructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(unaryExpressionTypeEClass, UnaryExpressionType.class, "UnaryExpressionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUnaryExpressionType_Disj(), this.getBinaryExpressionType(), null, "disj", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryExpressionType_Conj(), this.getBinaryExpressionType(), null, "conj", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryExpressionType_Imp(), this.getBinaryExpressionType(), null, "imp", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryExpressionType_Eq(), this.getBinaryExpressionType(), null, "eq", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryExpressionType_Not(), this.getUnaryExpressionType(), null, "not", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnaryExpressionType_Var(), theXMLTypePackage.getString(), "var", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(unaryExtendedNodeTypeEClass, UnaryExtendedNodeType.class, "UnaryExtendedNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUnaryExtendedNodeType_ExtendedNodeGroup(), ecorePackage.getEFeatureMapEntry(), "extendedNodeGroup", null, 0, -1, UnaryExtendedNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryExtendedNodeType_Feature(), this.getExtendedLeafType(), null, "feature", null, 0, -1, UnaryExtendedNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryExtendedNodeType_Alt(), this.getBinaryExtendedNodeType(), null, "alt", null, 0, -1, UnaryExtendedNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryExtendedNodeType_Or(), this.getBinaryExtendedNodeType(), null, "or", null, 0, -1, UnaryExtendedNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryExtendedNodeType_And(), this.getUnaryExtendedNodeType(), null, "and", null, 0, -1, UnaryExtendedNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(unaryNodeTypeEClass, UnaryNodeType.class, "UnaryNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUnaryNodeType_NodeGroup(), ecorePackage.getEFeatureMapEntry(), "nodeGroup", null, 0, -1, UnaryNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryNodeType_Feature(), this.getLeafType(), null, "feature", null, 0, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryNodeType_Alt(), this.getBinaryNodeType(), null, "alt", null, 0, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryNodeType_Or(), this.getBinaryNodeType(), null, "or", null, 0, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryNodeType_And(), this.getUnaryNodeType(), null, "and", null, 0, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		// Create resource
+		createResource(eNS_URI);
+
+		// Create annotations
+		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+		createExtendedMetaDataAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createExtendedMetaDataAnnotations() {
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "qualified", "false"
+		   });
+		addAnnotation
+		  (binaryExpressionTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "binaryExpressionType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getBinaryExpressionType_ExpressionGroup(),
+		   source,
+		   new String[] {
+			   "kind", "group",
+			   "name", "ExpressionGroup:0"
+		   });
+		addAnnotation
+		  (getBinaryExpressionType_Disj(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "disj",
+			   "namespace", "##targetNamespace",
+			   "group", "ExpressionGroup:0"
+		   });
+		addAnnotation
+		  (getBinaryExpressionType_Conj(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "conj",
+			   "namespace", "##targetNamespace",
+			   "group", "ExpressionGroup:0"
+		   });
+		addAnnotation
+		  (getBinaryExpressionType_Imp(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "imp",
+			   "namespace", "##targetNamespace",
+			   "group", "ExpressionGroup:0"
+		   });
+		addAnnotation
+		  (getBinaryExpressionType_Eq(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "eq",
+			   "namespace", "##targetNamespace",
+			   "group", "ExpressionGroup:0"
+		   });
+		addAnnotation
+		  (getBinaryExpressionType_Not(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "not",
+			   "namespace", "##targetNamespace",
+			   "group", "ExpressionGroup:0"
+		   });
+		addAnnotation
+		  (getBinaryExpressionType_Var(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "var",
+			   "namespace", "##targetNamespace",
+			   "group", "ExpressionGroup:0"
+		   });
+		addAnnotation
+		  (binaryExtendedNodeTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "binaryExtendedNodeType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getBinaryExtendedNodeType_ExtendedNodeGroup(),
+		   source,
+		   new String[] {
+			   "kind", "group",
+			   "name", "ExtendedNodeGroup:7"
+		   });
+		addAnnotation
+		  (getBinaryExtendedNodeType_Feature(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "feature",
+			   "namespace", "##targetNamespace",
+			   "group", "ExtendedNodeGroup:7"
+		   });
+		addAnnotation
+		  (getBinaryExtendedNodeType_Alt(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "alt",
+			   "namespace", "##targetNamespace",
+			   "group", "ExtendedNodeGroup:7"
+		   });
+		addAnnotation
+		  (getBinaryExtendedNodeType_Or(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "or",
+			   "namespace", "##targetNamespace",
+			   "group", "ExtendedNodeGroup:7"
+		   });
+		addAnnotation
+		  (getBinaryExtendedNodeType_And(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "and",
+			   "namespace", "##targetNamespace",
+			   "group", "ExtendedNodeGroup:7"
+		   });
+		addAnnotation
+		  (binaryNodeTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "binaryNodeType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getBinaryNodeType_NodeGroup(),
+		   source,
+		   new String[] {
+			   "kind", "group",
+			   "name", "NodeGroup:6"
+		   });
+		addAnnotation
+		  (getBinaryNodeType_Feature(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "feature",
+			   "namespace", "##targetNamespace",
+			   "group", "NodeGroup:6"
+		   });
+		addAnnotation
+		  (getBinaryNodeType_Alt(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "alt",
+			   "namespace", "##targetNamespace",
+			   "group", "NodeGroup:6"
+		   });
+		addAnnotation
+		  (getBinaryNodeType_Or(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "or",
+			   "namespace", "##targetNamespace",
+			   "group", "NodeGroup:6"
+		   });
+		addAnnotation
+		  (getBinaryNodeType_And(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "and",
+			   "namespace", "##targetNamespace",
+			   "group", "NodeGroup:6"
+		   });
+		addAnnotation
+		  (calculationsTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "calculations_._type",
+			   "kind", "empty"
+		   });
+		addAnnotation
+		  (getCalculationsType_Key(),
+		   source,
+		   new String[] {
+			   "kind", "attribute",
+			   "name", "key",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getCalculationsType_Value(),
+		   source,
+		   new String[] {
+			   "kind", "attribute",
+			   "name", "value",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (commentsTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "comments_._type",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getCommentsType_C(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "c",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (constraintsTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "constraints_._type",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getConstraintsType_Rule(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "rule",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (documentRootEClass,
+		   source,
+		   new String[] {
+			   "name", "",
+			   "kind", "mixed"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Mixed(),
+		   source,
+		   new String[] {
+			   "kind", "elementWildcard",
+			   "name", ":mixed"
+		   });
+		addAnnotation
+		  (getDocumentRoot_XMLNSPrefixMap(),
+		   source,
+		   new String[] {
+			   "kind", "attribute",
+			   "name", "xmlns:prefix"
+		   });
+		addAnnotation
+		  (getDocumentRoot_XSISchemaLocation(),
+		   source,
+		   new String[] {
+			   "kind", "attribute",
+			   "name", "xsi:schemaLocation"
+		   });
+		addAnnotation
+		  (getDocumentRoot_C(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "c",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Calculations(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "calculations",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Comments(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "comments",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Constraints(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "constraints",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Description(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "description",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_ExtendedFeatureModel(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "extendedFeatureModel",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_FeatureModel(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "featureModel",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_FeatureOrder(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "featureOrder",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Graphics(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "graphics",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Properties(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "properties",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Rule(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "rule",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (expressionEClass,
+		   source,
+		   new String[] {
+			   "name", "expression",
+			   "kind", "empty"
+		   });
+		addAnnotation
+		  (extendedFeatureModelTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "extendedFeatureModel_._type",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getExtendedFeatureModelType_Properties(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "properties",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getExtendedFeatureModelType_Struct(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "struct",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getExtendedFeatureModelType_Constraints(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "constraints",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getExtendedFeatureModelType_Calculations(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "calculations",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getExtendedFeatureModelType_Comments(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "comments",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getExtendedFeatureModelType_FeatureOrder(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "featureOrder",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (extendedLeafTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "extendedLeafType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (extendedNodeEClass,
+		   source,
+		   new String[] {
+			   "name", "extendedNode",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getExtendedNode_Attribute(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "attribute",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (featureModelTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "featureModel_._type",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getFeatureModelType_Properties(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "properties",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getFeatureModelType_Struct(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "struct",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getFeatureModelType_Constraints(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "constraints",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getFeatureModelType_Calculations(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "calculations",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getFeatureModelType_Comments(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "comments",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getFeatureModelType_FeatureOrder(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "featureOrder",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (featureOrderTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "featureOrder_._type",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getFeatureOrderType_Feature(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "feature",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getFeatureOrderType_UserDefined(),
+		   source,
+		   new String[] {
+			   "kind", "attribute",
+			   "name", "userDefined",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (graphicsTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "graphics_._type",
+			   "kind", "empty"
+		   });
+		addAnnotation
+		  (getGraphicsType_Key(),
+		   source,
+		   new String[] {
+			   "kind", "attribute",
+			   "name", "key",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getGraphicsType_Value(),
+		   source,
+		   new String[] {
+			   "kind", "attribute",
+			   "name", "value",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (leafTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "leafType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (nodeEClass,
+		   source,
+		   new String[] {
+			   "name", "node",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getNode_Description(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "description",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getNode_Graphics(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "graphics",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getNode_Abstract(),
+		   source,
+		   new String[] {
+			   "kind", "attribute",
+			   "name", "abstract",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getNode_Hidden(),
+		   source,
+		   new String[] {
+			   "kind", "attribute",
+			   "name", "hidden",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getNode_Mandatory(),
+		   source,
+		   new String[] {
+			   "kind", "attribute",
+			   "name", "mandatory",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getNode_Name(),
+		   source,
+		   new String[] {
+			   "kind", "attribute",
+			   "name", "name",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (propertiesTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "properties_._type",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getPropertiesType_Group(),
+		   source,
+		   new String[] {
+			   "kind", "group",
+			   "name", "group:0"
+		   });
+		addAnnotation
+		  (getPropertiesType_Graphics(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "graphics",
+			   "namespace", "##targetNamespace",
+			   "group", "group:0"
+		   });
+		addAnnotation
+		  (getPropertiesType_Calculations(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "calculations",
+			   "namespace", "##targetNamespace",
+			   "group", "group:0"
+		   });
+		addAnnotation
+		  (ruleTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "rule_._type",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getRuleType_Description(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "description",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getRuleType_Disj(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "disj",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getRuleType_Conj(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "conj",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getRuleType_Imp(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "imp",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getRuleType_Eq(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "eq",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getRuleType_Not(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "not",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getRuleType_Var(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "var",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (structTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "struct_._type",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getStructType_Feature(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "feature",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getStructType_Alt(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "alt",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getStructType_Or(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "or",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getStructType_And(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "and",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (extendedStructTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "struct_._1_._type",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getExtendedStructType_Feature(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "feature",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getExtendedStructType_Alt(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "alt",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getExtendedStructType_Or(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "or",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getExtendedStructType_And(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "and",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (unaryExpressionTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "unaryExpressionType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getUnaryExpressionType_Disj(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "disj",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getUnaryExpressionType_Conj(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "conj",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getUnaryExpressionType_Imp(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "imp",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getUnaryExpressionType_Eq(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "eq",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getUnaryExpressionType_Not(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "not",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getUnaryExpressionType_Var(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "var",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (unaryExtendedNodeTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "unaryExtendedNodeType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getUnaryExtendedNodeType_ExtendedNodeGroup(),
+		   source,
+		   new String[] {
+			   "kind", "group",
+			   "name", "ExtendedNodeGroup:7"
+		   });
+		addAnnotation
+		  (getUnaryExtendedNodeType_Feature(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "feature",
+			   "namespace", "##targetNamespace",
+			   "group", "ExtendedNodeGroup:7"
+		   });
+		addAnnotation
+		  (getUnaryExtendedNodeType_Alt(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "alt",
+			   "namespace", "##targetNamespace",
+			   "group", "ExtendedNodeGroup:7"
+		   });
+		addAnnotation
+		  (getUnaryExtendedNodeType_Or(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "or",
+			   "namespace", "##targetNamespace",
+			   "group", "ExtendedNodeGroup:7"
+		   });
+		addAnnotation
+		  (getUnaryExtendedNodeType_And(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "and",
+			   "namespace", "##targetNamespace",
+			   "group", "ExtendedNodeGroup:7"
+		   });
+		addAnnotation
+		  (unaryNodeTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "unaryNodeType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getUnaryNodeType_NodeGroup(),
+		   source,
+		   new String[] {
+			   "kind", "group",
+			   "name", "NodeGroup:6"
+		   });
+		addAnnotation
+		  (getUnaryNodeType_Feature(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "feature",
+			   "namespace", "##targetNamespace",
+			   "group", "NodeGroup:6"
+		   });
+		addAnnotation
+		  (getUnaryNodeType_Alt(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "alt",
+			   "namespace", "##targetNamespace",
+			   "group", "NodeGroup:6"
+		   });
+		addAnnotation
+		  (getUnaryNodeType_Or(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "or",
+			   "namespace", "##targetNamespace",
+			   "group", "NodeGroup:6"
+		   });
+		addAnnotation
+		  (getUnaryNodeType_And(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "and",
+			   "namespace", "##targetNamespace",
+			   "group", "NodeGroup:6"
+		   });
+	}
+
+} //FeatureIDEXSDPackageImpl
