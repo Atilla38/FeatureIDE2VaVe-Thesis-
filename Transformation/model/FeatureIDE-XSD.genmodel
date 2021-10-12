@@ -114,11 +114,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType/or"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType/and"/>
     </genClasses>
-    <genClasses ecoreClass="FeatureIDEXSD.ecore#//StructType1">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType1/feature"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType1/alt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType1/or"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType1/and"/>
+    <genClasses ecoreClass="FeatureIDEXSD.ecore#//ExtendedStructType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//ExtendedStructType/feature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//ExtendedStructType/alt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//ExtendedStructType/or"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//ExtendedStructType/and"/>
     </genClasses>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//UnaryExpressionType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//UnaryExpressionType/disj"/>

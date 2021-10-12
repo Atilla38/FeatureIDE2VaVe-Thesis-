@@ -369,7 +369,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="struct" lowerBound="1"
-        eType="#//StructType1" containment="true" resolveProxies="false">
+        eType="#//ExtendedStructType" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="struct"/>
@@ -716,7 +716,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StructType1">
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedStructType">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="struct_._1_._type"/>
       <details key="kind" value="elementOnly"/>
