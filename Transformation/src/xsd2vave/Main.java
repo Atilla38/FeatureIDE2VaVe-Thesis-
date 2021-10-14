@@ -21,14 +21,7 @@ public class Main {
 		Resource resource = loadFeatureIDEXMLFile(file);
 		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
 
-		if (root.getFeatureModel() != null) {
-			FeatureModelType featureModel = root.getFeatureModel();
-			StructType struct = featureModel.getStruct();
-			ConstraintsType constraints = featureModel.getConstraints();
-			
-			
-			transformation.start(struct,constraints);
-		}
+		transformation.start(root);
 
 	}
 
