@@ -1,4 +1,4 @@
-package transformations;
+package xsd2vave;
 
 import java.io.File;
 
@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
+import FeatureIDEXSD.ConstraintsType;
 import FeatureIDEXSD.DocumentRoot;
 import FeatureIDEXSD.FeatureModelType;
 import FeatureIDEXSD.StructType;
@@ -15,16 +16,18 @@ public class Main {
 	static XSD2VaveTransformation transformation;
 
 	public static void main(String[] args) {
-		File file = new File("D:\\Projekte\\Feature\\FeatureIDE\\FeatureIDE.xml");
+		File file = new File("D:\\Projekte\\workspace\\Car\\Car.xml");
 		transformation = new XSD2VaveTransformation();
 		Resource resource = loadFeatureIDEXMLFile(file);
 		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
 
 		if (root.getFeatureModel() != null) {
-			FeatureModelType featurModel = root.getFeatureModel();
-			StructType struct = featurModel.getStruct();
+			FeatureModelType featureModel = root.getFeatureModel();
+			StructType struct = featureModel.getStruct();
+			ConstraintsType constraints = featureModel.getConstraints();
 			
-			transformation.start(struct);
+			
+			transformation.start(struct,constraints);
 		}
 
 	}

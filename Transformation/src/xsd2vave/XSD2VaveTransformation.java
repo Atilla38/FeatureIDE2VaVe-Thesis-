@@ -1,4 +1,4 @@
-package transformations;
+package xsd2vave;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -17,8 +17,10 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import FeatureIDEXSD.BinaryNodeType;
+import FeatureIDEXSD.ConstraintsType;
 import FeatureIDEXSD.LeafType;
 import FeatureIDEXSD.Node;
+import FeatureIDEXSD.RuleType;
 import FeatureIDEXSD.StructType;
 import FeatureIDEXSD.UnaryNodeType;
 import vavemodel.VavemodelFactory;
@@ -33,7 +35,7 @@ public class XSD2VaveTransformation {
 
 	}
 
-	public void start(StructType struct) {
+	public void start(StructType struct,ConstraintsType constraints) {
 
 		if (struct.getAlt() != null) {
 			this.parseAlt(struct.getAlt(), null, null);
@@ -45,6 +47,12 @@ public class XSD2VaveTransformation {
 
 		if (struct.getOr() != null) {
 			this.parseOr(struct.getOr(), null, null);
+		}
+		
+		for(RuleType rule : constraints.getRule()) {
+			if(rule.getConj() != null) {
+				
+			}
 		}
 
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
