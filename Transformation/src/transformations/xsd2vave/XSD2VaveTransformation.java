@@ -66,11 +66,27 @@ public class XSD2VaveTransformation {
 				vavemodel.CrossTreeConstraint crossTreeConstr = VavemodelFactory.eINSTANCE.createCrossTreeConstraint();
 				vavemodel.Expression<FeatureOption> expression = null;
 				
+				if (rule.getImp() != null) {
+					expression = this.constraintTransformation.parseImp(rule.getImp());
+				}
+				
 				if (rule.getConj() != null) {
 					this.constraintTransformation.parseConj(rule.getConj());
 				}
-
-				if (rule.getImp() != null) {
+				
+				if (rule.getDisj() != null) {
+					expression = this.constraintTransformation.parseImp(rule.getImp());
+				}
+				
+				if (rule.getEq() != null) {
+					expression = this.constraintTransformation.parseImp(rule.getImp());
+				}
+				
+				if (rule.getNot() != null) {
+					expression = this.constraintTransformation.parseImp(rule.getImp());
+				}
+				
+				if (rule.getVar() != null) {
 					expression = this.constraintTransformation.parseImp(rule.getImp());
 				}
 
