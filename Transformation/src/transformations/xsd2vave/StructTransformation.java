@@ -1,4 +1,4 @@
-package xsd2vave;
+package transformations.xsd2vave;
 
 import java.util.List;
 

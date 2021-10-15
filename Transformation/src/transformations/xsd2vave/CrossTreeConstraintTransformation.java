@@ -1,4 +1,4 @@
-package xsd2vave;
+package transformations.xsd2vave;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
