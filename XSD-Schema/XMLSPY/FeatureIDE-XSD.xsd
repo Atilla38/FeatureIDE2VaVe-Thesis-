@@ -111,14 +111,20 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="description" type="xs:string"/>
+	<xs:element name="conj" type="binaryExpressionType" substitutionGroup="expressionList"/>
+	<xs:element name="eq" type="binaryExpressionType" substitutionGroup="expressionList"/>
+	<xs:element name="var" abstract="false" substitutionGroup="expressionList">
+		<xs:complexType mixed="true">
+			<xs:complexContent>
+				<xs:extension base="expression"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="disj" type="binaryExpressionType" substitutionGroup="expressionList"/>
+	<xs:element name="expressionList" type="expression" abstract="true"/>
 	<xs:group name="expressionGroup">
 		<xs:choice>
-			<xs:element name="disj" type="binaryExpressionType"/>
-			<xs:element name="conj" type="binaryExpressionType"/>
-			<xs:element name="imp" type="binaryExpressionType"/>
-			<xs:element name="eq" type="binaryExpressionType"/>
-			<xs:element name="not" type="unaryExpressionType"/>
-			<xs:element name="var" type="xs:string"/>
+			<xs:element ref="expressionList"/>
 		</xs:choice>
 	</xs:group>
 	<xs:complexType name="unaryExpressionType">
@@ -130,11 +136,13 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="not" type="unaryExpressionType" substitutionGroup="expressionList"/>
+	<xs:element name="imp" type="binaryExpressionType" substitutionGroup="expressionList"/>
 	<xs:complexType name="binaryExpressionType">
 		<xs:complexContent>
 			<xs:extension base="expression">
-				<xs:choice minOccurs="2" maxOccurs="2">
-					<xs:group ref="expressionGroup"/>
+				<xs:choice>
+					<xs:group ref="expressionGroup" minOccurs="2" maxOccurs="2"/>
 				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
@@ -187,7 +195,7 @@
 			</xs:choice>
 		</xs:complexType>
 	</xs:element>
-	<xs:complexType name="expression"/>
+	<xs:complexType name="expression" abstract="false"/>
 	<xs:element name="rule">
 		<xs:complexType>
 			<xs:sequence>
