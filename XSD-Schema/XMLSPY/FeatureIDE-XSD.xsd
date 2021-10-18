@@ -111,8 +111,23 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="description" type="xs:string"/>
-	<xs:element name="conj" type="binaryExpressionType" substitutionGroup="expressionList"/>
-	<xs:element name="eq" type="binaryExpressionType" substitutionGroup="expressionList"/>
+	<xs:complexType name="disjType">
+		<xs:complexContent>
+			<xs:extension base="binaryExpressionType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="conj" type="conjType" substitutionGroup="expressionList"/>
+	<xs:complexType name="notType">
+		<xs:complexContent>
+			<xs:extension base="unaryExpressionType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="eq" type="eqType" substitutionGroup="expressionList"/>
+	<xs:complexType name="impType">
+		<xs:complexContent>
+			<xs:extension base="binaryExpressionType"/>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="var" abstract="false" substitutionGroup="expressionList">
 		<xs:complexType mixed="true">
 			<xs:complexContent>
@@ -120,7 +135,12 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="disj" type="binaryExpressionType" substitutionGroup="expressionList"/>
+	<xs:complexType name="eqType">
+		<xs:complexContent>
+			<xs:extension base="binaryExpressionType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="disj" type="disjType" substitutionGroup="expressionList"/>
 	<xs:element name="expressionList" type="expression" abstract="true"/>
 	<xs:group name="expressionGroup">
 		<xs:choice>
@@ -136,8 +156,13 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="not" type="unaryExpressionType" substitutionGroup="expressionList"/>
-	<xs:element name="imp" type="binaryExpressionType" substitutionGroup="expressionList"/>
+	<xs:element name="not" type="notType" substitutionGroup="expressionList"/>
+	<xs:complexType name="conjType">
+		<xs:complexContent>
+			<xs:extension base="binaryExpressionType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="imp" type="impType" substitutionGroup="expressionList"/>
 	<xs:complexType name="binaryExpressionType">
 		<xs:complexContent>
 			<xs:extension base="expression">
