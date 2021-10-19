@@ -23,14 +23,21 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getC <em>C</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getCalculations <em>Calculations</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getComments <em>Comments</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getConj <em>Conj</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getExpressionList <em>Expression List</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getConstraints <em>Constraints</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getDescription <em>Description</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getDisj <em>Disj</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getEq <em>Eq</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getExtendedFeatureModel <em>Extended Feature Model</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getFeatureModel <em>Feature Model</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getFeatureOrder <em>Feature Order</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getGraphics <em>Graphics</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getImp <em>Imp</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getNot <em>Not</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getProperties <em>Properties</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getRule <em>Rule</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getVar <em>Var</em>}</li>
  * </ul>
  *
  * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot()
@@ -149,6 +156,41 @@ public interface DocumentRoot extends EObject {
 	void setComments(CommentsType value);
 
 	/**
+	 * Returns the value of the '<em><b>Conj</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Conj</em>' containment reference.
+	 * @see #setConj(ConjType)
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_Conj()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='conj' namespace='##targetNamespace' affiliation='expressionList'"
+	 * @generated
+	 */
+	ConjType getConj();
+
+	/**
+	 * Sets the value of the '{@link FeatureIDEXSD.DocumentRoot#getConj <em>Conj</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Conj</em>' containment reference.
+	 * @see #getConj()
+	 * @generated
+	 */
+	void setConj(ConjType value);
+
+	/**
+	 * Returns the value of the '<em><b>Expression List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Expression List</em>' containment reference.
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_ExpressionList()
+	 * @model containment="true" upper="-2" transient="true" changeable="false" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='expressionList' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Expression getExpressionList();
+
+	/**
 	 * Returns the value of the '<em><b>Constraints</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,6 +235,52 @@ public interface DocumentRoot extends EObject {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Disj</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Disj</em>' containment reference.
+	 * @see #setDisj(DisjType)
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_Disj()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='disj' namespace='##targetNamespace' affiliation='expressionList'"
+	 * @generated
+	 */
+	DisjType getDisj();
+
+	/**
+	 * Sets the value of the '{@link FeatureIDEXSD.DocumentRoot#getDisj <em>Disj</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Disj</em>' containment reference.
+	 * @see #getDisj()
+	 * @generated
+	 */
+	void setDisj(DisjType value);
+
+	/**
+	 * Returns the value of the '<em><b>Eq</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Eq</em>' containment reference.
+	 * @see #setEq(EqType)
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_Eq()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='eq' namespace='##targetNamespace' affiliation='expressionList'"
+	 * @generated
+	 */
+	EqType getEq();
+
+	/**
+	 * Sets the value of the '{@link FeatureIDEXSD.DocumentRoot#getEq <em>Eq</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Eq</em>' containment reference.
+	 * @see #getEq()
+	 * @generated
+	 */
+	void setEq(EqType value);
 
 	/**
 	 * Returns the value of the '<em><b>Extended Feature Model</b></em>' containment reference.
@@ -287,6 +375,52 @@ public interface DocumentRoot extends EObject {
 	void setGraphics(GraphicsType value);
 
 	/**
+	 * Returns the value of the '<em><b>Imp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Imp</em>' containment reference.
+	 * @see #setImp(ImpType)
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_Imp()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='imp' namespace='##targetNamespace' affiliation='expressionList'"
+	 * @generated
+	 */
+	ImpType getImp();
+
+	/**
+	 * Sets the value of the '{@link FeatureIDEXSD.DocumentRoot#getImp <em>Imp</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Imp</em>' containment reference.
+	 * @see #getImp()
+	 * @generated
+	 */
+	void setImp(ImpType value);
+
+	/**
+	 * Returns the value of the '<em><b>Not</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Not</em>' containment reference.
+	 * @see #setNot(NotType)
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_Not()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='not' namespace='##targetNamespace' affiliation='expressionList'"
+	 * @generated
+	 */
+	NotType getNot();
+
+	/**
+	 * Sets the value of the '{@link FeatureIDEXSD.DocumentRoot#getNot <em>Not</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Not</em>' containment reference.
+	 * @see #getNot()
+	 * @generated
+	 */
+	void setNot(NotType value);
+
+	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -331,5 +465,28 @@ public interface DocumentRoot extends EObject {
 	 * @generated
 	 */
 	void setRule(RuleType value);
+
+	/**
+	 * Returns the value of the '<em><b>Var</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Var</em>' containment reference.
+	 * @see #setVar(VarType)
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_Var()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='var' namespace='##targetNamespace' affiliation='expressionList'"
+	 * @generated
+	 */
+	VarType getVar();
+
+	/**
+	 * Sets the value of the '{@link FeatureIDEXSD.DocumentRoot#getVar <em>Var</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Var</em>' containment reference.
+	 * @see #getVar()
+	 * @generated
+	 */
+	void setVar(VarType value);
 
 } // DocumentRoot

@@ -9,17 +9,32 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import FeatureIDEXSD.BinaryNodeType;
 import FeatureIDEXSD.LeafType;
 import FeatureIDEXSD.Node;
+import FeatureIDEXSD.StructType;
 import FeatureIDEXSD.UnaryNodeType;
 import vavemodel.VavemodelFactory;
 
 public class StructTransformation {
-	
+
 	private vavemodel.System system;
-	
+
 	public StructTransformation(vavemodel.System system) {
 		this.system = system;
 	}
-	
+
+	public void start(StructType struct) {
+		if (struct.getAlt() != null) {
+			this.parseAlt(struct.getAlt(), null, null);
+		}
+
+		if (struct.getAnd() != null) {
+			this.parseAnd(struct.getAnd(), null, null);
+		}
+
+		if (struct.getOr() != null) {
+			this.parseOr(struct.getOr(), null, null);
+		}
+	}
+
 	public void parseOr(BinaryNodeType or, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
 
 		vavemodel.Feature feature = this.createFeature(or);

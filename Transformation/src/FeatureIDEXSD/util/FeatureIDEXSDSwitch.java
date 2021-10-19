@@ -100,15 +100,39 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FeatureIDEXSDPackage.CONJ_TYPE: {
+				ConjType conjType = (ConjType)theEObject;
+				T result = caseConjType(conjType);
+				if (result == null) result = caseBinaryExpressionType(conjType);
+				if (result == null) result = caseExpression(conjType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FeatureIDEXSDPackage.CONSTRAINTS_TYPE: {
 				ConstraintsType constraintsType = (ConstraintsType)theEObject;
 				T result = caseConstraintsType(constraintsType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FeatureIDEXSDPackage.DISJ_TYPE: {
+				DisjType disjType = (DisjType)theEObject;
+				T result = caseDisjType(disjType);
+				if (result == null) result = caseBinaryExpressionType(disjType);
+				if (result == null) result = caseExpression(disjType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT: {
 				DocumentRoot documentRoot = (DocumentRoot)theEObject;
 				T result = caseDocumentRoot(documentRoot);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FeatureIDEXSDPackage.EQ_TYPE: {
+				EqType eqType = (EqType)theEObject;
+				T result = caseEqType(eqType);
+				if (result == null) result = caseBinaryExpressionType(eqType);
+				if (result == null) result = caseExpression(eqType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -157,6 +181,14 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FeatureIDEXSDPackage.IMP_TYPE: {
+				ImpType impType = (ImpType)theEObject;
+				T result = caseImpType(impType);
+				if (result == null) result = caseBinaryExpressionType(impType);
+				if (result == null) result = caseExpression(impType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FeatureIDEXSDPackage.LEAF_TYPE: {
 				LeafType leafType = (LeafType)theEObject;
 				T result = caseLeafType(leafType);
@@ -167,6 +199,14 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 			case FeatureIDEXSDPackage.NODE: {
 				Node node = (Node)theEObject;
 				T result = caseNode(node);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FeatureIDEXSDPackage.NOT_TYPE: {
+				NotType notType = (NotType)theEObject;
+				T result = caseNotType(notType);
+				if (result == null) result = caseUnaryExpressionType(notType);
+				if (result == null) result = caseExpression(notType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -188,9 +228,9 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE: {
-				ExtendedStructType extendedStructType = (ExtendedStructType)theEObject;
-				T result = caseExtendedStructType(extendedStructType);
+			case FeatureIDEXSDPackage.STRUCT_TYPE1: {
+				StructType1 structType1 = (StructType1)theEObject;
+				T result = caseStructType1(structType1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -213,6 +253,13 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 				UnaryNodeType unaryNodeType = (UnaryNodeType)theEObject;
 				T result = caseUnaryNodeType(unaryNodeType);
 				if (result == null) result = caseNode(unaryNodeType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FeatureIDEXSDPackage.VAR_TYPE: {
+				VarType varType = (VarType)theEObject;
+				T result = caseVarType(varType);
+				if (result == null) result = caseExpression(varType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -296,6 +343,21 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conj Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conj Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConjType(ConjType object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Constraints Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -311,6 +373,21 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Disj Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Disj Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDisjType(DisjType object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Document Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -322,6 +399,21 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDocumentRoot(DocumentRoot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Eq Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Eq Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEqType(EqType object) {
 		return null;
 	}
 
@@ -431,6 +523,21 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Imp Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Imp Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImpType(ImpType object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Leaf Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -457,6 +564,21 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNode(Node object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Not Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Not Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNotType(NotType object) {
 		return null;
 	}
 
@@ -506,17 +628,17 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Extended Struct Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Struct Type1</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Extended Struct Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Struct Type1</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExtendedStructType(ExtendedStructType object) {
+	public T caseStructType1(StructType1 object) {
 		return null;
 	}
 
@@ -562,6 +684,21 @@ public class FeatureIDEXSDSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUnaryNodeType(UnaryNodeType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Var Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Var Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVarType(VarType object) {
 		return null;
 	}
 

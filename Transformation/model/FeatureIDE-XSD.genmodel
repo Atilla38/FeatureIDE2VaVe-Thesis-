@@ -9,12 +9,8 @@
       ecorePackage="FeatureIDEXSD.ecore#/">
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//BinaryExpressionType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//BinaryExpressionType/expressionGroup"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//BinaryExpressionType/disj"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//BinaryExpressionType/conj"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//BinaryExpressionType/imp"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//BinaryExpressionType/eq"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//BinaryExpressionType/not"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//BinaryExpressionType/var"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//BinaryExpressionType/expressionListGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//BinaryExpressionType/expressionList"/>
     </genClasses>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//BinaryExtendedNodeType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//BinaryExtendedNodeType/extendedNodeGroup"/>
@@ -37,9 +33,11 @@
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//CommentsType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//CommentsType/c"/>
     </genClasses>
+    <genClasses ecoreClass="FeatureIDEXSD.ecore#//ConjType"/>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//ConstraintsType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//ConstraintsType/rule"/>
     </genClasses>
+    <genClasses ecoreClass="FeatureIDEXSD.ecore#//DisjType"/>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//DocumentRoot">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//DocumentRoot/mixed"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/xMLNSPrefixMap"/>
@@ -47,15 +45,23 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//DocumentRoot/c"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/calculations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/comments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/conj"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/expressionList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/constraints"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//DocumentRoot/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/disj"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/eq"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/extendedFeatureModel"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/featureModel"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/featureOrder"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/graphics"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/imp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/not"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/properties"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/rule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//DocumentRoot/var"/>
     </genClasses>
+    <genClasses ecoreClass="FeatureIDEXSD.ecore#//EqType"/>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//Expression"/>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//ExtendedFeatureModelType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//ExtendedFeatureModelType/properties"/>
@@ -85,6 +91,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//GraphicsType/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//GraphicsType/value"/>
     </genClasses>
+    <genClasses ecoreClass="FeatureIDEXSD.ecore#//ImpType"/>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//LeafType"/>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//Node">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//Node/description"/>
@@ -94,6 +101,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//Node/mandatory"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//Node/name"/>
     </genClasses>
+    <genClasses ecoreClass="FeatureIDEXSD.ecore#//NotType"/>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//PropertiesType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//PropertiesType/group"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//PropertiesType/graphics"/>
@@ -101,12 +109,8 @@
     </genClasses>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//RuleType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//RuleType/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//RuleType/disj"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//RuleType/conj"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//RuleType/imp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//RuleType/eq"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//RuleType/not"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//RuleType/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//RuleType/expressionListGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//RuleType/expressionList"/>
     </genClasses>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//StructType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType/feature"/>
@@ -114,19 +118,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType/or"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType/and"/>
     </genClasses>
-    <genClasses ecoreClass="FeatureIDEXSD.ecore#//ExtendedStructType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//ExtendedStructType/feature"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//ExtendedStructType/alt"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//ExtendedStructType/or"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//ExtendedStructType/and"/>
+    <genClasses ecoreClass="FeatureIDEXSD.ecore#//StructType1">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType1/feature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType1/alt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType1/or"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType1/and"/>
     </genClasses>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//UnaryExpressionType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//UnaryExpressionType/disj"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//UnaryExpressionType/conj"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//UnaryExpressionType/imp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//UnaryExpressionType/eq"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//UnaryExpressionType/not"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//UnaryExpressionType/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//UnaryExpressionType/expressionListGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//UnaryExpressionType/expressionList"/>
     </genClasses>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//UnaryExtendedNodeType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//UnaryExtendedNodeType/extendedNodeGroup"/>
@@ -141,6 +141,9 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//UnaryNodeType/alt"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//UnaryNodeType/or"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//UnaryNodeType/and"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureIDEXSD.ecore#//VarType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//VarType/mixed"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

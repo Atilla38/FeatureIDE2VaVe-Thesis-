@@ -54,13 +54,13 @@ public interface ExtendedFeatureModelType extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Struct</em>' containment reference.
-	 * @see #setStruct(ExtendedStructType)
+	 * @see #setStruct(StructType1)
 	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getExtendedFeatureModelType_Struct()
 	 * @model containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='struct' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	ExtendedStructType getStruct();
+	StructType1 getStruct();
 
 	/**
 	 * Sets the value of the '{@link FeatureIDEXSD.ExtendedFeatureModelType#getStruct <em>Struct</em>}' containment reference.
@@ -70,7 +70,7 @@ public interface ExtendedFeatureModelType extends EObject {
 	 * @see #getStruct()
 	 * @generated
 	 */
-	void setStruct(ExtendedStructType value);
+	void setStruct(StructType1 value);
 
 	/**
 	 * Returns the value of the '<em><b>Constraints</b></em>' containment reference.

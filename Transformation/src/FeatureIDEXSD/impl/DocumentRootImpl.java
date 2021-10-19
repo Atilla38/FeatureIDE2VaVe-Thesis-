@@ -4,16 +4,22 @@ package FeatureIDEXSD.impl;
 
 import FeatureIDEXSD.CalculationsType;
 import FeatureIDEXSD.CommentsType;
+import FeatureIDEXSD.ConjType;
 import FeatureIDEXSD.ConstraintsType;
+import FeatureIDEXSD.DisjType;
 import FeatureIDEXSD.DocumentRoot;
+import FeatureIDEXSD.EqType;
+import FeatureIDEXSD.Expression;
 import FeatureIDEXSD.ExtendedFeatureModelType;
 import FeatureIDEXSD.FeatureIDEXSDPackage;
 import FeatureIDEXSD.FeatureModelType;
 import FeatureIDEXSD.FeatureOrderType;
 import FeatureIDEXSD.GraphicsType;
+import FeatureIDEXSD.ImpType;
+import FeatureIDEXSD.NotType;
 import FeatureIDEXSD.PropertiesType;
 import FeatureIDEXSD.RuleType;
-
+import FeatureIDEXSD.VarType;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EMap;
@@ -45,14 +51,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getC <em>C</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getCalculations <em>Calculations</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getConj <em>Conj</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getExpressionList <em>Expression List</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getConstraints <em>Constraints</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getDisj <em>Disj</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getEq <em>Eq</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getExtendedFeatureModel <em>Extended Feature Model</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getFeatureModel <em>Feature Model</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getFeatureOrder <em>Feature Order</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getGraphics <em>Graphics</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getImp <em>Imp</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getNot <em>Not</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getRule <em>Rule</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getVar <em>Var</em>}</li>
  * </ul>
  *
  * @generated
@@ -240,6 +253,51 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ConjType getConj() {
+		return (ConjType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__CONJ, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConj(ConjType newConj, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__CONJ, newConj, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConj(ConjType newConj) {
+		((FeatureMap.Internal)getMixed()).set(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__CONJ, newConj);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Expression getExpressionList() {
+		return (Expression)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__EXPRESSION_LIST, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetExpressionList(Expression newExpressionList, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__EXPRESSION_LIST, newExpressionList, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ConstraintsType getConstraints() {
 		return (ConstraintsType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__CONSTRAINTS, true);
 	}
@@ -278,6 +336,60 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 */
 	public void setDescription(String newDescription) {
 		((FeatureMap.Internal)getMixed()).set(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__DESCRIPTION, newDescription);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DisjType getDisj() {
+		return (DisjType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__DISJ, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDisj(DisjType newDisj, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__DISJ, newDisj, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisj(DisjType newDisj) {
+		((FeatureMap.Internal)getMixed()).set(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__DISJ, newDisj);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EqType getEq() {
+		return (EqType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__EQ, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEq(EqType newEq, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__EQ, newEq, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEq(EqType newEq) {
+		((FeatureMap.Internal)getMixed()).set(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__EQ, newEq);
 	}
 
 	/**
@@ -393,6 +505,60 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ImpType getImp() {
+		return (ImpType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__IMP, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetImp(ImpType newImp, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__IMP, newImp, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImp(ImpType newImp) {
+		((FeatureMap.Internal)getMixed()).set(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__IMP, newImp);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotType getNot() {
+		return (NotType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__NOT, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetNot(NotType newNot, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__NOT, newNot, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNot(NotType newNot) {
+		((FeatureMap.Internal)getMixed()).set(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__NOT, newNot);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PropertiesType getProperties() {
 		return (PropertiesType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__PROPERTIES, true);
 	}
@@ -447,6 +613,33 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public VarType getVar() {
+		return (VarType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__VAR, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVar(VarType newVar, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__VAR, newVar, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVar(VarType newVar) {
+		((FeatureMap.Internal)getMixed()).set(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__VAR, newVar);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -460,8 +653,16 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return basicSetCalculations(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__COMMENTS:
 				return basicSetComments(null, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CONJ:
+				return basicSetConj(null, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXPRESSION_LIST:
+				return basicSetExpressionList(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CONSTRAINTS:
 				return basicSetConstraints(null, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__DISJ:
+				return basicSetDisj(null, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EQ:
+				return basicSetEq(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL:
 				return basicSetExtendedFeatureModel(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE_MODEL:
@@ -470,10 +671,16 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return basicSetFeatureOrder(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__GRAPHICS:
 				return basicSetGraphics(null, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__IMP:
+				return basicSetImp(null, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NOT:
+				return basicSetNot(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__PROPERTIES:
 				return basicSetProperties(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__RULE:
 				return basicSetRule(null, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__VAR:
+				return basicSetVar(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -501,10 +708,18 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getCalculations();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__COMMENTS:
 				return getComments();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CONJ:
+				return getConj();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXPRESSION_LIST:
+				return getExpressionList();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CONSTRAINTS:
 				return getConstraints();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__DESCRIPTION:
 				return getDescription();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__DISJ:
+				return getDisj();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EQ:
+				return getEq();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL:
 				return getExtendedFeatureModel();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE_MODEL:
@@ -513,10 +728,16 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getFeatureOrder();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__GRAPHICS:
 				return getGraphics();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__IMP:
+				return getImp();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NOT:
+				return getNot();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__PROPERTIES:
 				return getProperties();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__RULE:
 				return getRule();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__VAR:
+				return getVar();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -547,11 +768,20 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__COMMENTS:
 				setComments((CommentsType)newValue);
 				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CONJ:
+				setConj((ConjType)newValue);
+				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CONSTRAINTS:
 				setConstraints((ConstraintsType)newValue);
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__DISJ:
+				setDisj((DisjType)newValue);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EQ:
+				setEq((EqType)newValue);
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL:
 				setExtendedFeatureModel((ExtendedFeatureModelType)newValue);
@@ -565,11 +795,20 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__GRAPHICS:
 				setGraphics((GraphicsType)newValue);
 				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__IMP:
+				setImp((ImpType)newValue);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NOT:
+				setNot((NotType)newValue);
+				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__PROPERTIES:
 				setProperties((PropertiesType)newValue);
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__RULE:
 				setRule((RuleType)newValue);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__VAR:
+				setVar((VarType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -601,11 +840,20 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__COMMENTS:
 				setComments((CommentsType)null);
 				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CONJ:
+				setConj((ConjType)null);
+				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CONSTRAINTS:
 				setConstraints((ConstraintsType)null);
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__DISJ:
+				setDisj((DisjType)null);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EQ:
+				setEq((EqType)null);
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL:
 				setExtendedFeatureModel((ExtendedFeatureModelType)null);
@@ -619,11 +867,20 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__GRAPHICS:
 				setGraphics((GraphicsType)null);
 				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__IMP:
+				setImp((ImpType)null);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NOT:
+				setNot((NotType)null);
+				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__PROPERTIES:
 				setProperties((PropertiesType)null);
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__RULE:
 				setRule((RuleType)null);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__VAR:
+				setVar((VarType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -649,10 +906,18 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getCalculations() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__COMMENTS:
 				return getComments() != null;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CONJ:
+				return getConj() != null;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXPRESSION_LIST:
+				return getExpressionList() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CONSTRAINTS:
 				return getConstraints() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__DISJ:
+				return getDisj() != null;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EQ:
+				return getEq() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL:
 				return getExtendedFeatureModel() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE_MODEL:
@@ -661,10 +926,16 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getFeatureOrder() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__GRAPHICS:
 				return getGraphics() != null;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__IMP:
+				return getImp() != null;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NOT:
+				return getNot() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__PROPERTIES:
 				return getProperties() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__RULE:
 				return getRule() != null;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__VAR:
+				return getVar() != null;
 		}
 		return super.eIsSet(featureID);
 	}

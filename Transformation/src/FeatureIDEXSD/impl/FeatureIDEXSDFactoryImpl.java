@@ -61,8 +61,11 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 			case FeatureIDEXSDPackage.BINARY_NODE_TYPE: return createBinaryNodeType();
 			case FeatureIDEXSDPackage.CALCULATIONS_TYPE: return createCalculationsType();
 			case FeatureIDEXSDPackage.COMMENTS_TYPE: return createCommentsType();
+			case FeatureIDEXSDPackage.CONJ_TYPE: return createConjType();
 			case FeatureIDEXSDPackage.CONSTRAINTS_TYPE: return createConstraintsType();
+			case FeatureIDEXSDPackage.DISJ_TYPE: return createDisjType();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT: return createDocumentRoot();
+			case FeatureIDEXSDPackage.EQ_TYPE: return createEqType();
 			case FeatureIDEXSDPackage.EXPRESSION: return createExpression();
 			case FeatureIDEXSDPackage.EXTENDED_FEATURE_MODEL_TYPE: return createExtendedFeatureModelType();
 			case FeatureIDEXSDPackage.EXTENDED_LEAF_TYPE: return createExtendedLeafType();
@@ -70,15 +73,18 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 			case FeatureIDEXSDPackage.FEATURE_MODEL_TYPE: return createFeatureModelType();
 			case FeatureIDEXSDPackage.FEATURE_ORDER_TYPE: return createFeatureOrderType();
 			case FeatureIDEXSDPackage.GRAPHICS_TYPE: return createGraphicsType();
+			case FeatureIDEXSDPackage.IMP_TYPE: return createImpType();
 			case FeatureIDEXSDPackage.LEAF_TYPE: return createLeafType();
 			case FeatureIDEXSDPackage.NODE: return createNode();
+			case FeatureIDEXSDPackage.NOT_TYPE: return createNotType();
 			case FeatureIDEXSDPackage.PROPERTIES_TYPE: return createPropertiesType();
 			case FeatureIDEXSDPackage.RULE_TYPE: return createRuleType();
 			case FeatureIDEXSDPackage.STRUCT_TYPE: return createStructType();
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE: return createExtendedStructType();
+			case FeatureIDEXSDPackage.STRUCT_TYPE1: return createStructType1();
 			case FeatureIDEXSDPackage.UNARY_EXPRESSION_TYPE: return createUnaryExpressionType();
 			case FeatureIDEXSDPackage.UNARY_EXTENDED_NODE_TYPE: return createUnaryExtendedNodeType();
 			case FeatureIDEXSDPackage.UNARY_NODE_TYPE: return createUnaryNodeType();
+			case FeatureIDEXSDPackage.VAR_TYPE: return createVarType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -139,6 +145,16 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ConjType createConjType() {
+		ConjTypeImpl conjType = new ConjTypeImpl();
+		return conjType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ConstraintsType createConstraintsType() {
 		ConstraintsTypeImpl constraintsType = new ConstraintsTypeImpl();
 		return constraintsType;
@@ -149,9 +165,29 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DisjType createDisjType() {
+		DisjTypeImpl disjType = new DisjTypeImpl();
+		return disjType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DocumentRoot createDocumentRoot() {
 		DocumentRootImpl documentRoot = new DocumentRootImpl();
 		return documentRoot;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EqType createEqType() {
+		EqTypeImpl eqType = new EqTypeImpl();
+		return eqType;
 	}
 
 	/**
@@ -229,6 +265,16 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ImpType createImpType() {
+		ImpTypeImpl impType = new ImpTypeImpl();
+		return impType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public LeafType createLeafType() {
 		LeafTypeImpl leafType = new LeafTypeImpl();
 		return leafType;
@@ -242,6 +288,16 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 	public Node createNode() {
 		NodeImpl node = new NodeImpl();
 		return node;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotType createNotType() {
+		NotTypeImpl notType = new NotTypeImpl();
+		return notType;
 	}
 
 	/**
@@ -279,9 +335,9 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExtendedStructType createExtendedStructType() {
-		ExtendedStructTypeImpl extendedStructType = new ExtendedStructTypeImpl();
-		return extendedStructType;
+	public StructType1 createStructType1() {
+		StructType1Impl structType1 = new StructType1Impl();
+		return structType1;
 	}
 
 	/**
@@ -312,6 +368,16 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 	public UnaryNodeType createUnaryNodeType() {
 		UnaryNodeTypeImpl unaryNodeType = new UnaryNodeTypeImpl();
 		return unaryNodeType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VarType createVarType() {
+		VarTypeImpl varType = new VarTypeImpl();
+		return varType;
 	}
 
 	/**
