@@ -2,6 +2,7 @@
  */
 package FeatureIDEXSD;
 
+import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,12 +13,8 @@ package FeatureIDEXSD;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link FeatureIDEXSD.UnaryExpressionType#getDisj <em>Disj</em>}</li>
- *   <li>{@link FeatureIDEXSD.UnaryExpressionType#getConj <em>Conj</em>}</li>
- *   <li>{@link FeatureIDEXSD.UnaryExpressionType#getImp <em>Imp</em>}</li>
- *   <li>{@link FeatureIDEXSD.UnaryExpressionType#getEq <em>Eq</em>}</li>
- *   <li>{@link FeatureIDEXSD.UnaryExpressionType#getNot <em>Not</em>}</li>
- *   <li>{@link FeatureIDEXSD.UnaryExpressionType#getVar <em>Var</em>}</li>
+ *   <li>{@link FeatureIDEXSD.UnaryExpressionType#getExpressionListGroup <em>Expression List Group</em>}</li>
+ *   <li>{@link FeatureIDEXSD.UnaryExpressionType#getExpressionList <em>Expression List</em>}</li>
  * </ul>
  *
  * @see FeatureIDEXSD.FeatureIDEXSDPackage#getUnaryExpressionType()
@@ -26,141 +23,28 @@ package FeatureIDEXSD;
  */
 public interface UnaryExpressionType extends Expression {
 	/**
-	 * Returns the value of the '<em><b>Disj</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Expression List Group</b></em>' attribute list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Disj</em>' containment reference.
-	 * @see #setDisj(BinaryExpressionType)
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getUnaryExpressionType_Disj()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='disj' namespace='##targetNamespace'"
+	 * @return the value of the '<em>Expression List Group</em>' attribute list.
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getUnaryExpressionType_ExpressionListGroup()
+	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="false"
+	 *        extendedMetaData="kind='group' name='expressionList:group' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	BinaryExpressionType getDisj();
+	FeatureMap getExpressionListGroup();
 
 	/**
-	 * Sets the value of the '{@link FeatureIDEXSD.UnaryExpressionType#getDisj <em>Disj</em>}' containment reference.
+	 * Returns the value of the '<em><b>Expression List</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Disj</em>' containment reference.
-	 * @see #getDisj()
+	 * @return the value of the '<em>Expression List</em>' containment reference.
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getUnaryExpressionType_ExpressionList()
+	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='expressionList' namespace='##targetNamespace' group='expressionList:group'"
 	 * @generated
 	 */
-	void setDisj(BinaryExpressionType value);
-
-	/**
-	 * Returns the value of the '<em><b>Conj</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Conj</em>' containment reference.
-	 * @see #setConj(BinaryExpressionType)
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getUnaryExpressionType_Conj()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='conj' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	BinaryExpressionType getConj();
-
-	/**
-	 * Sets the value of the '{@link FeatureIDEXSD.UnaryExpressionType#getConj <em>Conj</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Conj</em>' containment reference.
-	 * @see #getConj()
-	 * @generated
-	 */
-	void setConj(BinaryExpressionType value);
-
-	/**
-	 * Returns the value of the '<em><b>Imp</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Imp</em>' containment reference.
-	 * @see #setImp(BinaryExpressionType)
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getUnaryExpressionType_Imp()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='imp' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	BinaryExpressionType getImp();
-
-	/**
-	 * Sets the value of the '{@link FeatureIDEXSD.UnaryExpressionType#getImp <em>Imp</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Imp</em>' containment reference.
-	 * @see #getImp()
-	 * @generated
-	 */
-	void setImp(BinaryExpressionType value);
-
-	/**
-	 * Returns the value of the '<em><b>Eq</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Eq</em>' containment reference.
-	 * @see #setEq(BinaryExpressionType)
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getUnaryExpressionType_Eq()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='eq' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	BinaryExpressionType getEq();
-
-	/**
-	 * Sets the value of the '{@link FeatureIDEXSD.UnaryExpressionType#getEq <em>Eq</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Eq</em>' containment reference.
-	 * @see #getEq()
-	 * @generated
-	 */
-	void setEq(BinaryExpressionType value);
-
-	/**
-	 * Returns the value of the '<em><b>Not</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Not</em>' containment reference.
-	 * @see #setNot(UnaryExpressionType)
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getUnaryExpressionType_Not()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='not' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	UnaryExpressionType getNot();
-
-	/**
-	 * Sets the value of the '{@link FeatureIDEXSD.UnaryExpressionType#getNot <em>Not</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Not</em>' containment reference.
-	 * @see #getNot()
-	 * @generated
-	 */
-	void setNot(UnaryExpressionType value);
-
-	/**
-	 * Returns the value of the '<em><b>Var</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Var</em>' attribute.
-	 * @see #setVar(String)
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getUnaryExpressionType_Var()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
-	 *        extendedMetaData="kind='element' name='var' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	String getVar();
-
-	/**
-	 * Sets the value of the '{@link FeatureIDEXSD.UnaryExpressionType#getVar <em>Var</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Var</em>' attribute.
-	 * @see #getVar()
-	 * @generated
-	 */
-	void setVar(String value);
+	Expression getExpressionList();
 
 } // UnaryExpressionType

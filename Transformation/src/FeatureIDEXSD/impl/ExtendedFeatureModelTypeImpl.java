@@ -6,11 +6,11 @@ import FeatureIDEXSD.CalculationsType;
 import FeatureIDEXSD.CommentsType;
 import FeatureIDEXSD.ConstraintsType;
 import FeatureIDEXSD.ExtendedFeatureModelType;
-import FeatureIDEXSD.ExtendedStructType;
 import FeatureIDEXSD.FeatureIDEXSDPackage;
 import FeatureIDEXSD.FeatureOrderType;
 import FeatureIDEXSD.PropertiesType;
 
+import FeatureIDEXSD.StructType1;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -57,7 +57,7 @@ public class ExtendedFeatureModelTypeImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 * @ordered
 	 */
-	protected ExtendedStructType struct;
+	protected StructType1 struct;
 
 	/**
 	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference.
@@ -166,7 +166,7 @@ public class ExtendedFeatureModelTypeImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExtendedStructType getStruct() {
+	public StructType1 getStruct() {
 		return struct;
 	}
 
@@ -175,8 +175,8 @@ public class ExtendedFeatureModelTypeImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStruct(ExtendedStructType newStruct, NotificationChain msgs) {
-		ExtendedStructType oldStruct = struct;
+	public NotificationChain basicSetStruct(StructType1 newStruct, NotificationChain msgs) {
+		StructType1 oldStruct = struct;
 		struct = newStruct;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.EXTENDED_FEATURE_MODEL_TYPE__STRUCT, oldStruct, newStruct);
@@ -190,7 +190,7 @@ public class ExtendedFeatureModelTypeImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStruct(ExtendedStructType newStruct) {
+	public void setStruct(StructType1 newStruct) {
 		if (newStruct != struct) {
 			NotificationChain msgs = null;
 			if (struct != null)
@@ -436,7 +436,7 @@ public class ExtendedFeatureModelTypeImpl extends MinimalEObjectImpl.Container i
 				setProperties((PropertiesType)newValue);
 				return;
 			case FeatureIDEXSDPackage.EXTENDED_FEATURE_MODEL_TYPE__STRUCT:
-				setStruct((ExtendedStructType)newValue);
+				setStruct((StructType1)newValue);
 				return;
 			case FeatureIDEXSDPackage.EXTENDED_FEATURE_MODEL_TYPE__CONSTRAINTS:
 				setConstraints((ConstraintsType)newValue);
@@ -466,7 +466,7 @@ public class ExtendedFeatureModelTypeImpl extends MinimalEObjectImpl.Container i
 				setProperties((PropertiesType)null);
 				return;
 			case FeatureIDEXSDPackage.EXTENDED_FEATURE_MODEL_TYPE__STRUCT:
-				setStruct((ExtendedStructType)null);
+				setStruct((StructType1)null);
 				return;
 			case FeatureIDEXSDPackage.EXTENDED_FEATURE_MODEL_TYPE__CONSTRAINTS:
 				setConstraints((ConstraintsType)null);

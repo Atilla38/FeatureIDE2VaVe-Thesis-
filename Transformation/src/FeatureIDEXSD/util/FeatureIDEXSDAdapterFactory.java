@@ -68,6 +68,14 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 	protected FeatureIDEXSDSwitch<Adapter> modelSwitch =
 		new FeatureIDEXSDSwitch<Adapter>() {
 			@Override
+			public Adapter caseAltType(AltType object) {
+				return createAltTypeAdapter();
+			}
+			@Override
+			public Adapter caseAndType(AndType object) {
+				return createAndTypeAdapter();
+			}
+			@Override
 			public Adapter caseBinaryExpressionType(BinaryExpressionType object) {
 				return createBinaryExpressionTypeAdapter();
 			}
@@ -88,12 +96,24 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 				return createCommentsTypeAdapter();
 			}
 			@Override
+			public Adapter caseConjType(ConjType object) {
+				return createConjTypeAdapter();
+			}
+			@Override
 			public Adapter caseConstraintsType(ConstraintsType object) {
 				return createConstraintsTypeAdapter();
 			}
 			@Override
+			public Adapter caseDisjType(DisjType object) {
+				return createDisjTypeAdapter();
+			}
+			@Override
 			public Adapter caseDocumentRoot(DocumentRoot object) {
 				return createDocumentRootAdapter();
+			}
+			@Override
+			public Adapter caseEqType(EqType object) {
+				return createEqTypeAdapter();
 			}
 			@Override
 			public Adapter caseExpression(Expression object) {
@@ -120,8 +140,16 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 				return createFeatureOrderTypeAdapter();
 			}
 			@Override
+			public Adapter caseFeatureType(FeatureType object) {
+				return createFeatureTypeAdapter();
+			}
+			@Override
 			public Adapter caseGraphicsType(GraphicsType object) {
 				return createGraphicsTypeAdapter();
+			}
+			@Override
+			public Adapter caseImpType(ImpType object) {
+				return createImpTypeAdapter();
 			}
 			@Override
 			public Adapter caseLeafType(LeafType object) {
@@ -130,6 +158,14 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNode(Node object) {
 				return createNodeAdapter();
+			}
+			@Override
+			public Adapter caseNotType(NotType object) {
+				return createNotTypeAdapter();
+			}
+			@Override
+			public Adapter caseOrType(OrType object) {
+				return createOrTypeAdapter();
 			}
 			@Override
 			public Adapter casePropertiesType(PropertiesType object) {
@@ -144,8 +180,8 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 				return createStructTypeAdapter();
 			}
 			@Override
-			public Adapter caseExtendedStructType(ExtendedStructType object) {
-				return createExtendedStructTypeAdapter();
+			public Adapter caseStructType1(StructType1 object) {
+				return createStructType1Adapter();
 			}
 			@Override
 			public Adapter caseUnaryExpressionType(UnaryExpressionType object) {
@@ -158,6 +194,10 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseUnaryNodeType(UnaryNodeType object) {
 				return createUnaryNodeTypeAdapter();
+			}
+			@Override
+			public Adapter caseVarType(VarType object) {
+				return createVarTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -178,6 +218,34 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.AltType <em>Alt Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FeatureIDEXSD.AltType
+	 * @generated
+	 */
+	public Adapter createAltTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.AndType <em>And Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FeatureIDEXSD.AndType
+	 * @generated
+	 */
+	public Adapter createAndTypeAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.BinaryExpressionType <em>Binary Expression Type</em>}'.
@@ -250,6 +318,20 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.ConjType <em>Conj Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FeatureIDEXSD.ConjType
+	 * @generated
+	 */
+	public Adapter createConjTypeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.ConstraintsType <em>Constraints Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -264,6 +346,20 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.DisjType <em>Disj Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FeatureIDEXSD.DisjType
+	 * @generated
+	 */
+	public Adapter createDisjTypeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.DocumentRoot <em>Document Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -274,6 +370,20 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDocumentRootAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.EqType <em>Eq Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FeatureIDEXSD.EqType
+	 * @generated
+	 */
+	public Adapter createEqTypeAdapter() {
 		return null;
 	}
 
@@ -362,6 +472,20 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.FeatureType <em>Feature Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FeatureIDEXSD.FeatureType
+	 * @generated
+	 */
+	public Adapter createFeatureTypeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.GraphicsType <em>Graphics Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -372,6 +496,20 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGraphicsTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.ImpType <em>Imp Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FeatureIDEXSD.ImpType
+	 * @generated
+	 */
+	public Adapter createImpTypeAdapter() {
 		return null;
 	}
 
@@ -400,6 +538,34 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.NotType <em>Not Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FeatureIDEXSD.NotType
+	 * @generated
+	 */
+	public Adapter createNotTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.OrType <em>Or Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FeatureIDEXSD.OrType
+	 * @generated
+	 */
+	public Adapter createOrTypeAdapter() {
 		return null;
 	}
 
@@ -446,16 +612,16 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.ExtendedStructType <em>Extended Struct Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.StructType1 <em>Struct Type1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see FeatureIDEXSD.ExtendedStructType
+	 * @see FeatureIDEXSD.StructType1
 	 * @generated
 	 */
-	public Adapter createExtendedStructTypeAdapter() {
+	public Adapter createStructType1Adapter() {
 		return null;
 	}
 
@@ -498,6 +664,20 @@ public class FeatureIDEXSDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUnaryNodeTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FeatureIDEXSD.VarType <em>Var Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FeatureIDEXSD.VarType
+	 * @generated
+	 */
+	public Adapter createVarTypeAdapter() {
 		return null;
 	}
 

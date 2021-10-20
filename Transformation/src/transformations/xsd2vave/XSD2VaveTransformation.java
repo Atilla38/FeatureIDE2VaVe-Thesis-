@@ -16,9 +16,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import FeatureIDEXSD.ConstraintsType;
 import FeatureIDEXSD.DocumentRoot;
 import FeatureIDEXSD.FeatureModelType;
-import FeatureIDEXSD.RuleType;
 import FeatureIDEXSD.StructType;
-import vavemodel.FeatureOption;
 import vavemodel.VavemodelFactory;
 
 public class XSD2VaveTransformation {
@@ -49,51 +47,10 @@ public class XSD2VaveTransformation {
 			return;
 		}
 
-		if (struct.getAlt() != null) {
-			this.structTransformation.parseAlt(struct.getAlt(), null, null);
-		}
-
-		if (struct.getAnd() != null) {
-			this.structTransformation.parseAnd(struct.getAnd(), null, null);
-		}
-
-		if (struct.getOr() != null) {
-			this.structTransformation.parseOr(struct.getOr(), null, null);
-		}
+		this.structTransformation.start(struct);
 
 		if (constraints != null && constraints.getRule() != null) {
-			for (RuleType rule : constraints.getRule()) {
-				vavemodel.CrossTreeConstraint crossTreeConstr = VavemodelFactory.eINSTANCE.createCrossTreeConstraint();
-				vavemodel.Expression<FeatureOption> expression = null;
-				
-				if (rule.getImp() != null) {
-					expression = this.constraintTransformation.parseImp(rule.getImp());
-				}
-				
-				if (rule.getConj() != null) {
-					this.constraintTransformation.parseConj(rule.getConj());
-				}
-				
-				if (rule.getDisj() != null) {
-					expression = this.constraintTransformation.parseImp(rule.getImp());
-				}
-				
-				if (rule.getEq() != null) {
-					expression = this.constraintTransformation.parseImp(rule.getImp());
-				}
-				
-				if (rule.getNot() != null) {
-					expression = this.constraintTransformation.parseImp(rule.getImp());
-				}
-				
-				if (rule.getVar() != null) {
-					expression = this.constraintTransformation.parseImp(rule.getImp());
-				}
-
-				crossTreeConstr.setExpression(expression);
-				system.getConstraint().add(crossTreeConstr);
-			}
-
+			this.constraintTransformation.start(constraints.getRule());
 		}
 
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;

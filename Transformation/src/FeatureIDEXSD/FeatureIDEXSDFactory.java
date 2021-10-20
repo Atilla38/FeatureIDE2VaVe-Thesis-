@@ -22,6 +22,24 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	FeatureIDEXSDFactory eINSTANCE = FeatureIDEXSD.impl.FeatureIDEXSDFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Alt Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Alt Type</em>'.
+	 * @generated
+	 */
+	AltType createAltType();
+
+	/**
+	 * Returns a new object of class '<em>And Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>And Type</em>'.
+	 * @generated
+	 */
+	AndType createAndType();
+
+	/**
 	 * Returns a new object of class '<em>Binary Expression Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,6 +85,15 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	CommentsType createCommentsType();
 
 	/**
+	 * Returns a new object of class '<em>Conj Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conj Type</em>'.
+	 * @generated
+	 */
+	ConjType createConjType();
+
+	/**
 	 * Returns a new object of class '<em>Constraints Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,6 +103,15 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	ConstraintsType createConstraintsType();
 
 	/**
+	 * Returns a new object of class '<em>Disj Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Disj Type</em>'.
+	 * @generated
+	 */
+	DisjType createDisjType();
+
+	/**
 	 * Returns a new object of class '<em>Document Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +119,15 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	 * @generated
 	 */
 	DocumentRoot createDocumentRoot();
+
+	/**
+	 * Returns a new object of class '<em>Eq Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Eq Type</em>'.
+	 * @generated
+	 */
+	EqType createEqType();
 
 	/**
 	 * Returns a new object of class '<em>Expression</em>'.
@@ -139,6 +184,15 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	FeatureOrderType createFeatureOrderType();
 
 	/**
+	 * Returns a new object of class '<em>Feature Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature Type</em>'.
+	 * @generated
+	 */
+	FeatureType createFeatureType();
+
+	/**
 	 * Returns a new object of class '<em>Graphics Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,6 +200,15 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	 * @generated
 	 */
 	GraphicsType createGraphicsType();
+
+	/**
+	 * Returns a new object of class '<em>Imp Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Imp Type</em>'.
+	 * @generated
+	 */
+	ImpType createImpType();
 
 	/**
 	 * Returns a new object of class '<em>Leaf Type</em>'.
@@ -164,6 +227,24 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	 * @generated
 	 */
 	Node createNode();
+
+	/**
+	 * Returns a new object of class '<em>Not Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Not Type</em>'.
+	 * @generated
+	 */
+	NotType createNotType();
+
+	/**
+	 * Returns a new object of class '<em>Or Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Or Type</em>'.
+	 * @generated
+	 */
+	OrType createOrType();
 
 	/**
 	 * Returns a new object of class '<em>Properties Type</em>'.
@@ -193,13 +274,13 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	StructType createStructType();
 
 	/**
-	 * Returns a new object of class '<em>Extended Struct Type</em>'.
+	 * Returns a new object of class '<em>Struct Type1</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Extended Struct Type</em>'.
+	 * @return a new object of class '<em>Struct Type1</em>'.
 	 * @generated
 	 */
-	ExtendedStructType createExtendedStructType();
+	StructType1 createStructType1();
 
 	/**
 	 * Returns a new object of class '<em>Unary Expression Type</em>'.
@@ -227,6 +308,15 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	 * @generated
 	 */
 	UnaryNodeType createUnaryNodeType();
+
+	/**
+	 * Returns a new object of class '<em>Var Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Var Type</em>'.
+	 * @generated
+	 */
+	VarType createVarType();
 
 	/**
 	 * Returns the package supported by this factory.

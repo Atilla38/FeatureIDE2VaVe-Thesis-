@@ -82,12 +82,9 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:group name="nodeGroup">
-		<xs:choice>
-			<xs:element name="feature" type="leafType"/>
-			<xs:element name="alt" type="binaryNodeType"/>
-			<xs:element name="or" type="binaryNodeType"/>
-			<xs:element name="and" type="unaryNodeType"/>
-		</xs:choice>
+		<xs:sequence>
+			<xs:element ref="nodeList"/>
+		</xs:sequence>
 	</xs:group>
 	<xs:element name="c" type="xs:string"/>
 	<xs:element name="calculations">
@@ -111,14 +108,65 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="description" type="xs:string"/>
+	<xs:complexType name="disjType">
+		<xs:complexContent>
+			<xs:extension base="binaryExpressionType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="conj" type="conjType" substitutionGroup="expressionList"/>
+	<xs:complexType name="notType">
+		<xs:complexContent>
+			<xs:extension base="unaryExpressionType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="alt" type="altType" substitutionGroup="nodeList"/>
+	<xs:element name="or" type="orType" substitutionGroup="nodeList"/>
+	<xs:element name="and" type="andType" substitutionGroup="nodeList"/>
+	<xs:element name="feature" type="featureType" substitutionGroup="nodeList"/>
+	<xs:element name="eq" type="eqType" substitutionGroup="expressionList"/>
+	<xs:complexType name="impType">
+		<xs:complexContent>
+			<xs:extension base="binaryExpressionType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="altType">
+		<xs:complexContent>
+			<xs:extension base="binaryNodeType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="orType">
+		<xs:complexContent>
+			<xs:extension base="binaryNodeType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="andType">
+		<xs:complexContent>
+			<xs:extension base="unaryNodeType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="featureType">
+		<xs:complexContent>
+			<xs:extension base="leafType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="nodeList" type="node" abstract="true"/>
+	<xs:element name="var" abstract="false" substitutionGroup="expressionList">
+		<xs:complexType mixed="true">
+			<xs:complexContent>
+				<xs:extension base="expression"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="eqType">
+		<xs:complexContent>
+			<xs:extension base="binaryExpressionType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="disj" type="disjType" substitutionGroup="expressionList"/>
+	<xs:element name="expressionList" type="expression" abstract="true"/>
 	<xs:group name="expressionGroup">
 		<xs:choice>
-			<xs:element name="disj" type="binaryExpressionType"/>
-			<xs:element name="conj" type="binaryExpressionType"/>
-			<xs:element name="imp" type="binaryExpressionType"/>
-			<xs:element name="eq" type="binaryExpressionType"/>
-			<xs:element name="not" type="unaryExpressionType"/>
-			<xs:element name="var" type="xs:string"/>
+			<xs:element ref="expressionList"/>
 		</xs:choice>
 	</xs:group>
 	<xs:complexType name="unaryExpressionType">
@@ -130,11 +178,18 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="not" type="notType" substitutionGroup="expressionList"/>
+	<xs:complexType name="conjType">
+		<xs:complexContent>
+			<xs:extension base="binaryExpressionType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="imp" type="impType" substitutionGroup="expressionList"/>
 	<xs:complexType name="binaryExpressionType">
 		<xs:complexContent>
 			<xs:extension base="expression">
-				<xs:choice minOccurs="2" maxOccurs="2">
-					<xs:group ref="expressionGroup"/>
+				<xs:choice>
+					<xs:group ref="expressionGroup" minOccurs="2" maxOccurs="2"/>
 				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
@@ -187,7 +242,7 @@
 			</xs:choice>
 		</xs:complexType>
 	</xs:element>
-	<xs:complexType name="expression"/>
+	<xs:complexType name="expression" abstract="false"/>
 	<xs:element name="rule">
 		<xs:complexType>
 			<xs:sequence>

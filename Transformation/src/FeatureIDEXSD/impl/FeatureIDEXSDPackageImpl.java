@@ -2,32 +2,42 @@
  */
 package FeatureIDEXSD.impl;
 
+import FeatureIDEXSD.AltType;
+import FeatureIDEXSD.AndType;
 import FeatureIDEXSD.BinaryExpressionType;
 import FeatureIDEXSD.BinaryExtendedNodeType;
 import FeatureIDEXSD.BinaryNodeType;
 import FeatureIDEXSD.CalculationsType;
 import FeatureIDEXSD.CommentsType;
+import FeatureIDEXSD.ConjType;
 import FeatureIDEXSD.ConstraintsType;
+import FeatureIDEXSD.DisjType;
 import FeatureIDEXSD.DocumentRoot;
+import FeatureIDEXSD.EqType;
 import FeatureIDEXSD.Expression;
 import FeatureIDEXSD.ExtendedFeatureModelType;
 import FeatureIDEXSD.ExtendedLeafType;
 import FeatureIDEXSD.ExtendedNode;
-import FeatureIDEXSD.ExtendedStructType;
 import FeatureIDEXSD.FeatureIDEXSDFactory;
 import FeatureIDEXSD.FeatureIDEXSDPackage;
 import FeatureIDEXSD.FeatureModelType;
 import FeatureIDEXSD.FeatureOrderType;
+import FeatureIDEXSD.FeatureType;
 import FeatureIDEXSD.GraphicsType;
+import FeatureIDEXSD.ImpType;
 import FeatureIDEXSD.LeafType;
 import FeatureIDEXSD.Node;
+import FeatureIDEXSD.NotType;
+import FeatureIDEXSD.OrType;
 import FeatureIDEXSD.PropertiesType;
 import FeatureIDEXSD.RuleType;
 import FeatureIDEXSD.StructType;
+import FeatureIDEXSD.StructType1;
 import FeatureIDEXSD.UnaryExpressionType;
 import FeatureIDEXSD.UnaryExtendedNodeType;
 import FeatureIDEXSD.UnaryNodeType;
 
+import FeatureIDEXSD.VarType;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -44,6 +54,20 @@ import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
  * @generated
  */
 public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDEXSDPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass altTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass andTypeEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84,6 +108,13 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass conjTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass constraintsTypeEClass = null;
 
 	/**
@@ -91,7 +122,21 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass disjTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass documentRootEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eqTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,7 +185,21 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass featureTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass graphicsTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass impTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,6 +214,20 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * @generated
 	 */
 	private EClass nodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass notTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass orTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +255,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass extendedStructTypeEClass = null;
+	private EClass structType1EClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,6 +277,13 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * @generated
 	 */
 	private EClass unaryNodeTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass varTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -274,6 +354,24 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAltType() {
+		return altTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAndType() {
+		return andTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBinaryExpressionType() {
 		return binaryExpressionTypeEClass;
 	}
@@ -292,8 +390,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBinaryExpressionType_Disj() {
-		return (EReference)binaryExpressionTypeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getBinaryExpressionType_ExpressionListGroup() {
+		return (EAttribute)binaryExpressionTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -301,44 +399,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBinaryExpressionType_Conj() {
+	public EReference getBinaryExpressionType_ExpressionList() {
 		return (EReference)binaryExpressionTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBinaryExpressionType_Imp() {
-		return (EReference)binaryExpressionTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBinaryExpressionType_Eq() {
-		return (EReference)binaryExpressionTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBinaryExpressionType_Not() {
-		return (EReference)binaryExpressionTypeEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getBinaryExpressionType_Var() {
-		return (EAttribute)binaryExpressionTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -418,8 +480,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBinaryNodeType_Feature() {
-		return (EReference)binaryNodeTypeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getBinaryNodeType_NodeListGroup() {
+		return (EAttribute)binaryNodeTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -427,26 +489,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBinaryNodeType_Alt() {
+	public EReference getBinaryNodeType_NodeList() {
 		return (EReference)binaryNodeTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBinaryNodeType_Or() {
-		return (EReference)binaryNodeTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBinaryNodeType_And() {
-		return (EReference)binaryNodeTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -499,6 +543,15 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getConjType() {
+		return conjTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConstraintsType() {
 		return constraintsTypeEClass;
 	}
@@ -510,6 +563,15 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 */
 	public EReference getConstraintsType_Rule() {
 		return (EReference)constraintsTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDisjType() {
+		return disjTypeEClass;
 	}
 
 	/**
@@ -553,8 +615,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDocumentRoot_C() {
-		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(3);
+	public EReference getDocumentRoot_Alt() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -562,7 +624,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDocumentRoot_Calculations() {
+	public EReference getDocumentRoot_NodeList() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -571,7 +633,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDocumentRoot_Comments() {
+	public EReference getDocumentRoot_And() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -580,8 +642,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDocumentRoot_Constraints() {
-		return (EReference)documentRootEClass.getEStructuralFeatures().get(6);
+	public EAttribute getDocumentRoot_C() {
+		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -589,8 +651,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDocumentRoot_Description() {
-		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(7);
+	public EReference getDocumentRoot_Calculations() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -598,7 +660,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDocumentRoot_ExtendedFeatureModel() {
+	public EReference getDocumentRoot_Comments() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -607,7 +669,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDocumentRoot_FeatureModel() {
+	public EReference getDocumentRoot_Conj() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -616,7 +678,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDocumentRoot_FeatureOrder() {
+	public EReference getDocumentRoot_ExpressionList() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -625,7 +687,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDocumentRoot_Graphics() {
+	public EReference getDocumentRoot_Constraints() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -634,8 +696,107 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDocumentRoot_Description() {
+		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Disj() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Eq() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_ExtendedFeatureModel() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Feature() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_FeatureModel() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_FeatureOrder() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Graphics() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Imp() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Not() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Or() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getDocumentRoot_Properties() {
-		return (EReference)documentRootEClass.getEStructuralFeatures().get(12);
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -644,7 +805,25 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * @generated
 	 */
 	public EReference getDocumentRoot_Rule() {
-		return (EReference)documentRootEClass.getEStructuralFeatures().get(13);
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_Var() {
+		return (EReference)documentRootEClass.getEStructuralFeatures().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEqType() {
+		return eqTypeEClass;
 	}
 
 	/**
@@ -841,6 +1020,15 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFeatureType() {
+		return featureTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getGraphicsType() {
 		return graphicsTypeEClass;
 	}
@@ -861,6 +1049,15 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 */
 	public EAttribute getGraphicsType_Value() {
 		return (EAttribute)graphicsTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getImpType() {
+		return impTypeEClass;
 	}
 
 	/**
@@ -940,6 +1137,24 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getNotType() {
+		return notTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOrType() {
+		return orTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPropertiesType() {
 		return propertiesTypeEClass;
 	}
@@ -994,8 +1209,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRuleType_Disj() {
-		return (EReference)ruleTypeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getRuleType_ExpressionListGroup() {
+		return (EAttribute)ruleTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1003,44 +1218,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRuleType_Conj() {
+	public EReference getRuleType_ExpressionList() {
 		return (EReference)ruleTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRuleType_Imp() {
-		return (EReference)ruleTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRuleType_Eq() {
-		return (EReference)ruleTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRuleType_Not() {
-		return (EReference)ruleTypeEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRuleType_Var() {
-		return (EAttribute)ruleTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1057,8 +1236,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructType_Feature() {
-		return (EReference)structTypeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getStructType_NodeListGroup() {
+		return (EAttribute)structTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1066,7 +1245,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructType_Alt() {
+	public EReference getStructType_NodeList() {
 		return (EReference)structTypeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1075,8 +1254,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructType_Or() {
-		return (EReference)structTypeEClass.getEStructuralFeatures().get(2);
+	public EClass getStructType1() {
+		return structType1EClass;
 	}
 
 	/**
@@ -1084,8 +1263,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructType_And() {
-		return (EReference)structTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getStructType1_Feature() {
+		return (EReference)structType1EClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1093,8 +1272,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getExtendedStructType() {
-		return extendedStructTypeEClass;
+	public EReference getStructType1_Alt() {
+		return (EReference)structType1EClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1102,8 +1281,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExtendedStructType_Feature() {
-		return (EReference)extendedStructTypeEClass.getEStructuralFeatures().get(0);
+	public EReference getStructType1_Or() {
+		return (EReference)structType1EClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1111,26 +1290,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExtendedStructType_Alt() {
-		return (EReference)extendedStructTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getExtendedStructType_Or() {
-		return (EReference)extendedStructTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getExtendedStructType_And() {
-		return (EReference)extendedStructTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getStructType1_And() {
+		return (EReference)structType1EClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1147,8 +1308,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUnaryExpressionType_Disj() {
-		return (EReference)unaryExpressionTypeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getUnaryExpressionType_ExpressionListGroup() {
+		return (EAttribute)unaryExpressionTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1156,44 +1317,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUnaryExpressionType_Conj() {
+	public EReference getUnaryExpressionType_ExpressionList() {
 		return (EReference)unaryExpressionTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUnaryExpressionType_Imp() {
-		return (EReference)unaryExpressionTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUnaryExpressionType_Eq() {
-		return (EReference)unaryExpressionTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUnaryExpressionType_Not() {
-		return (EReference)unaryExpressionTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUnaryExpressionType_Var() {
-		return (EAttribute)unaryExpressionTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1273,8 +1398,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUnaryNodeType_Feature() {
-		return (EReference)unaryNodeTypeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getUnaryNodeType_NodeListGroup() {
+		return (EAttribute)unaryNodeTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1282,7 +1407,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUnaryNodeType_Alt() {
+	public EReference getUnaryNodeType_NodeList() {
 		return (EReference)unaryNodeTypeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1291,8 +1416,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUnaryNodeType_Or() {
-		return (EReference)unaryNodeTypeEClass.getEStructuralFeatures().get(3);
+	public EClass getVarType() {
+		return varTypeEClass;
 	}
 
 	/**
@@ -1300,8 +1425,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUnaryNodeType_And() {
-		return (EReference)unaryNodeTypeEClass.getEStructuralFeatures().get(4);
+	public EAttribute getVarType_Mixed() {
+		return (EAttribute)varTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1332,14 +1457,14 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		isCreated = true;
 
 		// Create classes and their features
+		altTypeEClass = createEClass(ALT_TYPE);
+
+		andTypeEClass = createEClass(AND_TYPE);
+
 		binaryExpressionTypeEClass = createEClass(BINARY_EXPRESSION_TYPE);
 		createEAttribute(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__EXPRESSION_GROUP);
-		createEReference(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__DISJ);
-		createEReference(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__CONJ);
-		createEReference(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__IMP);
-		createEReference(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__EQ);
-		createEReference(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__NOT);
-		createEAttribute(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__VAR);
+		createEAttribute(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP);
+		createEReference(binaryExpressionTypeEClass, BINARY_EXPRESSION_TYPE__EXPRESSION_LIST);
 
 		binaryExtendedNodeTypeEClass = createEClass(BINARY_EXTENDED_NODE_TYPE);
 		createEAttribute(binaryExtendedNodeTypeEClass, BINARY_EXTENDED_NODE_TYPE__EXTENDED_NODE_GROUP);
@@ -1350,10 +1475,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 
 		binaryNodeTypeEClass = createEClass(BINARY_NODE_TYPE);
 		createEAttribute(binaryNodeTypeEClass, BINARY_NODE_TYPE__NODE_GROUP);
-		createEReference(binaryNodeTypeEClass, BINARY_NODE_TYPE__FEATURE);
-		createEReference(binaryNodeTypeEClass, BINARY_NODE_TYPE__ALT);
-		createEReference(binaryNodeTypeEClass, BINARY_NODE_TYPE__OR);
-		createEReference(binaryNodeTypeEClass, BINARY_NODE_TYPE__AND);
+		createEAttribute(binaryNodeTypeEClass, BINARY_NODE_TYPE__NODE_LIST_GROUP);
+		createEReference(binaryNodeTypeEClass, BINARY_NODE_TYPE__NODE_LIST);
 
 		calculationsTypeEClass = createEClass(CALCULATIONS_TYPE);
 		createEAttribute(calculationsTypeEClass, CALCULATIONS_TYPE__KEY);
@@ -1362,24 +1485,42 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		commentsTypeEClass = createEClass(COMMENTS_TYPE);
 		createEAttribute(commentsTypeEClass, COMMENTS_TYPE__C);
 
+		conjTypeEClass = createEClass(CONJ_TYPE);
+
 		constraintsTypeEClass = createEClass(CONSTRAINTS_TYPE);
 		createEReference(constraintsTypeEClass, CONSTRAINTS_TYPE__RULE);
+
+		disjTypeEClass = createEClass(DISJ_TYPE);
 
 		documentRootEClass = createEClass(DOCUMENT_ROOT);
 		createEAttribute(documentRootEClass, DOCUMENT_ROOT__MIXED);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__ALT);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__NODE_LIST);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__AND);
 		createEAttribute(documentRootEClass, DOCUMENT_ROOT__C);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__CALCULATIONS);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__COMMENTS);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__CONJ);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__EXPRESSION_LIST);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__CONSTRAINTS);
 		createEAttribute(documentRootEClass, DOCUMENT_ROOT__DESCRIPTION);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__DISJ);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__EQ);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__FEATURE);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__FEATURE_MODEL);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__FEATURE_ORDER);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__GRAPHICS);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__IMP);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__NOT);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__OR);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__PROPERTIES);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__RULE);
+		createEReference(documentRootEClass, DOCUMENT_ROOT__VAR);
+
+		eqTypeEClass = createEClass(EQ_TYPE);
 
 		expressionEClass = createEClass(EXPRESSION);
 
@@ -1408,9 +1549,13 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		createEReference(featureOrderTypeEClass, FEATURE_ORDER_TYPE__FEATURE);
 		createEAttribute(featureOrderTypeEClass, FEATURE_ORDER_TYPE__USER_DEFINED);
 
+		featureTypeEClass = createEClass(FEATURE_TYPE);
+
 		graphicsTypeEClass = createEClass(GRAPHICS_TYPE);
 		createEAttribute(graphicsTypeEClass, GRAPHICS_TYPE__KEY);
 		createEAttribute(graphicsTypeEClass, GRAPHICS_TYPE__VALUE);
+
+		impTypeEClass = createEClass(IMP_TYPE);
 
 		leafTypeEClass = createEClass(LEAF_TYPE);
 
@@ -1422,6 +1567,10 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		createEAttribute(nodeEClass, NODE__MANDATORY);
 		createEAttribute(nodeEClass, NODE__NAME);
 
+		notTypeEClass = createEClass(NOT_TYPE);
+
+		orTypeEClass = createEClass(OR_TYPE);
+
 		propertiesTypeEClass = createEClass(PROPERTIES_TYPE);
 		createEAttribute(propertiesTypeEClass, PROPERTIES_TYPE__GROUP);
 		createEReference(propertiesTypeEClass, PROPERTIES_TYPE__GRAPHICS);
@@ -1429,32 +1578,22 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 
 		ruleTypeEClass = createEClass(RULE_TYPE);
 		createEAttribute(ruleTypeEClass, RULE_TYPE__DESCRIPTION);
-		createEReference(ruleTypeEClass, RULE_TYPE__DISJ);
-		createEReference(ruleTypeEClass, RULE_TYPE__CONJ);
-		createEReference(ruleTypeEClass, RULE_TYPE__IMP);
-		createEReference(ruleTypeEClass, RULE_TYPE__EQ);
-		createEReference(ruleTypeEClass, RULE_TYPE__NOT);
-		createEAttribute(ruleTypeEClass, RULE_TYPE__VAR);
+		createEAttribute(ruleTypeEClass, RULE_TYPE__EXPRESSION_LIST_GROUP);
+		createEReference(ruleTypeEClass, RULE_TYPE__EXPRESSION_LIST);
 
 		structTypeEClass = createEClass(STRUCT_TYPE);
-		createEReference(structTypeEClass, STRUCT_TYPE__FEATURE);
-		createEReference(structTypeEClass, STRUCT_TYPE__ALT);
-		createEReference(structTypeEClass, STRUCT_TYPE__OR);
-		createEReference(structTypeEClass, STRUCT_TYPE__AND);
+		createEAttribute(structTypeEClass, STRUCT_TYPE__NODE_LIST_GROUP);
+		createEReference(structTypeEClass, STRUCT_TYPE__NODE_LIST);
 
-		extendedStructTypeEClass = createEClass(EXTENDED_STRUCT_TYPE);
-		createEReference(extendedStructTypeEClass, EXTENDED_STRUCT_TYPE__FEATURE);
-		createEReference(extendedStructTypeEClass, EXTENDED_STRUCT_TYPE__ALT);
-		createEReference(extendedStructTypeEClass, EXTENDED_STRUCT_TYPE__OR);
-		createEReference(extendedStructTypeEClass, EXTENDED_STRUCT_TYPE__AND);
+		structType1EClass = createEClass(STRUCT_TYPE1);
+		createEReference(structType1EClass, STRUCT_TYPE1__FEATURE);
+		createEReference(structType1EClass, STRUCT_TYPE1__ALT);
+		createEReference(structType1EClass, STRUCT_TYPE1__OR);
+		createEReference(structType1EClass, STRUCT_TYPE1__AND);
 
 		unaryExpressionTypeEClass = createEClass(UNARY_EXPRESSION_TYPE);
-		createEReference(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__DISJ);
-		createEReference(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__CONJ);
-		createEReference(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__IMP);
-		createEReference(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__EQ);
-		createEReference(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__NOT);
-		createEAttribute(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__VAR);
+		createEAttribute(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP);
+		createEReference(unaryExpressionTypeEClass, UNARY_EXPRESSION_TYPE__EXPRESSION_LIST);
 
 		unaryExtendedNodeTypeEClass = createEClass(UNARY_EXTENDED_NODE_TYPE);
 		createEAttribute(unaryExtendedNodeTypeEClass, UNARY_EXTENDED_NODE_TYPE__EXTENDED_NODE_GROUP);
@@ -1465,10 +1604,11 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 
 		unaryNodeTypeEClass = createEClass(UNARY_NODE_TYPE);
 		createEAttribute(unaryNodeTypeEClass, UNARY_NODE_TYPE__NODE_GROUP);
-		createEReference(unaryNodeTypeEClass, UNARY_NODE_TYPE__FEATURE);
-		createEReference(unaryNodeTypeEClass, UNARY_NODE_TYPE__ALT);
-		createEReference(unaryNodeTypeEClass, UNARY_NODE_TYPE__OR);
-		createEReference(unaryNodeTypeEClass, UNARY_NODE_TYPE__AND);
+		createEAttribute(unaryNodeTypeEClass, UNARY_NODE_TYPE__NODE_LIST_GROUP);
+		createEReference(unaryNodeTypeEClass, UNARY_NODE_TYPE__NODE_LIST);
+
+		varTypeEClass = createEClass(VAR_TYPE);
+		createEAttribute(varTypeEClass, VAR_TYPE__MIXED);
 	}
 
 	/**
@@ -1502,25 +1642,35 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		altTypeEClass.getESuperTypes().add(this.getBinaryNodeType());
+		andTypeEClass.getESuperTypes().add(this.getUnaryNodeType());
 		binaryExpressionTypeEClass.getESuperTypes().add(this.getExpression());
 		binaryExtendedNodeTypeEClass.getESuperTypes().add(this.getExtendedNode());
 		binaryNodeTypeEClass.getESuperTypes().add(this.getNode());
+		conjTypeEClass.getESuperTypes().add(this.getBinaryExpressionType());
+		disjTypeEClass.getESuperTypes().add(this.getBinaryExpressionType());
+		eqTypeEClass.getESuperTypes().add(this.getBinaryExpressionType());
 		extendedLeafTypeEClass.getESuperTypes().add(this.getExtendedNode());
 		extendedNodeEClass.getESuperTypes().add(this.getNode());
+		featureTypeEClass.getESuperTypes().add(this.getLeafType());
+		impTypeEClass.getESuperTypes().add(this.getBinaryExpressionType());
 		leafTypeEClass.getESuperTypes().add(this.getNode());
+		notTypeEClass.getESuperTypes().add(this.getUnaryExpressionType());
+		orTypeEClass.getESuperTypes().add(this.getBinaryNodeType());
 		unaryExpressionTypeEClass.getESuperTypes().add(this.getExpression());
 		unaryExtendedNodeTypeEClass.getESuperTypes().add(this.getExtendedNode());
 		unaryNodeTypeEClass.getESuperTypes().add(this.getNode());
+		varTypeEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(altTypeEClass, AltType.class, "AltType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(andTypeEClass, AndType.class, "AndType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(binaryExpressionTypeEClass, BinaryExpressionType.class, "BinaryExpressionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBinaryExpressionType_ExpressionGroup(), ecorePackage.getEFeatureMapEntry(), "expressionGroup", null, 0, -1, BinaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryExpressionType_Disj(), this.getBinaryExpressionType(), null, "disj", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryExpressionType_Conj(), this.getBinaryExpressionType(), null, "conj", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryExpressionType_Imp(), this.getBinaryExpressionType(), null, "imp", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryExpressionType_Eq(), this.getBinaryExpressionType(), null, "eq", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryExpressionType_Not(), this.getUnaryExpressionType(), null, "not", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBinaryExpressionType_Var(), theXMLTypePackage.getString(), "var", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBinaryExpressionType_ExpressionListGroup(), ecorePackage.getEFeatureMapEntry(), "expressionListGroup", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExpressionType_ExpressionList(), this.getExpression(), null, "expressionList", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(binaryExtendedNodeTypeEClass, BinaryExtendedNodeType.class, "BinaryExtendedNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBinaryExtendedNodeType_ExtendedNodeGroup(), ecorePackage.getEFeatureMapEntry(), "extendedNodeGroup", null, 0, -1, BinaryExtendedNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1531,10 +1681,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 
 		initEClass(binaryNodeTypeEClass, BinaryNodeType.class, "BinaryNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBinaryNodeType_NodeGroup(), ecorePackage.getEFeatureMapEntry(), "nodeGroup", null, 0, -1, BinaryNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryNodeType_Feature(), this.getLeafType(), null, "feature", null, 0, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryNodeType_Alt(), this.getBinaryNodeType(), null, "alt", null, 0, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryNodeType_Or(), this.getBinaryNodeType(), null, "or", null, 0, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryNodeType_And(), this.getUnaryNodeType(), null, "and", null, 0, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBinaryNodeType_NodeListGroup(), ecorePackage.getEFeatureMapEntry(), "nodeListGroup", null, 2, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryNodeType_NodeList(), this.getNode(), null, "nodeList", null, 2, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(calculationsTypeEClass, CalculationsType.class, "CalculationsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCalculationsType_Key(), theXMLTypePackage.getString(), "key", null, 1, 1, CalculationsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1543,30 +1691,48 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		initEClass(commentsTypeEClass, CommentsType.class, "CommentsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCommentsType_C(), theXMLTypePackage.getString(), "c", null, 0, -1, CommentsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(conjTypeEClass, ConjType.class, "ConjType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(constraintsTypeEClass, ConstraintsType.class, "ConstraintsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstraintsType_Rule(), this.getRuleType(), null, "rule", null, 0, -1, ConstraintsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(disjTypeEClass, DisjType.class, "DisjType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(documentRootEClass, DocumentRoot.class, "DocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null, "xSISchemaLocation", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Alt(), this.getAltType(), null, "alt", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_NodeList(), this.getNode(), null, "nodeList", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_And(), this.getAndType(), null, "and", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentRoot_C(), theXMLTypePackage.getString(), "c", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_Calculations(), this.getCalculationsType(), null, "calculations", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_Comments(), this.getCommentsType(), null, "comments", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Conj(), this.getConjType(), null, "conj", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_ExpressionList(), this.getExpression(), null, "expressionList", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_Constraints(), this.getConstraintsType(), null, "constraints", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentRoot_Description(), theXMLTypePackage.getString(), "description", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Disj(), this.getDisjType(), null, "disj", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Eq(), this.getEqType(), null, "eq", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_ExtendedFeatureModel(), this.getExtendedFeatureModelType(), null, "extendedFeatureModel", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Feature(), this.getFeatureType(), null, "feature", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_FeatureModel(), this.getFeatureModelType(), null, "featureModel", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_FeatureOrder(), this.getFeatureOrderType(), null, "featureOrder", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_Graphics(), this.getGraphicsType(), null, "graphics", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Imp(), this.getImpType(), null, "imp", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Not(), this.getNotType(), null, "not", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Or(), this.getOrType(), null, "or", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_Properties(), this.getPropertiesType(), null, "properties", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_Rule(), this.getRuleType(), null, "rule", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Var(), this.getVarType(), null, "var", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(eqTypeEClass, EqType.class, "EqType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(extendedFeatureModelTypeEClass, ExtendedFeatureModelType.class, "ExtendedFeatureModelType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExtendedFeatureModelType_Properties(), this.getPropertiesType(), null, "properties", null, 0, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExtendedFeatureModelType_Struct(), this.getExtendedStructType(), null, "struct", null, 1, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtendedFeatureModelType_Struct(), this.getStructType1(), null, "struct", null, 1, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExtendedFeatureModelType_Constraints(), this.getConstraintsType(), null, "constraints", null, 0, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExtendedFeatureModelType_Calculations(), this.getCalculationsType(), null, "calculations", null, 0, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExtendedFeatureModelType_Comments(), this.getCommentsType(), null, "comments", null, 0, 1, ExtendedFeatureModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1589,9 +1755,13 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		initEReference(getFeatureOrderType_Feature(), this.getLeafType(), null, "feature", null, 0, -1, FeatureOrderType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureOrderType_UserDefined(), theXMLTypePackage.getBoolean(), "userDefined", null, 1, 1, FeatureOrderType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(featureTypeEClass, FeatureType.class, "FeatureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(graphicsTypeEClass, GraphicsType.class, "GraphicsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGraphicsType_Key(), theXMLTypePackage.getString(), "key", null, 1, 1, GraphicsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGraphicsType_Value(), theXMLTypePackage.getString(), "value", null, 1, 1, GraphicsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(impTypeEClass, ImpType.class, "ImpType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(leafTypeEClass, LeafType.class, "LeafType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1603,6 +1773,10 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		initEAttribute(getNode_Mandatory(), theXMLTypePackage.getBoolean(), "mandatory", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNode_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(notTypeEClass, NotType.class, "NotType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(orTypeEClass, OrType.class, "OrType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(propertiesTypeEClass, PropertiesType.class, "PropertiesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPropertiesType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, PropertiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertiesType_Graphics(), this.getGraphicsType(), null, "graphics", null, 0, -1, PropertiesType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -1610,32 +1784,22 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 
 		initEClass(ruleTypeEClass, RuleType.class, "RuleType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRuleType_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRuleType_Disj(), this.getBinaryExpressionType(), null, "disj", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRuleType_Conj(), this.getBinaryExpressionType(), null, "conj", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRuleType_Imp(), this.getBinaryExpressionType(), null, "imp", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRuleType_Eq(), this.getBinaryExpressionType(), null, "eq", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRuleType_Not(), this.getUnaryExpressionType(), null, "not", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRuleType_Var(), theXMLTypePackage.getString(), "var", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRuleType_ExpressionListGroup(), ecorePackage.getEFeatureMapEntry(), "expressionListGroup", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuleType_ExpressionList(), this.getExpression(), null, "expressionList", null, 0, 1, RuleType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(structTypeEClass, StructType.class, "StructType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructType_Feature(), this.getLeafType(), null, "feature", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructType_Alt(), this.getBinaryNodeType(), null, "alt", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructType_Or(), this.getBinaryNodeType(), null, "or", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructType_And(), this.getUnaryNodeType(), null, "and", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStructType_NodeListGroup(), ecorePackage.getEFeatureMapEntry(), "nodeListGroup", null, 1, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructType_NodeList(), this.getNode(), null, "nodeList", null, 1, 1, StructType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(extendedStructTypeEClass, ExtendedStructType.class, "ExtendedStructType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExtendedStructType_Feature(), this.getExtendedLeafType(), null, "feature", null, 0, 1, ExtendedStructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExtendedStructType_Alt(), this.getBinaryExtendedNodeType(), null, "alt", null, 0, 1, ExtendedStructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExtendedStructType_Or(), this.getBinaryExtendedNodeType(), null, "or", null, 0, 1, ExtendedStructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExtendedStructType_And(), this.getUnaryExtendedNodeType(), null, "and", null, 0, 1, ExtendedStructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(structType1EClass, StructType1.class, "StructType1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStructType1_Feature(), this.getExtendedLeafType(), null, "feature", null, 0, 1, StructType1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructType1_Alt(), this.getBinaryExtendedNodeType(), null, "alt", null, 0, 1, StructType1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructType1_Or(), this.getBinaryExtendedNodeType(), null, "or", null, 0, 1, StructType1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructType1_And(), this.getUnaryExtendedNodeType(), null, "and", null, 0, 1, StructType1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unaryExpressionTypeEClass, UnaryExpressionType.class, "UnaryExpressionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnaryExpressionType_Disj(), this.getBinaryExpressionType(), null, "disj", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUnaryExpressionType_Conj(), this.getBinaryExpressionType(), null, "conj", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUnaryExpressionType_Imp(), this.getBinaryExpressionType(), null, "imp", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUnaryExpressionType_Eq(), this.getBinaryExpressionType(), null, "eq", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUnaryExpressionType_Not(), this.getUnaryExpressionType(), null, "not", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUnaryExpressionType_Var(), theXMLTypePackage.getString(), "var", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnaryExpressionType_ExpressionListGroup(), ecorePackage.getEFeatureMapEntry(), "expressionListGroup", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryExpressionType_ExpressionList(), this.getExpression(), null, "expressionList", null, 0, 1, UnaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(unaryExtendedNodeTypeEClass, UnaryExtendedNodeType.class, "UnaryExtendedNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnaryExtendedNodeType_ExtendedNodeGroup(), ecorePackage.getEFeatureMapEntry(), "extendedNodeGroup", null, 0, -1, UnaryExtendedNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1646,10 +1810,11 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 
 		initEClass(unaryNodeTypeEClass, UnaryNodeType.class, "UnaryNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnaryNodeType_NodeGroup(), ecorePackage.getEFeatureMapEntry(), "nodeGroup", null, 0, -1, UnaryNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUnaryNodeType_Feature(), this.getLeafType(), null, "feature", null, 0, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getUnaryNodeType_Alt(), this.getBinaryNodeType(), null, "alt", null, 0, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getUnaryNodeType_Or(), this.getBinaryNodeType(), null, "or", null, 0, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getUnaryNodeType_And(), this.getUnaryNodeType(), null, "and", null, 0, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnaryNodeType_NodeListGroup(), ecorePackage.getEFeatureMapEntry(), "nodeListGroup", null, 1, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryNodeType_NodeList(), this.getNode(), null, "nodeList", null, 1, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(varTypeEClass, VarType.class, "VarType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVarType_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, VarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -1674,6 +1839,20 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "qualified", "false"
 		   });
 		addAnnotation
+		  (altTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "altType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (andTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "andType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
 		  (binaryExpressionTypeEClass,
 		   source,
 		   new String[] {
@@ -1688,58 +1867,22 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "name", "ExpressionGroup:0"
 		   });
 		addAnnotation
-		  (getBinaryExpressionType_Disj(),
+		  (getBinaryExpressionType_ExpressionListGroup(),
 		   source,
 		   new String[] {
-			   "kind", "element",
-			   "name", "disj",
+			   "kind", "group",
+			   "name", "expressionList:group",
 			   "namespace", "##targetNamespace",
 			   "group", "ExpressionGroup:0"
 		   });
 		addAnnotation
-		  (getBinaryExpressionType_Conj(),
+		  (getBinaryExpressionType_ExpressionList(),
 		   source,
 		   new String[] {
 			   "kind", "element",
-			   "name", "conj",
+			   "name", "expressionList",
 			   "namespace", "##targetNamespace",
-			   "group", "ExpressionGroup:0"
-		   });
-		addAnnotation
-		  (getBinaryExpressionType_Imp(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "imp",
-			   "namespace", "##targetNamespace",
-			   "group", "ExpressionGroup:0"
-		   });
-		addAnnotation
-		  (getBinaryExpressionType_Eq(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "eq",
-			   "namespace", "##targetNamespace",
-			   "group", "ExpressionGroup:0"
-		   });
-		addAnnotation
-		  (getBinaryExpressionType_Not(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "not",
-			   "namespace", "##targetNamespace",
-			   "group", "ExpressionGroup:0"
-		   });
-		addAnnotation
-		  (getBinaryExpressionType_Var(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "var",
-			   "namespace", "##targetNamespace",
-			   "group", "ExpressionGroup:0"
+			   "group", "expressionList:group"
 		   });
 		addAnnotation
 		  (binaryExtendedNodeTypeEClass,
@@ -1806,40 +1949,22 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "name", "NodeGroup:6"
 		   });
 		addAnnotation
-		  (getBinaryNodeType_Feature(),
+		  (getBinaryNodeType_NodeListGroup(),
 		   source,
 		   new String[] {
-			   "kind", "element",
-			   "name", "feature",
+			   "kind", "group",
+			   "name", "nodeList:group",
 			   "namespace", "##targetNamespace",
 			   "group", "NodeGroup:6"
 		   });
 		addAnnotation
-		  (getBinaryNodeType_Alt(),
+		  (getBinaryNodeType_NodeList(),
 		   source,
 		   new String[] {
 			   "kind", "element",
-			   "name", "alt",
+			   "name", "nodeList",
 			   "namespace", "##targetNamespace",
-			   "group", "NodeGroup:6"
-		   });
-		addAnnotation
-		  (getBinaryNodeType_Or(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "or",
-			   "namespace", "##targetNamespace",
-			   "group", "NodeGroup:6"
-		   });
-		addAnnotation
-		  (getBinaryNodeType_And(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "and",
-			   "namespace", "##targetNamespace",
-			   "group", "NodeGroup:6"
+			   "group", "nodeList:group"
 		   });
 		addAnnotation
 		  (calculationsTypeEClass,
@@ -1880,6 +2005,13 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
+		  (conjTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "conjType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
 		  (constraintsTypeEClass,
 		   source,
 		   new String[] {
@@ -1893,6 +2025,13 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "kind", "element",
 			   "name", "rule",
 			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (disjTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "disjType",
+			   "kind", "elementOnly"
 		   });
 		addAnnotation
 		  (documentRootEClass,
@@ -1923,6 +2062,32 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "name", "xsi:schemaLocation"
 		   });
 		addAnnotation
+		  (getDocumentRoot_Alt(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "alt",
+			   "namespace", "##targetNamespace",
+			   "affiliation", "nodeList"
+		   });
+		addAnnotation
+		  (getDocumentRoot_NodeList(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "nodeList",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_And(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "and",
+			   "namespace", "##targetNamespace",
+			   "affiliation", "nodeList"
+		   });
+		addAnnotation
 		  (getDocumentRoot_C(),
 		   source,
 		   new String[] {
@@ -1947,6 +2112,23 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
+		  (getDocumentRoot_Conj(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "conj",
+			   "namespace", "##targetNamespace",
+			   "affiliation", "expressionList"
+		   });
+		addAnnotation
+		  (getDocumentRoot_ExpressionList(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "expressionList",
+			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
 		  (getDocumentRoot_Constraints(),
 		   source,
 		   new String[] {
@@ -1963,12 +2145,39 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
+		  (getDocumentRoot_Disj(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "disj",
+			   "namespace", "##targetNamespace",
+			   "affiliation", "expressionList"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Eq(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "eq",
+			   "namespace", "##targetNamespace",
+			   "affiliation", "expressionList"
+		   });
+		addAnnotation
 		  (getDocumentRoot_ExtendedFeatureModel(),
 		   source,
 		   new String[] {
 			   "kind", "element",
 			   "name", "extendedFeatureModel",
 			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Feature(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "feature",
+			   "namespace", "##targetNamespace",
+			   "affiliation", "nodeList"
 		   });
 		addAnnotation
 		  (getDocumentRoot_FeatureModel(),
@@ -1995,6 +2204,33 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
+		  (getDocumentRoot_Imp(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "imp",
+			   "namespace", "##targetNamespace",
+			   "affiliation", "expressionList"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Not(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "not",
+			   "namespace", "##targetNamespace",
+			   "affiliation", "expressionList"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Or(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "or",
+			   "namespace", "##targetNamespace",
+			   "affiliation", "nodeList"
+		   });
+		addAnnotation
 		  (getDocumentRoot_Properties(),
 		   source,
 		   new String[] {
@@ -2009,6 +2245,22 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "kind", "element",
 			   "name", "rule",
 			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (getDocumentRoot_Var(),
+		   source,
+		   new String[] {
+			   "kind", "element",
+			   "name", "var",
+			   "namespace", "##targetNamespace",
+			   "affiliation", "expressionList"
+		   });
+		addAnnotation
+		  (eqTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "eqType",
+			   "kind", "elementOnly"
 		   });
 		addAnnotation
 		  (expressionEClass,
@@ -2173,6 +2425,13 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
+		  (featureTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "featureType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
 		  (graphicsTypeEClass,
 		   source,
 		   new String[] {
@@ -2194,6 +2453,13 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "kind", "attribute",
 			   "name", "value",
 			   "namespace", "##targetNamespace"
+		   });
+		addAnnotation
+		  (impTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "impType",
+			   "kind", "elementOnly"
 		   });
 		addAnnotation
 		  (leafTypeEClass,
@@ -2258,6 +2524,20 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
+		  (notTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "notType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (orTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "orType",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
 		  (propertiesTypeEClass,
 		   source,
 		   new String[] {
@@ -2305,52 +2585,21 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
-		  (getRuleType_Disj(),
+		  (getRuleType_ExpressionListGroup(),
 		   source,
 		   new String[] {
-			   "kind", "element",
-			   "name", "disj",
+			   "kind", "group",
+			   "name", "expressionList:group",
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
-		  (getRuleType_Conj(),
+		  (getRuleType_ExpressionList(),
 		   source,
 		   new String[] {
 			   "kind", "element",
-			   "name", "conj",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (getRuleType_Imp(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "imp",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (getRuleType_Eq(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "eq",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (getRuleType_Not(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "not",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (getRuleType_Var(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "var",
-			   "namespace", "##targetNamespace"
+			   "name", "expressionList",
+			   "namespace", "##targetNamespace",
+			   "group", "expressionList:group"
 		   });
 		addAnnotation
 		  (structTypeEClass,
@@ -2360,46 +2609,31 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "kind", "elementOnly"
 		   });
 		addAnnotation
-		  (getStructType_Feature(),
+		  (getStructType_NodeListGroup(),
 		   source,
 		   new String[] {
-			   "kind", "element",
-			   "name", "feature",
+			   "kind", "group",
+			   "name", "nodeList:group",
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
-		  (getStructType_Alt(),
+		  (getStructType_NodeList(),
 		   source,
 		   new String[] {
 			   "kind", "element",
-			   "name", "alt",
-			   "namespace", "##targetNamespace"
+			   "name", "nodeList",
+			   "namespace", "##targetNamespace",
+			   "group", "nodeList:group"
 		   });
 		addAnnotation
-		  (getStructType_Or(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "or",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (getStructType_And(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "and",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (extendedStructTypeEClass,
+		  (structType1EClass,
 		   source,
 		   new String[] {
 			   "name", "struct_._1_._type",
 			   "kind", "elementOnly"
 		   });
 		addAnnotation
-		  (getExtendedStructType_Feature(),
+		  (getStructType1_Feature(),
 		   source,
 		   new String[] {
 			   "kind", "element",
@@ -2407,7 +2641,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
-		  (getExtendedStructType_Alt(),
+		  (getStructType1_Alt(),
 		   source,
 		   new String[] {
 			   "kind", "element",
@@ -2415,7 +2649,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
-		  (getExtendedStructType_Or(),
+		  (getStructType1_Or(),
 		   source,
 		   new String[] {
 			   "kind", "element",
@@ -2423,7 +2657,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
-		  (getExtendedStructType_And(),
+		  (getStructType1_And(),
 		   source,
 		   new String[] {
 			   "kind", "element",
@@ -2438,52 +2672,21 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "kind", "elementOnly"
 		   });
 		addAnnotation
-		  (getUnaryExpressionType_Disj(),
+		  (getUnaryExpressionType_ExpressionListGroup(),
 		   source,
 		   new String[] {
-			   "kind", "element",
-			   "name", "disj",
+			   "kind", "group",
+			   "name", "expressionList:group",
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
-		  (getUnaryExpressionType_Conj(),
+		  (getUnaryExpressionType_ExpressionList(),
 		   source,
 		   new String[] {
 			   "kind", "element",
-			   "name", "conj",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (getUnaryExpressionType_Imp(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "imp",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (getUnaryExpressionType_Eq(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "eq",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (getUnaryExpressionType_Not(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "not",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (getUnaryExpressionType_Var(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "var",
-			   "namespace", "##targetNamespace"
+			   "name", "expressionList",
+			   "namespace", "##targetNamespace",
+			   "group", "expressionList:group"
 		   });
 		addAnnotation
 		  (unaryExtendedNodeTypeEClass,
@@ -2550,40 +2753,36 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "name", "NodeGroup:6"
 		   });
 		addAnnotation
-		  (getUnaryNodeType_Feature(),
+		  (getUnaryNodeType_NodeListGroup(),
 		   source,
 		   new String[] {
-			   "kind", "element",
-			   "name", "feature",
+			   "kind", "group",
+			   "name", "nodeList:group",
 			   "namespace", "##targetNamespace",
 			   "group", "NodeGroup:6"
 		   });
 		addAnnotation
-		  (getUnaryNodeType_Alt(),
+		  (getUnaryNodeType_NodeList(),
 		   source,
 		   new String[] {
 			   "kind", "element",
-			   "name", "alt",
+			   "name", "nodeList",
 			   "namespace", "##targetNamespace",
-			   "group", "NodeGroup:6"
+			   "group", "nodeList:group"
 		   });
 		addAnnotation
-		  (getUnaryNodeType_Or(),
+		  (varTypeEClass,
 		   source,
 		   new String[] {
-			   "kind", "element",
-			   "name", "or",
-			   "namespace", "##targetNamespace",
-			   "group", "NodeGroup:6"
+			   "name", "var_._type",
+			   "kind", "mixed"
 		   });
 		addAnnotation
-		  (getUnaryNodeType_And(),
+		  (getVarType_Mixed(),
 		   source,
 		   new String[] {
-			   "kind", "element",
-			   "name", "and",
-			   "namespace", "##targetNamespace",
-			   "group", "NodeGroup:6"
+			   "kind", "elementWildcard",
+			   "name", ":mixed"
 		   });
 	}
 

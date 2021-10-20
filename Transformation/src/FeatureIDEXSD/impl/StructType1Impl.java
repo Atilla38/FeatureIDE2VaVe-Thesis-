@@ -4,8 +4,8 @@ package FeatureIDEXSD.impl;
 
 import FeatureIDEXSD.BinaryExtendedNodeType;
 import FeatureIDEXSD.ExtendedLeafType;
-import FeatureIDEXSD.ExtendedStructType;
 import FeatureIDEXSD.FeatureIDEXSDPackage;
+import FeatureIDEXSD.StructType1;
 import FeatureIDEXSD.UnaryExtendedNodeType;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,21 +19,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Extended Struct Type</b></em>'.
+ * An implementation of the model object '<em><b>Struct Type1</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link FeatureIDEXSD.impl.ExtendedStructTypeImpl#getFeature <em>Feature</em>}</li>
- *   <li>{@link FeatureIDEXSD.impl.ExtendedStructTypeImpl#getAlt <em>Alt</em>}</li>
- *   <li>{@link FeatureIDEXSD.impl.ExtendedStructTypeImpl#getOr <em>Or</em>}</li>
- *   <li>{@link FeatureIDEXSD.impl.ExtendedStructTypeImpl#getAnd <em>And</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.StructType1Impl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.StructType1Impl#getAlt <em>Alt</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.StructType1Impl#getOr <em>Or</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.StructType1Impl#getAnd <em>And</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container implements ExtendedStructType {
+public class StructType1Impl extends MinimalEObjectImpl.Container implements StructType1 {
 	/**
 	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExtendedStructTypeImpl() {
+	protected StructType1Impl() {
 		super();
 	}
 
@@ -90,7 +90,7 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FeatureIDEXSDPackage.Literals.EXTENDED_STRUCT_TYPE;
+		return FeatureIDEXSDPackage.Literals.STRUCT_TYPE1;
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 		ExtendedLeafType oldFeature = feature;
 		feature = newFeature;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__FEATURE, oldFeature, newFeature);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.STRUCT_TYPE1__FEATURE, oldFeature, newFeature);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -126,14 +126,14 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 		if (newFeature != feature) {
 			NotificationChain msgs = null;
 			if (feature != null)
-				msgs = ((InternalEObject)feature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__FEATURE, null, msgs);
+				msgs = ((InternalEObject)feature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.STRUCT_TYPE1__FEATURE, null, msgs);
 			if (newFeature != null)
-				msgs = ((InternalEObject)newFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__FEATURE, null, msgs);
+				msgs = ((InternalEObject)newFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.STRUCT_TYPE1__FEATURE, null, msgs);
 			msgs = basicSetFeature(newFeature, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__FEATURE, newFeature, newFeature));
+			eNotify(new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.STRUCT_TYPE1__FEATURE, newFeature, newFeature));
 	}
 
 	/**
@@ -154,7 +154,7 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 		BinaryExtendedNodeType oldAlt = alt;
 		alt = newAlt;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__ALT, oldAlt, newAlt);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.STRUCT_TYPE1__ALT, oldAlt, newAlt);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -169,14 +169,14 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 		if (newAlt != alt) {
 			NotificationChain msgs = null;
 			if (alt != null)
-				msgs = ((InternalEObject)alt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__ALT, null, msgs);
+				msgs = ((InternalEObject)alt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.STRUCT_TYPE1__ALT, null, msgs);
 			if (newAlt != null)
-				msgs = ((InternalEObject)newAlt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__ALT, null, msgs);
+				msgs = ((InternalEObject)newAlt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.STRUCT_TYPE1__ALT, null, msgs);
 			msgs = basicSetAlt(newAlt, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__ALT, newAlt, newAlt));
+			eNotify(new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.STRUCT_TYPE1__ALT, newAlt, newAlt));
 	}
 
 	/**
@@ -197,7 +197,7 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 		BinaryExtendedNodeType oldOr = or;
 		or = newOr;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__OR, oldOr, newOr);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.STRUCT_TYPE1__OR, oldOr, newOr);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -212,14 +212,14 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 		if (newOr != or) {
 			NotificationChain msgs = null;
 			if (or != null)
-				msgs = ((InternalEObject)or).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__OR, null, msgs);
+				msgs = ((InternalEObject)or).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.STRUCT_TYPE1__OR, null, msgs);
 			if (newOr != null)
-				msgs = ((InternalEObject)newOr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__OR, null, msgs);
+				msgs = ((InternalEObject)newOr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.STRUCT_TYPE1__OR, null, msgs);
 			msgs = basicSetOr(newOr, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__OR, newOr, newOr));
+			eNotify(new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.STRUCT_TYPE1__OR, newOr, newOr));
 	}
 
 	/**
@@ -240,7 +240,7 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 		UnaryExtendedNodeType oldAnd = and;
 		and = newAnd;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__AND, oldAnd, newAnd);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.STRUCT_TYPE1__AND, oldAnd, newAnd);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -255,14 +255,14 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 		if (newAnd != and) {
 			NotificationChain msgs = null;
 			if (and != null)
-				msgs = ((InternalEObject)and).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__AND, null, msgs);
+				msgs = ((InternalEObject)and).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.STRUCT_TYPE1__AND, null, msgs);
 			if (newAnd != null)
-				msgs = ((InternalEObject)newAnd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__AND, null, msgs);
+				msgs = ((InternalEObject)newAnd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureIDEXSDPackage.STRUCT_TYPE1__AND, null, msgs);
 			msgs = basicSetAnd(newAnd, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__AND, newAnd, newAnd));
+			eNotify(new ENotificationImpl(this, Notification.SET, FeatureIDEXSDPackage.STRUCT_TYPE1__AND, newAnd, newAnd));
 	}
 
 	/**
@@ -273,13 +273,13 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__FEATURE:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__FEATURE:
 				return basicSetFeature(null, msgs);
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__ALT:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__ALT:
 				return basicSetAlt(null, msgs);
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__OR:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__OR:
 				return basicSetOr(null, msgs);
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__AND:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__AND:
 				return basicSetAnd(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -293,13 +293,13 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__FEATURE:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__FEATURE:
 				return getFeature();
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__ALT:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__ALT:
 				return getAlt();
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__OR:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__OR:
 				return getOr();
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__AND:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__AND:
 				return getAnd();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -313,16 +313,16 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__FEATURE:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__FEATURE:
 				setFeature((ExtendedLeafType)newValue);
 				return;
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__ALT:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__ALT:
 				setAlt((BinaryExtendedNodeType)newValue);
 				return;
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__OR:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__OR:
 				setOr((BinaryExtendedNodeType)newValue);
 				return;
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__AND:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__AND:
 				setAnd((UnaryExtendedNodeType)newValue);
 				return;
 		}
@@ -337,16 +337,16 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__FEATURE:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__FEATURE:
 				setFeature((ExtendedLeafType)null);
 				return;
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__ALT:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__ALT:
 				setAlt((BinaryExtendedNodeType)null);
 				return;
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__OR:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__OR:
 				setOr((BinaryExtendedNodeType)null);
 				return;
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__AND:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__AND:
 				setAnd((UnaryExtendedNodeType)null);
 				return;
 		}
@@ -361,16 +361,16 @@ public class ExtendedStructTypeImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__FEATURE:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__FEATURE:
 				return feature != null;
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__ALT:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__ALT:
 				return alt != null;
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__OR:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__OR:
 				return or != null;
-			case FeatureIDEXSDPackage.EXTENDED_STRUCT_TYPE__AND:
+			case FeatureIDEXSDPackage.STRUCT_TYPE1__AND:
 				return and != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ExtendedStructTypeImpl
+} //StructType1Impl

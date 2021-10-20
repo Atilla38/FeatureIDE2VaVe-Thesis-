@@ -65,25 +65,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 7;
-
-	/**
-	 * The number of structural features of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION_OPERATION_COUNT = 0;
+	int EXPRESSION = 12;
 
 	/**
 	 * The meta object id for the '{@link FeatureIDEXSD.impl.BinaryExpressionTypeImpl <em>Binary Expression Type</em>}' class.
@@ -93,88 +75,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getBinaryExpressionType()
 	 * @generated
 	 */
-	int BINARY_EXPRESSION_TYPE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Expression Group</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION_TYPE__EXPRESSION_GROUP = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Disj</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION_TYPE__DISJ = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Conj</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION_TYPE__CONJ = EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Imp</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION_TYPE__IMP = EXPRESSION_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Eq</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION_TYPE__EQ = EXPRESSION_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Not</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION_TYPE__NOT = EXPRESSION_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Var</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION_TYPE__VAR = EXPRESSION_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of structural features of the '<em>Binary Expression Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION_TYPE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 7;
-
-	/**
-	 * The number of operations of the '<em>Binary Expression Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPRESSION_TYPE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+	int BINARY_EXPRESSION_TYPE = 2;
 
 	/**
 	 * The meta object id for the '{@link FeatureIDEXSD.impl.NodeImpl <em>Node</em>}' class.
@@ -184,7 +85,187 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getNode()
 	 * @generated
 	 */
-	int NODE = 15;
+	int NODE = 22;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.ExtendedNodeImpl <em>Extended Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.ExtendedNodeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getExtendedNode()
+	 * @generated
+	 */
+	int EXTENDED_NODE = 15;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.BinaryExtendedNodeTypeImpl <em>Binary Extended Node Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.BinaryExtendedNodeTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getBinaryExtendedNodeType()
+	 * @generated
+	 */
+	int BINARY_EXTENDED_NODE_TYPE = 3;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.BinaryNodeTypeImpl <em>Binary Node Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.BinaryNodeTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getBinaryNodeType()
+	 * @generated
+	 */
+	int BINARY_NODE_TYPE = 4;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.CalculationsTypeImpl <em>Calculations Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.CalculationsTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getCalculationsType()
+	 * @generated
+	 */
+	int CALCULATIONS_TYPE = 5;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.CommentsTypeImpl <em>Comments Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.CommentsTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getCommentsType()
+	 * @generated
+	 */
+	int COMMENTS_TYPE = 6;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.ConstraintsTypeImpl <em>Constraints Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.ConstraintsTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getConstraintsType()
+	 * @generated
+	 */
+	int CONSTRAINTS_TYPE = 8;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.DocumentRootImpl <em>Document Root</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.DocumentRootImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getDocumentRoot()
+	 * @generated
+	 */
+	int DOCUMENT_ROOT = 10;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.ExtendedFeatureModelTypeImpl <em>Extended Feature Model Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.ExtendedFeatureModelTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getExtendedFeatureModelType()
+	 * @generated
+	 */
+	int EXTENDED_FEATURE_MODEL_TYPE = 13;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.ExtendedLeafTypeImpl <em>Extended Leaf Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.ExtendedLeafTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getExtendedLeafType()
+	 * @generated
+	 */
+	int EXTENDED_LEAF_TYPE = 14;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.FeatureModelTypeImpl <em>Feature Model Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.FeatureModelTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getFeatureModelType()
+	 * @generated
+	 */
+	int FEATURE_MODEL_TYPE = 16;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.FeatureOrderTypeImpl <em>Feature Order Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.FeatureOrderTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getFeatureOrderType()
+	 * @generated
+	 */
+	int FEATURE_ORDER_TYPE = 17;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.GraphicsTypeImpl <em>Graphics Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.GraphicsTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getGraphicsType()
+	 * @generated
+	 */
+	int GRAPHICS_TYPE = 19;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.LeafTypeImpl <em>Leaf Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.LeafTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getLeafType()
+	 * @generated
+	 */
+	int LEAF_TYPE = 21;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.PropertiesTypeImpl <em>Properties Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.PropertiesTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getPropertiesType()
+	 * @generated
+	 */
+	int PROPERTIES_TYPE = 25;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.RuleTypeImpl <em>Rule Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.RuleTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getRuleType()
+	 * @generated
+	 */
+	int RULE_TYPE = 26;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.StructTypeImpl <em>Struct Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.StructTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getStructType()
+	 * @generated
+	 */
+	int STRUCT_TYPE = 27;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.StructType1Impl <em>Struct Type1</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.StructType1Impl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getStructType1()
+	 * @generated
+	 */
+	int STRUCT_TYPE1 = 28;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.UnaryExpressionTypeImpl <em>Unary Expression Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.UnaryExpressionTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getUnaryExpressionType()
+	 * @generated
+	 */
+	int UNARY_EXPRESSION_TYPE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -259,14 +340,564 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int NODE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.ExtendedNodeImpl <em>Extended Node</em>}' class.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.ExtendedNodeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getExtendedNode()
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_NODE_TYPE__DESCRIPTION = NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Graphics</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_NODE_TYPE__GRAPHICS = NODE__GRAPHICS;
+
+	/**
+	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_NODE_TYPE__ABSTRACT = NODE__ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_NODE_TYPE__HIDDEN = NODE__HIDDEN;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_NODE_TYPE__MANDATORY = NODE__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_NODE_TYPE__NAME = NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Node Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_NODE_TYPE__NODE_GROUP = NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Node List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_NODE_TYPE__NODE_LIST_GROUP = NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Node List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_NODE_TYPE__NODE_LIST = NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Binary Node Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_NODE_TYPE_FEATURE_COUNT = NODE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Binary Node Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_NODE_TYPE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.AltTypeImpl <em>Alt Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.AltTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getAltType()
 	 * @generated
 	 */
-	int EXTENDED_NODE = 10;
+	int ALT_TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALT_TYPE__DESCRIPTION = BINARY_NODE_TYPE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Graphics</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALT_TYPE__GRAPHICS = BINARY_NODE_TYPE__GRAPHICS;
+
+	/**
+	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALT_TYPE__ABSTRACT = BINARY_NODE_TYPE__ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALT_TYPE__HIDDEN = BINARY_NODE_TYPE__HIDDEN;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALT_TYPE__MANDATORY = BINARY_NODE_TYPE__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALT_TYPE__NAME = BINARY_NODE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Node Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALT_TYPE__NODE_GROUP = BINARY_NODE_TYPE__NODE_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Node List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALT_TYPE__NODE_LIST_GROUP = BINARY_NODE_TYPE__NODE_LIST_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Node List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALT_TYPE__NODE_LIST = BINARY_NODE_TYPE__NODE_LIST;
+
+	/**
+	 * The number of structural features of the '<em>Alt Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALT_TYPE_FEATURE_COUNT = BINARY_NODE_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Alt Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALT_TYPE_OPERATION_COUNT = BINARY_NODE_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.ConjTypeImpl <em>Conj Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.ConjTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getConjType()
+	 * @generated
+	 */
+	int CONJ_TYPE = 7;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.DisjTypeImpl <em>Disj Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.DisjTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getDisjType()
+	 * @generated
+	 */
+	int DISJ_TYPE = 9;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.EqTypeImpl <em>Eq Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.EqTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getEqType()
+	 * @generated
+	 */
+	int EQ_TYPE = 11;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.ImpTypeImpl <em>Imp Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.ImpTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getImpType()
+	 * @generated
+	 */
+	int IMP_TYPE = 20;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.NotTypeImpl <em>Not Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.NotTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getNotType()
+	 * @generated
+	 */
+	int NOT_TYPE = 23;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.OrTypeImpl <em>Or Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.OrTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getOrType()
+	 * @generated
+	 */
+	int OR_TYPE = 24;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.UnaryExtendedNodeTypeImpl <em>Unary Extended Node Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.UnaryExtendedNodeTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getUnaryExtendedNodeType()
+	 * @generated
+	 */
+	int UNARY_EXTENDED_NODE_TYPE = 30;
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.UnaryNodeTypeImpl <em>Unary Node Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.UnaryNodeTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getUnaryNodeType()
+	 * @generated
+	 */
+	int UNARY_NODE_TYPE = 31;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_NODE_TYPE__DESCRIPTION = NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Graphics</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_NODE_TYPE__GRAPHICS = NODE__GRAPHICS;
+
+	/**
+	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_NODE_TYPE__ABSTRACT = NODE__ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_NODE_TYPE__HIDDEN = NODE__HIDDEN;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_NODE_TYPE__MANDATORY = NODE__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_NODE_TYPE__NAME = NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Node Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_NODE_TYPE__NODE_GROUP = NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Node List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_NODE_TYPE__NODE_LIST_GROUP = NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Node List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_NODE_TYPE__NODE_LIST = NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Unary Node Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_NODE_TYPE_FEATURE_COUNT = NODE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Unary Node Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_NODE_TYPE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.AndTypeImpl <em>And Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see FeatureIDEXSD.impl.AndTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getAndType()
+	 * @generated
+	 */
+	int AND_TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TYPE__DESCRIPTION = UNARY_NODE_TYPE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Graphics</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TYPE__GRAPHICS = UNARY_NODE_TYPE__GRAPHICS;
+
+	/**
+	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TYPE__ABSTRACT = UNARY_NODE_TYPE__ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TYPE__HIDDEN = UNARY_NODE_TYPE__HIDDEN;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TYPE__MANDATORY = UNARY_NODE_TYPE__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TYPE__NAME = UNARY_NODE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Node Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TYPE__NODE_GROUP = UNARY_NODE_TYPE__NODE_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Node List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TYPE__NODE_LIST_GROUP = UNARY_NODE_TYPE__NODE_LIST_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Node List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TYPE__NODE_LIST = UNARY_NODE_TYPE__NODE_LIST;
+
+	/**
+	 * The number of structural features of the '<em>And Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TYPE_FEATURE_COUNT = UNARY_NODE_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>And Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TYPE_OPERATION_COUNT = UNARY_NODE_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Expression Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_EXPRESSION_TYPE__EXPRESSION_GROUP = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Expression List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Expression List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_EXPRESSION_TYPE__EXPRESSION_LIST = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Binary Expression Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_EXPRESSION_TYPE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Binary Expression Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_EXPRESSION_TYPE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -348,16 +979,6 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTENDED_NODE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.BinaryExtendedNodeTypeImpl <em>Binary Extended Node Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.BinaryExtendedNodeTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getBinaryExtendedNodeType()
-	 * @generated
-	 */
-	int BINARY_EXTENDED_NODE_TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -486,143 +1107,6 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int BINARY_EXTENDED_NODE_TYPE_OPERATION_COUNT = EXTENDED_NODE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.BinaryNodeTypeImpl <em>Binary Node Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.BinaryNodeTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getBinaryNodeType()
-	 * @generated
-	 */
-	int BINARY_NODE_TYPE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE__DESCRIPTION = NODE__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Graphics</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE__GRAPHICS = NODE__GRAPHICS;
-
-	/**
-	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE__ABSTRACT = NODE__ABSTRACT;
-
-	/**
-	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE__HIDDEN = NODE__HIDDEN;
-
-	/**
-	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE__MANDATORY = NODE__MANDATORY;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE__NAME = NODE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Node Group</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE__NODE_GROUP = NODE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Feature</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE__FEATURE = NODE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Alt</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE__ALT = NODE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Or</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE__OR = NODE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>And</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE__AND = NODE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Binary Node Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE_FEATURE_COUNT = NODE_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of operations of the '<em>Binary Node Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_NODE_TYPE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.CalculationsTypeImpl <em>Calculations Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.CalculationsTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getCalculationsType()
-	 * @generated
-	 */
-	int CALCULATIONS_TYPE = 3;
-
-	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -659,16 +1143,6 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int CALCULATIONS_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.CommentsTypeImpl <em>Comments Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.CommentsTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getCommentsType()
-	 * @generated
-	 */
-	int COMMENTS_TYPE = 4;
-
-	/**
 	 * The feature id for the '<em><b>C</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -696,14 +1170,49 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int COMMENTS_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.ConstraintsTypeImpl <em>Constraints Type</em>}' class.
+	 * The feature id for the '<em><b>Expression Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.ConstraintsTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getConstraintsType()
 	 * @generated
+	 * @ordered
 	 */
-	int CONSTRAINTS_TYPE = 5;
+	int CONJ_TYPE__EXPRESSION_GROUP = BINARY_EXPRESSION_TYPE__EXPRESSION_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Expression List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONJ_TYPE__EXPRESSION_LIST_GROUP = BINARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Expression List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONJ_TYPE__EXPRESSION_LIST = BINARY_EXPRESSION_TYPE__EXPRESSION_LIST;
+
+	/**
+	 * The number of structural features of the '<em>Conj Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONJ_TYPE_FEATURE_COUNT = BINARY_EXPRESSION_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Conj Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONJ_TYPE_OPERATION_COUNT = BINARY_EXPRESSION_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Rule</b></em>' containment reference list.
@@ -733,14 +1242,49 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int CONSTRAINTS_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.DocumentRootImpl <em>Document Root</em>}' class.
+	 * The feature id for the '<em><b>Expression Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.DocumentRootImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getDocumentRoot()
 	 * @generated
+	 * @ordered
 	 */
-	int DOCUMENT_ROOT = 6;
+	int DISJ_TYPE__EXPRESSION_GROUP = BINARY_EXPRESSION_TYPE__EXPRESSION_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Expression List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISJ_TYPE__EXPRESSION_LIST_GROUP = BINARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Expression List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISJ_TYPE__EXPRESSION_LIST = BINARY_EXPRESSION_TYPE__EXPRESSION_LIST;
+
+	/**
+	 * The number of structural features of the '<em>Disj Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISJ_TYPE_FEATURE_COUNT = BINARY_EXPRESSION_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Disj Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISJ_TYPE_OPERATION_COUNT = BINARY_EXPRESSION_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -770,13 +1314,40 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Alt</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__ALT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Node List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__NODE_LIST = 4;
+
+	/**
+	 * The feature id for the '<em><b>And</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__AND = 5;
+
+	/**
 	 * The feature id for the '<em><b>C</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__C = 3;
+	int DOCUMENT_ROOT__C = 6;
 
 	/**
 	 * The feature id for the '<em><b>Calculations</b></em>' containment reference.
@@ -785,7 +1356,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__CALCULATIONS = 4;
+	int DOCUMENT_ROOT__CALCULATIONS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference.
@@ -794,7 +1365,25 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__COMMENTS = 5;
+	int DOCUMENT_ROOT__COMMENTS = 8;
+
+	/**
+	 * The feature id for the '<em><b>Conj</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__CONJ = 9;
+
+	/**
+	 * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__EXPRESSION_LIST = 10;
 
 	/**
 	 * The feature id for the '<em><b>Constraints</b></em>' containment reference.
@@ -803,7 +1392,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__CONSTRAINTS = 6;
+	int DOCUMENT_ROOT__CONSTRAINTS = 11;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -812,7 +1401,25 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__DESCRIPTION = 7;
+	int DOCUMENT_ROOT__DESCRIPTION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Disj</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__DISJ = 13;
+
+	/**
+	 * The feature id for the '<em><b>Eq</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__EQ = 14;
 
 	/**
 	 * The feature id for the '<em><b>Extended Feature Model</b></em>' containment reference.
@@ -821,7 +1428,16 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL = 8;
+	int DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL = 15;
+
+	/**
+	 * The feature id for the '<em><b>Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__FEATURE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Feature Model</b></em>' containment reference.
@@ -830,7 +1446,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__FEATURE_MODEL = 9;
+	int DOCUMENT_ROOT__FEATURE_MODEL = 17;
 
 	/**
 	 * The feature id for the '<em><b>Feature Order</b></em>' containment reference.
@@ -839,7 +1455,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__FEATURE_ORDER = 10;
+	int DOCUMENT_ROOT__FEATURE_ORDER = 18;
 
 	/**
 	 * The feature id for the '<em><b>Graphics</b></em>' containment reference.
@@ -848,7 +1464,34 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__GRAPHICS = 11;
+	int DOCUMENT_ROOT__GRAPHICS = 19;
+
+	/**
+	 * The feature id for the '<em><b>Imp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__IMP = 20;
+
+	/**
+	 * The feature id for the '<em><b>Not</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__NOT = 21;
+
+	/**
+	 * The feature id for the '<em><b>Or</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__OR = 22;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference.
@@ -857,7 +1500,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__PROPERTIES = 12;
+	int DOCUMENT_ROOT__PROPERTIES = 23;
 
 	/**
 	 * The feature id for the '<em><b>Rule</b></em>' containment reference.
@@ -866,7 +1509,16 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT__RULE = 13;
+	int DOCUMENT_ROOT__RULE = 24;
+
+	/**
+	 * The feature id for the '<em><b>Var</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__VAR = 25;
 
 	/**
 	 * The number of structural features of the '<em>Document Root</em>' class.
@@ -875,7 +1527,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT_FEATURE_COUNT = 14;
+	int DOCUMENT_ROOT_FEATURE_COUNT = 26;
 
 	/**
 	 * The number of operations of the '<em>Document Root</em>' class.
@@ -887,14 +1539,49 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int DOCUMENT_ROOT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.ExtendedFeatureModelTypeImpl <em>Extended Feature Model Type</em>}' class.
+	 * The feature id for the '<em><b>Expression Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.ExtendedFeatureModelTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getExtendedFeatureModelType()
 	 * @generated
+	 * @ordered
 	 */
-	int EXTENDED_FEATURE_MODEL_TYPE = 8;
+	int EQ_TYPE__EXPRESSION_GROUP = BINARY_EXPRESSION_TYPE__EXPRESSION_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Expression List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQ_TYPE__EXPRESSION_LIST_GROUP = BINARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Expression List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQ_TYPE__EXPRESSION_LIST = BINARY_EXPRESSION_TYPE__EXPRESSION_LIST;
+
+	/**
+	 * The number of structural features of the '<em>Eq Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQ_TYPE_FEATURE_COUNT = BINARY_EXPRESSION_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Eq Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQ_TYPE_OPERATION_COUNT = BINARY_EXPRESSION_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference.
@@ -967,16 +1654,6 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTENDED_FEATURE_MODEL_TYPE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.ExtendedLeafTypeImpl <em>Extended Leaf Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.ExtendedLeafTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getExtendedLeafType()
-	 * @generated
-	 */
-	int EXTENDED_LEAF_TYPE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1060,16 +1737,6 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int EXTENDED_LEAF_TYPE_OPERATION_COUNT = EXTENDED_NODE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.FeatureModelTypeImpl <em>Feature Model Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.FeatureModelTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getFeatureModelType()
-	 * @generated
-	 */
-	int FEATURE_MODEL_TYPE = 11;
-
-	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1142,16 +1809,6 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int FEATURE_MODEL_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.FeatureOrderTypeImpl <em>Feature Order Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.FeatureOrderTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getFeatureOrderType()
-	 * @generated
-	 */
-	int FEATURE_ORDER_TYPE = 12;
-
-	/**
 	 * The feature id for the '<em><b>Feature</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1186,62 +1843,6 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_ORDER_TYPE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.GraphicsTypeImpl <em>Graphics Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.GraphicsTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getGraphicsType()
-	 * @generated
-	 */
-	int GRAPHICS_TYPE = 13;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPHICS_TYPE__KEY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPHICS_TYPE__VALUE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Graphics Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPHICS_TYPE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Graphics Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPHICS_TYPE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.LeafTypeImpl <em>Leaf Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.LeafTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getLeafType()
-	 * @generated
-	 */
-	int LEAF_TYPE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1316,14 +1917,338 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int LEAF_TYPE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.PropertiesTypeImpl <em>Properties Type</em>}' class.
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.FeatureTypeImpl <em>Feature Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.PropertiesTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getPropertiesType()
+	 * @see FeatureIDEXSD.impl.FeatureTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getFeatureType()
 	 * @generated
 	 */
-	int PROPERTIES_TYPE = 16;
+	int FEATURE_TYPE = 18;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_TYPE__DESCRIPTION = LEAF_TYPE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Graphics</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_TYPE__GRAPHICS = LEAF_TYPE__GRAPHICS;
+
+	/**
+	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_TYPE__ABSTRACT = LEAF_TYPE__ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_TYPE__HIDDEN = LEAF_TYPE__HIDDEN;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_TYPE__MANDATORY = LEAF_TYPE__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_TYPE__NAME = LEAF_TYPE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Feature Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_TYPE_FEATURE_COUNT = LEAF_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Feature Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_TYPE_OPERATION_COUNT = LEAF_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPHICS_TYPE__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPHICS_TYPE__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Graphics Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPHICS_TYPE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Graphics Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPHICS_TYPE_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Expression Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMP_TYPE__EXPRESSION_GROUP = BINARY_EXPRESSION_TYPE__EXPRESSION_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Expression List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMP_TYPE__EXPRESSION_LIST_GROUP = BINARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Expression List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMP_TYPE__EXPRESSION_LIST = BINARY_EXPRESSION_TYPE__EXPRESSION_LIST;
+
+	/**
+	 * The number of structural features of the '<em>Imp Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMP_TYPE_FEATURE_COUNT = BINARY_EXPRESSION_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Imp Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMP_TYPE_OPERATION_COUNT = BINARY_EXPRESSION_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Expression List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_EXPRESSION_TYPE__EXPRESSION_LIST = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Unary Expression Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_EXPRESSION_TYPE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Unary Expression Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_EXPRESSION_TYPE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Expression List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_TYPE__EXPRESSION_LIST_GROUP = UNARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Expression List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_TYPE__EXPRESSION_LIST = UNARY_EXPRESSION_TYPE__EXPRESSION_LIST;
+
+	/**
+	 * The number of structural features of the '<em>Not Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_TYPE_FEATURE_COUNT = UNARY_EXPRESSION_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Not Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_TYPE_OPERATION_COUNT = UNARY_EXPRESSION_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TYPE__DESCRIPTION = BINARY_NODE_TYPE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Graphics</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TYPE__GRAPHICS = BINARY_NODE_TYPE__GRAPHICS;
+
+	/**
+	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TYPE__ABSTRACT = BINARY_NODE_TYPE__ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TYPE__HIDDEN = BINARY_NODE_TYPE__HIDDEN;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TYPE__MANDATORY = BINARY_NODE_TYPE__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TYPE__NAME = BINARY_NODE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Node Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TYPE__NODE_GROUP = BINARY_NODE_TYPE__NODE_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Node List Group</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TYPE__NODE_LIST_GROUP = BINARY_NODE_TYPE__NODE_LIST_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Node List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TYPE__NODE_LIST = BINARY_NODE_TYPE__NODE_LIST;
+
+	/**
+	 * The number of structural features of the '<em>Or Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TYPE_FEATURE_COUNT = BINARY_NODE_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Or Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TYPE_OPERATION_COUNT = BINARY_NODE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
@@ -1371,16 +2296,6 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int PROPERTIES_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.RuleTypeImpl <em>Rule Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.RuleTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getRuleType()
-	 * @generated
-	 */
-	int RULE_TYPE = 17;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1390,58 +2305,22 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int RULE_TYPE__DESCRIPTION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Disj</b></em>' containment reference.
+	 * The feature id for the '<em><b>Expression List Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_TYPE__DISJ = 1;
+	int RULE_TYPE__EXPRESSION_LIST_GROUP = 1;
 
 	/**
-	 * The feature id for the '<em><b>Conj</b></em>' containment reference.
+	 * The feature id for the '<em><b>Expression List</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_TYPE__CONJ = 2;
-
-	/**
-	 * The feature id for the '<em><b>Imp</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE_TYPE__IMP = 3;
-
-	/**
-	 * The feature id for the '<em><b>Eq</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE_TYPE__EQ = 4;
-
-	/**
-	 * The feature id for the '<em><b>Not</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE_TYPE__NOT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Var</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE_TYPE__VAR = 6;
+	int RULE_TYPE__EXPRESSION_LIST = 2;
 
 	/**
 	 * The number of structural features of the '<em>Rule Type</em>' class.
@@ -1450,7 +2329,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_TYPE_FEATURE_COUNT = 7;
+	int RULE_TYPE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Rule Type</em>' class.
@@ -1462,50 +2341,22 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int RULE_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.StructTypeImpl <em>Struct Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.StructTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getStructType()
-	 * @generated
-	 */
-	int STRUCT_TYPE = 18;
-
-	/**
-	 * The feature id for the '<em><b>Feature</b></em>' containment reference.
+	 * The feature id for the '<em><b>Node List Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__FEATURE = 0;
+	int STRUCT_TYPE__NODE_LIST_GROUP = 0;
 
 	/**
-	 * The feature id for the '<em><b>Alt</b></em>' containment reference.
+	 * The feature id for the '<em><b>Node List</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__ALT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Or</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCT_TYPE__OR = 2;
-
-	/**
-	 * The feature id for the '<em><b>And</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCT_TYPE__AND = 3;
+	int STRUCT_TYPE__NODE_LIST = 1;
 
 	/**
 	 * The number of structural features of the '<em>Struct Type</em>' class.
@@ -1514,7 +2365,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE_FEATURE_COUNT = 4;
+	int STRUCT_TYPE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Struct Type</em>' class.
@@ -1526,23 +2377,13 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int STRUCT_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.ExtendedStructTypeImpl <em>Extended Struct Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.ExtendedStructTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getExtendedStructType()
-	 * @generated
-	 */
-	int EXTENDED_STRUCT_TYPE = 19;
-
-	/**
 	 * The feature id for the '<em><b>Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDED_STRUCT_TYPE__FEATURE = 0;
+	int STRUCT_TYPE1__FEATURE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Alt</b></em>' containment reference.
@@ -1551,7 +2392,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDED_STRUCT_TYPE__ALT = 1;
+	int STRUCT_TYPE1__ALT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Or</b></em>' containment reference.
@@ -1560,7 +2401,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDED_STRUCT_TYPE__OR = 2;
+	int STRUCT_TYPE1__OR = 2;
 
 	/**
 	 * The feature id for the '<em><b>And</b></em>' containment reference.
@@ -1569,117 +2410,25 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDED_STRUCT_TYPE__AND = 3;
+	int STRUCT_TYPE1__AND = 3;
 
 	/**
-	 * The number of structural features of the '<em>Extended Struct Type</em>' class.
+	 * The number of structural features of the '<em>Struct Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDED_STRUCT_TYPE_FEATURE_COUNT = 4;
+	int STRUCT_TYPE1_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of operations of the '<em>Extended Struct Type</em>' class.
+	 * The number of operations of the '<em>Struct Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDED_STRUCT_TYPE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.UnaryExpressionTypeImpl <em>Unary Expression Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.UnaryExpressionTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getUnaryExpressionType()
-	 * @generated
-	 */
-	int UNARY_EXPRESSION_TYPE = 20;
-
-	/**
-	 * The feature id for the '<em><b>Disj</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION_TYPE__DISJ = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Conj</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION_TYPE__CONJ = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Imp</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION_TYPE__IMP = EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Eq</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION_TYPE__EQ = EXPRESSION_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Not</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION_TYPE__NOT = EXPRESSION_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Var</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION_TYPE__VAR = EXPRESSION_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Unary Expression Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION_TYPE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of operations of the '<em>Unary Expression Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_EXPRESSION_TYPE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.UnaryExtendedNodeTypeImpl <em>Unary Extended Node Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.UnaryExtendedNodeTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getUnaryExtendedNodeType()
-	 * @generated
-	 */
-	int UNARY_EXTENDED_NODE_TYPE = 21;
+	int STRUCT_TYPE1_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1808,132 +2557,62 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int UNARY_EXTENDED_NODE_TYPE_OPERATION_COUNT = EXTENDED_NODE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link FeatureIDEXSD.impl.UnaryNodeTypeImpl <em>Unary Node Type</em>}' class.
+	 * The meta object id for the '{@link FeatureIDEXSD.impl.VarTypeImpl <em>Var Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see FeatureIDEXSD.impl.UnaryNodeTypeImpl
-	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getUnaryNodeType()
+	 * @see FeatureIDEXSD.impl.VarTypeImpl
+	 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getVarType()
 	 * @generated
 	 */
-	int UNARY_NODE_TYPE = 22;
+	int VAR_TYPE = 32;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_NODE_TYPE__DESCRIPTION = NODE__DESCRIPTION;
+	int VAR_TYPE__MIXED = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Graphics</b></em>' containment reference.
+	 * The number of structural features of the '<em>Var Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_NODE_TYPE__GRAPHICS = NODE__GRAPHICS;
+	int VAR_TYPE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
+	 * The number of operations of the '<em>Var Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_NODE_TYPE__ABSTRACT = NODE__ABSTRACT;
+	int VAR_TYPE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
 
 	/**
-	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * Returns the meta object for class '{@link FeatureIDEXSD.AltType <em>Alt Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Alt Type</em>'.
+	 * @see FeatureIDEXSD.AltType
 	 * @generated
-	 * @ordered
 	 */
-	int UNARY_NODE_TYPE__HIDDEN = NODE__HIDDEN;
+	EClass getAltType();
 
 	/**
-	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * Returns the meta object for class '{@link FeatureIDEXSD.AndType <em>And Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>And Type</em>'.
+	 * @see FeatureIDEXSD.AndType
 	 * @generated
-	 * @ordered
 	 */
-	int UNARY_NODE_TYPE__MANDATORY = NODE__MANDATORY;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_NODE_TYPE__NAME = NODE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Node Group</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_NODE_TYPE__NODE_GROUP = NODE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Feature</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_NODE_TYPE__FEATURE = NODE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Alt</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_NODE_TYPE__ALT = NODE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Or</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_NODE_TYPE__OR = NODE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>And</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_NODE_TYPE__AND = NODE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Unary Node Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_NODE_TYPE_FEATURE_COUNT = NODE_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of operations of the '<em>Unary Node Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_NODE_TYPE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
-
+	EClass getAndType();
 
 	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.BinaryExpressionType <em>Binary Expression Type</em>}'.
@@ -1957,70 +2636,26 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EAttribute getBinaryExpressionType_ExpressionGroup();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.BinaryExpressionType#getDisj <em>Disj</em>}'.
+	 * Returns the meta object for the attribute list '{@link FeatureIDEXSD.BinaryExpressionType#getExpressionListGroup <em>Expression List Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Disj</em>'.
-	 * @see FeatureIDEXSD.BinaryExpressionType#getDisj()
+	 * @return the meta object for the attribute list '<em>Expression List Group</em>'.
+	 * @see FeatureIDEXSD.BinaryExpressionType#getExpressionListGroup()
 	 * @see #getBinaryExpressionType()
 	 * @generated
 	 */
-	EReference getBinaryExpressionType_Disj();
+	EAttribute getBinaryExpressionType_ExpressionListGroup();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.BinaryExpressionType#getConj <em>Conj</em>}'.
+	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.BinaryExpressionType#getExpressionList <em>Expression List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Conj</em>'.
-	 * @see FeatureIDEXSD.BinaryExpressionType#getConj()
+	 * @return the meta object for the containment reference list '<em>Expression List</em>'.
+	 * @see FeatureIDEXSD.BinaryExpressionType#getExpressionList()
 	 * @see #getBinaryExpressionType()
 	 * @generated
 	 */
-	EReference getBinaryExpressionType_Conj();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.BinaryExpressionType#getImp <em>Imp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Imp</em>'.
-	 * @see FeatureIDEXSD.BinaryExpressionType#getImp()
-	 * @see #getBinaryExpressionType()
-	 * @generated
-	 */
-	EReference getBinaryExpressionType_Imp();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.BinaryExpressionType#getEq <em>Eq</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Eq</em>'.
-	 * @see FeatureIDEXSD.BinaryExpressionType#getEq()
-	 * @see #getBinaryExpressionType()
-	 * @generated
-	 */
-	EReference getBinaryExpressionType_Eq();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.BinaryExpressionType#getNot <em>Not</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Not</em>'.
-	 * @see FeatureIDEXSD.BinaryExpressionType#getNot()
-	 * @see #getBinaryExpressionType()
-	 * @generated
-	 */
-	EReference getBinaryExpressionType_Not();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link FeatureIDEXSD.BinaryExpressionType#getVar <em>Var</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Var</em>'.
-	 * @see FeatureIDEXSD.BinaryExpressionType#getVar()
-	 * @see #getBinaryExpressionType()
-	 * @generated
-	 */
-	EAttribute getBinaryExpressionType_Var();
+	EReference getBinaryExpressionType_ExpressionList();
 
 	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.BinaryExtendedNodeType <em>Binary Extended Node Type</em>}'.
@@ -2109,48 +2744,26 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EAttribute getBinaryNodeType_NodeGroup();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.BinaryNodeType#getFeature <em>Feature</em>}'.
+	 * Returns the meta object for the attribute list '{@link FeatureIDEXSD.BinaryNodeType#getNodeListGroup <em>Node List Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Feature</em>'.
-	 * @see FeatureIDEXSD.BinaryNodeType#getFeature()
+	 * @return the meta object for the attribute list '<em>Node List Group</em>'.
+	 * @see FeatureIDEXSD.BinaryNodeType#getNodeListGroup()
 	 * @see #getBinaryNodeType()
 	 * @generated
 	 */
-	EReference getBinaryNodeType_Feature();
+	EAttribute getBinaryNodeType_NodeListGroup();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.BinaryNodeType#getAlt <em>Alt</em>}'.
+	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.BinaryNodeType#getNodeList <em>Node List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Alt</em>'.
-	 * @see FeatureIDEXSD.BinaryNodeType#getAlt()
+	 * @return the meta object for the containment reference list '<em>Node List</em>'.
+	 * @see FeatureIDEXSD.BinaryNodeType#getNodeList()
 	 * @see #getBinaryNodeType()
 	 * @generated
 	 */
-	EReference getBinaryNodeType_Alt();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.BinaryNodeType#getOr <em>Or</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Or</em>'.
-	 * @see FeatureIDEXSD.BinaryNodeType#getOr()
-	 * @see #getBinaryNodeType()
-	 * @generated
-	 */
-	EReference getBinaryNodeType_Or();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.BinaryNodeType#getAnd <em>And</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>And</em>'.
-	 * @see FeatureIDEXSD.BinaryNodeType#getAnd()
-	 * @see #getBinaryNodeType()
-	 * @generated
-	 */
-	EReference getBinaryNodeType_And();
+	EReference getBinaryNodeType_NodeList();
 
 	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.CalculationsType <em>Calculations Type</em>}'.
@@ -2206,6 +2819,16 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EAttribute getCommentsType_C();
 
 	/**
+	 * Returns the meta object for class '{@link FeatureIDEXSD.ConjType <em>Conj Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conj Type</em>'.
+	 * @see FeatureIDEXSD.ConjType
+	 * @generated
+	 */
+	EClass getConjType();
+
+	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.ConstraintsType <em>Constraints Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2225,6 +2848,16 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConstraintsType_Rule();
+
+	/**
+	 * Returns the meta object for class '{@link FeatureIDEXSD.DisjType <em>Disj Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Disj Type</em>'.
+	 * @see FeatureIDEXSD.DisjType
+	 * @generated
+	 */
+	EClass getDisjType();
 
 	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.DocumentRoot <em>Document Root</em>}'.
@@ -2270,6 +2903,39 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EReference getDocumentRoot_XSISchemaLocation();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getAlt <em>Alt</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Alt</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getAlt()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Alt();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getNodeList <em>Node List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Node List</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getNodeList()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_NodeList();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getAnd <em>And</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>And</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getAnd()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_And();
+
+	/**
 	 * Returns the meta object for the attribute '{@link FeatureIDEXSD.DocumentRoot#getC <em>C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2303,6 +2969,28 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EReference getDocumentRoot_Comments();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getConj <em>Conj</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Conj</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getConj()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Conj();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getExpressionList <em>Expression List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression List</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getExpressionList()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_ExpressionList();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getConstraints <em>Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2325,6 +3013,28 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EAttribute getDocumentRoot_Description();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getDisj <em>Disj</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Disj</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getDisj()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Disj();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getEq <em>Eq</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Eq</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getEq()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Eq();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getExtendedFeatureModel <em>Extended Feature Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2334,6 +3044,17 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDocumentRoot_ExtendedFeatureModel();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getFeature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Feature</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getFeature()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Feature();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getFeatureModel <em>Feature Model</em>}'.
@@ -2369,6 +3090,39 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EReference getDocumentRoot_Graphics();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getImp <em>Imp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Imp</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getImp()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Imp();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getNot <em>Not</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Not</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getNot()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Not();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getOr <em>Or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Or</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getOr()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Or();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2389,6 +3143,27 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDocumentRoot_Rule();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.DocumentRoot#getVar <em>Var</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Var</em>'.
+	 * @see FeatureIDEXSD.DocumentRoot#getVar()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Var();
+
+	/**
+	 * Returns the meta object for class '{@link FeatureIDEXSD.EqType <em>Eq Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Eq Type</em>'.
+	 * @see FeatureIDEXSD.EqType
+	 * @generated
+	 */
+	EClass getEqType();
 
 	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.Expression <em>Expression</em>}'.
@@ -2616,6 +3391,16 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EAttribute getFeatureOrderType_UserDefined();
 
 	/**
+	 * Returns the meta object for class '{@link FeatureIDEXSD.FeatureType <em>Feature Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Type</em>'.
+	 * @see FeatureIDEXSD.FeatureType
+	 * @generated
+	 */
+	EClass getFeatureType();
+
+	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.GraphicsType <em>Graphics Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2646,6 +3431,16 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getGraphicsType_Value();
+
+	/**
+	 * Returns the meta object for class '{@link FeatureIDEXSD.ImpType <em>Imp Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Imp Type</em>'.
+	 * @see FeatureIDEXSD.ImpType
+	 * @generated
+	 */
+	EClass getImpType();
 
 	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.LeafType <em>Leaf Type</em>}'.
@@ -2734,6 +3529,26 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EAttribute getNode_Name();
 
 	/**
+	 * Returns the meta object for class '{@link FeatureIDEXSD.NotType <em>Not Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Not Type</em>'.
+	 * @see FeatureIDEXSD.NotType
+	 * @generated
+	 */
+	EClass getNotType();
+
+	/**
+	 * Returns the meta object for class '{@link FeatureIDEXSD.OrType <em>Or Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Or Type</em>'.
+	 * @see FeatureIDEXSD.OrType
+	 * @generated
+	 */
+	EClass getOrType();
+
+	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.PropertiesType <em>Properties Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2798,70 +3613,26 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EAttribute getRuleType_Description();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.RuleType#getDisj <em>Disj</em>}'.
+	 * Returns the meta object for the attribute list '{@link FeatureIDEXSD.RuleType#getExpressionListGroup <em>Expression List Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Disj</em>'.
-	 * @see FeatureIDEXSD.RuleType#getDisj()
+	 * @return the meta object for the attribute list '<em>Expression List Group</em>'.
+	 * @see FeatureIDEXSD.RuleType#getExpressionListGroup()
 	 * @see #getRuleType()
 	 * @generated
 	 */
-	EReference getRuleType_Disj();
+	EAttribute getRuleType_ExpressionListGroup();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.RuleType#getConj <em>Conj</em>}'.
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.RuleType#getExpressionList <em>Expression List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Conj</em>'.
-	 * @see FeatureIDEXSD.RuleType#getConj()
+	 * @return the meta object for the containment reference '<em>Expression List</em>'.
+	 * @see FeatureIDEXSD.RuleType#getExpressionList()
 	 * @see #getRuleType()
 	 * @generated
 	 */
-	EReference getRuleType_Conj();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.RuleType#getImp <em>Imp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Imp</em>'.
-	 * @see FeatureIDEXSD.RuleType#getImp()
-	 * @see #getRuleType()
-	 * @generated
-	 */
-	EReference getRuleType_Imp();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.RuleType#getEq <em>Eq</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Eq</em>'.
-	 * @see FeatureIDEXSD.RuleType#getEq()
-	 * @see #getRuleType()
-	 * @generated
-	 */
-	EReference getRuleType_Eq();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.RuleType#getNot <em>Not</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Not</em>'.
-	 * @see FeatureIDEXSD.RuleType#getNot()
-	 * @see #getRuleType()
-	 * @generated
-	 */
-	EReference getRuleType_Not();
-
-	/**
-	 * Returns the meta object for the attribute '{@link FeatureIDEXSD.RuleType#getVar <em>Var</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Var</em>'.
-	 * @see FeatureIDEXSD.RuleType#getVar()
-	 * @see #getRuleType()
-	 * @generated
-	 */
-	EAttribute getRuleType_Var();
+	EReference getRuleType_ExpressionList();
 
 	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.StructType <em>Struct Type</em>}'.
@@ -2874,102 +3645,80 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EClass getStructType();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType#getFeature <em>Feature</em>}'.
+	 * Returns the meta object for the attribute list '{@link FeatureIDEXSD.StructType#getNodeListGroup <em>Node List Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Node List Group</em>'.
+	 * @see FeatureIDEXSD.StructType#getNodeListGroup()
+	 * @see #getStructType()
+	 * @generated
+	 */
+	EAttribute getStructType_NodeListGroup();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType#getNodeList <em>Node List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Node List</em>'.
+	 * @see FeatureIDEXSD.StructType#getNodeList()
+	 * @see #getStructType()
+	 * @generated
+	 */
+	EReference getStructType_NodeList();
+
+	/**
+	 * Returns the meta object for class '{@link FeatureIDEXSD.StructType1 <em>Struct Type1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Struct Type1</em>'.
+	 * @see FeatureIDEXSD.StructType1
+	 * @generated
+	 */
+	EClass getStructType1();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType1#getFeature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Feature</em>'.
-	 * @see FeatureIDEXSD.StructType#getFeature()
-	 * @see #getStructType()
+	 * @see FeatureIDEXSD.StructType1#getFeature()
+	 * @see #getStructType1()
 	 * @generated
 	 */
-	EReference getStructType_Feature();
+	EReference getStructType1_Feature();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType#getAlt <em>Alt</em>}'.
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType1#getAlt <em>Alt</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Alt</em>'.
-	 * @see FeatureIDEXSD.StructType#getAlt()
-	 * @see #getStructType()
+	 * @see FeatureIDEXSD.StructType1#getAlt()
+	 * @see #getStructType1()
 	 * @generated
 	 */
-	EReference getStructType_Alt();
+	EReference getStructType1_Alt();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType#getOr <em>Or</em>}'.
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType1#getOr <em>Or</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Or</em>'.
-	 * @see FeatureIDEXSD.StructType#getOr()
-	 * @see #getStructType()
+	 * @see FeatureIDEXSD.StructType1#getOr()
+	 * @see #getStructType1()
 	 * @generated
 	 */
-	EReference getStructType_Or();
+	EReference getStructType1_Or();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType#getAnd <em>And</em>}'.
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType1#getAnd <em>And</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>And</em>'.
-	 * @see FeatureIDEXSD.StructType#getAnd()
-	 * @see #getStructType()
+	 * @see FeatureIDEXSD.StructType1#getAnd()
+	 * @see #getStructType1()
 	 * @generated
 	 */
-	EReference getStructType_And();
-
-	/**
-	 * Returns the meta object for class '{@link FeatureIDEXSD.ExtendedStructType <em>Extended Struct Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Extended Struct Type</em>'.
-	 * @see FeatureIDEXSD.ExtendedStructType
-	 * @generated
-	 */
-	EClass getExtendedStructType();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.ExtendedStructType#getFeature <em>Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Feature</em>'.
-	 * @see FeatureIDEXSD.ExtendedStructType#getFeature()
-	 * @see #getExtendedStructType()
-	 * @generated
-	 */
-	EReference getExtendedStructType_Feature();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.ExtendedStructType#getAlt <em>Alt</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Alt</em>'.
-	 * @see FeatureIDEXSD.ExtendedStructType#getAlt()
-	 * @see #getExtendedStructType()
-	 * @generated
-	 */
-	EReference getExtendedStructType_Alt();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.ExtendedStructType#getOr <em>Or</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Or</em>'.
-	 * @see FeatureIDEXSD.ExtendedStructType#getOr()
-	 * @see #getExtendedStructType()
-	 * @generated
-	 */
-	EReference getExtendedStructType_Or();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.ExtendedStructType#getAnd <em>And</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>And</em>'.
-	 * @see FeatureIDEXSD.ExtendedStructType#getAnd()
-	 * @see #getExtendedStructType()
-	 * @generated
-	 */
-	EReference getExtendedStructType_And();
+	EReference getStructType1_And();
 
 	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.UnaryExpressionType <em>Unary Expression Type</em>}'.
@@ -2982,70 +3731,26 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EClass getUnaryExpressionType();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.UnaryExpressionType#getDisj <em>Disj</em>}'.
+	 * Returns the meta object for the attribute list '{@link FeatureIDEXSD.UnaryExpressionType#getExpressionListGroup <em>Expression List Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Disj</em>'.
-	 * @see FeatureIDEXSD.UnaryExpressionType#getDisj()
+	 * @return the meta object for the attribute list '<em>Expression List Group</em>'.
+	 * @see FeatureIDEXSD.UnaryExpressionType#getExpressionListGroup()
 	 * @see #getUnaryExpressionType()
 	 * @generated
 	 */
-	EReference getUnaryExpressionType_Disj();
+	EAttribute getUnaryExpressionType_ExpressionListGroup();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.UnaryExpressionType#getConj <em>Conj</em>}'.
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.UnaryExpressionType#getExpressionList <em>Expression List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Conj</em>'.
-	 * @see FeatureIDEXSD.UnaryExpressionType#getConj()
+	 * @return the meta object for the containment reference '<em>Expression List</em>'.
+	 * @see FeatureIDEXSD.UnaryExpressionType#getExpressionList()
 	 * @see #getUnaryExpressionType()
 	 * @generated
 	 */
-	EReference getUnaryExpressionType_Conj();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.UnaryExpressionType#getImp <em>Imp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Imp</em>'.
-	 * @see FeatureIDEXSD.UnaryExpressionType#getImp()
-	 * @see #getUnaryExpressionType()
-	 * @generated
-	 */
-	EReference getUnaryExpressionType_Imp();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.UnaryExpressionType#getEq <em>Eq</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Eq</em>'.
-	 * @see FeatureIDEXSD.UnaryExpressionType#getEq()
-	 * @see #getUnaryExpressionType()
-	 * @generated
-	 */
-	EReference getUnaryExpressionType_Eq();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.UnaryExpressionType#getNot <em>Not</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Not</em>'.
-	 * @see FeatureIDEXSD.UnaryExpressionType#getNot()
-	 * @see #getUnaryExpressionType()
-	 * @generated
-	 */
-	EReference getUnaryExpressionType_Not();
-
-	/**
-	 * Returns the meta object for the attribute '{@link FeatureIDEXSD.UnaryExpressionType#getVar <em>Var</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Var</em>'.
-	 * @see FeatureIDEXSD.UnaryExpressionType#getVar()
-	 * @see #getUnaryExpressionType()
-	 * @generated
-	 */
-	EAttribute getUnaryExpressionType_Var();
+	EReference getUnaryExpressionType_ExpressionList();
 
 	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.UnaryExtendedNodeType <em>Unary Extended Node Type</em>}'.
@@ -3134,48 +3839,47 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EAttribute getUnaryNodeType_NodeGroup();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.UnaryNodeType#getFeature <em>Feature</em>}'.
+	 * Returns the meta object for the attribute list '{@link FeatureIDEXSD.UnaryNodeType#getNodeListGroup <em>Node List Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Feature</em>'.
-	 * @see FeatureIDEXSD.UnaryNodeType#getFeature()
+	 * @return the meta object for the attribute list '<em>Node List Group</em>'.
+	 * @see FeatureIDEXSD.UnaryNodeType#getNodeListGroup()
 	 * @see #getUnaryNodeType()
 	 * @generated
 	 */
-	EReference getUnaryNodeType_Feature();
+	EAttribute getUnaryNodeType_NodeListGroup();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.UnaryNodeType#getAlt <em>Alt</em>}'.
+	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.UnaryNodeType#getNodeList <em>Node List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Alt</em>'.
-	 * @see FeatureIDEXSD.UnaryNodeType#getAlt()
+	 * @return the meta object for the containment reference list '<em>Node List</em>'.
+	 * @see FeatureIDEXSD.UnaryNodeType#getNodeList()
 	 * @see #getUnaryNodeType()
 	 * @generated
 	 */
-	EReference getUnaryNodeType_Alt();
+	EReference getUnaryNodeType_NodeList();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.UnaryNodeType#getOr <em>Or</em>}'.
+	 * Returns the meta object for class '{@link FeatureIDEXSD.VarType <em>Var Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Or</em>'.
-	 * @see FeatureIDEXSD.UnaryNodeType#getOr()
-	 * @see #getUnaryNodeType()
+	 * @return the meta object for class '<em>Var Type</em>'.
+	 * @see FeatureIDEXSD.VarType
 	 * @generated
 	 */
-	EReference getUnaryNodeType_Or();
+	EClass getVarType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link FeatureIDEXSD.UnaryNodeType#getAnd <em>And</em>}'.
+	 * Returns the meta object for the attribute list '{@link FeatureIDEXSD.VarType#getMixed <em>Mixed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>And</em>'.
-	 * @see FeatureIDEXSD.UnaryNodeType#getAnd()
-	 * @see #getUnaryNodeType()
+	 * @return the meta object for the attribute list '<em>Mixed</em>'.
+	 * @see FeatureIDEXSD.VarType#getMixed()
+	 * @see #getVarType()
 	 * @generated
 	 */
-	EReference getUnaryNodeType_And();
+	EAttribute getVarType_Mixed();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3201,6 +3905,26 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link FeatureIDEXSD.impl.AltTypeImpl <em>Alt Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FeatureIDEXSD.impl.AltTypeImpl
+		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getAltType()
+		 * @generated
+		 */
+		EClass ALT_TYPE = eINSTANCE.getAltType();
+
+		/**
+		 * The meta object literal for the '{@link FeatureIDEXSD.impl.AndTypeImpl <em>And Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FeatureIDEXSD.impl.AndTypeImpl
+		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getAndType()
+		 * @generated
+		 */
+		EClass AND_TYPE = eINSTANCE.getAndType();
+
+		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.BinaryExpressionTypeImpl <em>Binary Expression Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3219,52 +3943,20 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EAttribute BINARY_EXPRESSION_TYPE__EXPRESSION_GROUP = eINSTANCE.getBinaryExpressionType_ExpressionGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Disj</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Expression List Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_EXPRESSION_TYPE__DISJ = eINSTANCE.getBinaryExpressionType_Disj();
+		EAttribute BINARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP = eINSTANCE.getBinaryExpressionType_ExpressionListGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Conj</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Expression List</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_EXPRESSION_TYPE__CONJ = eINSTANCE.getBinaryExpressionType_Conj();
-
-		/**
-		 * The meta object literal for the '<em><b>Imp</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BINARY_EXPRESSION_TYPE__IMP = eINSTANCE.getBinaryExpressionType_Imp();
-
-		/**
-		 * The meta object literal for the '<em><b>Eq</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BINARY_EXPRESSION_TYPE__EQ = eINSTANCE.getBinaryExpressionType_Eq();
-
-		/**
-		 * The meta object literal for the '<em><b>Not</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BINARY_EXPRESSION_TYPE__NOT = eINSTANCE.getBinaryExpressionType_Not();
-
-		/**
-		 * The meta object literal for the '<em><b>Var</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BINARY_EXPRESSION_TYPE__VAR = eINSTANCE.getBinaryExpressionType_Var();
+		EReference BINARY_EXPRESSION_TYPE__EXPRESSION_LIST = eINSTANCE.getBinaryExpressionType_ExpressionList();
 
 		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.BinaryExtendedNodeTypeImpl <em>Binary Extended Node Type</em>}' class.
@@ -3335,36 +4027,20 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EAttribute BINARY_NODE_TYPE__NODE_GROUP = eINSTANCE.getBinaryNodeType_NodeGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Feature</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Node List Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_NODE_TYPE__FEATURE = eINSTANCE.getBinaryNodeType_Feature();
+		EAttribute BINARY_NODE_TYPE__NODE_LIST_GROUP = eINSTANCE.getBinaryNodeType_NodeListGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Alt</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Node List</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_NODE_TYPE__ALT = eINSTANCE.getBinaryNodeType_Alt();
-
-		/**
-		 * The meta object literal for the '<em><b>Or</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BINARY_NODE_TYPE__OR = eINSTANCE.getBinaryNodeType_Or();
-
-		/**
-		 * The meta object literal for the '<em><b>And</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BINARY_NODE_TYPE__AND = eINSTANCE.getBinaryNodeType_And();
+		EReference BINARY_NODE_TYPE__NODE_LIST = eINSTANCE.getBinaryNodeType_NodeList();
 
 		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.CalculationsTypeImpl <em>Calculations Type</em>}' class.
@@ -3411,6 +4087,16 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EAttribute COMMENTS_TYPE__C = eINSTANCE.getCommentsType_C();
 
 		/**
+		 * The meta object literal for the '{@link FeatureIDEXSD.impl.ConjTypeImpl <em>Conj Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FeatureIDEXSD.impl.ConjTypeImpl
+		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getConjType()
+		 * @generated
+		 */
+		EClass CONJ_TYPE = eINSTANCE.getConjType();
+
+		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.ConstraintsTypeImpl <em>Constraints Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3427,6 +4113,16 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONSTRAINTS_TYPE__RULE = eINSTANCE.getConstraintsType_Rule();
+
+		/**
+		 * The meta object literal for the '{@link FeatureIDEXSD.impl.DisjTypeImpl <em>Disj Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FeatureIDEXSD.impl.DisjTypeImpl
+		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getDisjType()
+		 * @generated
+		 */
+		EClass DISJ_TYPE = eINSTANCE.getDisjType();
 
 		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.DocumentRootImpl <em>Document Root</em>}' class.
@@ -3463,6 +4159,30 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EReference DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = eINSTANCE.getDocumentRoot_XSISchemaLocation();
 
 		/**
+		 * The meta object literal for the '<em><b>Alt</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__ALT = eINSTANCE.getDocumentRoot_Alt();
+
+		/**
+		 * The meta object literal for the '<em><b>Node List</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__NODE_LIST = eINSTANCE.getDocumentRoot_NodeList();
+
+		/**
+		 * The meta object literal for the '<em><b>And</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__AND = eINSTANCE.getDocumentRoot_And();
+
+		/**
 		 * The meta object literal for the '<em><b>C</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3487,6 +4207,22 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EReference DOCUMENT_ROOT__COMMENTS = eINSTANCE.getDocumentRoot_Comments();
 
 		/**
+		 * The meta object literal for the '<em><b>Conj</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__CONJ = eINSTANCE.getDocumentRoot_Conj();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__EXPRESSION_LIST = eINSTANCE.getDocumentRoot_ExpressionList();
+
+		/**
 		 * The meta object literal for the '<em><b>Constraints</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3503,12 +4239,36 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EAttribute DOCUMENT_ROOT__DESCRIPTION = eINSTANCE.getDocumentRoot_Description();
 
 		/**
+		 * The meta object literal for the '<em><b>Disj</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__DISJ = eINSTANCE.getDocumentRoot_Disj();
+
+		/**
+		 * The meta object literal for the '<em><b>Eq</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__EQ = eINSTANCE.getDocumentRoot_Eq();
+
+		/**
 		 * The meta object literal for the '<em><b>Extended Feature Model</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL = eINSTANCE.getDocumentRoot_ExtendedFeatureModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__FEATURE = eINSTANCE.getDocumentRoot_Feature();
 
 		/**
 		 * The meta object literal for the '<em><b>Feature Model</b></em>' containment reference feature.
@@ -3535,6 +4295,30 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EReference DOCUMENT_ROOT__GRAPHICS = eINSTANCE.getDocumentRoot_Graphics();
 
 		/**
+		 * The meta object literal for the '<em><b>Imp</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__IMP = eINSTANCE.getDocumentRoot_Imp();
+
+		/**
+		 * The meta object literal for the '<em><b>Not</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__NOT = eINSTANCE.getDocumentRoot_Not();
+
+		/**
+		 * The meta object literal for the '<em><b>Or</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__OR = eINSTANCE.getDocumentRoot_Or();
+
+		/**
 		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3549,6 +4333,24 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DOCUMENT_ROOT__RULE = eINSTANCE.getDocumentRoot_Rule();
+
+		/**
+		 * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__VAR = eINSTANCE.getDocumentRoot_Var();
+
+		/**
+		 * The meta object literal for the '{@link FeatureIDEXSD.impl.EqTypeImpl <em>Eq Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FeatureIDEXSD.impl.EqTypeImpl
+		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getEqType()
+		 * @generated
+		 */
+		EClass EQ_TYPE = eINSTANCE.getEqType();
 
 		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -3731,6 +4533,16 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EAttribute FEATURE_ORDER_TYPE__USER_DEFINED = eINSTANCE.getFeatureOrderType_UserDefined();
 
 		/**
+		 * The meta object literal for the '{@link FeatureIDEXSD.impl.FeatureTypeImpl <em>Feature Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FeatureIDEXSD.impl.FeatureTypeImpl
+		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getFeatureType()
+		 * @generated
+		 */
+		EClass FEATURE_TYPE = eINSTANCE.getFeatureType();
+
+		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.GraphicsTypeImpl <em>Graphics Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3755,6 +4567,16 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GRAPHICS_TYPE__VALUE = eINSTANCE.getGraphicsType_Value();
+
+		/**
+		 * The meta object literal for the '{@link FeatureIDEXSD.impl.ImpTypeImpl <em>Imp Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FeatureIDEXSD.impl.ImpTypeImpl
+		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getImpType()
+		 * @generated
+		 */
+		EClass IMP_TYPE = eINSTANCE.getImpType();
 
 		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.LeafTypeImpl <em>Leaf Type</em>}' class.
@@ -3825,6 +4647,26 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EAttribute NODE__NAME = eINSTANCE.getNode_Name();
 
 		/**
+		 * The meta object literal for the '{@link FeatureIDEXSD.impl.NotTypeImpl <em>Not Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FeatureIDEXSD.impl.NotTypeImpl
+		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getNotType()
+		 * @generated
+		 */
+		EClass NOT_TYPE = eINSTANCE.getNotType();
+
+		/**
+		 * The meta object literal for the '{@link FeatureIDEXSD.impl.OrTypeImpl <em>Or Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see FeatureIDEXSD.impl.OrTypeImpl
+		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getOrType()
+		 * @generated
+		 */
+		EClass OR_TYPE = eINSTANCE.getOrType();
+
+		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.PropertiesTypeImpl <em>Properties Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3877,52 +4719,20 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EAttribute RULE_TYPE__DESCRIPTION = eINSTANCE.getRuleType_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Disj</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Expression List Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RULE_TYPE__DISJ = eINSTANCE.getRuleType_Disj();
+		EAttribute RULE_TYPE__EXPRESSION_LIST_GROUP = eINSTANCE.getRuleType_ExpressionListGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Conj</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RULE_TYPE__CONJ = eINSTANCE.getRuleType_Conj();
-
-		/**
-		 * The meta object literal for the '<em><b>Imp</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RULE_TYPE__IMP = eINSTANCE.getRuleType_Imp();
-
-		/**
-		 * The meta object literal for the '<em><b>Eq</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RULE_TYPE__EQ = eINSTANCE.getRuleType_Eq();
-
-		/**
-		 * The meta object literal for the '<em><b>Not</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RULE_TYPE__NOT = eINSTANCE.getRuleType_Not();
-
-		/**
-		 * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RULE_TYPE__VAR = eINSTANCE.getRuleType_Var();
+		EReference RULE_TYPE__EXPRESSION_LIST = eINSTANCE.getRuleType_ExpressionList();
 
 		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.StructTypeImpl <em>Struct Type</em>}' class.
@@ -3935,46 +4745,30 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EClass STRUCT_TYPE = eINSTANCE.getStructType();
 
 		/**
-		 * The meta object literal for the '<em><b>Feature</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Node List Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCT_TYPE__FEATURE = eINSTANCE.getStructType_Feature();
+		EAttribute STRUCT_TYPE__NODE_LIST_GROUP = eINSTANCE.getStructType_NodeListGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Alt</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Node List</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCT_TYPE__ALT = eINSTANCE.getStructType_Alt();
+		EReference STRUCT_TYPE__NODE_LIST = eINSTANCE.getStructType_NodeList();
 
 		/**
-		 * The meta object literal for the '<em><b>Or</b></em>' containment reference feature.
+		 * The meta object literal for the '{@link FeatureIDEXSD.impl.StructType1Impl <em>Struct Type1</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see FeatureIDEXSD.impl.StructType1Impl
+		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getStructType1()
 		 * @generated
 		 */
-		EReference STRUCT_TYPE__OR = eINSTANCE.getStructType_Or();
-
-		/**
-		 * The meta object literal for the '<em><b>And</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STRUCT_TYPE__AND = eINSTANCE.getStructType_And();
-
-		/**
-		 * The meta object literal for the '{@link FeatureIDEXSD.impl.ExtendedStructTypeImpl <em>Extended Struct Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see FeatureIDEXSD.impl.ExtendedStructTypeImpl
-		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getExtendedStructType()
-		 * @generated
-		 */
-		EClass EXTENDED_STRUCT_TYPE = eINSTANCE.getExtendedStructType();
+		EClass STRUCT_TYPE1 = eINSTANCE.getStructType1();
 
 		/**
 		 * The meta object literal for the '<em><b>Feature</b></em>' containment reference feature.
@@ -3982,7 +4776,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDED_STRUCT_TYPE__FEATURE = eINSTANCE.getExtendedStructType_Feature();
+		EReference STRUCT_TYPE1__FEATURE = eINSTANCE.getStructType1_Feature();
 
 		/**
 		 * The meta object literal for the '<em><b>Alt</b></em>' containment reference feature.
@@ -3990,7 +4784,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDED_STRUCT_TYPE__ALT = eINSTANCE.getExtendedStructType_Alt();
+		EReference STRUCT_TYPE1__ALT = eINSTANCE.getStructType1_Alt();
 
 		/**
 		 * The meta object literal for the '<em><b>Or</b></em>' containment reference feature.
@@ -3998,7 +4792,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDED_STRUCT_TYPE__OR = eINSTANCE.getExtendedStructType_Or();
+		EReference STRUCT_TYPE1__OR = eINSTANCE.getStructType1_Or();
 
 		/**
 		 * The meta object literal for the '<em><b>And</b></em>' containment reference feature.
@@ -4006,7 +4800,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTENDED_STRUCT_TYPE__AND = eINSTANCE.getExtendedStructType_And();
+		EReference STRUCT_TYPE1__AND = eINSTANCE.getStructType1_And();
 
 		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.UnaryExpressionTypeImpl <em>Unary Expression Type</em>}' class.
@@ -4019,52 +4813,20 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EClass UNARY_EXPRESSION_TYPE = eINSTANCE.getUnaryExpressionType();
 
 		/**
-		 * The meta object literal for the '<em><b>Disj</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Expression List Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNARY_EXPRESSION_TYPE__DISJ = eINSTANCE.getUnaryExpressionType_Disj();
+		EAttribute UNARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP = eINSTANCE.getUnaryExpressionType_ExpressionListGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Conj</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Expression List</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNARY_EXPRESSION_TYPE__CONJ = eINSTANCE.getUnaryExpressionType_Conj();
-
-		/**
-		 * The meta object literal for the '<em><b>Imp</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNARY_EXPRESSION_TYPE__IMP = eINSTANCE.getUnaryExpressionType_Imp();
-
-		/**
-		 * The meta object literal for the '<em><b>Eq</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNARY_EXPRESSION_TYPE__EQ = eINSTANCE.getUnaryExpressionType_Eq();
-
-		/**
-		 * The meta object literal for the '<em><b>Not</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNARY_EXPRESSION_TYPE__NOT = eINSTANCE.getUnaryExpressionType_Not();
-
-		/**
-		 * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UNARY_EXPRESSION_TYPE__VAR = eINSTANCE.getUnaryExpressionType_Var();
+		EReference UNARY_EXPRESSION_TYPE__EXPRESSION_LIST = eINSTANCE.getUnaryExpressionType_ExpressionList();
 
 		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.UnaryExtendedNodeTypeImpl <em>Unary Extended Node Type</em>}' class.
@@ -4135,36 +4897,38 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EAttribute UNARY_NODE_TYPE__NODE_GROUP = eINSTANCE.getUnaryNodeType_NodeGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Feature</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Node List Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNARY_NODE_TYPE__FEATURE = eINSTANCE.getUnaryNodeType_Feature();
+		EAttribute UNARY_NODE_TYPE__NODE_LIST_GROUP = eINSTANCE.getUnaryNodeType_NodeListGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Alt</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Node List</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNARY_NODE_TYPE__ALT = eINSTANCE.getUnaryNodeType_Alt();
+		EReference UNARY_NODE_TYPE__NODE_LIST = eINSTANCE.getUnaryNodeType_NodeList();
 
 		/**
-		 * The meta object literal for the '<em><b>Or</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link FeatureIDEXSD.impl.VarTypeImpl <em>Var Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see FeatureIDEXSD.impl.VarTypeImpl
+		 * @see FeatureIDEXSD.impl.FeatureIDEXSDPackageImpl#getVarType()
 		 * @generated
 		 */
-		EReference UNARY_NODE_TYPE__OR = eINSTANCE.getUnaryNodeType_Or();
+		EClass VAR_TYPE = eINSTANCE.getVarType();
 
 		/**
-		 * The meta object literal for the '<em><b>And</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNARY_NODE_TYPE__AND = eINSTANCE.getUnaryNodeType_And();
+		EAttribute VAR_TYPE__MIXED = eINSTANCE.getVarType_Mixed();
 
 	}
 

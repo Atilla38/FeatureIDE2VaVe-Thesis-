@@ -16,10 +16,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * </p>
  * <ul>
  *   <li>{@link FeatureIDEXSD.BinaryNodeType#getNodeGroup <em>Node Group</em>}</li>
- *   <li>{@link FeatureIDEXSD.BinaryNodeType#getFeature <em>Feature</em>}</li>
- *   <li>{@link FeatureIDEXSD.BinaryNodeType#getAlt <em>Alt</em>}</li>
- *   <li>{@link FeatureIDEXSD.BinaryNodeType#getOr <em>Or</em>}</li>
- *   <li>{@link FeatureIDEXSD.BinaryNodeType#getAnd <em>And</em>}</li>
+ *   <li>{@link FeatureIDEXSD.BinaryNodeType#getNodeListGroup <em>Node List Group</em>}</li>
+ *   <li>{@link FeatureIDEXSD.BinaryNodeType#getNodeList <em>Node List</em>}</li>
  * </ul>
  *
  * @see FeatureIDEXSD.FeatureIDEXSDPackage#getBinaryNodeType()
@@ -41,55 +39,29 @@ public interface BinaryNodeType extends Node {
 	FeatureMap getNodeGroup();
 
 	/**
-	 * Returns the value of the '<em><b>Feature</b></em>' containment reference list.
-	 * The list contents are of type {@link FeatureIDEXSD.LeafType}.
+	 * Returns the value of the '<em><b>Node List Group</b></em>' attribute list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Feature</em>' containment reference list.
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getBinaryNodeType_Feature()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='feature' namespace='##targetNamespace' group='NodeGroup:6'"
+	 * @return the value of the '<em>Node List Group</em>' attribute list.
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getBinaryNodeType_NodeListGroup()
+	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" lower="2" many="true" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='group' name='nodeList:group' namespace='##targetNamespace' group='NodeGroup:6'"
 	 * @generated
 	 */
-	EList<LeafType> getFeature();
+	FeatureMap getNodeListGroup();
 
 	/**
-	 * Returns the value of the '<em><b>Alt</b></em>' containment reference list.
-	 * The list contents are of type {@link FeatureIDEXSD.BinaryNodeType}.
+	 * Returns the value of the '<em><b>Node List</b></em>' containment reference list.
+	 * The list contents are of type {@link FeatureIDEXSD.Node}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Alt</em>' containment reference list.
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getBinaryNodeType_Alt()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='alt' namespace='##targetNamespace' group='NodeGroup:6'"
+	 * @return the value of the '<em>Node List</em>' containment reference list.
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getBinaryNodeType_NodeList()
+	 * @model containment="true" lower="2" transient="true" changeable="false" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='nodeList' namespace='##targetNamespace' group='nodeList:group'"
 	 * @generated
 	 */
-	EList<BinaryNodeType> getAlt();
-
-	/**
-	 * Returns the value of the '<em><b>Or</b></em>' containment reference list.
-	 * The list contents are of type {@link FeatureIDEXSD.BinaryNodeType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Or</em>' containment reference list.
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getBinaryNodeType_Or()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='or' namespace='##targetNamespace' group='NodeGroup:6'"
-	 * @generated
-	 */
-	EList<BinaryNodeType> getOr();
-
-	/**
-	 * Returns the value of the '<em><b>And</b></em>' containment reference list.
-	 * The list contents are of type {@link FeatureIDEXSD.UnaryNodeType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>And</em>' containment reference list.
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getBinaryNodeType_And()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='and' namespace='##targetNamespace' group='NodeGroup:6'"
-	 * @generated
-	 */
-	EList<UnaryNodeType> getAnd();
+	EList<Node> getNodeList();
 
 } // BinaryNodeType

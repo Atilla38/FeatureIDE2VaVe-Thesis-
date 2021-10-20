@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Project ValidFileSet="Yes" ValidFile="FeatureIDE-XSD - extended.xsd">
+<Project ValidFileSet="Yes" ValidFile="FeatureIDE-XSD.xsd">
 	<Folder FolderName="XML Files" ExtStr="xml;cml;math;rdf;smil;svg;wml">
 		<File FilePath="D:\Projekte\Feature\Test\After Or Alt.xml" HomeFolder="Yes"/>
 		<File FilePath="D:\Projekte\Feature\Test\Alt ends with feature.xml" HomeFolder="Yes"/>

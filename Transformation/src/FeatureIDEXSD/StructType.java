@@ -3,6 +3,7 @@
 package FeatureIDEXSD;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,10 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link FeatureIDEXSD.StructType#getFeature <em>Feature</em>}</li>
- *   <li>{@link FeatureIDEXSD.StructType#getAlt <em>Alt</em>}</li>
- *   <li>{@link FeatureIDEXSD.StructType#getOr <em>Or</em>}</li>
- *   <li>{@link FeatureIDEXSD.StructType#getAnd <em>And</em>}</li>
+ *   <li>{@link FeatureIDEXSD.StructType#getNodeListGroup <em>Node List Group</em>}</li>
+ *   <li>{@link FeatureIDEXSD.StructType#getNodeList <em>Node List</em>}</li>
  * </ul>
  *
  * @see FeatureIDEXSD.FeatureIDEXSDPackage#getStructType()
@@ -25,95 +24,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface StructType extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Feature</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Node List Group</b></em>' attribute list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Feature</em>' containment reference.
-	 * @see #setFeature(LeafType)
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getStructType_Feature()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='feature' namespace='##targetNamespace'"
+	 * @return the value of the '<em>Node List Group</em>' attribute list.
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getStructType_NodeListGroup()
+	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" required="true" many="false"
+	 *        extendedMetaData="kind='group' name='nodeList:group' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	LeafType getFeature();
+	FeatureMap getNodeListGroup();
 
 	/**
-	 * Sets the value of the '{@link FeatureIDEXSD.StructType#getFeature <em>Feature</em>}' containment reference.
+	 * Returns the value of the '<em><b>Node List</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Feature</em>' containment reference.
-	 * @see #getFeature()
+	 * @return the value of the '<em>Node List</em>' containment reference.
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getStructType_NodeList()
+	 * @model containment="true" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='nodeList' namespace='##targetNamespace' group='nodeList:group'"
 	 * @generated
 	 */
-	void setFeature(LeafType value);
-
-	/**
-	 * Returns the value of the '<em><b>Alt</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Alt</em>' containment reference.
-	 * @see #setAlt(BinaryNodeType)
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getStructType_Alt()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='alt' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	BinaryNodeType getAlt();
-
-	/**
-	 * Sets the value of the '{@link FeatureIDEXSD.StructType#getAlt <em>Alt</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Alt</em>' containment reference.
-	 * @see #getAlt()
-	 * @generated
-	 */
-	void setAlt(BinaryNodeType value);
-
-	/**
-	 * Returns the value of the '<em><b>Or</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Or</em>' containment reference.
-	 * @see #setOr(BinaryNodeType)
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getStructType_Or()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='or' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	BinaryNodeType getOr();
-
-	/**
-	 * Sets the value of the '{@link FeatureIDEXSD.StructType#getOr <em>Or</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Or</em>' containment reference.
-	 * @see #getOr()
-	 * @generated
-	 */
-	void setOr(BinaryNodeType value);
-
-	/**
-	 * Returns the value of the '<em><b>And</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>And</em>' containment reference.
-	 * @see #setAnd(UnaryNodeType)
-	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getStructType_And()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='and' namespace='##targetNamespace'"
-	 * @generated
-	 */
-	UnaryNodeType getAnd();
-
-	/**
-	 * Sets the value of the '{@link FeatureIDEXSD.StructType#getAnd <em>And</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>And</em>' containment reference.
-	 * @see #getAnd()
-	 * @generated
-	 */
-	void setAnd(UnaryNodeType value);
+	Node getNodeList();
 
 } // StructType
