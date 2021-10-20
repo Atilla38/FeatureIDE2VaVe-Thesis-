@@ -82,12 +82,9 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:group name="nodeGroup">
-		<xs:choice>
-			<xs:element name="feature" type="leafType"/>
-			<xs:element name="alt" type="binaryNodeType"/>
-			<xs:element name="or" type="binaryNodeType"/>
-			<xs:element name="and" type="unaryNodeType"/>
-		</xs:choice>
+		<xs:sequence>
+			<xs:element ref="nodeList"/>
+		</xs:sequence>
 	</xs:group>
 	<xs:element name="c" type="xs:string"/>
 	<xs:element name="calculations">
@@ -122,12 +119,37 @@
 			<xs:extension base="unaryExpressionType"/>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="alt" type="altType" substitutionGroup="nodeList"/>
+	<xs:element name="or" type="orType" substitutionGroup="nodeList"/>
+	<xs:element name="and" type="andType" substitutionGroup="nodeList"/>
+	<xs:element name="feature" type="featureType" substitutionGroup="nodeList"/>
 	<xs:element name="eq" type="eqType" substitutionGroup="expressionList"/>
 	<xs:complexType name="impType">
 		<xs:complexContent>
 			<xs:extension base="binaryExpressionType"/>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="altType">
+		<xs:complexContent>
+			<xs:extension base="binaryNodeType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="orType">
+		<xs:complexContent>
+			<xs:extension base="binaryNodeType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="andType">
+		<xs:complexContent>
+			<xs:extension base="unaryNodeType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="featureType">
+		<xs:complexContent>
+			<xs:extension base="leafType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="nodeList" type="node" abstract="true"/>
 	<xs:element name="var" abstract="false" substitutionGroup="expressionList">
 		<xs:complexType mixed="true">
 			<xs:complexContent>
