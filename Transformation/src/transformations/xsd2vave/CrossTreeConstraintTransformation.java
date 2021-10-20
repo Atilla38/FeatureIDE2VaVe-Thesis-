@@ -65,37 +65,37 @@ public class CrossTreeConstraintTransformation {
 
 	}
 
-	public vavemodel.Implication<FeatureOption> parseImp(BinaryExpressionType imp) {
+	private vavemodel.Implication<FeatureOption> parseImp(BinaryExpressionType imp) {
 		vavemodel.Implication<FeatureOption> vaveImp = VavemodelFactory.eINSTANCE.createImplication();
 		this.transformChilds(imp, null, vaveImp);
 		return vaveImp;
 	}
 
-	public Conjunction<FeatureOption> parseConj(BinaryExpressionType conj) {
+	private Conjunction<FeatureOption> parseConj(BinaryExpressionType conj) {
 		vavemodel.Conjunction<FeatureOption> vaveConj = VavemodelFactory.eINSTANCE.createConjunction();
 		this.transformChilds(conj, null, vaveConj);
 		return vaveConj;
 	}
 
-	public vavemodel.Disjunction<FeatureOption> parseDisj(BinaryExpressionType disj) {
+	private vavemodel.Disjunction<FeatureOption> parseDisj(BinaryExpressionType disj) {
 		vavemodel.Disjunction<FeatureOption> vaveDisj = VavemodelFactory.eINSTANCE.createDisjunction();
 		this.transformChilds(disj, null, vaveDisj);
 		return vaveDisj;
 	}
 
-	public vavemodel.Equivalence<FeatureOption> parseEq(BinaryExpressionType eq) {
+	private vavemodel.Equivalence<FeatureOption> parseEq(BinaryExpressionType eq) {
 		vavemodel.Equivalence<FeatureOption> vaveEq = VavemodelFactory.eINSTANCE.createEquivalence();
 		this.transformChilds(eq, null, vaveEq);
 		return vaveEq;
 	}
 
-	public vavemodel.Not<FeatureOption> parseNot(UnaryExpressionType not) {
+	private vavemodel.Not<FeatureOption> parseNot(UnaryExpressionType not) {
 		vavemodel.Not<FeatureOption> vaveNot = VavemodelFactory.eINSTANCE.createNot();
 		this.transformChilds(null, not, vaveNot);
 		return vaveNot;
 	}
 
-	public vavemodel.Variable<FeatureOption> parseVar(VarType var) {
+	private vavemodel.Variable<FeatureOption> parseVar(VarType var) {
 
 		vavemodel.Variable<FeatureOption> vaveVar = VavemodelFactory.eINSTANCE.createVariable();
 		for (Feature feature : system.getFeature()) {
