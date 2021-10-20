@@ -22,6 +22,24 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	FeatureIDEXSDFactory eINSTANCE = FeatureIDEXSD.impl.FeatureIDEXSDFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Alt Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Alt Type</em>'.
+	 * @generated
+	 */
+	AltType createAltType();
+
+	/**
+	 * Returns a new object of class '<em>And Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>And Type</em>'.
+	 * @generated
+	 */
+	AndType createAndType();
+
+	/**
 	 * Returns a new object of class '<em>Binary Expression Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,6 +184,15 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	FeatureOrderType createFeatureOrderType();
 
 	/**
+	 * Returns a new object of class '<em>Feature Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature Type</em>'.
+	 * @generated
+	 */
+	FeatureType createFeatureType();
+
+	/**
 	 * Returns a new object of class '<em>Graphics Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -209,6 +236,15 @@ public interface FeatureIDEXSDFactory extends EFactory {
 	 * @generated
 	 */
 	NotType createNotType();
+
+	/**
+	 * Returns a new object of class '<em>Or Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Or Type</em>'.
+	 * @generated
+	 */
+	OrType createOrType();
 
 	/**
 	 * Returns a new object of class '<em>Properties Type</em>'.

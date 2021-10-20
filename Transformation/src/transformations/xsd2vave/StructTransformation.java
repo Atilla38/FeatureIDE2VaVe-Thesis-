@@ -6,9 +6,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import FeatureIDEXSD.AltType;
+import FeatureIDEXSD.AndType;
 import FeatureIDEXSD.BinaryNodeType;
+import FeatureIDEXSD.FeatureType;
 import FeatureIDEXSD.LeafType;
 import FeatureIDEXSD.Node;
+import FeatureIDEXSD.OrType;
 import FeatureIDEXSD.StructType;
 import FeatureIDEXSD.UnaryNodeType;
 import vavemodel.VavemodelFactory;
@@ -22,20 +26,25 @@ public class StructTransformation {
 	}
 
 	public void start(StructType struct) {
-		if (struct.getAlt() != null) {
-			this.parseAlt(struct.getAlt(), null, null);
+		Node node = struct.getNodeList();
+		if (node instanceof AltType) {
+			this.parseAlt((BinaryNodeType) node, null, null);
 		}
 
-		if (struct.getAnd() != null) {
-			this.parseAnd(struct.getAnd(), null, null);
+		if (node instanceof AndType) {
+			this.parseAnd((UnaryNodeType) node, null, null);
 		}
 
-		if (struct.getOr() != null) {
-			this.parseOr(struct.getOr(), null, null);
+		if (node instanceof OrType) {
+			this.parseOr((BinaryNodeType) node, null, null);
+		}
+
+		if (node instanceof FeatureType) {
+			this.parseFeature((LeafType) node, null, null);
 		}
 	}
 
-	public void parseOr(BinaryNodeType or, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
+	private void parseOr(BinaryNodeType or, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
 
 		vavemodel.Feature feature = this.createFeature(or);
 
@@ -49,7 +58,7 @@ public class StructTransformation {
 
 	}
 
-	public void parseAlt(BinaryNodeType alt, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
+	private void parseAlt(BinaryNodeType alt, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
 		vavemodel.Feature feature = this.createFeature(alt);
 
 		this.addTreeConstraints(alt, feature, parent, treeConstrParent);
@@ -61,7 +70,7 @@ public class StructTransformation {
 		this.tranformChildFeatures(alt, null, feature, treeconstr);
 	}
 
-	public void parseAnd(UnaryNodeType and, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
+	private void parseAnd(UnaryNodeType and, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
 
 		vavemodel.Feature feature = this.createFeature(and);
 
@@ -70,7 +79,7 @@ public class StructTransformation {
 
 	}
 
-	public void parseFeature(LeafType leaf, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
+	private void parseFeature(LeafType leaf, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
 
 		vavemodel.Feature feature = this.createFeature(leaf);
 		this.addTreeConstraints(leaf, feature, parent, treeConstrParent);
@@ -93,64 +102,50 @@ public class StructTransformation {
 
 	private void tranformChildFeatures(BinaryNodeType binaryNode, UnaryNodeType unaryNode, vavemodel.Feature feature,
 			vavemodel.TreeConstraint treeConstr) {
-		EList<LeafType> features;
-		EList<BinaryNodeType> ors;
-		EList<BinaryNodeType> alts;
-		EList<UnaryNodeType> ands;
+
+		EList<Node> nodeList;
 
 		if (binaryNode != null) {
-			features = binaryNode.getFeature();
-			ors = binaryNode.getOr();
-			alts = binaryNode.getAlt();
-			ands = binaryNode.getAnd();
+			nodeList = binaryNode.getNodeList();
 		} else if (unaryNode != null) {
-			features = unaryNode.getFeature();
-			ors = unaryNode.getOr();
-			alts = unaryNode.getAlt();
-			ands = unaryNode.getAnd();
+			nodeList = unaryNode.getNodeList();
 		} else {
 			System.out.println("Unary and binaryNode can't be both null");
 			return;
 		}
 
-		if (!features.isEmpty()) {
-			for (LeafType child : features) {
+		for (Node childNode : nodeList) {
+			if (childNode instanceof FeatureType) {
 				if (unaryNode != null) {
-					this.parseFeature(child, feature, null);
+					this.parseFeature((LeafType) childNode, feature, null);
 				} else {
-					this.parseFeature(child, null, treeConstr);
+					this.parseFeature((LeafType) childNode, null, treeConstr);
 				}
 
 			}
-		}
 
-		if (!ands.isEmpty()) {
-			for (UnaryNodeType child : ands) {
+			if (childNode instanceof AndType) {
 
 				if (unaryNode != null) {
-					this.parseAnd(child, feature, null);
+					this.parseAnd((UnaryNodeType) childNode, feature, null);
 				} else {
-					this.parseAnd(child, null, treeConstr);
+					this.parseAnd((UnaryNodeType) childNode, null, treeConstr);
 				}
 			}
-		}
 
-		if (!ors.isEmpty()) {
-			for (BinaryNodeType child : ors) {
+			if (childNode instanceof OrType) {
 				if (unaryNode != null) {
-					this.parseOr(child, feature, null);
+					this.parseOr((BinaryNodeType) childNode, feature, null);
 				} else {
-					this.parseOr(child, null, treeConstr);
+					this.parseOr((BinaryNodeType) childNode, null, treeConstr);
 				}
 			}
-		}
 
-		if (!alts.isEmpty()) {
-			for (BinaryNodeType child : alts) {
+			if (childNode instanceof AltType) {
 				if (unaryNode != null) {
-					this.parseAlt(child, feature, null);
+					this.parseAlt((BinaryNodeType) childNode, feature, null);
 				} else {
-					this.parseAlt(child, null, treeConstr);
+					this.parseAlt((BinaryNodeType) childNode, null, treeConstr);
 				}
 			}
 		}

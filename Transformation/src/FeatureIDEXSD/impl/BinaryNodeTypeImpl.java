@@ -4,11 +4,7 @@ package FeatureIDEXSD.impl;
 
 import FeatureIDEXSD.BinaryNodeType;
 import FeatureIDEXSD.FeatureIDEXSDPackage;
-import FeatureIDEXSD.LeafType;
-import FeatureIDEXSD.UnaryNodeType;
-
-import java.util.Collection;
-
+import FeatureIDEXSD.Node;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -29,10 +25,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link FeatureIDEXSD.impl.BinaryNodeTypeImpl#getNodeGroup <em>Node Group</em>}</li>
- *   <li>{@link FeatureIDEXSD.impl.BinaryNodeTypeImpl#getFeature <em>Feature</em>}</li>
- *   <li>{@link FeatureIDEXSD.impl.BinaryNodeTypeImpl#getAlt <em>Alt</em>}</li>
- *   <li>{@link FeatureIDEXSD.impl.BinaryNodeTypeImpl#getOr <em>Or</em>}</li>
- *   <li>{@link FeatureIDEXSD.impl.BinaryNodeTypeImpl#getAnd <em>And</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.BinaryNodeTypeImpl#getNodeListGroup <em>Node List Group</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.BinaryNodeTypeImpl#getNodeList <em>Node List</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,8 +78,8 @@ public class BinaryNodeTypeImpl extends NodeImpl implements BinaryNodeType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<LeafType> getFeature() {
-		return getNodeGroup().list(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__FEATURE);
+	public FeatureMap getNodeListGroup() {
+		return (FeatureMap)getNodeGroup().<FeatureMap.Entry>list(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST_GROUP);
 	}
 
 	/**
@@ -93,26 +87,8 @@ public class BinaryNodeTypeImpl extends NodeImpl implements BinaryNodeType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<BinaryNodeType> getAlt() {
-		return getNodeGroup().list(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__ALT);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<BinaryNodeType> getOr() {
-		return getNodeGroup().list(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__OR);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<UnaryNodeType> getAnd() {
-		return getNodeGroup().list(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__AND);
+	public EList<Node> getNodeList() {
+		return getNodeListGroup().list(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST);
 	}
 
 	/**
@@ -125,14 +101,10 @@ public class BinaryNodeTypeImpl extends NodeImpl implements BinaryNodeType {
 		switch (featureID) {
 			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_GROUP:
 				return ((InternalEList<?>)getNodeGroup()).basicRemove(otherEnd, msgs);
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__FEATURE:
-				return ((InternalEList<?>)getFeature()).basicRemove(otherEnd, msgs);
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__ALT:
-				return ((InternalEList<?>)getAlt()).basicRemove(otherEnd, msgs);
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__OR:
-				return ((InternalEList<?>)getOr()).basicRemove(otherEnd, msgs);
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__AND:
-				return ((InternalEList<?>)getAnd()).basicRemove(otherEnd, msgs);
+			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_LIST_GROUP:
+				return ((InternalEList<?>)getNodeListGroup()).basicRemove(otherEnd, msgs);
+			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_LIST:
+				return ((InternalEList<?>)getNodeList()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -148,14 +120,11 @@ public class BinaryNodeTypeImpl extends NodeImpl implements BinaryNodeType {
 			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_GROUP:
 				if (coreType) return getNodeGroup();
 				return ((FeatureMap.Internal)getNodeGroup()).getWrapper();
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__FEATURE:
-				return getFeature();
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__ALT:
-				return getAlt();
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__OR:
-				return getOr();
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__AND:
-				return getAnd();
+			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_LIST_GROUP:
+				if (coreType) return getNodeListGroup();
+				return ((FeatureMap.Internal)getNodeListGroup()).getWrapper();
+			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_LIST:
+				return getNodeList();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,21 +141,8 @@ public class BinaryNodeTypeImpl extends NodeImpl implements BinaryNodeType {
 			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_GROUP:
 				((FeatureMap.Internal)getNodeGroup()).set(newValue);
 				return;
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__FEATURE:
-				getFeature().clear();
-				getFeature().addAll((Collection<? extends LeafType>)newValue);
-				return;
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__ALT:
-				getAlt().clear();
-				getAlt().addAll((Collection<? extends BinaryNodeType>)newValue);
-				return;
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__OR:
-				getOr().clear();
-				getOr().addAll((Collection<? extends BinaryNodeType>)newValue);
-				return;
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__AND:
-				getAnd().clear();
-				getAnd().addAll((Collection<? extends UnaryNodeType>)newValue);
+			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_LIST_GROUP:
+				((FeatureMap.Internal)getNodeListGroup()).set(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -203,17 +159,8 @@ public class BinaryNodeTypeImpl extends NodeImpl implements BinaryNodeType {
 			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_GROUP:
 				getNodeGroup().clear();
 				return;
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__FEATURE:
-				getFeature().clear();
-				return;
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__ALT:
-				getAlt().clear();
-				return;
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__OR:
-				getOr().clear();
-				return;
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__AND:
-				getAnd().clear();
+			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_LIST_GROUP:
+				getNodeListGroup().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -229,14 +176,10 @@ public class BinaryNodeTypeImpl extends NodeImpl implements BinaryNodeType {
 		switch (featureID) {
 			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_GROUP:
 				return nodeGroup != null && !nodeGroup.isEmpty();
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__FEATURE:
-				return !getFeature().isEmpty();
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__ALT:
-				return !getAlt().isEmpty();
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__OR:
-				return !getOr().isEmpty();
-			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__AND:
-				return !getAnd().isEmpty();
+			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_LIST_GROUP:
+				return !getNodeListGroup().isEmpty();
+			case FeatureIDEXSDPackage.BINARY_NODE_TYPE__NODE_LIST:
+				return !getNodeList().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

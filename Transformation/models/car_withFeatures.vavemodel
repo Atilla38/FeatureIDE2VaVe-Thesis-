@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
-  <constraint>
-    <expression xsi:type="vavemodel:Implication">
-      <term xsi:type="vavemodel:Variable" option="//@feature.3"/>
-      <term xsi:type="vavemodel:Variable" option="//@feature.1"/>
-    </expression>
-  </constraint>
-  <constraint>
-    <expression xsi:type="vavemodel:Not">
-      <term xsi:type="vavemodel:Not">
-        <term xsi:type="vavemodel:Variable" option="//@feature.3"/>
-      </term>
-    </expression>
-  </constraint>
+<vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
   <feature name="Car">
-    <treeconstraint type="XORNONE" feature="//@feature.1"/>
-    <treeconstraint feature="//@feature.2"/>
+    <treeconstraint feature="//@feature.1"/>
+    <treeconstraint feature="//@feature.3"/>
   </feature>
-  <feature name="SmogControl"/>
-  <feature name="EngineType">
-    <treeconstraint type="OR" feature="//@feature.3 //@feature.4"/>
+  <feature name="NewFeature">
+    <treeconstraint type="XORNONE" feature="//@feature.2"/>
   </feature>
-  <feature name="Gasoline"/>
-  <feature name="Electric"/>
+  <feature name="NewFeature3"/>
+  <feature name="NewFeature2"/>
 </vavemodel:System>

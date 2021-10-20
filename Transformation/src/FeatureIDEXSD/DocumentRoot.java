@@ -20,6 +20,9 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getMixed <em>Mixed</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getXSISchemaLocation <em>XSI Schema Location</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getAlt <em>Alt</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getNodeList <em>Node List</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getAnd <em>And</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getC <em>C</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getCalculations <em>Calculations</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getComments <em>Comments</em>}</li>
@@ -30,11 +33,13 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getDisj <em>Disj</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getEq <em>Eq</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getExtendedFeatureModel <em>Extended Feature Model</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getFeature <em>Feature</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getFeatureModel <em>Feature Model</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getFeatureOrder <em>Feature Order</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getGraphics <em>Graphics</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getImp <em>Imp</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getNot <em>Not</em>}</li>
+ *   <li>{@link FeatureIDEXSD.DocumentRoot#getOr <em>Or</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getProperties <em>Properties</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getRule <em>Rule</em>}</li>
  *   <li>{@link FeatureIDEXSD.DocumentRoot#getVar <em>Var</em>}</li>
@@ -85,6 +90,64 @@ public interface DocumentRoot extends EObject {
 	 * @generated
 	 */
 	EMap<String, String> getXSISchemaLocation();
+
+	/**
+	 * Returns the value of the '<em><b>Alt</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Alt</em>' containment reference.
+	 * @see #setAlt(AltType)
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_Alt()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='alt' namespace='##targetNamespace' affiliation='nodeList'"
+	 * @generated
+	 */
+	AltType getAlt();
+
+	/**
+	 * Sets the value of the '{@link FeatureIDEXSD.DocumentRoot#getAlt <em>Alt</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Alt</em>' containment reference.
+	 * @see #getAlt()
+	 * @generated
+	 */
+	void setAlt(AltType value);
+
+	/**
+	 * Returns the value of the '<em><b>Node List</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Node List</em>' containment reference.
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_NodeList()
+	 * @model containment="true" upper="-2" transient="true" changeable="false" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='nodeList' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Node getNodeList();
+
+	/**
+	 * Returns the value of the '<em><b>And</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>And</em>' containment reference.
+	 * @see #setAnd(AndType)
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_And()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='and' namespace='##targetNamespace' affiliation='nodeList'"
+	 * @generated
+	 */
+	AndType getAnd();
+
+	/**
+	 * Sets the value of the '{@link FeatureIDEXSD.DocumentRoot#getAnd <em>And</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>And</em>' containment reference.
+	 * @see #getAnd()
+	 * @generated
+	 */
+	void setAnd(AndType value);
 
 	/**
 	 * Returns the value of the '<em><b>C</b></em>' attribute.
@@ -306,6 +369,29 @@ public interface DocumentRoot extends EObject {
 	void setExtendedFeatureModel(ExtendedFeatureModelType value);
 
 	/**
+	 * Returns the value of the '<em><b>Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Feature</em>' containment reference.
+	 * @see #setFeature(FeatureType)
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_Feature()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='feature' namespace='##targetNamespace' affiliation='nodeList'"
+	 * @generated
+	 */
+	FeatureType getFeature();
+
+	/**
+	 * Sets the value of the '{@link FeatureIDEXSD.DocumentRoot#getFeature <em>Feature</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Feature</em>' containment reference.
+	 * @see #getFeature()
+	 * @generated
+	 */
+	void setFeature(FeatureType value);
+
+	/**
 	 * Returns the value of the '<em><b>Feature Model</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -419,6 +505,29 @@ public interface DocumentRoot extends EObject {
 	 * @generated
 	 */
 	void setNot(NotType value);
+
+	/**
+	 * Returns the value of the '<em><b>Or</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Or</em>' containment reference.
+	 * @see #setOr(OrType)
+	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getDocumentRoot_Or()
+	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='or' namespace='##targetNamespace' affiliation='nodeList'"
+	 * @generated
+	 */
+	OrType getOr();
+
+	/**
+	 * Sets the value of the '{@link FeatureIDEXSD.DocumentRoot#getOr <em>Or</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Or</em>' containment reference.
+	 * @see #getOr()
+	 * @generated
+	 */
+	void setOr(OrType value);
 
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' containment reference.

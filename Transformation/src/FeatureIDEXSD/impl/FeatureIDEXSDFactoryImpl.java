@@ -56,6 +56,8 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case FeatureIDEXSDPackage.ALT_TYPE: return createAltType();
+			case FeatureIDEXSDPackage.AND_TYPE: return createAndType();
 			case FeatureIDEXSDPackage.BINARY_EXPRESSION_TYPE: return createBinaryExpressionType();
 			case FeatureIDEXSDPackage.BINARY_EXTENDED_NODE_TYPE: return createBinaryExtendedNodeType();
 			case FeatureIDEXSDPackage.BINARY_NODE_TYPE: return createBinaryNodeType();
@@ -72,11 +74,13 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 			case FeatureIDEXSDPackage.EXTENDED_NODE: return createExtendedNode();
 			case FeatureIDEXSDPackage.FEATURE_MODEL_TYPE: return createFeatureModelType();
 			case FeatureIDEXSDPackage.FEATURE_ORDER_TYPE: return createFeatureOrderType();
+			case FeatureIDEXSDPackage.FEATURE_TYPE: return createFeatureType();
 			case FeatureIDEXSDPackage.GRAPHICS_TYPE: return createGraphicsType();
 			case FeatureIDEXSDPackage.IMP_TYPE: return createImpType();
 			case FeatureIDEXSDPackage.LEAF_TYPE: return createLeafType();
 			case FeatureIDEXSDPackage.NODE: return createNode();
 			case FeatureIDEXSDPackage.NOT_TYPE: return createNotType();
+			case FeatureIDEXSDPackage.OR_TYPE: return createOrType();
 			case FeatureIDEXSDPackage.PROPERTIES_TYPE: return createPropertiesType();
 			case FeatureIDEXSDPackage.RULE_TYPE: return createRuleType();
 			case FeatureIDEXSDPackage.STRUCT_TYPE: return createStructType();
@@ -88,6 +92,26 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AltType createAltType() {
+		AltTypeImpl altType = new AltTypeImpl();
+		return altType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AndType createAndType() {
+		AndTypeImpl andType = new AndTypeImpl();
+		return andType;
 	}
 
 	/**
@@ -255,6 +279,16 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public FeatureType createFeatureType() {
+		FeatureTypeImpl featureType = new FeatureTypeImpl();
+		return featureType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GraphicsType createGraphicsType() {
 		GraphicsTypeImpl graphicsType = new GraphicsTypeImpl();
 		return graphicsType;
@@ -298,6 +332,16 @@ public class FeatureIDEXSDFactoryImpl extends EFactoryImpl implements FeatureIDE
 	public NotType createNotType() {
 		NotTypeImpl notType = new NotTypeImpl();
 		return notType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrType createOrType() {
+		OrTypeImpl orType = new OrTypeImpl();
+		return orType;
 	}
 
 	/**

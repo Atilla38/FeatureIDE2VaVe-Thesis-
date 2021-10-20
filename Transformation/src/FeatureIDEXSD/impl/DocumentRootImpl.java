@@ -2,6 +2,8 @@
  */
 package FeatureIDEXSD.impl;
 
+import FeatureIDEXSD.AltType;
+import FeatureIDEXSD.AndType;
 import FeatureIDEXSD.CalculationsType;
 import FeatureIDEXSD.CommentsType;
 import FeatureIDEXSD.ConjType;
@@ -14,9 +16,12 @@ import FeatureIDEXSD.ExtendedFeatureModelType;
 import FeatureIDEXSD.FeatureIDEXSDPackage;
 import FeatureIDEXSD.FeatureModelType;
 import FeatureIDEXSD.FeatureOrderType;
+import FeatureIDEXSD.FeatureType;
 import FeatureIDEXSD.GraphicsType;
 import FeatureIDEXSD.ImpType;
+import FeatureIDEXSD.Node;
 import FeatureIDEXSD.NotType;
+import FeatureIDEXSD.OrType;
 import FeatureIDEXSD.PropertiesType;
 import FeatureIDEXSD.RuleType;
 import FeatureIDEXSD.VarType;
@@ -48,6 +53,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getMixed <em>Mixed</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getXSISchemaLocation <em>XSI Schema Location</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getAlt <em>Alt</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getNodeList <em>Node List</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getAnd <em>And</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getC <em>C</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getCalculations <em>Calculations</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getComments <em>Comments</em>}</li>
@@ -58,11 +66,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getDisj <em>Disj</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getEq <em>Eq</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getExtendedFeatureModel <em>Extended Feature Model</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getFeature <em>Feature</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getFeatureModel <em>Feature Model</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getFeatureOrder <em>Feature Order</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getGraphics <em>Graphics</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getImp <em>Imp</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getNot <em>Not</em>}</li>
+ *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getOr <em>Or</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getRule <em>Rule</em>}</li>
  *   <li>{@link FeatureIDEXSD.impl.DocumentRootImpl#getVar <em>Var</em>}</li>
@@ -174,6 +184,78 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, FeatureIDEXSDPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		}
 		return xSISchemaLocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AltType getAlt() {
+		return (AltType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAlt(AltType newAlt, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT, newAlt, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAlt(AltType newAlt) {
+		((FeatureMap.Internal)getMixed()).set(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT, newAlt);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Node getNodeList() {
+		return (Node)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__NODE_LIST, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetNodeList(Node newNodeList, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__NODE_LIST, newNodeList, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AndType getAnd() {
+		return (AndType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAnd(AndType newAnd, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND, newAnd, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAnd(AndType newAnd) {
+		((FeatureMap.Internal)getMixed()).set(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND, newAnd);
 	}
 
 	/**
@@ -424,6 +506,33 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public FeatureType getFeature() {
+		return (FeatureType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetFeature(FeatureType newFeature, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE, newFeature, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFeature(FeatureType newFeature) {
+		((FeatureMap.Internal)getMixed()).set(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE, newFeature);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public FeatureModelType getFeatureModel() {
 		return (FeatureModelType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE_MODEL, true);
 	}
@@ -559,6 +668,33 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public OrType getOr() {
+		return (OrType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOr(OrType newOr, NotificationChain msgs) {
+		return ((FeatureMap.Internal)getMixed()).basicAdd(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR, newOr, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOr(OrType newOr) {
+		((FeatureMap.Internal)getMixed()).set(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR, newOr);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PropertiesType getProperties() {
 		return (PropertiesType)getMixed().get(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__PROPERTIES, true);
 	}
@@ -649,6 +785,12 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return ((InternalEList<?>)getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
 				return ((InternalEList<?>)getXSISchemaLocation()).basicRemove(otherEnd, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__ALT:
+				return basicSetAlt(null, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NODE_LIST:
+				return basicSetNodeList(null, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__AND:
+				return basicSetAnd(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CALCULATIONS:
 				return basicSetCalculations(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__COMMENTS:
@@ -665,6 +807,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return basicSetEq(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL:
 				return basicSetExtendedFeatureModel(null, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE:
+				return basicSetFeature(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE_MODEL:
 				return basicSetFeatureModel(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE_ORDER:
@@ -675,6 +819,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return basicSetImp(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NOT:
 				return basicSetNot(null, msgs);
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__OR:
+				return basicSetOr(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__PROPERTIES:
 				return basicSetProperties(null, msgs);
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__RULE:
@@ -702,6 +848,12 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
 				if (coreType) return getXSISchemaLocation();
 				else return getXSISchemaLocation().map();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__ALT:
+				return getAlt();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NODE_LIST:
+				return getNodeList();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__AND:
+				return getAnd();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__C:
 				return getC();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CALCULATIONS:
@@ -722,6 +874,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getEq();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL:
 				return getExtendedFeatureModel();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE:
+				return getFeature();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE_MODEL:
 				return getFeatureModel();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE_ORDER:
@@ -732,6 +886,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getImp();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NOT:
 				return getNot();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__OR:
+				return getOr();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__PROPERTIES:
 				return getProperties();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__RULE:
@@ -758,6 +914,12 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
 				((EStructuralFeature.Setting)getXSISchemaLocation()).set(newValue);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__ALT:
+				setAlt((AltType)newValue);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__AND:
+				setAnd((AndType)newValue);
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__C:
 				setC((String)newValue);
@@ -786,6 +948,9 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL:
 				setExtendedFeatureModel((ExtendedFeatureModelType)newValue);
 				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE:
+				setFeature((FeatureType)newValue);
+				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE_MODEL:
 				setFeatureModel((FeatureModelType)newValue);
 				return;
@@ -800,6 +965,9 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NOT:
 				setNot((NotType)newValue);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__OR:
+				setOr((OrType)newValue);
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__PROPERTIES:
 				setProperties((PropertiesType)newValue);
@@ -831,6 +999,12 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
 				getXSISchemaLocation().clear();
 				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__ALT:
+				setAlt((AltType)null);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__AND:
+				setAnd((AndType)null);
+				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__C:
 				setC(C_EDEFAULT);
 				return;
@@ -858,6 +1032,9 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL:
 				setExtendedFeatureModel((ExtendedFeatureModelType)null);
 				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE:
+				setFeature((FeatureType)null);
+				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE_MODEL:
 				setFeatureModel((FeatureModelType)null);
 				return;
@@ -872,6 +1049,9 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NOT:
 				setNot((NotType)null);
+				return;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__OR:
+				setOr((OrType)null);
 				return;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__PROPERTIES:
 				setProperties((PropertiesType)null);
@@ -900,6 +1080,12 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
 				return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__ALT:
+				return getAlt() != null;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NODE_LIST:
+				return getNodeList() != null;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__AND:
+				return getAnd() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__C:
 				return C_EDEFAULT == null ? getC() != null : !C_EDEFAULT.equals(getC());
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__CALCULATIONS:
@@ -920,6 +1106,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getEq() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__EXTENDED_FEATURE_MODEL:
 				return getExtendedFeatureModel() != null;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE:
+				return getFeature() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE_MODEL:
 				return getFeatureModel() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__FEATURE_ORDER:
@@ -930,6 +1118,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				return getImp() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__NOT:
 				return getNot() != null;
+			case FeatureIDEXSDPackage.DOCUMENT_ROOT__OR:
+				return getOr() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__PROPERTIES:
 				return getProperties() != null;
 			case FeatureIDEXSDPackage.DOCUMENT_ROOT__RULE:

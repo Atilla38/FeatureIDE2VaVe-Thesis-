@@ -10,26 +10,10 @@
 	</properties>
 	<struct>
 		<and abstract="true" mandatory="true" name="Car">
-			<or mandatory="true" name="EngineType">
-				<feature name="Gasoline"/>
-				<feature name="Electric"/>
-			</or>
-			<feature name="SmogControl"/>
+			<and mandatory="true" name="NewFeature">
+				<feature name="NewFeature3"/>
+			</and>
+			<feature mandatory="true" name="NewFeature2"/>
 		</and>
 	</struct>
-	<constraints>
-		<rule>
-			<imp>
-				<var>Gasoline</var>
-				<var>SmogControl</var>
-			</imp>
-		</rule>
-		<rule>
-			<not>
-				<not>
-					<var>Gasoline</var>
-				</not>
-			</not>
-		</rule>
-	</constraints>
 </featureModel>
