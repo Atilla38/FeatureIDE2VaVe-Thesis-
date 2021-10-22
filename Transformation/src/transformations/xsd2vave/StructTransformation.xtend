@@ -16,7 +16,7 @@ import FeatureIDEXSD.UnaryNodeType
 import vavemodel.VavemodelFactory
 
 /**
- * Implements the structural xml to vave transformation of the FeatureIDE Feature-Model.
+ * Implements the structural transformation from xml to vave of the FeatureIDE Feature-Model.
  */
 class StructTransformation {
 	vavemodel.System system
@@ -31,7 +31,7 @@ class StructTransformation {
      */
 	def void start(StructType struct) {
 		var Node node = struct.getNodeList()
-			this.parseChild(node, null, null)
+			this.parseFeature(node, null, null)
 	}
     
     /**
@@ -40,12 +40,12 @@ class StructTransformation {
      * @param parent The parent of the or feature.
      * @param treeConstrParent The tree constraint of the parent which is used to point to the child.  
      */
-	def dispatch private void parseChild(OrType or, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
+	def dispatch private void parseFeature(OrType or, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
 		var vavemodel.Feature feature = this.createFeature(or)
 		this.addTreeConstraints(or, feature, parent, treeConstrParent)
 		var vavemodel.TreeConstraint treeconstr = VavemodelFactory::eINSTANCE.createTreeConstraint()
-		treeconstr.setType(vavemodel.GroupType::OR)
-		addContainment(feature, treeconstr, "treeconstraint")
+		treeconstr.setType(vavemodel.GroupType::OR) //Tree constraint with type OR = or feature in the FeatureIDE.
+		addContainment(feature, treeconstr, "treeconstraint") //Add tree constraint with type XOR to the vavemodel feature.
 		this.tranformChildFeatures(or, null, feature, treeconstr)
 	}
 
@@ -55,12 +55,12 @@ class StructTransformation {
      * @param parent The parent of the alt feature.
      * @param treeConstrParent The tree constraint of the parent which is used to point to the child.  
      */
-	def dispatch private void parseChild(AltType alt, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
+	def dispatch private void parseFeature(AltType alt, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
 		var vavemodel.Feature feature = this.createFeature(alt)
 		this.addTreeConstraints(alt, feature, parent, treeConstrParent)
 		var vavemodel.TreeConstraint treeconstr = VavemodelFactory::eINSTANCE.createTreeConstraint()
-		treeconstr.setType(vavemodel.GroupType::XOR)
-		addContainment(feature, treeconstr, "treeconstraint")
+		treeconstr.setType(vavemodel.GroupType::XOR) //Tree constraint with type XOR = alt feature in the FeatureIDE.
+		addContainment(feature, treeconstr, "treeconstraint") //Add tree constraint with type XOR to the vavemodel feature.
 		this.tranformChildFeatures(alt, null, feature, treeconstr)
 	}
 
@@ -70,7 +70,7 @@ class StructTransformation {
      * @param parent The parent of the and feature.
      * @param treeConstrParent The tree constraint of the parent which is used to point to the child.  
      */
-	def dispatch private void parseChild(AndType and, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
+	def dispatch private void parseFeature(AndType and, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
 		var vavemodel.Feature feature = this.createFeature(and)
 		this.addTreeConstraints(and, feature, parent, treeConstrParent)
 		this.tranformChildFeatures(null, and, feature, treeConstrParent)
@@ -82,7 +82,7 @@ class StructTransformation {
      * @param parent The parent of the leaf feature.
      * @param treeConstrParent The tree constraint of the parent which is used to point to the child.  
      */
-	def dispatch private void parseChild(FeatureType leaf, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
+	def dispatch private void parseFeature(FeatureType leaf, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
 		var vavemodel.Feature feature = this.createFeature(leaf)
 		this.addTreeConstraints(leaf, feature, parent, treeConstrParent)
 	}
@@ -131,9 +131,9 @@ class StructTransformation {
 		for (Node childNode : nodeList) {
 			
 				if (unaryNode !== null) {
-					this.parseChild(childNode, feature, null)
+					this.parseFeature(childNode, feature, null)
 				} else {
-					this.parseChild(childNode, null, treeConstr)
+					this.parseFeature(childNode, null, treeConstr)
 				}
 		}
 	}
@@ -141,25 +141,25 @@ class StructTransformation {
     /**
      * Adds tree constraints to the parent parameter. If treeConstrParent is not null the tree constraint will be added which points then to the feature parameter.
      * If parent is not null a tree constraint which points to the feature based on the node parameter will be added to the parent.
-     * @param Node If the node is mandatory a tree constraint with type XOR will be added to the parent else with type XORNONE.
+     * @param Node If parent is not null and the node is mandatory a tree constraint with type XOR will be added to the parent else when parent is not null with type XORNONE.
      * @param feature The child of the parent feature.
-     * @param parent The feature parent.
+     * @param parent The parent of the feature parameter.
      */
 	def private void addTreeConstraints(Node node, vavemodel.Feature feature, vavemodel.Feature parent,
 		vavemodel.TreeConstraint treeConstrParent) {
 		if (treeConstrParent !== null) {
-			addContainment(treeConstrParent, feature, "feature")
+			addContainment(treeConstrParent, feature, "feature") // Add pointer, which points to the feature, to the treeConstrParent
 		} else {
 			if (parent !== null) {
 				var vavemodel.TreeConstraint treeconstr = VavemodelFactory::eINSTANCE.createTreeConstraint()
 				if (node.isMandatory()) {
-					treeconstr.setType(vavemodel.GroupType::XOR)
-					addContainment(parent, treeconstr, "treeconstraint")
-					addContainment(treeconstr, feature, "feature")
+					treeconstr.setType(vavemodel.GroupType::XOR)          // Tree constraint with type XOR = mandatory.
+					addContainment(parent, treeconstr, "treeconstraint")  // Add tree constraint with type XOR to the parent.
+					addContainment(treeconstr, feature, "feature")        // Add pointer, which points to the feature, to the tree constraint.
 				} else {
-					treeconstr.setType(vavemodel.GroupType::XORNONE)
-					addContainment(parent, treeconstr, "treeconstraint")
-					addContainment(treeconstr, feature, "feature")
+					treeconstr.setType(vavemodel.GroupType::XORNONE)      // Tree constraint with type XORNONE = optional.
+					addContainment(parent, treeconstr, "treeconstraint")  // Add tree constraint with type XORNONE to the parent.
+					addContainment(treeconstr, feature, "feature")        // Add pointer, which points to the feature, to the tree constraint.
 				}
 			}
 		}

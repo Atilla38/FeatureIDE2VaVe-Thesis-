@@ -19,7 +19,7 @@ import vavemodel.TreeConstraint;
 import vavemodel.VavemodelFactory;
 
 /**
- * Implements the structural xml to vave transformation of the FeatureIDE Feature-Model.
+ * Implements the structural transformation from xml to vave of the FeatureIDE Feature-Model.
  */
 @SuppressWarnings("all")
 public class StructTransformation {
@@ -35,7 +35,7 @@ public class StructTransformation {
    */
   public void start(final StructType struct) {
     Node node = struct.getNodeList();
-    this.parseChild(node, null, null);
+    this.parseFeature(node, null, null);
   }
   
   /**
@@ -44,7 +44,7 @@ public class StructTransformation {
    * @param parent The parent of the or feature.
    * @param treeConstrParent The tree constraint of the parent which is used to point to the child.
    */
-  private void _parseChild(final OrType or, final Feature parent, final TreeConstraint treeConstrParent) {
+  private void _parseFeature(final OrType or, final Feature parent, final TreeConstraint treeConstrParent) {
     Feature feature = this.createFeature(or);
     this.addTreeConstraints(or, feature, parent, treeConstrParent);
     TreeConstraint treeconstr = VavemodelFactory.eINSTANCE.createTreeConstraint();
@@ -59,7 +59,7 @@ public class StructTransformation {
    * @param parent The parent of the alt feature.
    * @param treeConstrParent The tree constraint of the parent which is used to point to the child.
    */
-  private void _parseChild(final AltType alt, final Feature parent, final TreeConstraint treeConstrParent) {
+  private void _parseFeature(final AltType alt, final Feature parent, final TreeConstraint treeConstrParent) {
     Feature feature = this.createFeature(alt);
     this.addTreeConstraints(alt, feature, parent, treeConstrParent);
     TreeConstraint treeconstr = VavemodelFactory.eINSTANCE.createTreeConstraint();
@@ -74,7 +74,7 @@ public class StructTransformation {
    * @param parent The parent of the and feature.
    * @param treeConstrParent The tree constraint of the parent which is used to point to the child.
    */
-  private void _parseChild(final AndType and, final Feature parent, final TreeConstraint treeConstrParent) {
+  private void _parseFeature(final AndType and, final Feature parent, final TreeConstraint treeConstrParent) {
     Feature feature = this.createFeature(and);
     this.addTreeConstraints(and, feature, parent, treeConstrParent);
     this.tranformChildFeatures(null, and, feature, treeConstrParent);
@@ -86,7 +86,7 @@ public class StructTransformation {
    * @param parent The parent of the leaf feature.
    * @param treeConstrParent The tree constraint of the parent which is used to point to the child.
    */
-  private void _parseChild(final FeatureType leaf, final Feature parent, final TreeConstraint treeConstrParent) {
+  private void _parseFeature(final FeatureType leaf, final Feature parent, final TreeConstraint treeConstrParent) {
     Feature feature = this.createFeature(leaf);
     this.addTreeConstraints(leaf, feature, parent, treeConstrParent);
   }
@@ -136,9 +136,9 @@ public class StructTransformation {
     }
     for (final Node childNode : nodeList) {
       if ((unaryNode != null)) {
-        this.parseChild(childNode, feature, null);
+        this.parseFeature(childNode, feature, null);
       } else {
-        this.parseChild(childNode, null, treeConstr);
+        this.parseFeature(childNode, null, treeConstr);
       }
     }
   }
@@ -146,9 +146,9 @@ public class StructTransformation {
   /**
    * Adds tree constraints to the parent parameter. If treeConstrParent is not null the tree constraint will be added which points then to the feature parameter.
    * If parent is not null a tree constraint which points to the feature based on the node parameter will be added to the parent.
-   * @param Node If the node is mandatory a tree constraint with type XOR will be added to the parent else with type XORNONE.
+   * @param Node If parent is not null and the node is mandatory a tree constraint with type XOR will be added to the parent else when parent is not null with type XORNONE.
    * @param feature The child of the parent feature.
-   * @param parent The feature parent.
+   * @param parent The parent of the feature parameter.
    */
   private void addTreeConstraints(final Node node, final Feature feature, final Feature parent, final TreeConstraint treeConstrParent) {
     if ((treeConstrParent != null)) {
@@ -170,18 +170,18 @@ public class StructTransformation {
     }
   }
   
-  private void parseChild(final Node alt, final Feature parent, final TreeConstraint treeConstrParent) {
+  private void parseFeature(final Node alt, final Feature parent, final TreeConstraint treeConstrParent) {
     if (alt instanceof AltType) {
-      _parseChild((AltType)alt, parent, treeConstrParent);
+      _parseFeature((AltType)alt, parent, treeConstrParent);
       return;
     } else if (alt instanceof AndType) {
-      _parseChild((AndType)alt, parent, treeConstrParent);
+      _parseFeature((AndType)alt, parent, treeConstrParent);
       return;
     } else if (alt instanceof FeatureType) {
-      _parseChild((FeatureType)alt, parent, treeConstrParent);
+      _parseFeature((FeatureType)alt, parent, treeConstrParent);
       return;
     } else if (alt instanceof OrType) {
-      _parseChild((OrType)alt, parent, treeConstrParent);
+      _parseFeature((OrType)alt, parent, treeConstrParent);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
