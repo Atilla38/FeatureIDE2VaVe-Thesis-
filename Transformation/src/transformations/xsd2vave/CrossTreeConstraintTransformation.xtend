@@ -18,15 +18,18 @@ import vavemodel.Feature
 import vavemodel.FeatureOption
 import vavemodel.UnaryExpression
 import vavemodel.VavemodelFactory
+import exception.handling.xml2vave.ExceptionHandlerConstraints
 
 /**
  * Implements the constraint transformation from xml to vave of the FeatureIDE Feature-Model.
  */
 class CrossTreeConstraintTransformation {
 	vavemodel.System system
+	ExceptionHandlerConstraints exceptionHandler;
 
 	new(vavemodel.System system) {
 		this.system = system
+		exceptionHandler = new ExceptionHandlerConstraints()
 	}
 
     /**
@@ -122,6 +125,10 @@ class CrossTreeConstraintTransformation {
 		System.out.println("No matching feature found in system")
 		return null
 	}
+	
+	def dispatch private vavemodel.Not<FeatureOption> parseExpression(Expression expression) {
+		throw new Exception("Unsupported expression");
+	}
 
     /**
      * Transforms the child terms and adds them to the expression.
@@ -135,10 +142,12 @@ class CrossTreeConstraintTransformation {
 		var Boolean isBinary
 		if (binaryExpression !== null) {
 			featureIDEExpressionList = binaryExpression.getExpressionList()
+			exceptionHandler.checkExpression(binaryExpression, featureIDEExpressionList);
 			isBinary = true
 		} else if (unaryExpression !== null) {
 			featureIDEExpressionList = new BasicEList<Expression>()
 			featureIDEExpressionList.add(unaryExpression.getExpressionList())
+			exceptionHandler.checkExpression(unaryExpression, featureIDEExpressionList);
 			isBinary = false
 		} else {
 			System.out.println("Binary and unaryExpression can't be both null")

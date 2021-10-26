@@ -9,9 +9,11 @@ import FeatureIDEXSD.NotType;
 import FeatureIDEXSD.RuleType;
 import FeatureIDEXSD.UnaryExpressionType;
 import FeatureIDEXSD.VarType;
+import exception.handling.xml2vave.ExceptionHandlerConstraints;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import vavemodel.BinaryExpression;
 import vavemodel.Conjunction;
 import vavemodel.CrossTreeConstraint;
@@ -33,8 +35,12 @@ import vavemodel.VavemodelFactory;
 public class CrossTreeConstraintTransformation {
   private vavemodel.System system;
   
+  private ExceptionHandlerConstraints exceptionHandler;
+  
   public CrossTreeConstraintTransformation(final vavemodel.System system) {
     this.system = system;
+    ExceptionHandlerConstraints _exceptionHandlerConstraints = new ExceptionHandlerConstraints();
+    this.exceptionHandler = _exceptionHandlerConstraints;
   }
   
   /**
@@ -133,6 +139,14 @@ public class CrossTreeConstraintTransformation {
     return null;
   }
   
+  private Not<FeatureOption> _parseExpression(final FeatureIDEXSD.Expression expression) {
+    try {
+      throw new Exception("Unsupported expression");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
   /**
    * Transforms the child terms and adds them to the expression.
    * @param binaryExpression If the parent expression is of the type BinaryExpressionType this parameter should not be null.
@@ -144,12 +158,14 @@ public class CrossTreeConstraintTransformation {
     Boolean isBinary = null;
     if ((binaryExpression != null)) {
       featureIDEExpressionList = binaryExpression.getExpressionList();
+      this.exceptionHandler.checkExpression(binaryExpression, featureIDEExpressionList);
       isBinary = Boolean.valueOf(true);
     } else {
       if ((unaryExpression != null)) {
         BasicEList<FeatureIDEXSD.Expression> _basicEList = new BasicEList<FeatureIDEXSD.Expression>();
         featureIDEExpressionList = _basicEList;
         featureIDEExpressionList.add(unaryExpression.getExpressionList());
+        this.exceptionHandler.checkExpression(unaryExpression, featureIDEExpressionList);
         isBinary = Boolean.valueOf(false);
       } else {
         System.out.println("Binary and unaryExpression can\'t be both null");
@@ -194,6 +210,8 @@ public class CrossTreeConstraintTransformation {
       return _parseExpression((NotType)conj);
     } else if (conj instanceof VarType) {
       return _parseExpression((VarType)conj);
+    } else if (conj != null) {
+      return _parseExpression(conj);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(conj).toString());

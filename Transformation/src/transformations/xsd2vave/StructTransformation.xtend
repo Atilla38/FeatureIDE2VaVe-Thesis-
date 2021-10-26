@@ -14,15 +14,18 @@ import FeatureIDEXSD.OrType
 import FeatureIDEXSD.StructType
 import FeatureIDEXSD.UnaryNodeType
 import vavemodel.VavemodelFactory
+import exception.handling.xml2vave.ExceptionHandlerStruct
 
 /**
  * Implements the structural transformation from xml to vave of the FeatureIDE Feature-Model.
  */
 class StructTransformation {
 	vavemodel.System system
+	ExceptionHandlerStruct exceptionHandler
 
 	new(vavemodel.System system) {
 		this.system = system
+		exceptionHandler = new ExceptionHandlerStruct()
 	}
 
     /**
@@ -86,6 +89,10 @@ class StructTransformation {
 		var vavemodel.Feature feature = this.createFeature(leaf)
 		this.addTreeConstraints(leaf, feature, parent, treeConstrParent)
 	}
+	
+	def dispatch private void parseFeature(Node node, vavemodel.Feature parent, vavemodel.TreeConstraint treeConstrParent) {
+		throw new Exception("Unsupported node type");
+	}
 
     /**
      * Adds the containment to the container.
@@ -122,12 +129,15 @@ class StructTransformation {
 		var EList<Node> nodeList
 		if (binaryNode !== null) {
 			nodeList = binaryNode.getNodeList()
+			exceptionHandler.checkNode(binaryNode,nodeList);
 		} else if (unaryNode !== null) {
 			nodeList = unaryNode.getNodeList()
+			exceptionHandler.checkNode(unaryNode,nodeList);
 		} else {
-			System::out.println("Unary and binaryNode can't be both null")
+			System::out.println("Unary and binary node can't be both null")
 			return;
 		}
+		
 		for (Node childNode : nodeList) {
 			
 				if (unaryNode !== null) {

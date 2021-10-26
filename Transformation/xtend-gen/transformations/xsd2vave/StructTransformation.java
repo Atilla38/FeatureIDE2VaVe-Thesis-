@@ -8,11 +8,13 @@ import FeatureIDEXSD.Node;
 import FeatureIDEXSD.OrType;
 import FeatureIDEXSD.StructType;
 import FeatureIDEXSD.UnaryNodeType;
+import exception.handling.xml2vave.ExceptionHandlerStruct;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import vavemodel.Feature;
 import vavemodel.GroupType;
 import vavemodel.TreeConstraint;
@@ -25,8 +27,12 @@ import vavemodel.VavemodelFactory;
 public class StructTransformation {
   private vavemodel.System system;
   
+  private ExceptionHandlerStruct exceptionHandler;
+  
   public StructTransformation(final vavemodel.System system) {
     this.system = system;
+    ExceptionHandlerStruct _exceptionHandlerStruct = new ExceptionHandlerStruct();
+    this.exceptionHandler = _exceptionHandlerStruct;
   }
   
   /**
@@ -91,6 +97,14 @@ public class StructTransformation {
     this.addTreeConstraints(leaf, feature, parent, treeConstrParent);
   }
   
+  private void _parseFeature(final Node node, final Feature parent, final TreeConstraint treeConstrParent) {
+    try {
+      throw new Exception("Unsupported node type");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
   /**
    * Adds the containment to the container.
    * @param container The container to which the containment should be added.
@@ -126,11 +140,13 @@ public class StructTransformation {
     EList<Node> nodeList = null;
     if ((binaryNode != null)) {
       nodeList = binaryNode.getNodeList();
+      this.exceptionHandler.checkNode(binaryNode, nodeList);
     } else {
       if ((unaryNode != null)) {
         nodeList = unaryNode.getNodeList();
+        this.exceptionHandler.checkNode(unaryNode, nodeList);
       } else {
-        System.out.println("Unary and binaryNode can\'t be both null");
+        System.out.println("Unary and binary node can\'t be both null");
         return;
       }
     }
@@ -182,6 +198,9 @@ public class StructTransformation {
       return;
     } else if (alt instanceof OrType) {
       _parseFeature((OrType)alt, parent, treeConstrParent);
+      return;
+    } else if (alt != null) {
+      _parseFeature(alt, parent, treeConstrParent);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +

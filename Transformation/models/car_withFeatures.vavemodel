@@ -1,37 +1,82 @@
 <?xml version="1.0" encoding="ASCII"?>
 <vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
+  <constraint/>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.20"/>
+      <term xsi:type="vavemodel:Not">
+        <term xsi:type="vavemodel:Variable" option="//@feature.19"/>
+      </term>
+    </expression>
+  </constraint>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.15"/>
+      <term xsi:type="vavemodel:Variable" option="//@feature.16"/>
+    </expression>
+  </constraint>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.13"/>
+      <term xsi:type="vavemodel:Variable" option="//@feature.5"/>
+    </expression>
+  </constraint>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.14"/>
+      <term xsi:type="vavemodel:Disjunction">
+        <term xsi:type="vavemodel:Variable" option="//@feature.4"/>
+        <term xsi:type="vavemodel:Variable" option="//@feature.5"/>
+      </term>
+    </expression>
+  </constraint>
   <constraint>
     <expression xsi:type="vavemodel:Implication">
       <term xsi:type="vavemodel:Variable" option="//@feature.2"/>
-      <term xsi:type="vavemodel:Variable" option="//@feature.4"/>
+      <term xsi:type="vavemodel:Variable" option="//@feature.20"/>
     </expression>
   </constraint>
-  <constraint>
-    <expression xsi:type="vavemodel:Implication">
-      <term xsi:type="vavemodel:Variable" option="//@feature.4"/>
-      <term xsi:type="vavemodel:Disjunction">
-        <term xsi:type="vavemodel:Variable" option="//@feature.3"/>
-        <term xsi:type="vavemodel:Variable" option="//@feature.2"/>
-      </term>
-    </expression>
-  </constraint>
-  <constraint>
-    <expression xsi:type="vavemodel:Implication">
-      <term xsi:type="vavemodel:Disjunction">
-        <term xsi:type="vavemodel:Variable" option="//@feature.2"/>
-        <term xsi:type="vavemodel:Variable" option="//@feature.3"/>
-      </term>
-      <term xsi:type="vavemodel:Variable" option="//@feature.4"/>
-    </expression>
-  </constraint>
-  <feature name="Car">
+  <feature name="Elevator">
     <treeconstraint feature="//@feature.1"/>
-    <treeconstraint type="XORNONE" feature="//@feature.4"/>
+    <treeconstraint type="XORNONE" feature="//@feature.11"/>
+    <treeconstraint type="XORNONE" feature="//@feature.12"/>
+    <treeconstraint type="XORNONE" feature="//@feature.15"/>
+    <treeconstraint type="XORNONE" feature="//@feature.19"/>
   </feature>
-  <feature name="EngineType">
-    <treeconstraint type="OR" feature="//@feature.2 //@feature.3"/>
+  <feature name="Behavior">
+    <treeconstraint feature="//@feature.2"/>
+    <treeconstraint type="XORNONE" feature="//@feature.6"/>
+    <treeconstraint type="XORNONE" feature="//@feature.7"/>
   </feature>
-  <feature name="Gasoline"/>
-  <feature name="Electric"/>
-  <feature name="SmogControl"/>
+  <feature name="Modes">
+    <treeconstraint type="OR" feature="//@feature.3 //@feature.4 //@feature.5"/>
+  </feature>
+  <feature name="Sabbath"/>
+  <feature name="FIFO"/>
+  <feature name="ShortestPaht"/>
+  <feature name="Service"/>
+  <feature name="Priorities">
+    <treeconstraint type="OR" feature="//@feature.8 //@feature.9 //@feature.10"/>
+  </feature>
+  <feature name="RushHour"/>
+  <feature name="FloorPriority"/>
+  <feature name="PersonPriority"/>
+  <feature name="VoiceOutput"/>
+  <feature name="CallButtons">
+    <treeconstraint feature="//@feature.13 //@feature.14"/>
+  </feature>
+  <feature name="DirectedCall"/>
+  <feature name="UndirectedCall"/>
+  <feature name="Security">
+    <treeconstraint type="XORNONE" feature="//@feature.16"/>
+  </feature>
+  <feature name="Permission">
+    <treeconstraint type="OR" feature="//@feature.17 //@feature.18"/>
+  </feature>
+  <feature name="FloorPermission"/>
+  <feature name="PermissionControl"/>
+  <feature name="Safety">
+    <treeconstraint type="XORNONE" feature="//@feature.20"/>
+  </feature>
+  <feature name="Overloaded"/>
 </vavemodel:System>

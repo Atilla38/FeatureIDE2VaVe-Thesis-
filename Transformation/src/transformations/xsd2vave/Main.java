@@ -13,7 +13,7 @@ public class Main {
 	static XSD2VaveTransformation transformation;
 
 	public static void main(String[] args) {
-		File file = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\FeatureIDE-Projects\\Car\\car.xml");
+		File file = new File("D:\\Projekte\\Feature\\Elevator-Antenna-v1.0\\Elevator-Antenna-v1.0.xml");
 		generateVaveModel(file);
 
 	}
