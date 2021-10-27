@@ -1,4 +1,4 @@
-package transformations.xsd2vave;
+package transformations.xml2vave;
 
 import java.io.IOException;
 
@@ -19,14 +19,14 @@ import FeatureIDEXSD.FeatureModelType;
 import FeatureIDEXSD.StructType;
 import vavemodel.VavemodelFactory;
 
-public class XSD2VaveTransformation {
+public class XML2VaveTransformation {
 
 	private vavemodel.System system;
 	private Path projectFolder = Paths.get(".").normalize().toAbsolutePath();
 	private StructTransformation structTransformation;
 	private CrossTreeConstraintTransformation constraintTransformation;
 
-	public XSD2VaveTransformation() {
+	public XML2VaveTransformation() {
 		this.system = VavemodelFactory.eINSTANCE.createSystem();
 		this.structTransformation = new StructTransformation(system);
 		this.constraintTransformation = new CrossTreeConstraintTransformation(system);
