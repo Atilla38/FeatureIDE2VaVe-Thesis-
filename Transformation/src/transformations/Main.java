@@ -31,7 +31,7 @@ public class Main {
 	
 	private static void generateFeatureIDEXMLFile(File vavemodel) {
 		vave2xmlTransformation = new Vave2XMLTransformation();
-		Resource resource = loadFeatureIDEXMLFile(vavemodel);
+		Resource resource = loadVavemodel(vavemodel);
 		vavemodel.System root = (vavemodel.System) resource.getContents().get(0);
 		vave2xmlTransformation.start(root);
 	}
@@ -57,7 +57,7 @@ public class Main {
 	public static Resource loadVavemodel(File file) {
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
         Map<String, Object> m = reg.getExtensionToFactoryMap();
-        m.put("website", new XMIResourceFactoryImpl());
+        m.put("vavemodel", new XMIResourceFactoryImpl());
 
         // Obtain a new resource set
         ResourceSet resSet = new ResourceSetImpl();
