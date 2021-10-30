@@ -46,7 +46,12 @@ public class Vave2XMLTransformation {
 			return;
 		}
 		
-		this.structTransformation.start(features);
+		try {
+			this.structTransformation.start(features);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	
 		if (root.getConstraint() != null) {
 			constraints = root.getConstraint();

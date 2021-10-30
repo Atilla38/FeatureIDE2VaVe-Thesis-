@@ -22,7 +22,7 @@ public class Main {
 	private static Path projectFolder = Paths.get(".").normalize().toAbsolutePath();
 
 	public static void main(String[] args) {
-		File xmlFile = new File("D:\\Projekte\\Feature\\Elevator-Antenna-v1.0\\Elevator-Antenna-v1.0.xml");
+		File xmlFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\FeatureIDE-Projects\\Car\\car.xml");
 		generateVaveModel(xmlFile);
 		File vaveFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models/car_withFeatures.vavemodel");
 		generateFeatureIDEXMLFile(vaveFile);
