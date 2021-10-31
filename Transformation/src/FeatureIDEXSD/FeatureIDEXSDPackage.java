@@ -2341,22 +2341,40 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	int RULE_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Node List Group</b></em>' attribute list.
+	 * The feature id for the '<em><b>Alt</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__NODE_LIST_GROUP = 0;
+	int STRUCT_TYPE__ALT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Node List</b></em>' containment reference.
+	 * The feature id for the '<em><b>Or</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__NODE_LIST = 1;
+	int STRUCT_TYPE__OR = 1;
+
+	/**
+	 * The feature id for the '<em><b>And</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCT_TYPE__AND = 2;
+
+	/**
+	 * The feature id for the '<em><b>Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCT_TYPE__FEATURE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Struct Type</em>' class.
@@ -2365,7 +2383,7 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE_FEATURE_COUNT = 2;
+	int STRUCT_TYPE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Struct Type</em>' class.
@@ -3645,26 +3663,48 @@ public interface FeatureIDEXSDPackage extends EPackage {
 	EClass getStructType();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link FeatureIDEXSD.StructType#getNodeListGroup <em>Node List Group</em>}'.
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType#getAlt <em>Alt</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Node List Group</em>'.
-	 * @see FeatureIDEXSD.StructType#getNodeListGroup()
+	 * @return the meta object for the containment reference '<em>Alt</em>'.
+	 * @see FeatureIDEXSD.StructType#getAlt()
 	 * @see #getStructType()
 	 * @generated
 	 */
-	EAttribute getStructType_NodeListGroup();
+	EReference getStructType_Alt();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType#getNodeList <em>Node List</em>}'.
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType#getOr <em>Or</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Node List</em>'.
-	 * @see FeatureIDEXSD.StructType#getNodeList()
+	 * @return the meta object for the containment reference '<em>Or</em>'.
+	 * @see FeatureIDEXSD.StructType#getOr()
 	 * @see #getStructType()
 	 * @generated
 	 */
-	EReference getStructType_NodeList();
+	EReference getStructType_Or();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType#getAnd <em>And</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>And</em>'.
+	 * @see FeatureIDEXSD.StructType#getAnd()
+	 * @see #getStructType()
+	 * @generated
+	 */
+	EReference getStructType_And();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link FeatureIDEXSD.StructType#getFeature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Feature</em>'.
+	 * @see FeatureIDEXSD.StructType#getFeature()
+	 * @see #getStructType()
+	 * @generated
+	 */
+	EReference getStructType_Feature();
 
 	/**
 	 * Returns the meta object for class '{@link FeatureIDEXSD.StructType1 <em>Struct Type1</em>}'.
@@ -4745,20 +4785,36 @@ public interface FeatureIDEXSDPackage extends EPackage {
 		EClass STRUCT_TYPE = eINSTANCE.getStructType();
 
 		/**
-		 * The meta object literal for the '<em><b>Node List Group</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Alt</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STRUCT_TYPE__NODE_LIST_GROUP = eINSTANCE.getStructType_NodeListGroup();
+		EReference STRUCT_TYPE__ALT = eINSTANCE.getStructType_Alt();
 
 		/**
-		 * The meta object literal for the '<em><b>Node List</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Or</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCT_TYPE__NODE_LIST = eINSTANCE.getStructType_NodeList();
+		EReference STRUCT_TYPE__OR = eINSTANCE.getStructType_Or();
+
+		/**
+		 * The meta object literal for the '<em><b>And</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCT_TYPE__AND = eINSTANCE.getStructType_And();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCT_TYPE__FEATURE = eINSTANCE.getStructType_Feature();
 
 		/**
 		 * The meta object literal for the '{@link FeatureIDEXSD.impl.StructType1Impl <em>Struct Type1</em>}' class.

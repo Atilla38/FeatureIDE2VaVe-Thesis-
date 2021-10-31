@@ -26,6 +26,9 @@ public class Main {
 		generateVaveModel(xmlFile);
 		File vaveFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models/car_withFeatures.vavemodel");
 		generateFeatureIDEXMLFile(vaveFile);
+		
+		File newXmlFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models/FeatureIDEXML.featureIDE");
+		generateVaveModel(newXmlFile);
 
 	}
 	

@@ -120,8 +120,10 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//RuleType/expressionList"/>
     </genClasses>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//StructType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute FeatureIDEXSD.ecore#//StructType/nodeListGroup"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType/nodeList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType/alt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType/or"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType/and"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType/feature"/>
     </genClasses>
     <genClasses ecoreClass="FeatureIDEXSD.ecore#//StructType1">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureIDEXSD.ecore#//StructType1/feature"/>

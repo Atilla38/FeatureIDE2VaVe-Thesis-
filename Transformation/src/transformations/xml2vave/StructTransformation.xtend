@@ -33,7 +33,22 @@ class StructTransformation {
      * @param struct The struct container of the FeatureIDEXSD ecore model.
      */
 	def void start(StructType struct) {
-		var Node node = struct.getNodeList()
+		var Node node
+		if(struct.getAlt() !== null) {
+			node = struct.getAlt();
+		}
+		
+		if(struct.getOr() !== null) {
+			node = struct.getOr();
+		}
+		
+		if(struct.getAnd() !== null) {
+			node = struct.getAnd();
+		}
+		
+		if(struct.getFeature() !== null) {
+			node = struct.getFeature();
+		}
 			this.parseFeature(node, null, null)
 	}
     
