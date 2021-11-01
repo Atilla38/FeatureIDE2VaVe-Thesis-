@@ -24,10 +24,10 @@ public class Main {
 	public static void main(String[] args) {
 		File xmlFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\FeatureIDE-Projects\\Car\\car.xml");
 		generateVaveModel(xmlFile);
-		File vaveFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models/car_withFeatures.vavemodel");
+		File vaveFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models\\car_withFeatures.vavemodel");
 		generateFeatureIDEXMLFile(vaveFile);
 		
-		File newXmlFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models/FeatureIDEXML.featureIDE");
+		File newXmlFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models\\FeatureIDEXML.featureidexsd");
 		generateVaveModel(newXmlFile);
 
 	}

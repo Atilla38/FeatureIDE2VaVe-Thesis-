@@ -66,10 +66,10 @@ public class Vave2XMLTransformation {
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
-		m.put("featureIDE", new XMIResourceFactoryImpl());
+		m.put("featureidexsd", new XMIResourceFactoryImpl());
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.createResource(
-				URI.createFileURI(this.projectFolder.resolve("models/FeatureIDEXML.featureIDE").toString()));
+				URI.createFileURI(this.projectFolder.resolve("models/FeatureIDEXML.featureidexsd").toString()));
 		resource.getContents().add(documentRoot);
 
 		try {
