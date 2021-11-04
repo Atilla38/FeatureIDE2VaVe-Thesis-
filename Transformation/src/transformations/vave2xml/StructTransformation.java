@@ -1,8 +1,12 @@
 package transformations.vave2xml;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.FeatureMap.Entry;
 
 import FeatureIDEXSD.AltType;
 import FeatureIDEXSD.AndType;
@@ -30,34 +34,35 @@ public class StructTransformation {
 
 	public void start(EList<Feature> features) throws Exception {
 		vavemodel.Feature rootFeature = features.get(0);
-		Node node;
+		Map.Entry<EStructuralFeature, Node> entry;
 		if (rootFeature.getTreeconstraint().size() >= 1) {
 			TreeConstraint treeConstraint = rootFeature.getTreeconstraint().get(0);
 			switch (treeConstraint.getType().getValue()) {
 			case GroupType.OR_VALUE:
-				node = parseOr(rootFeature, true, true);
+				entry = parseOr(rootFeature, true, true);
 				break;
 
 			case GroupType.XOR_VALUE:
 				if (treeConstraint.getFeature().size() == 1) {
-					struct.setAnd(parseAnd(rootFeature, true, true));
+					entry = parseAnd(rootFeature, true, true);
 				} else {
-					node = parseAlt(rootFeature, true, true);
+					entry = parseAlt(rootFeature, true, true);
 				}
 				break;
 			case GroupType.XORNONE_VALUE:
-				struct.setAnd(parseAnd(rootFeature, true, true));
+				entry = parseAnd(rootFeature, true, true);
 				break;
 			default:
 				throw new Exception("No matching found");
 			}
 		} else {
-			node = parseFeature(rootFeature, true, true);
+			entry = parseFeature(rootFeature, true, true);
 		}
+		struct.getNodeListGroup().add(entry.getKey(), entry.getValue());
 		this.featureModel.setStruct(struct);
 	}
 
-	private Node parseChild(Feature feature, TreeConstraint treeConstraintParent, boolean mandatoryAttribute)
+	private Map.Entry<EStructuralFeature, Node> parseChild(Feature feature, TreeConstraint treeConstraintParent, boolean mandatoryAttribute)
 			throws Exception {
 		Node node = null;
 		boolean mandatory = false;
@@ -69,27 +74,23 @@ public class StructTransformation {
 			TreeConstraint treeConstraint = feature.getTreeconstraint().get(0);
 			switch (treeConstraint.getType().getValue()) {
 			case GroupType.OR_VALUE:
-				node = parseOr(feature, mandatory, mandatoryAttribute);
-				break;
+				return parseOr(feature, mandatory, mandatoryAttribute);
 
 			case GroupType.XOR_VALUE:
 				if (treeConstraint.getFeature().size() == 1) {
-					node = parseAnd(feature, mandatory, mandatoryAttribute);
+					return parseAnd(feature, mandatory, mandatoryAttribute);
 				} else {
-					node = parseAlt(feature, mandatory, mandatoryAttribute);
+					return parseAlt(feature, mandatory, mandatoryAttribute);
 				}
-				break;
 			case GroupType.XORNONE_VALUE:
-				node = parseAnd(feature, mandatory, mandatoryAttribute);
-				break;
+				return parseAnd(feature, mandatory, mandatoryAttribute);
 			default:
 				throw new Exception("No matching found");
 
 			}
 		} else {
-			node = parseFeature(feature, mandatory, mandatoryAttribute);
+			return parseFeature(feature, mandatory, mandatoryAttribute);
 		}
-		return node;
 	}
 
 	private boolean isMandatory(TreeConstraint treeConstraint) throws Exception {
@@ -104,18 +105,19 @@ public class StructTransformation {
 		}
 	}
 
-	private FeatureType parseFeature(Feature feature, boolean mandatory, boolean mandatoryAttribute) {
+	private java.util.Map.Entry<EStructuralFeature, Node> parseFeature(Feature feature, boolean mandatory, boolean mandatoryAttribute) {
 		FeatureType featureIDE = FeatureIDEXSDFactory.eINSTANCE.createFeatureType();
 		featureIDE.setName(feature.getName());
 
 		if (mandatoryAttribute) {
 			featureIDE.setMandatory(mandatory);
 		}
-
-		return featureIDE;
+		
+		
+		return Map.entry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE, featureIDE);
 	}
 
-	private AndType parseAnd(Feature feature, boolean mandatory, boolean mandatoryAttribute) throws Exception {
+	private  java.util.Map.Entry<EStructuralFeature, Node> parseAnd(Feature feature, boolean mandatory, boolean mandatoryAttribute) throws Exception {
 		AndType andFeature = FeatureIDEXSDFactory.eINSTANCE.createAndType();
 		andFeature.setName(feature.getName());
 
@@ -123,39 +125,36 @@ public class StructTransformation {
 			andFeature.setMandatory(mandatory);
 		}
 
-		EList<Node> nodes = new BasicEList<Node>();
 		EList<TreeConstraint> treeConstraintList = feature.getTreeconstraint();
 		for (TreeConstraint treeConstraint : treeConstraintList) {
 			for (Feature childFeature : treeConstraint.getFeature()) {
-				Node node = FeatureIDEXSDFactory.eINSTANCE.createNode();
-				node = parseChild(childFeature, treeConstraint, true);
-				nodes.add(node);
+				Map.Entry<EStructuralFeature, Node> entry = parseChild(childFeature, treeConstraint, true);
+				andFeature.getNodeListGroup().add(entry.getKey(),entry.getValue());
 			}
 		}
-		andFeature.getNodeList().addAll(nodes);
-		return andFeature;
+		return Map.entry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND, andFeature);
 	}
 
-	private AltType parseAlt(Feature feature, boolean mandatory, boolean mandatoryAttribute) {
-		return FeatureIDEXSDFactory.eINSTANCE.createAltType();
+	private java.util.Map.Entry<EStructuralFeature, Node> parseAlt(Feature feature, boolean mandatory, boolean mandatoryAttribute) {
+		return Map.entry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT, FeatureIDEXSDFactory.eINSTANCE.createAltType());
 
 	}
 
-	private OrType parseOr(Feature feature, boolean mandatory, boolean mandatoryAttribute) throws Exception {
+	private java.util.Map.Entry<EStructuralFeature, Node> parseOr(Feature feature, boolean mandatory, boolean mandatoryAttribute) throws Exception {
 		OrType orFeature = FeatureIDEXSDFactory.eINSTANCE.createOrType();
 		orFeature.setName(feature.getName());
 		if (mandatoryAttribute) {
 			orFeature.setMandatory(mandatory);
 		}
-		EList<Node> nodes = new BasicEList<Node>();
+		
 		EList<TreeConstraint> treeConstraintList = feature.getTreeconstraint();
 		for (TreeConstraint treeConstraint : treeConstraintList) {
 			for (Feature childFeature : treeConstraint.getFeature()) {
-				nodes.add(parseChild(childFeature, treeConstraint, false));
+				Map.Entry<EStructuralFeature, Node> entry = parseChild(childFeature, treeConstraint, false);
+				orFeature.getNodeGroup().add(entry.getKey(),entry.getValue());
 			}
 		}
-		orFeature.getNodeList().addAll(nodes);
 		
-		return orFeature;
+		return Map.entry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR, orFeature);
 	}
 }

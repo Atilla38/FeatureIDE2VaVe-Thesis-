@@ -1236,8 +1236,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructType_Alt() {
-		return (EReference)structTypeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getStructType_NodeListGroup() {
+		return (EAttribute)structTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1245,26 +1245,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructType_Or() {
+	public EReference getStructType_NodeList() {
 		return (EReference)structTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getStructType_And() {
-		return (EReference)structTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getStructType_Feature() {
-		return (EReference)structTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1600,10 +1582,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		createEReference(ruleTypeEClass, RULE_TYPE__EXPRESSION_LIST);
 
 		structTypeEClass = createEClass(STRUCT_TYPE);
-		createEReference(structTypeEClass, STRUCT_TYPE__ALT);
-		createEReference(structTypeEClass, STRUCT_TYPE__OR);
-		createEReference(structTypeEClass, STRUCT_TYPE__AND);
-		createEReference(structTypeEClass, STRUCT_TYPE__FEATURE);
+		createEAttribute(structTypeEClass, STRUCT_TYPE__NODE_LIST_GROUP);
+		createEReference(structTypeEClass, STRUCT_TYPE__NODE_LIST);
 
 		structType1EClass = createEClass(STRUCT_TYPE1);
 		createEReference(structType1EClass, STRUCT_TYPE1__FEATURE);
@@ -1702,7 +1682,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		initEClass(binaryNodeTypeEClass, BinaryNodeType.class, "BinaryNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBinaryNodeType_NodeGroup(), ecorePackage.getEFeatureMapEntry(), "nodeGroup", null, 0, -1, BinaryNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBinaryNodeType_NodeListGroup(), ecorePackage.getEFeatureMapEntry(), "nodeListGroup", null, 2, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryNodeType_NodeList(), this.getNode(), null, "nodeList", null, 2, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryNodeType_NodeList(), this.getNode(), null, "nodeList", null, 2, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(calculationsTypeEClass, CalculationsType.class, "CalculationsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCalculationsType_Key(), theXMLTypePackage.getString(), "key", null, 1, 1, CalculationsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1808,10 +1788,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		initEReference(getRuleType_ExpressionList(), this.getExpression(), null, "expressionList", null, 0, 1, RuleType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(structTypeEClass, StructType.class, "StructType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructType_Alt(), this.getAltType(), null, "alt", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructType_Or(), this.getOrType(), null, "or", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructType_And(), this.getAndType(), null, "and", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructType_Feature(), this.getFeatureType(), null, "feature", null, 0, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStructType_NodeListGroup(), ecorePackage.getEFeatureMapEntry(), "nodeListGroup", null, 1, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructType_NodeList(), this.getNode(), null, "nodeList", null, 1, 1, StructType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(structType1EClass, StructType1.class, "StructType1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructType1_Feature(), this.getExtendedLeafType(), null, "feature", null, 0, 1, StructType1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1833,7 +1811,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		initEClass(unaryNodeTypeEClass, UnaryNodeType.class, "UnaryNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnaryNodeType_NodeGroup(), ecorePackage.getEFeatureMapEntry(), "nodeGroup", null, 0, -1, UnaryNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnaryNodeType_NodeListGroup(), ecorePackage.getEFeatureMapEntry(), "nodeListGroup", null, 1, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getUnaryNodeType_NodeList(), this.getNode(), null, "nodeList", null, 1, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryNodeType_NodeList(), this.getNode(), null, "nodeList", null, 1, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(varTypeEClass, VarType.class, "VarType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVarType_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, VarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2631,36 +2609,21 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 			   "kind", "elementOnly"
 		   });
 		addAnnotation
-		  (getStructType_Alt(),
+		  (getStructType_NodeListGroup(),
 		   source,
 		   new String[] {
-			   "kind", "element",
-			   "name", "alt",
+			   "kind", "group",
+			   "name", "nodeList:group",
 			   "namespace", "##targetNamespace"
 		   });
 		addAnnotation
-		  (getStructType_Or(),
+		  (getStructType_NodeList(),
 		   source,
 		   new String[] {
 			   "kind", "element",
-			   "name", "or",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (getStructType_And(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "and",
-			   "namespace", "##targetNamespace"
-		   });
-		addAnnotation
-		  (getStructType_Feature(),
-		   source,
-		   new String[] {
-			   "kind", "element",
-			   "name", "feature",
-			   "namespace", "##targetNamespace"
+			   "name", "nodeList",
+			   "namespace", "##targetNamespace",
+			   "group", "nodeList:group"
 		   });
 		addAnnotation
 		  (structType1EClass,

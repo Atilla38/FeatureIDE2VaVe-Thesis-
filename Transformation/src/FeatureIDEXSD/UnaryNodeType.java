@@ -58,7 +58,7 @@ public interface UnaryNodeType extends Node {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Node List</em>' containment reference list.
 	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getUnaryNodeType_NodeList()
-	 * @model containment="true" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
 	 *        extendedMetaData="kind='element' name='nodeList' namespace='##targetNamespace' group='nodeList:group'"
 	 * @generated
 	 */

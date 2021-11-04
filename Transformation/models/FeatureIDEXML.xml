@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<FeatureIDEXSD:DocumentRoot xmlns:FeatureIDEXSD="file:/D:/Uni/Bachelorarbeit/Thesis%20Repository/XSD-Schema/XMLSPY/FeatureIDE-XSD.xsd">
+  <featureModel>
+    <struct>
+      <and mandatory="true" name="Car">
+        <or mandatory="true" name="EngineType">
+          <feature name="Gasoline"/>
+          <feature name="Electric"/>
+        </or>
+        <feature mandatory="false" name="SmogControl"/>
+      </and>
+    </struct>
+  </featureModel>
+</FeatureIDEXSD:DocumentRoot>

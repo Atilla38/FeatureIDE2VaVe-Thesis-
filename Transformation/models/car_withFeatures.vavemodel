@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="ASCII"?>
-<vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
+<vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.2"/>
+      <term xsi:type="vavemodel:Variable" option="//@feature.4"/>
+    </expression>
+  </constraint>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.4"/>
+      <term xsi:type="vavemodel:Disjunction">
+        <term xsi:type="vavemodel:Variable" option="//@feature.3"/>
+        <term xsi:type="vavemodel:Variable" option="//@feature.2"/>
+      </term>
+    </expression>
+  </constraint>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Disjunction">
+        <term xsi:type="vavemodel:Variable" option="//@feature.2"/>
+        <term xsi:type="vavemodel:Variable" option="//@feature.3"/>
+      </term>
+      <term xsi:type="vavemodel:Variable" option="//@feature.4"/>
+    </expression>
+  </constraint>
   <feature name="Car">
     <treeconstraint feature="//@feature.1"/>
     <treeconstraint type="XORNONE" feature="//@feature.4"/>

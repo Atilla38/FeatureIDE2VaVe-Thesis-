@@ -210,12 +210,9 @@
 				<xs:element ref="properties" minOccurs="0"/>
 				<xs:element name="struct">
 					<xs:complexType>
-						<xs:choice>
-						<xs:element ref = "alt"/>
-						<xs:element ref = "or"/>
-						<xs:element ref = "and"/>
-						<xs:element ref = "feature"/>
-						</xs:choice>
+						<xs:sequence>
+						<xs:element ref="nodeList"/>
+						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 				<xs:element ref="constraints" minOccurs="0"/>

@@ -12,10 +12,12 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 
 import FeatureIDEXSD.DocumentRoot;
 import FeatureIDEXSD.FeatureIDEXSDFactory;
 import FeatureIDEXSD.FeatureModelType;
+import FeatureIDEXSD.util.FeatureIDEXSDResourceFactoryImpl;
 import vavemodel.CrossTreeConstraint;
 import vavemodel.Feature;
 
@@ -64,12 +66,13 @@ public class Vave2XMLTransformation {
 		
 		this.documentRoot.setFeatureModel(featureModel);
 		
-		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> m = reg.getExtensionToFactoryMap();
-		m.put("featureidexsd", new XMIResourceFactoryImpl());
 		ResourceSet resSet = new ResourceSetImpl();
+		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xml",
+				new XMLResourceFactoryImpl());
+		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("featureIDExsd",
+				new XMLResourceFactoryImpl());
 		Resource resource = resSet.createResource(
-				URI.createFileURI(this.projectFolder.resolve("models/FeatureIDEXML.featureidexsd").toString()));
+				URI.createFileURI(this.projectFolder.resolve("models/FeatureIDEXML.xml").toString()));
 		resource.getContents().add(documentRoot);
 
 		try {
