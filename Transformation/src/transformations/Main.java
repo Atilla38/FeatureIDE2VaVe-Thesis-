@@ -28,10 +28,6 @@ public class Main {
 		generateVaveModel(xmlFile);
 		File vaveFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models\\car_withFeatures.vavemodel");
 		generateFeatureIDEXMLFile(vaveFile);
-		
-		/*File newXmlFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models\\FeatureIDEXML.featureidexsd");
-		generateVaveModel(newXmlFile);*/
-
 	}
 	
 	private static void generateFeatureIDEXMLFile(File vavemodel) {
@@ -45,22 +41,6 @@ public class Main {
 		xml2vaveTransformation = new XML2VaveTransformation();
 		Resource resource = loadFeatureIDEXMLFile(featureIDEXML);
 		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
-		
-		ResourceSet resSet = new ResourceSetImpl();
-		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xml",
-				new FeatureIDEXSDResourceFactoryImpl());
-		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("featureIDExsd",
-				new FeatureIDEXSDResourceFactoryImpl());
-		Resource resource1 = resSet.createResource(
-				URI.createFileURI(projectFolder.resolve("models/prased.xml").toString()));
-		resource1.getContents().add(root);
-		
-		try {
-			resource1.save(Collections.EMPTY_MAP);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
 		xml2vaveTransformation.start(root);
 	}
 
