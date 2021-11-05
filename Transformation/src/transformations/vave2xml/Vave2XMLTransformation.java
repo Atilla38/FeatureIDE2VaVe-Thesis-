@@ -66,11 +66,10 @@ public class Vave2XMLTransformation {
 		
 		this.documentRoot.setFeatureModel(featureModel);
 		
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("xml", new FeatureIDEXSDResourceFactoryImpl());
 		ResourceSet resSet = new ResourceSetImpl();
-		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xml",
-				new XMLResourceFactoryImpl());
-		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("featureIDExsd",
-				new XMLResourceFactoryImpl());
 		Resource resource = resSet.createResource(
 				URI.createFileURI(this.projectFolder.resolve("models/FeatureIDEXML.xml").toString()));
 		resource.getContents().add(documentRoot);

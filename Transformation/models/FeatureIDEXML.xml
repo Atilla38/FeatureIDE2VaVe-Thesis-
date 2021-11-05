@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="ASCII"?>
-<FeatureIDEXSD:DocumentRoot xmlns:FeatureIDEXSD="file:/D:/Uni/Bachelorarbeit/Thesis%20Repository/XSD-Schema/XMLSPY/FeatureIDE-XSD.xsd">
-  <featureModel>
-    <struct>
-      <and mandatory="true" name="Car">
-        <or mandatory="true" name="EngineType">
-          <feature name="Gasoline"/>
-          <feature name="Electric"/>
+<featureModel>
+  <struct>
+    <and mandatory="true" name="Car">
+      <or mandatory="true" name="EngineType">
+        <or name="Gasoline">
+          <feature name="NewFeature6"/>
+          <feature name="NewFeature7"/>
         </or>
-        <feature mandatory="false" name="SmogControl"/>
-      </and>
-    </struct>
-  </featureModel>
-</FeatureIDEXSD:DocumentRoot>
+        <feature name="Electric"/>
+      </or>
+      <or mandatory="false" name="SmogControl">
+        <and name="NewFeature">
+          <alt mandatory="true" name="NewFeature3">
+            <feature name="NewFeature4"/>
+            <feature name="NewFeature5"/>
+          </alt>
+        </and>
+        <feature name="NewFeature2"/>
+      </or>
+    </and>
+  </struct>
+</featureModel>

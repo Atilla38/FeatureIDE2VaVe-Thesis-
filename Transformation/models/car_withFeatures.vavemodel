@@ -3,14 +3,14 @@
   <constraint>
     <expression xsi:type="vavemodel:Implication">
       <term xsi:type="vavemodel:Variable" option="//@feature.2"/>
-      <term xsi:type="vavemodel:Variable" option="//@feature.4"/>
+      <term xsi:type="vavemodel:Variable" option="//@feature.6"/>
     </expression>
   </constraint>
   <constraint>
     <expression xsi:type="vavemodel:Implication">
-      <term xsi:type="vavemodel:Variable" option="//@feature.4"/>
+      <term xsi:type="vavemodel:Variable" option="//@feature.6"/>
       <term xsi:type="vavemodel:Disjunction">
-        <term xsi:type="vavemodel:Variable" option="//@feature.3"/>
+        <term xsi:type="vavemodel:Variable" option="//@feature.5"/>
         <term xsi:type="vavemodel:Variable" option="//@feature.2"/>
       </term>
     </expression>
@@ -19,19 +19,34 @@
     <expression xsi:type="vavemodel:Implication">
       <term xsi:type="vavemodel:Disjunction">
         <term xsi:type="vavemodel:Variable" option="//@feature.2"/>
-        <term xsi:type="vavemodel:Variable" option="//@feature.3"/>
+        <term xsi:type="vavemodel:Variable" option="//@feature.5"/>
       </term>
-      <term xsi:type="vavemodel:Variable" option="//@feature.4"/>
+      <term xsi:type="vavemodel:Variable" option="//@feature.6"/>
     </expression>
   </constraint>
   <feature name="Car">
     <treeconstraint feature="//@feature.1"/>
-    <treeconstraint type="XORNONE" feature="//@feature.4"/>
+    <treeconstraint type="XORNONE" feature="//@feature.6"/>
   </feature>
   <feature name="EngineType">
-    <treeconstraint type="OR" feature="//@feature.2 //@feature.3"/>
+    <treeconstraint type="OR" feature="//@feature.2 //@feature.5"/>
   </feature>
-  <feature name="Gasoline"/>
+  <feature name="Gasoline">
+    <treeconstraint type="OR" feature="//@feature.3 //@feature.4"/>
+  </feature>
+  <feature name="NewFeature6"/>
+  <feature name="NewFeature7"/>
   <feature name="Electric"/>
-  <feature name="SmogControl"/>
+  <feature name="SmogControl">
+    <treeconstraint type="OR" feature="//@feature.7 //@feature.11"/>
+  </feature>
+  <feature name="NewFeature">
+    <treeconstraint feature="//@feature.8"/>
+  </feature>
+  <feature name="NewFeature3">
+    <treeconstraint feature="//@feature.9 //@feature.10"/>
+  </feature>
+  <feature name="NewFeature4"/>
+  <feature name="NewFeature5"/>
+  <feature name="NewFeature2"/>
 </vavemodel:System>
