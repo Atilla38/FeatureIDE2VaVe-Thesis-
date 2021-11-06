@@ -749,8 +749,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressionList" eType="#//Expression"
-        changeable="false" volatile="true" transient="true" derived="true" containment="true"
-        resolveProxies="false">
+        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="expressionList"/>

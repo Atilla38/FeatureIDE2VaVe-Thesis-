@@ -57,7 +57,7 @@ public interface BinaryExpressionType extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Expression List</em>' containment reference list.
 	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getBinaryExpressionType_ExpressionList()
-	 * @model containment="true" upper="2" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model containment="true" upper="2" transient="true" volatile="true" derived="true"
 	 *        extendedMetaData="kind='element' name='expressionList' namespace='##targetNamespace' group='expressionList:group'"
 	 * @generated
 	 */

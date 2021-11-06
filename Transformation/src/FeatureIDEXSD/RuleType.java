@@ -65,11 +65,22 @@ public interface RuleType extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Expression List</em>' containment reference.
+	 * @see #setExpressionList(Expression)
 	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getRuleType_ExpressionList()
-	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model containment="true" transient="true" volatile="true" derived="true"
 	 *        extendedMetaData="kind='element' name='expressionList' namespace='##targetNamespace' group='expressionList:group'"
 	 * @generated
 	 */
 	Expression getExpressionList();
+
+	/**
+	 * Sets the value of the '{@link FeatureIDEXSD.RuleType#getExpressionList <em>Expression List</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Expression List</em>' containment reference.
+	 * @see #getExpressionList()
+	 * @generated
+	 */
+	void setExpressionList(Expression value);
 
 } // RuleType

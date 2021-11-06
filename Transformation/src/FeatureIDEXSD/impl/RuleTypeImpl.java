@@ -138,6 +138,15 @@ public class RuleTypeImpl extends MinimalEObjectImpl.Container implements RuleTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setExpressionList(Expression newExpressionList) {
+		((FeatureMap.Internal)getExpressionListGroup()).set(FeatureIDEXSDPackage.Literals.RULE_TYPE__EXPRESSION_LIST, newExpressionList);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -182,6 +191,9 @@ public class RuleTypeImpl extends MinimalEObjectImpl.Container implements RuleTy
 			case FeatureIDEXSDPackage.RULE_TYPE__EXPRESSION_LIST_GROUP:
 				((FeatureMap.Internal)getExpressionListGroup()).set(newValue);
 				return;
+			case FeatureIDEXSDPackage.RULE_TYPE__EXPRESSION_LIST:
+				setExpressionList((Expression)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -199,6 +211,9 @@ public class RuleTypeImpl extends MinimalEObjectImpl.Container implements RuleTy
 				return;
 			case FeatureIDEXSDPackage.RULE_TYPE__EXPRESSION_LIST_GROUP:
 				getExpressionListGroup().clear();
+				return;
+			case FeatureIDEXSDPackage.RULE_TYPE__EXPRESSION_LIST:
+				setExpressionList((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);

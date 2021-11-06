@@ -6,24 +6,6 @@
       <term xsi:type="vavemodel:Variable" option="//@feature.6"/>
     </expression>
   </constraint>
-  <constraint>
-    <expression xsi:type="vavemodel:Implication">
-      <term xsi:type="vavemodel:Variable" option="//@feature.6"/>
-      <term xsi:type="vavemodel:Disjunction">
-        <term xsi:type="vavemodel:Variable" option="//@feature.5"/>
-        <term xsi:type="vavemodel:Variable" option="//@feature.2"/>
-      </term>
-    </expression>
-  </constraint>
-  <constraint>
-    <expression xsi:type="vavemodel:Implication">
-      <term xsi:type="vavemodel:Disjunction">
-        <term xsi:type="vavemodel:Variable" option="//@feature.2"/>
-        <term xsi:type="vavemodel:Variable" option="//@feature.5"/>
-      </term>
-      <term xsi:type="vavemodel:Variable" option="//@feature.6"/>
-    </expression>
-  </constraint>
   <feature name="Car">
     <treeconstraint feature="//@feature.1"/>
     <treeconstraint type="XORNONE" feature="//@feature.6"/>
