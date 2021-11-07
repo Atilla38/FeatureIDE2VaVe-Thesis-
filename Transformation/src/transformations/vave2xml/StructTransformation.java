@@ -4,6 +4,8 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
 
 import FeatureIDEXSD.AltType;
 import FeatureIDEXSD.AndType;
@@ -32,14 +34,13 @@ public class StructTransformation {
 
 	public void start(EList<Feature> features) throws Exception {
 		vavemodel.Feature rootFeature = features.get(0);
-		Map.Entry<EStructuralFeature, Node> entry;
-		entry = this.parse(rootFeature, null, false);
-		entry.getValue().setMandatory(true);
-		struct.getNodeListGroup().add(entry.getKey(), entry.getValue());
+		FeatureMap.Entry entry = this.parse(rootFeature, null, false);
+	    ((Node) entry.getValue()).setMandatory(true);
+		struct.getNodeListGroup().add(entry);
 		this.featureModel.setStruct(struct);
 	}
 
-	private Map.Entry<EStructuralFeature, Node> parse(Feature feature, TreeConstraint treeConstraintParent,
+	private FeatureMap.Entry parse(Feature feature, TreeConstraint treeConstraintParent,
 			boolean mandatoryAttribute) throws Exception {
 		boolean mandatory = false;
 
@@ -81,16 +82,16 @@ public class StructTransformation {
 		}
 	}
 
-	private java.util.Map.Entry<EStructuralFeature, Node> parseFeature(Feature feature, boolean mandatory,
+	private FeatureMap.Entry parseFeature(Feature feature, boolean mandatory,
 			boolean mandatoryAttribute) {
 		FeatureType featureIDE = FeatureIDEXSDFactory.eINSTANCE.createFeatureType();
 
 		this.setAttributes(featureIDE, feature, mandatory, mandatoryAttribute);
 
-		return Map.entry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE, featureIDE);
+		return  FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE, featureIDE);
 	}
 
-	private java.util.Map.Entry<EStructuralFeature, Node> parseAnd(Feature feature, boolean mandatory,
+	private FeatureMap.Entry parseAnd(Feature feature, boolean mandatory,
 			boolean mandatoryAttribute) throws Exception {
 		AndType andFeature = FeatureIDEXSDFactory.eINSTANCE.createAndType();
 
@@ -98,21 +99,21 @@ public class StructTransformation {
 
 		parseChild(feature, null, andFeature);
 
-		return Map.entry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND, andFeature);
+		return  FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND, andFeature);
 	}
 
-	private java.util.Map.Entry<EStructuralFeature, Node> parseAlt(Feature feature, boolean mandatory,
+	private FeatureMap.Entry parseAlt(Feature feature, boolean mandatory,
 			boolean mandatoryAttribute) throws Exception {
 		AltType altFeature = FeatureIDEXSDFactory.eINSTANCE.createAltType();
 
 		this.setAttributes(altFeature, feature, mandatory, mandatoryAttribute);
 		parseChild(feature, altFeature, null);
 
-		return Map.entry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT, altFeature);
+		return  FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT, altFeature);
 
 	}
 
-	private java.util.Map.Entry<EStructuralFeature, Node> parseOr(Feature feature, boolean mandatory,
+	private FeatureMap.Entry parseOr(Feature feature, boolean mandatory,
 			boolean mandatoryAttribute) throws Exception {
 		OrType orFeature = FeatureIDEXSDFactory.eINSTANCE.createOrType();
 
@@ -120,7 +121,7 @@ public class StructTransformation {
 
 		parseChild(feature, orFeature, null);
 
-		return Map.entry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR, orFeature);
+		return  FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR, orFeature);
 	}
 
 	private void parseChild(Feature feature, BinaryNodeType binaryNode, UnaryNodeType unaryNode) throws Exception {
@@ -128,11 +129,9 @@ public class StructTransformation {
 		for (TreeConstraint treeConstraint : treeConstraintList) {
 			for (Feature childFeature : treeConstraint.getFeature()) {
 				if (binaryNode != null) {
-					Map.Entry<EStructuralFeature, Node> entry = parse(childFeature, treeConstraint, false);
-					binaryNode.getNodeGroup().add(entry.getKey(), entry.getValue());
+					binaryNode.getNodeGroup().add(parse(childFeature, treeConstraint, false));
 				} else {
-					Map.Entry<EStructuralFeature, Node> entry = parse(childFeature, treeConstraint, true);
-					unaryNode.getNodeGroup().add(entry.getKey(), entry.getValue());
+					unaryNode.getNodeGroup().add(parse(childFeature, treeConstraint, true));
 				}
 			}
 		}
