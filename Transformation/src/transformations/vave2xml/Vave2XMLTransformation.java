@@ -11,8 +11,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 
 import FeatureIDEXSD.DocumentRoot;
 import FeatureIDEXSD.FeatureIDEXSDFactory;
@@ -21,6 +19,11 @@ import FeatureIDEXSD.util.FeatureIDEXSDResourceFactoryImpl;
 import vavemodel.CrossTreeConstraint;
 import vavemodel.Feature;
 
+/**
+ * This class transforms the VaVe feature-model to a FeatureIDE feature-model.
+ * @author Atilla
+ *
+ */
 public class Vave2XMLTransformation {
 
 	private FeatureModelType featureModel;
@@ -37,6 +40,10 @@ public class Vave2XMLTransformation {
 		this.constraintTransformation = new CrossTreeConstraintTransformation(featureModel);
 	}
 	
+	/**
+	 * Starts the transformation.
+	 * @param root The root element of the Vavemodel.
+	 */
 	public void start(vavemodel.System root) {
 		EList<Feature> features;
 		EList<CrossTreeConstraint> constraints;

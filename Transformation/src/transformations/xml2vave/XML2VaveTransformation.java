@@ -19,6 +19,11 @@ import FeatureIDEXSD.FeatureModelType;
 import FeatureIDEXSD.StructType;
 import vavemodel.VavemodelFactory;
 
+/**
+ * This class transforms the FeatureIDE-Feature-Model XML-File to a Feature-Model in VaVe.
+ * @author Atilla
+ *
+ */
 public class XML2VaveTransformation {
 
 	private vavemodel.System system;
@@ -33,6 +38,10 @@ public class XML2VaveTransformation {
 
 	}
 
+	/**
+	 * Starts the transformation.
+	 * @param root The root element.
+	 */
 	public void start(DocumentRoot root) {
 
 		StructType struct;

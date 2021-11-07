@@ -1,10 +1,6 @@
 package transformations;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Collections;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -21,7 +17,6 @@ import transformations.xml2vave.XML2VaveTransformation;
 public class Main {
 	static XML2VaveTransformation xml2vaveTransformation;
 	static Vave2XMLTransformation vave2xmlTransformation;
-	private static Path projectFolder = Paths.get(".").normalize().toAbsolutePath();
 
 	public static void main(String[] args) {
 		File xmlFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\FeatureIDE-Projects\\Car\\car.xml");
