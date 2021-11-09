@@ -85,7 +85,7 @@ public class StructTransformation {
 
 	/**
 	 * Determines if the feature is mandatory or not based on the GroupType of the treeConstraint parameter.
-	 * @param treeConstraint The tree constraint of the vavemode.Feature feature.
+	 * @param treeConstraint The tree constraint of the vavemodel.Feature feature.
 	 * @return Returns true if the feature should be mandatory, false else.
 	 * @throws Exception
 	 */
