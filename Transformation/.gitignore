@@ -3,7 +3,7 @@
 build/
 !**/src/**/build
 !**/xtend-gen/**/build
-!**/xtend-gen
+src/main/xtend-gen
 bin/
 target/
 .gradle/
