@@ -20,4 +20,30 @@
       </or>
     </and>
   </struct>
+  <constraints>
+    <rule>
+      <imp>
+        <var>Gasoline</var>
+        <var>SmogControl</var>
+      </imp>
+    </rule>
+    <rule>
+      <imp>
+        <var>SmogControl</var>
+        <disj>
+          <var>Electric</var>
+          <var>Gasoline</var>
+        </disj>
+      </imp>
+    </rule>
+    <rule>
+      <imp>
+        <disj>
+          <var>Gasoline</var>
+          <var>Electric</var>
+        </disj>
+        <var>SmogControl</var>
+      </imp>
+    </rule>
+  </constraints>
 </featureModel>
