@@ -11,6 +11,7 @@ import java.util.List;
 import org.custommonkey.xmlunit.DetailedDiff;
 import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.Difference;
+import org.custommonkey.xmlunit.DifferenceListener;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
@@ -26,6 +27,7 @@ class XMLComparator {
 		BufferedReader target = new BufferedReader(new InputStreamReader(fis2));
 
 		XMLUnit.setIgnoreWhitespace(true);
+	
 		
 		// comparing two XML using XMLUnit in Java
 		List<Difference> differences = compareXML(source, target);
@@ -41,7 +43,8 @@ class XMLComparator {
 		
         //for getting detailed differences between two xml files
 		DetailedDiff detailXmlDiff = new DetailedDiff(xmlDiff);
-
+		DifferenceListener listener = new MyDifferenceListener();
+		detailXmlDiff.overrideDifferenceListener(listener);
 		return detailXmlDiff.getAllDifferences();
 	}
 
@@ -50,7 +53,7 @@ class XMLComparator {
 		System.out.println("===============================");
 		System.out.println("Total differences : " + totalDifferences);
 		System.out.println("================================");
-
+		
 		for (Difference difference : differences) {
 			System.out.println(difference);
 		}
