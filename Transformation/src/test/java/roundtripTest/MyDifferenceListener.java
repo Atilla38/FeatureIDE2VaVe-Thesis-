@@ -24,6 +24,14 @@ public class MyDifferenceListener implements DifferenceListener {
 		if (controlNode != null && controlNode.getNodeName().equals("graphics")) {
 			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
 		}
+		
+		if (testNode != null && testNode.getNodeName().equals("properties")) {
+			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
+		}
+
+		if (testNode != null && testNode.getNodeName().equals("graphics")) {
+			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
+		}
 
 		if (difference.getId() == DifferenceConstants.CHILD_NODELIST_SEQUENCE_ID) {
 			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
