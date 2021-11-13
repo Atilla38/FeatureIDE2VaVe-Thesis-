@@ -201,7 +201,7 @@ public class StructTransformation {
 	private void setAttributes(Node node, Feature feature, boolean mandatory, boolean mandatoryAttribute) {
 		node.setName(feature.getName());
 
-		if (mandatoryAttribute) {
+		if (mandatoryAttribute && mandatory) {
 			node.setMandatory(mandatory);
 		}
 	}
