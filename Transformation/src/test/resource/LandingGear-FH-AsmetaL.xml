@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<calculations key="tautology" value="true"/>
+		<calculations key="auto" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<calculations key="redundant" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<calculations key="constraints" value="true"/>
+		<graphics key="layoutalgorithm" value="1"/>
+		<calculations key="features" value="true"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="LandingGear">
+			<alt name="Base">
+				<and name="Cylinders_Valves">
+					<and name="Sensors">
+						<and name="Landing_Sets">
+							<feature name="HealthMonitor"/>
+						</and>
+					</and>
+				</and>
+				<and name="Cylinder_Valves_v2">
+					<feature name="Sensors_v2"/>
+				</and>
+			</alt>
+		</and>
+	</struct>
+</featureModel>

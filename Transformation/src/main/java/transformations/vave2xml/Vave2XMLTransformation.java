@@ -90,7 +90,7 @@ public class Vave2XMLTransformation {
 			e.printStackTrace();
 		}
 
-		System.out.println("FOLDER: " + this.projectFolder);
+		System.out.println("FOLDER: " + this.projectFolder + this.targetFolder + this.fileName+".xml");
 		
 	}
 	
