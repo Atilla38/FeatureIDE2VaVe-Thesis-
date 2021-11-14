@@ -1,6 +1,7 @@
 package roundtripTest;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.custommonkey.xmlunit.Difference;
@@ -12,26 +13,24 @@ import org.w3c.dom.Text;
 
 public class MyDifferenceListener implements DifferenceListener {
 
+	private String[] ignoreNodes = new String[] {"properties", "graphics", "calculations", "comments", "description", "featureOrder"};
+	private List<String> ignoreNodesList = Arrays.asList(ignoreNodes);
 	@Override
 	public int differenceFound(Difference difference) {
 		Node controlNode = difference.getControlNodeDetail().getNode();
 		Node testNode = difference.getTestNodeDetail().getNode();
 
-		if (controlNode != null && controlNode.getNodeName().equals("properties")) {
+		if (controlNode != null && ignoreNodesList.contains(controlNode.getNodeName())) {
 			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
 		}
 
-		if (controlNode != null && controlNode.getNodeName().equals("graphics")) {
+		
+		if (testNode != null && ignoreNodesList.contains(testNode.getNodeName())) {
 			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
 		}
 		
-		if (testNode != null && testNode.getNodeName().equals("properties")) {
-			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-		}
-
-		if (testNode != null && testNode.getNodeName().equals("graphics")) {
-			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-		}
+		
+		
 
 		if (difference.getId() == DifferenceConstants.CHILD_NODELIST_SEQUENCE_ID) {
 			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
@@ -63,28 +62,37 @@ public class MyDifferenceListener implements DifferenceListener {
 			if (nodeToTest.getFirstChild().getNodeName().equals("graphics")) {
 				return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
 			}
+			
+			if (nodeToTest.getFirstChild().getNodeName().equals("description")) {
+				return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
+			}
 		}
 
 		if (difference.getId() == DifferenceConstants.CHILD_NODELIST_LENGTH_ID) {
-			Node nodeToTest;
-			if (controlNode.getChildNodes().getLength() > testNode.getChildNodes().getLength()) {
-				nodeToTest = controlNode;
-			} else {
-				nodeToTest = testNode;
-			}
-
-			if (nodeToTest.getNodeName().equals("featureModel")) {
-				if (nodeToTest.getFirstChild().getNodeName().equals("properties")) {
+			
+				List<String> controlNodes = new ArrayList<String>();
+				List<String> testNodes = new ArrayList<String>();
+		        
+				for(int i = 0; i < controlNode.getChildNodes().getLength(); i++) {
+					if(!ignoreNodesList.contains(controlNode.getChildNodes().item(i).getNodeName())) {
+						controlNodes.add(controlNode.getChildNodes().item(i).getNodeName());
+					}
+				}
+				
+				for(int i = 0; i < testNode.getChildNodes().getLength(); i++) {
+					if(!ignoreNodesList.contains(testNode.getChildNodes().item(i).getNodeName())) {
+						testNodes.add(testNode.getChildNodes().item(i).getNodeName());
+					}
+				}
+				
+				if(controlNodes.equals(testNodes)) {
 					return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
 				} else {
 					return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
 				}
-			} else {
-				if (nodeToTest.getFirstChild().getNodeName().equals("graphics")) {
-					return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-				}
-			}
+			
 		}
+		
 		return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
 	}
 

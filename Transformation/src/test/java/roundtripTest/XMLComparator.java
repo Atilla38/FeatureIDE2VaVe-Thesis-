@@ -3,9 +3,14 @@ package roundtripTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.custommonkey.xmlunit.DetailedDiff;
@@ -13,69 +18,138 @@ import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.Difference;
 import org.custommonkey.xmlunit.DifferenceListener;
 import org.custommonkey.xmlunit.XMLUnit;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
 
+import transformations.Main;
+
 class XMLComparator {
+	private static List<File> fileList = new ArrayList<File>();
+	private static Path projectFolder = Paths.get(".").normalize().toAbsolutePath();
+	private static String sourceFolder = "src/test/resource/";
+	private static String targetFolderVave = "target/src/test/resource/models/vave/";
+	private static String targetFolderFeatureIDE = "target/src/test/resource/models/FeatureIDE/";
+	
+	@BeforeAll
+	public static void generateRoundTripXMLFiles() {
+		Main main = new Main();
+		System.out.println(projectFolder.toString());
+		addFilesToList(fileList, "xml", sourceFolder);
+		System.out.println("Hello");
+		for (File file : fileList) {
+			String fileName = file.getName();
+			String name = fileName.substring(0, fileName.lastIndexOf("."));
+			System.out.println(name);
+			Main.generateVaveModel(file, name, targetFolderVave);
+		}
+
+		List<File> vaveFileList = new ArrayList<File>();
+		addFilesToList(vaveFileList, "vavemodel", targetFolderVave);
+		for (File file : vaveFileList) {
+			String fileName = file.getName();
+			String name = fileName.substring(0, fileName.lastIndexOf("."));
+			Main.generateFeatureIDEXMLFile(file, name, targetFolderFeatureIDE);
+		}
+	}
+
+	private static void addFilesToList(List<File> list, String ending, String folderPath) {
+		File folder = new File(folderPath);
+		File[] listOfFiles = folder.listFiles();
+		for (File file : listOfFiles) {
+			String filename = file.getName();
+			if (filename.endsWith("." + ending) || filename.endsWith("." + ending.toUpperCase())) {
+				list.add(file);
+			}
+		}
+	}
 
 	@Test
 	public void given2XMLS_whenGeneratesDifferences_thenCorrect() throws SAXException, IOException {
-		FileInputStream fis1 = new FileInputStream("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\FeatureIDE-Projects\\Car\\car.xml");
-		FileInputStream fis2 = new FileInputStream("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models\\FeatureIDEXML.xml");
 
-		FileInputStream similarFis1 = new FileInputStream("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\FeatureIDE-Projects\\Car\\car.xml");
-		FileInputStream similarFis2 = new FileInputStream("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models\\FeatureIDEXML.xml");
-		
-		BufferedReader source = new BufferedReader(new InputStreamReader(fis1));
-		BufferedReader target = new BufferedReader(new InputStreamReader(fis2));
+		int totalIdenticalDifferences = 0;
+		int totalSimilarDifferences = 0;
+		for (File file : fileList) {
+			FileInputStream fis1 = new FileInputStream(file.getPath());
+			FileInputStream fis2 = new FileInputStream(
+					targetFolderFeatureIDE + file.getName());
 
-		BufferedReader similarSource = new BufferedReader(new InputStreamReader(similarFis1));
-		BufferedReader similarTarget = new BufferedReader(new InputStreamReader(similarFis2));
-		XMLUnit.setIgnoreWhitespace(true);
-	    
-		DifferenceListener identicalListener = new MyDifferenceListener();
-		DifferenceListener attributeListener = new IgnoreAbstractAndHiddenAttribute();
-		
-		// comparing two XML using XMLUnit in Java
-		List<Difference> identicalDifferences = compareXML(source, target, identicalListener);
-		List<Difference> similarDifferences = compareXML(similarSource, similarTarget, attributeListener);
-		// showing differences found in two xml files
-		System.out.println("Identical differences");
-		printDifferences(identicalDifferences);
-		
-		System.out.println("//////////////////////////////////////////////////////////////");
-		
-		System.out.println("Similar differences");
-		printDifferences(similarDifferences);
-		
-		printResult(identicalDifferences, similarDifferences);
+			FileInputStream similarFis1 = new FileInputStream(file.getPath());
+			FileInputStream similarFis2 = new FileInputStream(
+					targetFolderFeatureIDE + file.getName());
+
+			BufferedReader source = new BufferedReader(new InputStreamReader(fis1));
+			BufferedReader target = new BufferedReader(new InputStreamReader(fis2));
+
+			BufferedReader similarSource = new BufferedReader(new InputStreamReader(similarFis1));
+			BufferedReader similarTarget = new BufferedReader(new InputStreamReader(similarFis2));
+			XMLUnit.setIgnoreWhitespace(true);
+
+			DifferenceListener identicalListener = new MyDifferenceListener();
+			DifferenceListener similarListener = new IgnoreNotTransformableFeatureModelChildren();
+
+			// comparing two XML using XMLUnit in Java
+			List<Difference> identicalDifferences = compareXML(source, target, identicalListener);
+			List<Difference> similarDifferences = compareXML(similarSource, similarTarget, similarListener);
+			// showing differences found in two xml files
+			printDifferences(file.getName(), identicalDifferences, similarDifferences);
+
+			System.out.println("*******************************************************************************************");
+			System.out.println("*******************************************************************************************");
+			System.out.println("*******************************************************************************************");
+			
+			totalIdenticalDifferences = totalIdenticalDifferences + identicalDifferences.size();
+
+			totalSimilarDifferences = totalSimilarDifferences + similarDifferences.size();
+
+		}
+		System.out.println("Number of compared XML-Files:" + fileList.size());
+
+		System.out.println("Sum of all total identical differnces: " + totalIdenticalDifferences);
+
+		System.out.println("Sum of all total similar differnces: " + totalSimilarDifferences);
+
+		System.out.println("Total deviation: " + (totalIdenticalDifferences - totalSimilarDifferences));
 	}
 
-	public static List<org.custommonkey.xmlunit.Difference> compareXML(BufferedReader source, BufferedReader target, DifferenceListener listener) throws SAXException, IOException {
+	public static List<org.custommonkey.xmlunit.Difference> compareXML(BufferedReader source, BufferedReader target,
+			DifferenceListener listener) throws SAXException, IOException {
 
-        //creating Diff instance to compare two XML files
+		// creating Diff instance to compare two XML files
 		Diff xmlDiff = new Diff(source, target);
-		
-        //for getting detailed differences between two xml files
+
+		// for getting detailed differences between two xml files
 		DetailedDiff detailXmlDiff = new DetailedDiff(xmlDiff);
 		detailXmlDiff.overrideDifferenceListener(listener);
 		return detailXmlDiff.getAllDifferences();
 	}
 
-	public static void printDifferences(List<Difference> differences) {
-		int totalDifferences = differences.size();
+	public static void printDifferences(String fileName, List<Difference> identicalDifferences, List<Difference> similarDifferences) {
+		int numberOfIdenticalDifferences = identicalDifferences.size();
 		System.out.println("===============================");
-		System.out.println("Total differences : " + totalDifferences);
+		System.out.println("Identical differences : " + numberOfIdenticalDifferences);
 		System.out.println("================================");
 		
-		for (Difference difference : differences) {
+		for (Difference difference : identicalDifferences) {
 			System.out.println(difference);
 		}
-	}
-	
-	private void printResult(List<Difference> identicalDifferences, List<Difference> similarDifferences) {
+		
+		System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+		
+		int numberOfSimilarDifferences = similarDifferences.size();
+		System.out.println("===============================");
+		System.out.println("Similar differences : " + numberOfSimilarDifferences);
+		System.out.println("================================");
+		
+		for (Difference difference : similarDifferences) {
+			System.out.println(difference);
+		}
+		
 		int differences = identicalDifferences.size() - similarDifferences.size();
 		System.out.println("===============================");
+		System.out.println("Compared file : " + fileName);
+		System.out.println("Identical differences : " + numberOfIdenticalDifferences);
+		System.out.println("Similar differences : " + numberOfSimilarDifferences);
 		System.out.println("Deviation : " + differences);
 		System.out.println("================================");
 	}

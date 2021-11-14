@@ -79,7 +79,7 @@ public class XML2VaveTransformation {
 			e.printStackTrace();
 		}
 
-		System.out.println("FOLDER: " + this.projectFolder + this.targetFolder + this.fileName+".vavemodel");
+		System.out.println("FOLDER: " + this.projectFolder + "/"+ this.targetFolder + this.fileName+".vavemodel");
 	}
 	
 	public void setFileName(String fileName) {

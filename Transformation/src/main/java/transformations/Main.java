@@ -20,20 +20,38 @@ public class Main {
 
 	public static void main(String[] args) {
 		File xmlFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\FeatureIDE-Projects\\Car\\car.xml");
-		generateVaveModel(xmlFile);
-		File vaveFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\Transformation\\models\\car_withFeatures.vavemodel");
-		generateFeatureIDEXMLFile(vaveFile);
+		generateVaveModel(xmlFile, "car", "target/src/test/resource/models/vave/");
+		File vaveFile = new File(
+				"target/src/test/resource/models/vave/car.vavemodel");
+		generateFeatureIDEXMLFile(vaveFile, "car", null);
 	}
-	
-	private static void generateFeatureIDEXMLFile(File vavemodel) {
+
+	public static void generateFeatureIDEXMLFile(File vavemodel, String fileName, String folder) {
 		vave2xmlTransformation = new Vave2XMLTransformation();
+		if (fileName != null) {
+			vave2xmlTransformation.setFileName(fileName);
+		}
+
+		if (folder != null) {
+			vave2xmlTransformation.setTargetFolder(folder);
+		}
+
 		Resource resource = loadVavemodel(vavemodel);
 		vavemodel.System root = (vavemodel.System) resource.getContents().get(0);
 		vave2xmlTransformation.start(root);
 	}
 
-	private static void generateVaveModel(File featureIDEXML) {
+	public static void generateVaveModel(File featureIDEXML, String fileName, String folder) {
 		xml2vaveTransformation = new XML2VaveTransformation();
+
+		if (fileName != null) {
+			xml2vaveTransformation.setFileName(fileName);
+		}
+
+		if (folder != null) {
+			xml2vaveTransformation.setTargetFolder(folder);
+		}
+
 		Resource resource = loadFeatureIDEXMLFile(featureIDEXML);
 		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
 		xml2vaveTransformation.start(root);
@@ -45,22 +63,20 @@ public class Main {
 				new FeatureIDEXSDResourceFactoryImpl());
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("featureIDExml",
 				new FeatureIDEXSDResourceFactoryImpl());
-		
+
 		return resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
 	}
-	
+
 	public static Resource loadVavemodel(File file) {
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-        Map<String, Object> m = reg.getExtensionToFactoryMap();
-        m.put("vavemodel", new XMIResourceFactoryImpl());
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("vavemodel", new XMIResourceFactoryImpl());
 
-        // Obtain a new resource set
-        ResourceSet resSet = new ResourceSetImpl();
+		// Obtain a new resource set
+		ResourceSet resSet = new ResourceSetImpl();
 
-        // Get the resource
-       return resSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
+		// Get the resource
+		return resSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
 	}
-	
-	
 
 }

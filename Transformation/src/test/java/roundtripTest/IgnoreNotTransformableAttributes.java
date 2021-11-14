@@ -9,7 +9,7 @@ import org.custommonkey.xmlunit.DifferenceListener;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
-public class IgnoreAbstractAndHiddenAttribute extends MyDifferenceListener {
+public class IgnoreNotTransformableAttributes extends MyDifferenceListener {
 	
 	@Override
 	public int differenceFound(Difference difference) {
