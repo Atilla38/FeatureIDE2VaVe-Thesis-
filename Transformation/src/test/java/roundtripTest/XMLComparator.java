@@ -36,7 +36,6 @@ class XMLComparator {
 		Main main = new Main();
 		System.out.println(projectFolder.toString());
 		addFilesToList(fileList, "xml", sourceFolder);
-		System.out.println("Hello");
 		for (File file : fileList) {
 			String fileName = file.getName();
 			String name = fileName.substring(0, fileName.lastIndexOf("."));

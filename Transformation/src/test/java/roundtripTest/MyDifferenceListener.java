@@ -33,18 +33,19 @@ public class MyDifferenceListener implements DifferenceListener {
 		
 
 		if (difference.getId() == DifferenceConstants.CHILD_NODELIST_SEQUENCE_ID) {
-			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-			/*List<Node> controlChildNodes = new ArrayList<Node>();
-			List<Node> testChildNodes = new ArrayList<Node>();
+			List<String> controlChildNodes = new ArrayList<String>();
+			List<String> testChildNodes = new ArrayList<String>();
 
 			for (int i = 0; i < controlNode.getChildNodes().getLength(); i++) {
-				if (controlNode.getChildNodes().item(i).getNodeType() != Node.TEXT_NODE) {
-					controlChildNodes.add(controlNode.getChildNodes().item(i));
+				String childNodeName = controlNode.getChildNodes().item(i).getNodeName();
+				if (controlNode.getChildNodes().item(i).getNodeType() != Node.TEXT_NODE && !ignoreNodesList.contains(childNodeName)) {
+					controlChildNodes.add(childNodeName);
 				}
 			}
 			for (int i = 0; i < testNode.getChildNodes().getLength(); i++) {
-				if (testNode.getChildNodes().item(i).getNodeType() != Node.TEXT_NODE) {
-					testChildNodes.add(testNode.getChildNodes().item(i));
+				String childNodeName = testNode.getChildNodes().item(i).getNodeName();
+				if (testNode.getChildNodes().item(i).getNodeType() != Node.TEXT_NODE && !ignoreNodesList.contains(childNodeName)) {
+					testChildNodes.add(childNodeName);
 				}
 			}
 			if (controlChildNodes.equals(testChildNodes)) {
@@ -52,7 +53,7 @@ public class MyDifferenceListener implements DifferenceListener {
 			} else {
 
 				return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
-			}*/
+			}
 		}
 
 		if (difference.getId() == DifferenceConstants.HAS_CHILD_NODES_ID) {
