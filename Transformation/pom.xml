@@ -14,7 +14,19 @@
 				</excludes>
 			</resource>
 			<resource>
-				<directory>src/main/xtend-gen</directory>
+				<directory>target/xtend-gen/main</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/test/java</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/test/resource</directory>
 				<excludes>
 					<exclude>**/*.java</exclude>
 				</excludes>
