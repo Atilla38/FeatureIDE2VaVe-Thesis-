@@ -11,7 +11,7 @@ import org.custommonkey.xmlunit.DifferenceConstants;
 import org.custommonkey.xmlunit.DifferenceListener;
 import org.w3c.dom.Node;
 
-public class MyDifferenceListener implements DifferenceListener {
+public class IgnoreNotTransformableFeatureModelChildren implements DifferenceListener {
 
 	private String[] ignoreNodes = new String[] {"properties", "graphics", "calculations", "comments", "description", "featureOrder"};
 	private List<String> ignoreNodesList = Arrays.asList(ignoreNodes);
