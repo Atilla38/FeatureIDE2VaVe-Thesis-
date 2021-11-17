@@ -1,11 +1,8 @@
 package roundtripTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Path;
@@ -22,6 +19,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
 
+import differenceListeners.IgnoreNotTransformableAttributes;
+import differenceListeners.MyDifferenceListener;
 import transformations.Main;
 
 class XMLComparator {
@@ -33,7 +32,6 @@ class XMLComparator {
 	
 	@BeforeAll
 	public static void generateRoundTripXMLFiles() {
-		Main main = new Main();
 		System.out.println(projectFolder.toString());
 		addFilesToList(fileList, "xml", sourceFolder);
 		for (File file : fileList) {
@@ -85,7 +83,7 @@ class XMLComparator {
 			XMLUnit.setIgnoreWhitespace(true);
 
 			DifferenceListener identicalListener = new MyDifferenceListener();
-			DifferenceListener similarListener = new IgnoreNotTransformableFeatureModelChildren();
+			DifferenceListener similarListener = new IgnoreNotTransformableAttributes();
 
 			// comparing two XML using XMLUnit in Java
 			List<Difference> identicalDifferences = compareXML(source, target, identicalListener);

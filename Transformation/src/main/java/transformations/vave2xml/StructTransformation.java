@@ -34,33 +34,39 @@ public class StructTransformation {
 
 	/**
 	 * Starts the transformation.
-	 * @param features A list of type Feature. The first element in the list will be the root feature. 
+	 * 
+	 * @param features A list of type Feature. The first element in the list will be
+	 *                 the root feature.
 	 * @throws Exception
 	 */
 	public void start(EList<Feature> features) throws Exception {
 		vavemodel.Feature rootFeature = features.get(0);
 		FeatureMap.Entry entry = this.parse(rootFeature, null, false);
-	    ((Node) entry.getValue()).setMandatory(true);
+		((Node) entry.getValue()).setMandatory(true);
 		struct.getNodeListGroup().add(entry);
 		this.featureModel.setStruct(struct);
 	}
 
 	/**
-	 * Determines which parse method should be called based on the GroupType of the treeConstraintParent parameter and the tree constraints of the feature parameter.
-	 * @param feature The feature which should be parsed.
+	 * Determines which parse method should be called based on the GroupType of the
+	 * treeConstraintParent parameter and the tree constraints of the feature
+	 * parameter.
+	 * 
+	 * @param feature              The feature which should be parsed.
 	 * @param treeConstraintParent The tree constraint of the parent feature.
-	 * @param mandatoryAttribute When the feature should have a mandatory attribute, this parameter should be true.
+	 * @param mandatoryAttribute   When the feature should have a mandatory
+	 *                             attribute, this parameter should be true.
 	 * @return Returns a FeatureMap.Entry
 	 * @throws Exception
 	 */
-	private FeatureMap.Entry parse(Feature feature, TreeConstraint treeConstraintParent,
-			boolean mandatoryAttribute) throws Exception {
+	private FeatureMap.Entry parse(Feature feature, TreeConstraint treeConstraintParent, boolean mandatoryAttribute)
+			throws Exception {
 		boolean mandatory = false;
 
-		if (mandatoryAttribute) { // if parent is a binary Node the mandatoryAttribute parameter is false
+		if (mandatoryAttribute) { // If parent is a binary node the mandatoryAttribute parameter should be false
 			mandatory = this.isMandatory(treeConstraintParent);
 		}
-		if (feature.getTreeconstraint().size() >= 1) {
+		if (feature.getTreeconstraint().size() >= 1) { // If the feature has a tree constraint it can not be a leaf.
 			TreeConstraint treeConstraint = feature.getTreeconstraint().get(0);
 			switch (treeConstraint.getType().getValue()) {
 			case GroupType.OR_VALUE:
@@ -84,7 +90,9 @@ public class StructTransformation {
 	}
 
 	/**
-	 * Determines if the feature is mandatory or not based on the GroupType of the treeConstraint parameter.
+	 * Determines if the feature is mandatory or not based on the GroupType of the
+	 * treeConstraint parameter.
+	 * 
 	 * @param treeConstraint The tree constraint of the vavemodel.Feature feature.
 	 * @return Returns true if the feature should be mandatory, false else.
 	 * @throws Exception
@@ -103,79 +111,98 @@ public class StructTransformation {
 
 	/**
 	 * Parses the vavemodel.Feature feature to a FeatureType node.
-	 * @param feature The feature which should be parsed.
-	 * @param mandatory When the feature should be mandatory this should be true.
-	 * @param mandatoryAttribute When the feature should have a mandatory attribute this should be true.
-	 * @return Returns a FeatureMap.Entry with FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE as EStructuralFeature.
+	 * 
+	 * @param feature            The feature which should be parsed.
+	 * @param mandatory          When the feature should be mandatory this should be
+	 *                           true.
+	 * @param mandatoryAttribute When the feature should have a mandatory attribute
+	 *                           this should be true.
+	 * @return Returns a FeatureMap.Entry with
+	 *         FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE as
+	 *         EStructuralFeature.
 	 */
-	private FeatureMap.Entry parseFeature(Feature feature, boolean mandatory,
-			boolean mandatoryAttribute) {
+	private FeatureMap.Entry parseFeature(Feature feature, boolean mandatory, boolean mandatoryAttribute) {
 		FeatureType featureIDE = FeatureIDEXSDFactory.eINSTANCE.createFeatureType();
 
 		this.setAttributes(featureIDE, feature, mandatory, mandatoryAttribute);
 
-		return  FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE, featureIDE);
+		return FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE, featureIDE);
 	}
 
 	/**
 	 * Parses the vavemodel.Feature feature to a AndType node.
-	 * @param feature The feature which should be parsed.
-	 * @param mandatory When the feature should be mandatory this should be true.
-	 * @param mandatoryAttribute When the feature should have a mandatory attribute this should be true.
-	 * @return Returns a FeatureMap.Entry with FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND as EStructuralFeature.
+	 * 
+	 * @param feature            The feature which should be parsed.
+	 * @param mandatory          When the feature should be mandatory this should be
+	 *                           true.
+	 * @param mandatoryAttribute When the feature should have a mandatory attribute
+	 *                           this should be true.
+	 * @return Returns a FeatureMap.Entry with
+	 *         FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND as
+	 *         EStructuralFeature.
 	 */
-	private FeatureMap.Entry parseAnd(Feature feature, boolean mandatory,
-			boolean mandatoryAttribute) throws Exception {
+	private FeatureMap.Entry parseAnd(Feature feature, boolean mandatory, boolean mandatoryAttribute) throws Exception {
 		AndType andFeature = FeatureIDEXSDFactory.eINSTANCE.createAndType();
 
 		this.setAttributes(andFeature, feature, mandatory, mandatoryAttribute);
 
 		parseChild(feature, null, andFeature);
 
-		return  FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND, andFeature);
+		return FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND, andFeature);
 	}
 
 	/**
 	 * Parses the vavemodel.Feature feature to AltType node.
-	 * @param feature The feature which should be parsed.
-	 * @param mandatory When the feature should be mandatory this should be true.
-	 * @param mandatoryAttribute When the feature should have a mandatory attribute this should be true.
-	 * @return Returns a FeatureMap.Entry with FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT as EStructuralFeature.
+	 * 
+	 * @param feature            The feature which should be parsed.
+	 * @param mandatory          When the feature should be mandatory this should be
+	 *                           true.
+	 * @param mandatoryAttribute When the feature should have a mandatory attribute
+	 *                           this should be true.
+	 * @return Returns a FeatureMap.Entry with
+	 *         FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT as
+	 *         EStructuralFeature.
 	 */
-	private FeatureMap.Entry parseAlt(Feature feature, boolean mandatory,
-			boolean mandatoryAttribute) throws Exception {
+	private FeatureMap.Entry parseAlt(Feature feature, boolean mandatory, boolean mandatoryAttribute) throws Exception {
 		AltType altFeature = FeatureIDEXSDFactory.eINSTANCE.createAltType();
 
 		this.setAttributes(altFeature, feature, mandatory, mandatoryAttribute);
 		parseChild(feature, altFeature, null);
 
-		return  FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT, altFeature);
+		return FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT, altFeature);
 
 	}
 
 	/**
 	 * Parses the vavemodel.Feature feature to a OrType node.
-	 * @param feature The feature which should be parsed.
-	 * @param mandatory When the feature should be mandatory this should be true.
-	 * @param mandatoryAttribute When the feature should have a mandatory attribute this should be true.
-	 * @return Returns a FeatureMap.Entry with FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR as EStructuralFeature.
+	 * 
+	 * @param feature            The feature which should be parsed.
+	 * @param mandatory          When the feature should be mandatory, this should
+	 *                           be true.
+	 * @param mandatoryAttribute When the feature should have a mandatory attribute,
+	 *                           this should be true.
+	 * @return Returns a FeatureMap.Entry with
+	 *         FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR as
+	 *         EStructuralFeature.
 	 */
-	private FeatureMap.Entry parseOr(Feature feature, boolean mandatory,
-			boolean mandatoryAttribute) throws Exception {
+	private FeatureMap.Entry parseOr(Feature feature, boolean mandatory, boolean mandatoryAttribute) throws Exception {
 		OrType orFeature = FeatureIDEXSDFactory.eINSTANCE.createOrType();
 
 		this.setAttributes(orFeature, feature, mandatory, mandatoryAttribute);
 
 		parseChild(feature, orFeature, null);
 
-		return  FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR, orFeature);
+		return FeatureMapUtil.createEntry(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR, orFeature);
 	}
 
 	/**
 	 * Parses the child features.
-	 * @param feature The vavemodel.Feature which children should be parsed.
-	 * @param binaryNode If the parent node is of type BinaryNodeType this should be not null.
-	 * @param unaryNode  If the parent node is of type UnaryNodeType this should be not null.
+	 * 
+	 * @param feature    The vavemodel.Feature, whose children should be parsed.
+	 * @param binaryNode If the parent node is of type BinaryNodeType, this should
+	 *                   be not null.
+	 * @param unaryNode  If the parent node is of type UnaryNodeType, this should be
+	 *                   not null.
 	 * @throws Exception
 	 */
 	private void parseChild(Feature feature, BinaryNodeType binaryNode, UnaryNodeType unaryNode) throws Exception {
@@ -193,10 +220,14 @@ public class StructTransformation {
 
 	/**
 	 * Takes over the attributes of the feature parameter to the node parameter.
-	 * @param node The node which attributes should be set.
-	 * @param feature The vavemodel.Feature whose attributes should be taken.
-	 * @param mandatory If the node should be mandatory this should be true.
-	 * @param mandatoryAttribute If the node should have an mandatory attribute this should be true.
+	 * 
+	 * @param node               The node, whose attributes should be set.
+	 * @param feature            The vavemodel.Feature, whose attributes should be
+	 *                           taken.
+	 * @param mandatory          If the node should be mandatory, this should be
+	 *                           true.
+	 * @param mandatoryAttribute If the node should have an mandatory attribute,
+	 *                           this should be true.
 	 */
 	private void setAttributes(Node node, Feature feature, boolean mandatory, boolean mandatoryAttribute) {
 		node.setName(feature.getName());

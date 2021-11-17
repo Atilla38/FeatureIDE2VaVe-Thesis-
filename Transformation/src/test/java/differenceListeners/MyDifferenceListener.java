@@ -1,6 +1,7 @@
-package roundtripTest;
+package differenceListeners;
 
 import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,7 +10,6 @@ import org.custommonkey.xmlunit.Difference;
 import org.custommonkey.xmlunit.DifferenceConstants;
 import org.custommonkey.xmlunit.DifferenceListener;
 import org.w3c.dom.Node;
-import org.w3c.dom.Text;
 
 public class MyDifferenceListener implements DifferenceListener {
 
