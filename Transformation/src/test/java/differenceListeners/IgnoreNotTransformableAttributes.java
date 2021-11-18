@@ -1,7 +1,7 @@
 package differenceListeners;
 
 import java.util.ArrayList;
-
+import java.util.Arrays;
 import java.util.List;
 
 import org.custommonkey.xmlunit.Difference;
@@ -11,6 +11,9 @@ import org.w3c.dom.Node;
 
 public class IgnoreNotTransformableAttributes extends IgnoreNotTransformableFeatureModelChildren {
 
+	private String[] ignoreNodes = new String[] {"abstract", "hidden"};
+	private List<String> ignoreNodesList = Arrays.asList(ignoreNodes);
+	
 	@Override
 	public int differenceFound(Difference difference) {
 		Node controlNode = difference.getControlNodeDetail().getNode();
@@ -23,17 +26,15 @@ public class IgnoreNotTransformableAttributes extends IgnoreNotTransformableFeat
 
 			for (int i = 0; i < controlNode.getAttributes().getLength(); i++) {
 
-				if (controlNode.getAttributes().item(i).getNodeName() != "abstract"
-						&& controlNode.getAttributes().item(i).getNodeName() != "hidden") {
-					controlAttributes.add(controlNode.getAttributes().item(i).getNodeName() + ""
+				if (!ignoreNodesList.contains(controlNode.getAttributes().item(i).getNodeName())) {
+					controlAttributes.add(controlNode.getAttributes().item(i).getNodeName()
 							+ controlNode.getAttributes().item(i).getNodeValue());
 				}
 			}
 
 			for (int i = 0; i < testNode.getAttributes().getLength(); i++) {
-				if (testNode.getAttributes().item(i).getNodeName() != "abstract"
-						&& testNode.getAttributes().item(i).getNodeName() != "hidden") {
-					testAttributes.add(testNode.getAttributes().item(i).getNodeName() + ""
+				if (!ignoreNodesList.contains(testNode.getAttributes().item(i).getNodeName())) {
+					testAttributes.add(testNode.getAttributes().item(i).getNodeName()
 							+ testNode.getAttributes().item(i).getNodeValue());
 				}
 			}

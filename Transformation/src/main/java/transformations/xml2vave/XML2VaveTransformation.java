@@ -65,6 +65,10 @@ public class XML2VaveTransformation {
 			this.constraintTransformation.start(constraints.getRule());
 		}
 
+		this.safeFile();
+	}
+	
+	private void safeFile() {
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("vavemodel", new XMIResourceFactoryImpl());
@@ -81,7 +85,7 @@ public class XML2VaveTransformation {
 
 		System.out.println("FOLDER: " + this.projectFolder + "/"+ this.targetFolder + this.fileName+".vavemodel");
 	}
-	
+
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}

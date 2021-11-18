@@ -76,6 +76,11 @@ public class Vave2XMLTransformation {
 		
 		this.documentRoot.setFeatureModel(featureModel);
 		
+	    safeFile();
+		
+	}
+	
+	private void safeFile() {
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("xml", new FeatureIDEXSDResourceFactoryImpl());
@@ -91,9 +96,8 @@ public class Vave2XMLTransformation {
 		}
 
 		System.out.println("FOLDER: " + this.projectFolder + "/"+ this.targetFolder + this.fileName+".xml");
-		
 	}
-	
+
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
