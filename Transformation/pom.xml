@@ -9,21 +9,15 @@
 		<resources>
 			<resource>
 				<directory>src/main/java</directory>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
 			</resource>
 			<resource>
-				<directory>target/xtend-gen/main</directory>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
+				<directory>src-gen/xtend-gen/main</directory>
+			</resource>
+			<resource>
+				<directory>src-gen/xtend-gen/test</directory>
 			</resource>
 			<resource>
 				<directory>src/test/java</directory>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
 			</resource>
 			<resource>
 				<directory>src/test/resource</directory>
@@ -51,8 +45,8 @@
 							<goal>testCompile</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/xtend-gen/main</outputDirectory>
-							<testOutputDirectory>${project.build.directory}/xtend-gen/test</testOutputDirectory>
+							<outputDirectory>src-gen/xtend-gen/main</outputDirectory>
+							<testOutputDirectory>src-gen/xtend-gen/test</testOutputDirectory>
 						</configuration>
 					</execution>
 				</executions>

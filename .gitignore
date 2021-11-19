@@ -4,6 +4,7 @@ build/
 !**/src/**/build
 !**/xtend-gen/**/build
 src/main/xtend-gen/
+src-gen/
 bin/
 models/
 target/
