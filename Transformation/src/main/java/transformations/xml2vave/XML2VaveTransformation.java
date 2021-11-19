@@ -32,7 +32,7 @@ public class XML2VaveTransformation {
 	private CrossTreeConstraintTransformation constraintTransformation;
 	
 	private String fileName = "xml2vave";
-	private String targetFolder = "target/src/test/resource/models/";
+	private String targetFolder = "target/src/test/resource/models/vave/";
 
 	public XML2VaveTransformation() {
 		this.system = VavemodelFactory.eINSTANCE.createSystem();

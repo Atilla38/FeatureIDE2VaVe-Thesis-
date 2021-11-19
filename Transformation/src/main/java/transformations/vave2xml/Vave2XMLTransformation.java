@@ -34,7 +34,7 @@ public class Vave2XMLTransformation {
 	private DocumentRoot documentRoot;
 	
 	private String fileName = "vave2xml";
-	private String targetFolder = "target/src/test/resource/models/";
+	private String targetFolder = "target/src/test/resource/models/FeatureIDE/";
 	
 	public Vave2XMLTransformation() {
 		this.documentRoot = FeatureIDEXSDFactory.eINSTANCE.createDocumentRoot();

@@ -19,8 +19,8 @@ public class Main {
 	static Vave2XMLTransformation vave2xmlTransformation;
 
 	public static void main(String[] args) {
-		File xmlFile = new File("D:\\Uni\\Bachelorarbeit\\Thesis Repository\\FeatureIDE-Projects\\Car\\car.xml");
-		generateVaveModel(xmlFile, "car", "target/src/test/resource/models/vave/");
+		File xmlFile = new File("src/test/resource/car.xml");
+		generateVaveModel(xmlFile, "car", null);
 		File vaveFile = new File(
 				"target/src/test/resource/models/vave/car.vavemodel");
 		generateFeatureIDEXMLFile(vaveFile, "car", null);
