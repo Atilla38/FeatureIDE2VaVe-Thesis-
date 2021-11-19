@@ -11,10 +11,10 @@
 				<directory>src/main/java</directory>
 			</resource>
 			<resource>
-				<directory>src-gen/xtend-gen/main</directory>
+				<directory>src-gen</directory>
 			</resource>
 			<resource>
-				<directory>src-gen/xtend-gen/test</directory>
+				<directory>xtend-gen</directory>
 			</resource>
 			<resource>
 				<directory>src/test/java</directory>
@@ -42,11 +42,9 @@
 					<execution>
 						<goals>
 							<goal>compile</goal>
-							<goal>testCompile</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>src-gen/xtend-gen/main</outputDirectory>
-							<testOutputDirectory>src-gen/xtend-gen/test</testOutputDirectory>
+							<outputDirectory>xtend-gen</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
