@@ -1,6 +1,7 @@
 package transformations;
 
 import java.io.File;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -13,16 +14,18 @@ import FeatureIDEXSD.DocumentRoot;
 import FeatureIDEXSD.util.FeatureIDEXSDResourceFactoryImpl;
 import transformations.vave2xml.Vave2XMLTransformation;
 import transformations.xml2vave.XML2VaveTransformation;
+import vavemodel.VavemodelPackage;
 
 public class Main {
 	static XML2VaveTransformation xml2vaveTransformation;
 	static Vave2XMLTransformation vave2xmlTransformation;
 
 	public static void main(String[] args) {
-		File xmlFile = new File("src/test/resource/car.xml");
-		generateVaveModel(xmlFile, "car", null);
+		File FeatureIDEFile = new File(
+				"src/test/resource/vave2xml/FeatureIDE/car.xml");
+		generateVaveModel(FeatureIDEFile, "car", null);
 		File vaveFile = new File(
-				"target/src/test/resource/models/vave/car.vavemodel");
+				"src/test/resource/vave2xml/vave/car.vavemodel");
 		generateFeatureIDEXMLFile(vaveFile, "car", null);
 	}
 
@@ -71,10 +74,12 @@ public class Main {
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("vavemodel", new XMIResourceFactoryImpl());
+		
 
 		// Obtain a new resource set
 		ResourceSet resSet = new ResourceSetImpl();
-
+		VavemodelPackage vavePackage = VavemodelPackage.eINSTANCE;
+		resSet.getPackageRegistry().put(vavePackage.getNsURI(), vavePackage);
 		// Get the resource
 		return resSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
 	}
