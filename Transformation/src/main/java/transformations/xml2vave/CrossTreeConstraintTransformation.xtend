@@ -60,7 +60,7 @@ class CrossTreeConstraintTransformation {
 	 */
 	def dispatch private vavemodel.Implication<FeatureOption> parseExpression(ImpType imp) {
 		var vavemodel.Implication<FeatureOption> vaveImp = VavemodelFactory.eINSTANCE.createImplication()
-		this.transformChilds(imp, null, vaveImp)
+		this.transformChildren(imp, null, vaveImp)
 		return vaveImp
 	}
 
@@ -71,7 +71,7 @@ class CrossTreeConstraintTransformation {
 	 */
 	def dispatch private Conjunction<FeatureOption> parseExpression(ConjType conj) {
 		var vavemodel.Conjunction<FeatureOption> vaveConj = VavemodelFactory.eINSTANCE.createConjunction()
-		this.transformChilds(conj, null, vaveConj)
+		this.transformChildren(conj, null, vaveConj)
 		return vaveConj
 	}
 
@@ -82,7 +82,7 @@ class CrossTreeConstraintTransformation {
 	 */
 	def dispatch private vavemodel.Disjunction<FeatureOption> parseExpression(DisjType disj) {
 		var vavemodel.Disjunction<FeatureOption> vaveDisj = VavemodelFactory.eINSTANCE.createDisjunction()
-		this.transformChilds(disj, null, vaveDisj)
+		this.transformChildren(disj, null, vaveDisj)
 		return vaveDisj
 	}
 
@@ -93,7 +93,7 @@ class CrossTreeConstraintTransformation {
 	 */
 	def dispatch private vavemodel.Equivalence<FeatureOption> parseExpression(EqType eq) {
 		var vavemodel.Equivalence<FeatureOption> vaveEq = VavemodelFactory.eINSTANCE.createEquivalence()
-		this.transformChilds(eq, null, vaveEq)
+		this.transformChildren(eq, null, vaveEq)
 		return vaveEq
 	}
 
@@ -104,7 +104,7 @@ class CrossTreeConstraintTransformation {
 	 */
 	def dispatch private vavemodel.Not<FeatureOption> parseExpression(NotType not) {
 		var vavemodel.Not<FeatureOption> vaveNot = VavemodelFactory.eINSTANCE.createNot()
-		this.transformChilds(null, not, vaveNot)
+		this.transformChildren(null, not, vaveNot)
 		return vaveNot
 	}
 
@@ -135,7 +135,7 @@ class CrossTreeConstraintTransformation {
 	 * @param unaryExpression If the parent expression is of the type UnaryExpressionType this parameter should not be null.
 	 * @param expression The parent expression with type vavemodel.Expression.
 	 */
-	def private void transformChilds(BinaryExpressionType binaryExpression, UnaryExpressionType unaryExpression,
+	def private void transformChildren(BinaryExpressionType binaryExpression, UnaryExpressionType unaryExpression,
 		vavemodel.Expression<FeatureOption> expression) {
 		var EList<Expression> featureIDEExpressionList
 		var Boolean isBinary
