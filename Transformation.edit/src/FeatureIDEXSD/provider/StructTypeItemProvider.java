@@ -16,6 +16,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -76,10 +78,7 @@ public class StructTypeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__ALT);
-			childrenFeatures.add(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__OR);
-			childrenFeatures.add(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__AND);
-			childrenFeatures.add(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__FEATURE);
+			childrenFeatures.add(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP);
 		}
 		return childrenFeatures;
 	}
@@ -132,10 +131,7 @@ public class StructTypeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructType.class)) {
-			case FeatureIDEXSDPackage.STRUCT_TYPE__ALT:
-			case FeatureIDEXSDPackage.STRUCT_TYPE__OR:
-			case FeatureIDEXSDPackage.STRUCT_TYPE__AND:
-			case FeatureIDEXSDPackage.STRUCT_TYPE__FEATURE:
+			case FeatureIDEXSDPackage.STRUCT_TYPE__NODE_LIST_GROUP:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -155,23 +151,147 @@ public class StructTypeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__ALT,
-				 FeatureIDEXSDFactory.eINSTANCE.createAltType()));
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createNode())));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__OR,
-				 FeatureIDEXSDFactory.eINSTANCE.createOrType()));
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createBinaryNodeType())));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__AND,
-				 FeatureIDEXSDFactory.eINSTANCE.createAndType()));
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createAltType())));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__FEATURE,
-				 FeatureIDEXSDFactory.eINSTANCE.createFeatureType()));
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createUnaryNodeType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createAndType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createExtendedNode())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createBinaryExtendedNodeType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createExtendedLeafType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createLeafType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createFeatureType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createOrType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createUnaryExtendedNodeType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT,
+					 FeatureIDEXSDFactory.eINSTANCE.createAltType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND,
+					 FeatureIDEXSDFactory.eINSTANCE.createAndType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE,
+					 FeatureIDEXSDFactory.eINSTANCE.createFeatureType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR,
+					 FeatureIDEXSDFactory.eINSTANCE.createOrType())));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		if (childFeature instanceof EStructuralFeature && FeatureMapUtil.isFeatureMap((EStructuralFeature)childFeature)) {
+			FeatureMap.Entry entry = (FeatureMap.Entry)childObject;
+			childFeature = entry.getEStructuralFeature();
+			childObject = entry.getValue();
+		}
+
+		boolean qualify =
+			childFeature == FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

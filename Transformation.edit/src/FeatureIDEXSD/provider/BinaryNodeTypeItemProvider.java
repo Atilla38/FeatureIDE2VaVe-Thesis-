@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -142,6 +143,90 @@ public class BinaryNodeTypeItemProvider extends NodeItemProvider {
 			(createChildParameter
 				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
 				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createNode())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createBinaryNodeType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createAltType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createUnaryNodeType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createAndType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createExtendedNode())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createBinaryExtendedNodeType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createExtendedLeafType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createLeafType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createFeatureType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createOrType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
+					(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST,
+					 FeatureIDEXSDFactory.eINSTANCE.createUnaryExtendedNodeType())));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_GROUP,
+				 FeatureMapUtil.createEntry
 					(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT,
 					 FeatureIDEXSDFactory.eINSTANCE.createAltType())));
 
@@ -165,6 +250,38 @@ public class BinaryNodeTypeItemProvider extends NodeItemProvider {
 				 FeatureMapUtil.createEntry
 					(FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR,
 					 FeatureIDEXSDFactory.eINSTANCE.createOrType())));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		if (childFeature instanceof EStructuralFeature && FeatureMapUtil.isFeatureMap((EStructuralFeature)childFeature)) {
+			FeatureMap.Entry entry = (FeatureMap.Entry)childObject;
+			childFeature = entry.getEStructuralFeature();
+			childObject = entry.getValue();
+		}
+
+		boolean qualify =
+			childFeature == FeatureIDEXSDPackage.Literals.BINARY_NODE_TYPE__NODE_LIST ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__FEATURE ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

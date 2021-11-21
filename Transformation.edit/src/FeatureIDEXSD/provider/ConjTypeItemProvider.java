@@ -3,12 +3,16 @@
 package FeatureIDEXSD.provider;
 
 
+import FeatureIDEXSD.FeatureIDEXSDPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -89,6 +93,39 @@ public class ConjTypeItemProvider extends BinaryExpressionTypeItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		if (childFeature instanceof EStructuralFeature && FeatureMapUtil.isFeatureMap((EStructuralFeature)childFeature)) {
+			FeatureMap.Entry entry = (FeatureMap.Entry)childObject;
+			childFeature = entry.getEStructuralFeature();
+			childObject = entry.getValue();
+		}
+
+		boolean qualify =
+			childFeature == FeatureIDEXSDPackage.Literals.BINARY_EXPRESSION_TYPE__EXPRESSION_LIST ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__CONJ ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__DISJ ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__EQ ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__IMP ||
+			childFeature == FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__NOT;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }
