@@ -24,7 +24,7 @@ import transformations.Main;
 
 class XMLComparator {
 	private static List<File> fileList = new ArrayList<File>();
-	private static String sourceFolder = "src/test/resource/";
+	private static String sourceFolder = "src/test/resource/roundTrip/";
 	private static String targetFolderVave = "target/src/test/resource/models/vave/";
 	private static String targetFolderFeatureIDE = "target/src/test/resource/models/FeatureIDE/";
 
