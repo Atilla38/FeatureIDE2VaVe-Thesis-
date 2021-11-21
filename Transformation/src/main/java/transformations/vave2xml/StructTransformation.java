@@ -42,7 +42,7 @@ public class StructTransformation {
 	public void start(EList<Feature> features) throws Exception {
 		vavemodel.Feature rootFeature = features.get(0);
 		FeatureMap.Entry entry = this.parse(rootFeature, null, false);
-		((Node) entry.getValue()).setMandatory(true);
+		((Node) entry.getValue()).setMandatory(true); // Root element is always mandatory
 		struct.getNodeListGroup().add(entry);
 		this.featureModel.setStruct(struct);
 	}
@@ -207,6 +207,9 @@ public class StructTransformation {
 	 */
 	private void parseChild(Feature feature, BinaryNodeType binaryNode, UnaryNodeType unaryNode) throws Exception {
 		EList<TreeConstraint> treeConstraintList = feature.getTreeconstraint();
+		if(binaryNode != null && treeConstraintList.size() > 1) {
+			throw new Exception("A binary node can only have on tree constraint");
+		}
 		for (TreeConstraint treeConstraint : treeConstraintList) {
 			for (Feature childFeature : treeConstraint.getFeature()) {
 				if (binaryNode != null) {
