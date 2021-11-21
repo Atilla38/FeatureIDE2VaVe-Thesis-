@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
+  <feature name="BankAccount">
+    <treeconstraint type="XORNONE" feature="//@feature.1"/>
+    <treeconstraint type="XORNONE" feature="//@feature.2"/>
+    <treeconstraint type="XORNONE" feature="//@feature.4"/>
+    <treeconstraint type="XORNONE" feature="//@feature.5"/>
+    <treeconstraint type="XORNONE" feature="//@feature.6"/>
+  </feature>
+  <feature name="DailyLimit"/>
+  <feature name="Interest">
+    <treeconstraint type="XORNONE" feature="//@feature.3"/>
+  </feature>
+  <feature name="InterestEstimation"/>
+  <feature name="Overdraft"/>
+  <feature name="CreditWorthiness"/>
+  <feature name="Lock">
+    <treeconstraint type="XORNONE" feature="//@feature.7"/>
+  </feature>
+  <feature name="Transaction"/>
+</vavemodel:System>
