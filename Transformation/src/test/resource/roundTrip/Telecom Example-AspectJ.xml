@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<calculations key="tautology" value="true"/>
+		<calculations key="auto" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<calculations key="redundant" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<calculations key="constraints" value="true"/>
+		<graphics key="layoutalgorithm" value="1"/>
+		<calculations key="features" value="true"/>
+	</properties>
+	<struct>
+		<and mandatory="true" name="Base">
+			<feature name="telecom_Billing"/>
+			<feature name="telecom_TimerLog"/>
+			<feature name="telecom_Timing"/>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>telecom_Billing</var>
+				<var>telecom_Timing</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

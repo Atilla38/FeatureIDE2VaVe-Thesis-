@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<calculations key="tautology" value="true"/>
+		<calculations key="auto" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<calculations key="redundant" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<calculations key="constraints" value="true"/>
+		<graphics key="layoutalgorithm" value="1"/>
+		<calculations key="features" value="true"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Base">
+			<alt abstract="true" name="tracing">
+				<and abstract="true" name="Lib">
+					<feature mandatory="true" name="tracing_lib_AbstractTrace"/>
+					<feature mandatory="true" name="tracing_lib_TraceMyClasses"/>
+				</and>
+				<and abstract="true" name="Version1">
+					<feature mandatory="true" name="tracing_version1_TraceMyClasses"/>
+				</and>
+				<and abstract="true" name="Version2">
+					<feature mandatory="true" name="tracing_version2_TraceMyClasses"/>
+					<feature mandatory="true" name="tracing_version2_Trace"/>
+				</and>
+				<and abstract="true" name="Version3">
+					<feature mandatory="true" name="tracing_version3_Trace"/>
+					<feature mandatory="true" name="tracing_version3_TraceMyClasses"/>
+				</and>
+			</alt>
+		</and>
+	</struct>
+</featureModel>
