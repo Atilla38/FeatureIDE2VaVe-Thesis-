@@ -30,6 +30,7 @@ public class Main {
 	}
 
 	public static void generateFeatureIDEXMLFile(File vavemodel, String fileName, String folder) {
+		System.out.println(fileName);
 		vave2xmlTransformation = new Vave2XMLTransformation();
 		if (fileName != null) {
 			vave2xmlTransformation.setFileName(fileName);
@@ -45,6 +46,7 @@ public class Main {
 	}
 
 	public static void generateVaveModel(File featureIDEXML, String fileName, String folder) {
+		System.out.println(fileName);
 		xml2vaveTransformation = new XML2VaveTransformation();
 
 		if (fileName != null) {
