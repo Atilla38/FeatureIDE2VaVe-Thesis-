@@ -61,7 +61,7 @@ public class XML2VaveTransformation {
 
 		this.structTransformation.start(struct);
 
-		if (constraints != null && constraints.getRule() != null) {
+		if (constraints != null && constraints.getRule() != null && constraints.getRule().size() > 0) {
 			this.constraintTransformation.start(constraints.getRule());
 		}
 

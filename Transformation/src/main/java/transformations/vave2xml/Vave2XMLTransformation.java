@@ -61,18 +61,15 @@ public class Vave2XMLTransformation {
 		try {
 			this.structTransformation.start(features);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 	
-		if (root.getConstraint() != null) {
+		if (root.getConstraint() != null && root.getConstraint().size() > 0) {
 			constraints = root.getConstraint();
+			this.constraintTransformation.start(constraints);
 		} else {
 			System.out.println("No constraint found");
-			return;
 		}
-		
-		this.constraintTransformation.start(constraints);
 		
 		this.documentRoot.setFeatureModel(featureModel);
 		
