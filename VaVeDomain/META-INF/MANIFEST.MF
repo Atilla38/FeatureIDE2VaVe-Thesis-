@@ -14,7 +14,6 @@ Require-Bundle: edu.kit.ipd.sdq.activextendannotations,
  org.eclipse.emf.mwe2.launch,
  org.eclipse.emf.mwe2.lib
 Bundle-ActivationPolicy: lazy
-Export-Package: tools.vitruv.domains.vave,
- vavemodel
+Export-Package: tools.vitruv.domains.vave
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
