@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="VaVe-Domain/src-gen" editDirectory="/VaVe-Domain.edit/src-gen"
-    editorDirectory="/VaVe-Domain.editor/src-gen" modelPluginID="VaVe-Domain"
-    modelName="Vavemodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    testsDirectory="/VaVe-Domain.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../tools.vitruv.framework.change.echange/metamodel/echange.genmodel#//echange"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="VaVe-Domain/src/main/java" editDirectory="/VaVe-Domain.edit/src-gen"
+    editorDirectory="/VaVe-Domain.editor/src-gen" modelPluginID="VaVe-Domain" modelName="Vavemodel"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory="/VaVe-Domain.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../tools.vitruv.framework.change.echange/metamodel/echange.genmodel#//echange"
     operationReflection="true" importOrganizing="true">
   <foreignModel>vavemodel.ecore</foreignModel>
   <genPackages prefix="Vavemodel" disposableProviderFactory="true" ecorePackage="vavemodel.ecore#/">
