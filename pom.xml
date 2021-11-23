@@ -4,12 +4,13 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>parent.project</groupId>
-	<artifactId>parent.project</artifactId>
+	<groupId>FeatureIDE2VaVe</groupId>
+	<artifactId>FeatureIDE2VaVe</artifactId>
         <version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<modules>
+                <module>VaVeDomain</module>
 		<module>Transformation</module>
 	</modules>
 

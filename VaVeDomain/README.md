@@ -1,0 +1,1 @@
+The contents of this project are taken from the [Vitruvius Repository (variability branch)](https://github.com/vitruv-tools/Vitruv/tree/variability) and adapted slightly.

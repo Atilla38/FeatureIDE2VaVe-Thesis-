@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+   <extension
+         name="Vitruv VaVe Demo Domain Provider"
+         point="tools.vitruv.framework.domains.provider">
+      <domainProvider
+            class="tools.vitruv.domains.vave.VaVeDomainProvider">
+      </domainProvider>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated vavemodel -->
+      <package
+            uri="http://tools.vitruv/Vave/1.0"
+            class="vavemodel.VavemodelPackage"
+            genModel="metamodel/vavemodel.genmodel"/>
+   </extension>
+
+</plugin>
