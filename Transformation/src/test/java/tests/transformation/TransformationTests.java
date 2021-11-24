@@ -32,7 +32,7 @@ class TransformationTests {
 		compareFiles(comparator);
 	}
 	
-	
+	@Test
 	void vave2XMLTest() throws SAXException, IOException {
 		Vave2XMLComparator comparator = new Vave2XMLComparator();
 		comparator.generateVave2XMLFiles();
