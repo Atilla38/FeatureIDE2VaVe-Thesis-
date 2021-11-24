@@ -1,6 +1,7 @@
-package roundtripTest;
+package comparators;
 
 import java.io.BufferedReader;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,27 +19,24 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
 
+import counter.FeatureIDEFeatureCounter;
 import differenceListeners.IgnoreNotTransformableAttributes;
 import differenceListeners.IgnoreNotTransformableFeatureModelChildren;
+import printer.Printer;
 import transformations.Main;
 
-class XMLComparator {
+class Vave2XMLComparator {
 	private static List<File> fileList = new ArrayList<File>();
-	private static String sourceFolder = "src/test/resource/roundTrip/";
-	private static String targetFolderVave = "target/src/test/resource/models/vave/";
+	private static String sourceFolderFeatureIDE = "src/test/resource/vave2xml/FeatureIDE/";
+	private static String sourceFolderVave = "src/test/resource/vave2xml/vave/";
 	private static String targetFolderFeatureIDE = "target/src/test/resource/models/FeatureIDE/";
 
 	@BeforeAll
-	public static void generateRoundTripXMLFiles() {
-		addFilesToList(fileList, "xml", sourceFolder);
-		for (File file : fileList) { // Generate for all XML files in the list a VaVe-Model with the same name.
-			String fileName = file.getName();
-			String name = fileName.substring(0, fileName.lastIndexOf("."));
-			Main.generateVaveModel(file, name, targetFolderVave);
-		}
+	public static void generateVave2XMLFiles() {
+		addFilesToList(fileList, "xml", sourceFolderFeatureIDE); // XML files on which the self created vavemodels are based.
 
 		List<File> vaveFileList = new ArrayList<File>();
-		addFilesToList(vaveFileList, "vavemodel", targetFolderVave);
+		addFilesToList(vaveFileList, "vavemodel", sourceFolderVave);
 		for (File file : vaveFileList) { // Generate for all .vavemodel files in the list a XML file with the same name.
 			String fileName = file.getName();
 			String name = fileName.substring(0, fileName.lastIndexOf("."));
@@ -62,7 +60,14 @@ class XMLComparator {
 
 		int totalIdenticalDifferences = 0;
 		int totalSimilarDifferences = 0;
+		int totalFeatures = 0;
+		int totalNotAbstractAndHiddenFeatures = 0;
+		Printer printer = new Printer();
+		FeatureIDEFeatureCounter counter = new FeatureIDEFeatureCounter();
+		
 		for (File file : fileList) {
+			totalFeatures =+ counter.countFeatures(file, true);
+			totalNotAbstractAndHiddenFeatures =+ counter.countFeatures(file, false);
 			FileInputStream fis1 = new FileInputStream(file.getPath());
 			FileInputStream fis2 = new FileInputStream(targetFolderFeatureIDE + file.getName());
 
@@ -83,9 +88,9 @@ class XMLComparator {
 			List<Difference> identicalDifferences = compareXML(source, target, identicalListener);
 			List<Difference> similarDifferences = compareXML(similarSource, similarTarget, similarListener);
 			// showing differences found in two xml files
-			printDifferences(file.getName(), identicalDifferences, similarDifferences);
+			printer.printDifferences(file.getName(), identicalDifferences, similarDifferences);
 
-			printSeperator();
+			printer.printSeperator();
 
 			totalIdenticalDifferences = totalIdenticalDifferences + identicalDifferences.size();
 
@@ -93,26 +98,7 @@ class XMLComparator {
 
 		}
 
-		printResult(totalIdenticalDifferences, totalSimilarDifferences);
-	}
-
-	private void printSeperator() {
-		System.out
-				.println("*******************************************************************************************");
-		System.out
-				.println("*******************************************************************************************");
-		System.out
-				.println("*******************************************************************************************");
-	}
-
-	private void printResult(int totalIdenticalDifferences, int totalSimilarDifferences) {
-		System.out.println("Number of compared XML-Files:" + fileList.size());
-
-		System.out.println("Sum of all total identical differnces: " + totalIdenticalDifferences);
-
-		System.out.println("Sum of all total similar differnces: " + totalSimilarDifferences);
-
-		System.out.println("Total deviation: " + (totalIdenticalDifferences - totalSimilarDifferences));
+		printer.printResult(fileList.size(), totalIdenticalDifferences, totalSimilarDifferences, totalFeatures, totalNotAbstractAndHiddenFeatures);
 	}
 
 	public static List<org.custommonkey.xmlunit.Difference> compareXML(BufferedReader source, BufferedReader target,
@@ -127,34 +113,5 @@ class XMLComparator {
 		return detailXmlDiff.getAllDifferences();
 	}
 
-	public static void printDifferences(String fileName, List<Difference> identicalDifferences,
-			List<Difference> similarDifferences) {
-		int numberOfIdenticalDifferences = identicalDifferences.size();
-		System.out.println("===============================");
-		System.out.println("Identical differences : " + numberOfIdenticalDifferences);
-		System.out.println("================================");
-
-		for (Difference difference : identicalDifferences) {
-			System.out.println(difference);
-		}
-
-		System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
-
-		int numberOfSimilarDifferences = similarDifferences.size();
-		System.out.println("===============================");
-		System.out.println("Similar differences : " + numberOfSimilarDifferences);
-		System.out.println("================================");
-
-		for (Difference difference : similarDifferences) {
-			System.out.println(difference);
-		}
-
-		int differences = identicalDifferences.size() - similarDifferences.size();
-		System.out.println("===============================");
-		System.out.println("Compared file : " + fileName);
-		System.out.println("Identical differences : " + numberOfIdenticalDifferences);
-		System.out.println("Similar differences : " + numberOfSimilarDifferences);
-		System.out.println("Deviation : " + differences);
-		System.out.println("================================");
-	}
+	
 }
