@@ -56,6 +56,6 @@ public class Printer {
 		
 		System.out.println("Total transformed features: " + totalFeatures);
 		
-		System.out.println("Total transformed not abstract and hidden features: " + totalNotAbstractAndHiddenFeatures);
+		System.out.println("Total transformed non abstract and hidden features: " + totalNotAbstractAndHiddenFeatures);
 	}
 }
