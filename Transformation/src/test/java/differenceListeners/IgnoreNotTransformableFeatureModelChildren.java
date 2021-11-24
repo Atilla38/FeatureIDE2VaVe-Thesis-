@@ -30,7 +30,7 @@ public class IgnoreNotTransformableFeatureModelChildren implements DifferenceLis
 			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
 		}
 
-		if (difference.getId() == DifferenceConstants.CHILD_NODELIST_SEQUENCE_ID) {
+		if (difference.getId() == DifferenceConstants.CHILD_NODELIST_SEQUENCE_ID || difference.getId() == DifferenceConstants.CHILD_NODELIST_LENGTH_ID) {
 			List<String> controlChildNodes = new ArrayList<String>();
 			List<String> testChildNodes = new ArrayList<String>();
 
@@ -60,38 +60,20 @@ public class IgnoreNotTransformableFeatureModelChildren implements DifferenceLis
 
 			Node nodeToTest = (controlNode.hasChildNodes()) ? controlNode : testNode;
 
-			if (nodeToTest.getFirstChild().getNodeName().equals("graphics")) {
-				return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-			}
+			List<String> nodeToTestChildNodes = new ArrayList<String>();
+	
 
-			if (nodeToTest.getFirstChild().getNodeName().equals("description")) {
-				return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-			}
-		}
-
-		if (difference.getId() == DifferenceConstants.CHILD_NODELIST_LENGTH_ID) {
-
-			List<String> controlNodes = new ArrayList<String>();
-			List<String> testNodes = new ArrayList<String>();
-
-			for (int i = 0; i < controlNode.getChildNodes().getLength(); i++) {
-				if (!ignoreNodesList.contains(controlNode.getChildNodes().item(i).getNodeName())) {
-					controlNodes.add(controlNode.getChildNodes().item(i).getNodeName());
+			for (int i = 0; i < nodeToTest.getChildNodes().getLength(); i++) {
+				String childNodeName = nodeToTest.getChildNodes().item(i).getNodeName();
+				if (nodeToTest.getChildNodes().item(i).getNodeType() != Node.TEXT_NODE
+						&& !ignoreNodesList.contains(childNodeName)) {
+					nodeToTestChildNodes.add(childNodeName);
 				}
 			}
-
-			for (int i = 0; i < testNode.getChildNodes().getLength(); i++) {
-				if (!ignoreNodesList.contains(testNode.getChildNodes().item(i).getNodeName())) {
-					testNodes.add(testNode.getChildNodes().item(i).getNodeName());
-				}
-			}
-
-			if (controlNodes.equals(testNodes)) {
+			
+			if(nodeToTestChildNodes.size() == 0) {
 				return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-			} else {
-				return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
 			}
-
 		}
 
 		return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
