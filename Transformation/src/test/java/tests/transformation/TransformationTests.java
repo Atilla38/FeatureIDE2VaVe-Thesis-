@@ -84,6 +84,8 @@ class TransformationTests {
 			}
 
 			printer.printResult(fileList.size(), totalIdenticalDifferences, totalSimilarDifferences, totalFeatures, totalNotAbstractAndHiddenFeatures);
+			
+			assertEquals(0, totalSimilarDifferences);
 		}
 	}
 
