@@ -31,52 +31,61 @@ public class IgnoreNotTransformableFeatureModelChildren implements DifferenceLis
 		}
 
 		if (difference.getId() == DifferenceConstants.CHILD_NODELIST_SEQUENCE_ID || difference.getId() == DifferenceConstants.CHILD_NODELIST_LENGTH_ID) {
-			List<String> controlChildNodes = new ArrayList<String>();
-			List<String> testChildNodes = new ArrayList<String>();
-
-			for (int i = 0; i < controlNode.getChildNodes().getLength(); i++) {
-				String childNodeName = controlNode.getChildNodes().item(i).getNodeName();
-				if (controlNode.getChildNodes().item(i).getNodeType() != Node.TEXT_NODE
-						&& !ignoreNodesList.contains(childNodeName)) {
-					controlChildNodes.add(childNodeName);
-				}
-			}
-			for (int i = 0; i < testNode.getChildNodes().getLength(); i++) {
-				String childNodeName = testNode.getChildNodes().item(i).getNodeName();
-				if (testNode.getChildNodes().item(i).getNodeType() != Node.TEXT_NODE
-						&& !ignoreNodesList.contains(childNodeName)) {
-					testChildNodes.add(childNodeName);
-				}
-			}
-			if (controlChildNodes.equals(testChildNodes)) {
-				return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-			} else {
-
-				return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
-			}
+			return this.differenceChildSequenzOrChildLength(controlNode, testNode);
 		}
 
 		if (difference.getId() == DifferenceConstants.HAS_CHILD_NODES_ID) {
-
-			Node nodeToTest = (controlNode.hasChildNodes()) ? controlNode : testNode;
-
-			List<String> nodeToTestChildNodes = new ArrayList<String>();
-	
-
-			for (int i = 0; i < nodeToTest.getChildNodes().getLength(); i++) {
-				String childNodeName = nodeToTest.getChildNodes().item(i).getNodeName();
-				if (nodeToTest.getChildNodes().item(i).getNodeType() != Node.TEXT_NODE
-						&& !ignoreNodesList.contains(childNodeName)) {
-					nodeToTestChildNodes.add(childNodeName);
-				}
-			}
-			
-			if(nodeToTestChildNodes.size() == 0) {
-				return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-			}
+			return this.differenceHasChildNodes(controlNode, testNode);
 		}
 
 		return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
+	}
+	
+	private int differenceChildSequenzOrChildLength(Node controlNode, Node testNode) {
+		List<String> controlChildNodes = new ArrayList<String>();
+		List<String> testChildNodes = new ArrayList<String>();
+
+		for (int i = 0; i < controlNode.getChildNodes().getLength(); i++) {
+			String childNodeName = controlNode.getChildNodes().item(i).getNodeName();
+			if (controlNode.getChildNodes().item(i).getNodeType() != Node.TEXT_NODE
+					&& !ignoreNodesList.contains(childNodeName)) {
+				controlChildNodes.add(childNodeName);
+			}
+		}
+		for (int i = 0; i < testNode.getChildNodes().getLength(); i++) {
+			String childNodeName = testNode.getChildNodes().item(i).getNodeName();
+			if (testNode.getChildNodes().item(i).getNodeType() != Node.TEXT_NODE
+					&& !ignoreNodesList.contains(childNodeName)) {
+				testChildNodes.add(childNodeName);
+			}
+		}
+		if (controlChildNodes.equals(testChildNodes)) {
+			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
+		} else {
+
+			return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
+		}
+	}
+	
+	private int differenceHasChildNodes(Node controlNode, Node testNode) {
+		Node nodeToTest = (controlNode.hasChildNodes()) ? controlNode : testNode;
+
+		List<String> nodeToTestChildNodes = new ArrayList<String>();
+
+
+		for (int i = 0; i < nodeToTest.getChildNodes().getLength(); i++) {
+			String childNodeName = nodeToTest.getChildNodes().item(i).getNodeName();
+			if (nodeToTest.getChildNodes().item(i).getNodeType() != Node.TEXT_NODE
+					&& !ignoreNodesList.contains(childNodeName)) {
+				nodeToTestChildNodes.add(childNodeName);
+			}
+		}
+		
+		if(nodeToTestChildNodes.size() == 0) {
+			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
+		} else {
+			return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
+		}
 	}
 
 	@Override
