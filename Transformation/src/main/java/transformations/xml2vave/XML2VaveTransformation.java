@@ -20,7 +20,9 @@ import FeatureIDEXSD.StructType;
 import vavemodel.VavemodelFactory;
 
 /**
- * This class transforms the FeatureIDE-Feature-Model XML-File to a Feature-Model in VaVe.
+ * This class transforms the FeatureIDE-Feature-Model XML-File to a
+ * Feature-Model in VaVe.
+ * 
  * @author Atilla
  *
  */
@@ -30,7 +32,7 @@ public class XML2VaveTransformation {
 	private Path projectFolder = Paths.get(".").normalize().toAbsolutePath();
 	private StructTransformation structTransformation;
 	private CrossTreeConstraintTransformation constraintTransformation;
-	
+
 	private String fileName = "xml2vave";
 	private String targetFolder = "target/src/test/resource/models/vave/";
 
@@ -43,6 +45,7 @@ public class XML2VaveTransformation {
 
 	/**
 	 * Starts the transformation.
+	 * 
 	 * @param root The root element.
 	 */
 	public void start(DocumentRoot root) {
@@ -55,8 +58,7 @@ public class XML2VaveTransformation {
 			struct = featureModel.getStruct();
 			constraints = featureModel.getConstraints();
 		} else {
-			System.out.println("featureModel is null");
-			return;
+			throw new IllegalArgumentException("featureModel can't be null");
 		}
 
 		this.structTransformation.start(struct);
@@ -65,31 +67,34 @@ public class XML2VaveTransformation {
 			this.constraintTransformation.start(constraints.getRule());
 		}
 
-		this.safeFile();
+		this.saveFile();
 	}
-	
-	private void safeFile() {
-		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> m = reg.getExtensionToFactoryMap();
-		m.put("vavemodel", new XMIResourceFactoryImpl());
+
+	/**
+	 * Saves the generated Vavemodel file.
+	 */
+	private void saveFile() {
+		Resource.Factory.Registry registry = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> map = registry.getExtensionToFactoryMap();
+		map.put("vavemodel", new XMIResourceFactoryImpl());
 		ResourceSet resSet = new ResourceSetImpl();
-		Resource resource = resSet.createResource(
-				URI.createFileURI(this.projectFolder.resolve(this.targetFolder + this.fileName+".vavemodel").toString()));
+		Resource resource = resSet.createResource(URI.createFileURI(
+				this.projectFolder.resolve(this.targetFolder + this.fileName + ".vavemodel").toString()));
 		resource.getContents().add(system);
 
 		try {
 			resource.save(Collections.EMPTY_MAP);
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException exception) {
+			exception.printStackTrace();
 		}
 
-		System.out.println("FOLDER: " + this.projectFolder + "/"+ this.targetFolder + this.fileName+".vavemodel");
+		System.out.println("FOLDER: " + this.projectFolder + "/" + this.targetFolder + this.fileName + ".vavemodel");
 	}
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
-	
+
 	public void setTargetFolder(String targetFolder) {
 		this.targetFolder = targetFolder;
 	}
