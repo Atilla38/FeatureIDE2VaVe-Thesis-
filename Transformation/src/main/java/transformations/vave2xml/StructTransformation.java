@@ -1,5 +1,7 @@
 package transformations.vave2xml;
 
+import java.util.List;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
@@ -59,8 +61,7 @@ public class StructTransformation {
 	 * @return Returns a FeatureMap.Entry
 	 * @throws Exception
 	 */
-	private FeatureMap.Entry parse(Feature feature, TreeConstraint treeConstraintParent, boolean mandatoryAttribute)
-			throws Exception {
+	private FeatureMap.Entry parse(Feature feature, TreeConstraint treeConstraintParent, boolean mandatoryAttribute) {
 		boolean mandatory = false;
 
 		if (mandatoryAttribute) { // If parent is a binary node the mandatoryAttribute parameter should be false
@@ -81,7 +82,7 @@ public class StructTransformation {
 			case GroupType.XORNONE_VALUE:
 				return parseAnd(feature, mandatory, mandatoryAttribute);
 			default:
-				throw new Exception("No matching found");
+				throw new IllegalArgumentException("No matching found");
 
 			}
 		} else {
@@ -97,14 +98,12 @@ public class StructTransformation {
 	 * @return Returns true if the feature should be mandatory, false else.
 	 * @throws Exception
 	 */
-	private boolean isMandatory(TreeConstraint treeConstraint) throws Exception {
+	private boolean isMandatory(TreeConstraint treeConstraint) {
 		switch (treeConstraint.getType().getValue()) {
 		case GroupType.XOR_VALUE:
 			return true;
-		case GroupType.XORNONE_VALUE:
-			return false;
 		default:
-			throw new Exception("A feature which is not a child of a binary node must be mandatory or optional");
+			return false;
 
 		}
 	}
@@ -141,7 +140,7 @@ public class StructTransformation {
 	 *         FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__AND as
 	 *         EStructuralFeature.
 	 */
-	private FeatureMap.Entry parseAnd(Feature feature, boolean mandatory, boolean mandatoryAttribute) throws Exception {
+	private FeatureMap.Entry parseAnd(Feature feature, boolean mandatory, boolean mandatoryAttribute) {
 		AndType andFeature = FeatureIDEXSDFactory.eINSTANCE.createAndType();
 
 		this.setAttributes(andFeature, feature, mandatory, mandatoryAttribute);
@@ -163,7 +162,7 @@ public class StructTransformation {
 	 *         FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__ALT as
 	 *         EStructuralFeature.
 	 */
-	private FeatureMap.Entry parseAlt(Feature feature, boolean mandatory, boolean mandatoryAttribute) throws Exception {
+	private FeatureMap.Entry parseAlt(Feature feature, boolean mandatory, boolean mandatoryAttribute) {
 		AltType altFeature = FeatureIDEXSDFactory.eINSTANCE.createAltType();
 
 		this.setAttributes(altFeature, feature, mandatory, mandatoryAttribute);
@@ -185,7 +184,7 @@ public class StructTransformation {
 	 *         FeatureIDEXSDPackage.Literals.DOCUMENT_ROOT__OR as
 	 *         EStructuralFeature.
 	 */
-	private FeatureMap.Entry parseOr(Feature feature, boolean mandatory, boolean mandatoryAttribute) throws Exception {
+	private FeatureMap.Entry parseOr(Feature feature, boolean mandatory, boolean mandatoryAttribute) {
 		OrType orFeature = FeatureIDEXSDFactory.eINSTANCE.createOrType();
 
 		this.setAttributes(orFeature, feature, mandatory, mandatoryAttribute);
@@ -205,10 +204,10 @@ public class StructTransformation {
 	 *                   not null.
 	 * @throws Exception
 	 */
-	private void parseChild(Feature feature, BinaryNodeType binaryNode, UnaryNodeType unaryNode) throws Exception {
-		EList<TreeConstraint> treeConstraintList = feature.getTreeconstraint();
-		if(binaryNode != null && treeConstraintList.size() > 1) {
-			throw new Exception("A binary node can only have on tree constraint");
+	private void parseChild(Feature feature, BinaryNodeType binaryNode, UnaryNodeType unaryNode) {
+		List<TreeConstraint> treeConstraintList = feature.getTreeconstraint();
+		if (binaryNode != null && treeConstraintList.size() > 1) {
+			throw new IllegalArgumentException("A binary node can only have one tree constraint");
 		}
 		for (TreeConstraint treeConstraint : treeConstraintList) {
 			for (Feature childFeature : treeConstraint.getFeature()) {

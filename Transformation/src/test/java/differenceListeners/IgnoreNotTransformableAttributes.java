@@ -11,9 +11,9 @@ import org.w3c.dom.Node;
 
 public class IgnoreNotTransformableAttributes extends IgnoreNotTransformableFeatureModelChildren {
 
-	private String[] ignoreNodes = new String[] {"abstract", "hidden"};
+	private String[] ignoreNodes = new String[] { "abstract", "hidden" };
 	private List<String> ignoreNodesList = Arrays.asList(ignoreNodes);
-	
+
 	@Override
 	public int differenceFound(Difference difference) {
 		Node controlNode = difference.getControlNodeDetail().getNode();
@@ -39,10 +39,9 @@ public class IgnoreNotTransformableAttributes extends IgnoreNotTransformableFeat
 				}
 			}
 
-			if (controlAttributes.equals(testAttributes)) {
-				return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-			} else
-				return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
+			return controlAttributes.equals(testAttributes)
+					? DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL
+					: DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
 		}
 		return super.differenceFound(difference);
 	}

@@ -27,16 +27,16 @@ class ExceptionHandlerStruct {
 
 		if (binary) {
 			if (list === null || list.get(0) === null) {
-				throw new Exception(node + " has no child nodes")
+				throw new IllegalArgumentException(node + " has no child nodes")
 			} else if (list.length < 2) {
-				throw new Exception(node + " is a binary node it needs at least two child nodes")
+				throw new IllegalArgumentException(node + " is a binary node it needs at least two child nodes")
 			} else
 				return
 		} else {
 			if (list === null) {
-				throw new Exception(node + " has no child node")
+				throw new IllegalArgumentException(node + " has no child node")
 			} else if (list.length < 1) {
-				throw new Exception(node + " is a unary node it needs at least one child node")
+				throw new IllegalArgumentException(node + " is a unary node it needs at least one child node")
 			} else
 				return
 

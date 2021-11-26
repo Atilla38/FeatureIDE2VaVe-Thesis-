@@ -30,7 +30,8 @@ public class IgnoreNotTransformableFeatureModelChildren implements DifferenceLis
 			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
 		}
 
-		if (difference.getId() == DifferenceConstants.CHILD_NODELIST_SEQUENCE_ID || difference.getId() == DifferenceConstants.CHILD_NODELIST_LENGTH_ID) {
+		if (difference.getId() == DifferenceConstants.CHILD_NODELIST_SEQUENCE_ID
+				|| difference.getId() == DifferenceConstants.CHILD_NODELIST_LENGTH_ID) {
 			return this.differenceChildSequenzOrChildLength(controlNode, testNode);
 		}
 
@@ -40,7 +41,7 @@ public class IgnoreNotTransformableFeatureModelChildren implements DifferenceLis
 
 		return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
 	}
-	
+
 	private int differenceChildSequenzOrChildLength(Node controlNode, Node testNode) {
 		List<String> controlChildNodes = new ArrayList<String>();
 		List<String> testChildNodes = new ArrayList<String>();
@@ -59,19 +60,14 @@ public class IgnoreNotTransformableFeatureModelChildren implements DifferenceLis
 				testChildNodes.add(childNodeName);
 			}
 		}
-		if (controlChildNodes.equals(testChildNodes)) {
-			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-		} else {
-
-			return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
-		}
+		return controlChildNodes.equals(testChildNodes) ? DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL
+				: DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
 	}
-	
+
 	private int differenceHasChildNodes(Node controlNode, Node testNode) {
 		Node nodeToTest = (controlNode.hasChildNodes()) ? controlNode : testNode;
 
 		List<String> nodeToTestChildNodes = new ArrayList<String>();
-
 
 		for (int i = 0; i < nodeToTest.getChildNodes().getLength(); i++) {
 			String childNodeName = nodeToTest.getChildNodes().item(i).getNodeName();
@@ -80,17 +76,13 @@ public class IgnoreNotTransformableFeatureModelChildren implements DifferenceLis
 				nodeToTestChildNodes.add(childNodeName);
 			}
 		}
-		
-		if(nodeToTestChildNodes.size() == 0) {
-			return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
-		} else {
-			return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
-		}
+
+		return nodeToTestChildNodes.size() == 0 ? DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL
+				: DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
 	}
 
 	@Override
 	public void skippedComparison(Node control, Node test) {
-		// TODO Auto-generated method stub
 
 	}
 }

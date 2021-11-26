@@ -16,21 +16,32 @@ import transformations.vave2xml.Vave2XMLTransformation;
 import transformations.xml2vave.XML2VaveTransformation;
 import vavemodel.VavemodelPackage;
 
+/**
+ * This is the main class of the transformation. You can run the transformation
+ * and can set the name and path of the files.
+ * 
+ * @author Atilla
+ *
+ */
 public class Main {
-	static XML2VaveTransformation xml2vaveTransformation;
-	static Vave2XMLTransformation vave2xmlTransformation;
+	private static XML2VaveTransformation xml2vaveTransformation;
+	private static Vave2XMLTransformation vave2xmlTransformation;
 
+	// TODO: Docs
 	public static void main(String[] args) {
-		File FeatureIDEFile = new File(
-				"src/test/resource/vave2xml/FeatureIDE/car.xml");
-		generateVaveModel(FeatureIDEFile, "car", null);
-		File vaveFile = new File(
-				"src/test/resource/vave2xml/vave/car.vavemodel");
+		File featureIDEFile = new File("src/test/resource/vave2xml/FeatureIDE/car.xml");
+		generateVaveModel(featureIDEFile, "car", null);
+		File vaveFile = new File("src/test/resource/vave2xml/vave/car.vavemodel");
 		generateFeatureIDEXMLFile(vaveFile, "car", null);
 	}
 
+	/**
+	 * Generates a FeatureIDE XML-File.
+	 * @param vavemodel The Vavemodel which should be transformed to a FeatureIDE XML-File.
+	 * @param fileName The name of the generated FeatueIDE XML-File.
+	 * @param folder The folder, in which the generated XML-File should be saved.
+	 */
 	public static void generateFeatureIDEXMLFile(File vavemodel, String fileName, String folder) {
-		System.out.println(fileName);
 		vave2xmlTransformation = new Vave2XMLTransformation();
 		if (fileName != null) {
 			vave2xmlTransformation.setFileName(fileName);
@@ -45,6 +56,12 @@ public class Main {
 		vave2xmlTransformation.start(root);
 	}
 
+	/**
+	 * Generates a Vavemodel from a given FeatureIDE XML-File.
+	 * @param featureIDEXML The FeatureIDEXML file which should be transformed to a vavemodel.
+	 * @param fileName The name of the generated Vavemodel.
+	 * @param folder The folder, in which the generated XML-File should be saved.
+	 */
 	public static void generateVaveModel(File featureIDEXML, String fileName, String folder) {
 		System.out.println(fileName);
 		xml2vaveTransformation = new XML2VaveTransformation();
@@ -62,6 +79,11 @@ public class Main {
 		xml2vaveTransformation.start(root);
 	}
 
+	/**
+	 * Loads the FeatureIDEXMLFile.
+	 * @param file The file which should be loaded.
+	 * @return Returns the file as a resource instance.
+	 */
 	public static Resource loadFeatureIDEXMLFile(File file) {
 		ResourceSetImpl resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xml",
@@ -72,11 +94,15 @@ public class Main {
 		return resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
 	}
 
+	/**
+	 * Loads the Vavemodel.
+	 * @param file The file which should be loaded.
+	 * @return Returns the file as a resource instance.
+	 */
 	public static Resource loadVavemodel(File file) {
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("vavemodel", new XMIResourceFactoryImpl());
-		
 
 		// Obtain a new resource set
 		ResourceSet resSet = new ResourceSetImpl();
