@@ -22,6 +22,7 @@ import vavemodel.Feature;
 
 /**
  * This class transforms the VaVe feature-model to a FeatureIDE feature-model.
+ * 
  * @author Atilla
  *
  */
@@ -32,58 +33,59 @@ public class Vave2XMLTransformation {
 	private StructTransformation structTransformation;
 	private CrossTreeConstraintTransformation constraintTransformation;
 	private DocumentRoot documentRoot;
-	
+
 	private String fileName = "vave2xml";
 	private String targetFolder = "target/src/test/resource/models/FeatureIDE/";
-	
+
 	public Vave2XMLTransformation() {
 		this.documentRoot = FeatureIDEXSDFactory.eINSTANCE.createDocumentRoot();
 		this.featureModel = FeatureIDEXSDFactory.eINSTANCE.createFeatureModelType();
 		this.structTransformation = new StructTransformation(featureModel);
 		this.constraintTransformation = new CrossTreeConstraintTransformation(featureModel);
 	}
-	
+
 	/**
 	 * Starts the transformation.
+	 * 
 	 * @param root The root element of the Vavemodel.
 	 */
 	public void start(vavemodel.System root) {
 		EList<Feature> features;
 		EList<CrossTreeConstraint> constraints;
-		
+
 		if (root.getFeature() != null) {
 			features = root.getFeature();
 		} else {
 			System.out.println("No feature found");
 			return;
 		}
-		
+
 		try {
 			this.structTransformation.start(features);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
-	
+
 		if (root.getConstraint() != null && root.getConstraint().size() > 0) {
 			constraints = root.getConstraint();
 			this.constraintTransformation.start(constraints);
 		} else {
 			System.out.println("No constraint found");
 		}
-		
+
 		this.documentRoot.setFeatureModel(featureModel);
-		
-	    safeFile();
-		
+
+		saveFile();
+
 	}
-	
-	private void safeFile() {
-		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> m = reg.getExtensionToFactoryMap();
-		m.put("xml", new FeatureIDEXSDResourceFactoryImpl());
+
+	private void saveFile() {
+		Resource.Factory.Registry registry = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> map = registry.getExtensionToFactoryMap(); 
+		map.put("xml", new FeatureIDEXSDResourceFactoryImpl());
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.createResource(
-				URI.createFileURI(this.projectFolder.resolve(this.targetFolder + this.fileName+".xml").toString()));
+				URI.createFileURI(this.projectFolder.resolve(this.targetFolder + this.fileName + ".xml").toString()));
 		resource.getContents().add(documentRoot);
 
 		try {
@@ -92,13 +94,13 @@ public class Vave2XMLTransformation {
 			e.printStackTrace();
 		}
 
-		System.out.println("FOLDER: " + this.projectFolder + "/"+ this.targetFolder + this.fileName+".xml");
+		System.out.println("FOLDER: " + this.projectFolder + "/" + this.targetFolder + this.fileName + ".xml");
 	}
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
-	
+
 	public void setTargetFolder(String targetFolder) {
 		this.targetFolder = targetFolder;
 	}
