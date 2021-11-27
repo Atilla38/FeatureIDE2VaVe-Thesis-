@@ -1,7 +1,6 @@
 package transformations;
 
 import java.io.File;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -27,12 +26,20 @@ public class Main {
 	private static XML2VaveTransformation xml2vaveTransformation;
 	private static Vave2XMLTransformation vave2xmlTransformation;
 
-	// TODO: Docs
 	public static void main(String[] args) {
-		File featureIDEFile = new File("src/test/resource/vave2xml/FeatureIDE/car.xml");
-		generateVaveModel(featureIDEFile, "car", null);
-		File vaveFile = new File("src/test/resource/vave2xml/vave/car.vavemodel");
-		generateFeatureIDEXMLFile(vaveFile, "car", null);
+		String featureIDEFilePath = args[0];
+		String vavemodelName = args[1];
+		String targetFolderVavemodel = args[2];
+		
+		String vavemodelFilePath = args[3];
+		String featureIDEModelName = args[4];
+		String targetFolderFeatureIDE = args[5];
+		
+		
+		File featureIDEFile = new File(featureIDEFilePath);
+		generateVaveModel(featureIDEFile, vavemodelName, targetFolderVavemodel);
+		File vaveFile = new File(vavemodelFilePath);
+		generateFeatureIDEXMLFile(vaveFile, featureIDEModelName, targetFolderFeatureIDE);
 	}
 
 	/**
@@ -43,11 +50,11 @@ public class Main {
 	 */
 	public static void generateFeatureIDEXMLFile(File vavemodel, String fileName, String folder) {
 		vave2xmlTransformation = new Vave2XMLTransformation();
-		if (fileName != null) {
+		if (!fileName.equals("null")) {
 			vave2xmlTransformation.setFileName(fileName);
 		}
 
-		if (folder != null) {
+		if (!folder.equals("null")) {
 			vave2xmlTransformation.setTargetFolder(folder);
 		}
 
@@ -63,14 +70,13 @@ public class Main {
 	 * @param folder The folder, in which the generated XML-File should be saved.
 	 */
 	public static void generateVaveModel(File featureIDEXML, String fileName, String folder) {
-		System.out.println(fileName);
 		xml2vaveTransformation = new XML2VaveTransformation();
 
-		if (fileName != null) {
+		if (!fileName.equals("null")) {
 			xml2vaveTransformation.setFileName(fileName);
 		}
 
-		if (folder != null) {
+		if (!folder.equals("null")) {
 			xml2vaveTransformation.setTargetFolder(folder);
 		}
 
@@ -100,9 +106,9 @@ public class Main {
 	 * @return Returns the file as a resource instance.
 	 */
 	public static Resource loadVavemodel(File file) {
-		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> m = reg.getExtensionToFactoryMap();
-		m.put("vavemodel", new XMIResourceFactoryImpl());
+		Resource.Factory.Registry registry = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> map = registry.getExtensionToFactoryMap();
+		map.put("vavemodel", new XMIResourceFactoryImpl());
 
 		// Obtain a new resource set
 		ResourceSet resSet = new ResourceSetImpl();
