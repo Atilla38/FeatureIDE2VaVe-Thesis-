@@ -35,7 +35,7 @@ public class Printer {
 		System.out.println("Deviation : " + differences);
 		System.out.println("================================");
 	}
-	
+
 	public void printSeperator() {
 		System.out
 				.println("*******************************************************************************************");
@@ -45,7 +45,8 @@ public class Printer {
 				.println("*******************************************************************************************");
 	}
 
-	public void printResult(int size, int totalIdenticalDifferences, int totalSimilarDifferences, int totalFeatures, int totalNotAbstractAndHiddenFeatures) {
+	public void printResult(int size, int totalIdenticalDifferences, int totalSimilarDifferences, int totalFeatures,
+			int totalNotAbstractAndHiddenFeatures) {
 		System.out.println("Number of compared XML-Files:" + size);
 
 		System.out.println("Sum of all total identical differnces: " + totalIdenticalDifferences);
@@ -53,9 +54,12 @@ public class Printer {
 		System.out.println("Sum of all total similar differnces: " + totalSimilarDifferences);
 
 		System.out.println("Total deviation: " + (totalIdenticalDifferences - totalSimilarDifferences));
-		
+
 		System.out.println("Total transformed features: " + totalFeatures);
-		
+
 		System.out.println("Total transformed non abstract and hidden features: " + totalNotAbstractAndHiddenFeatures);
+
+		System.out.println("Total transformed abstract and hidden features: "
+				+ (totalFeatures - totalNotAbstractAndHiddenFeatures));
 	}
 }
