@@ -90,8 +90,8 @@ public class Vave2XMLTransformation {
 
 		try {
 			resource.save(Collections.EMPTY_MAP);
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException exception) {
+			exception.printStackTrace();
 		}
 
 		System.out.println("FOLDER: " + this.projectFolder + "/" + this.targetFolder + this.fileName + ".xml");

@@ -10,37 +10,35 @@ import java.util.List
 
 class ExceptionHandlerConstraints {
 
-	static val String implication = "IMPLICATION"  
-	static val String conjunction = "CONJUNCTION"
-	static val String disjunction = "DISJUNCTION"
-	static val String equivalence = "EQUIVALENCE"
-	static val String not = "NOT"
+	static val String IMPLICATION = "IMPLICATION"  
+	static val String CONJUNCTION = "CONJUNCTION"
+	static val String DISJUNCTION = "DISJUNCTION"
+	static val String EQUIVALENCE = "EQUIVALENCE"
+	static val String NOT = "NOT"
 
 	def dispatch checkExpression(ImpType expression, List<Expression> expressionList) {
-		this.checkBinaryList(expressionList, implication, true)
+		this.checkBinaryList(expressionList, exception.handling.xml2vave.ExceptionHandlerConstraints.IMPLICATION, true)
 	}
 
 	def dispatch checkExpression(ConjType expression, List<Expression> expressionList) {
-		this.checkBinaryList(expressionList, conjunction, true)
+		this.checkBinaryList(expressionList, exception.handling.xml2vave.ExceptionHandlerConstraints.CONJUNCTION, true)
 	}
 
 	def dispatch checkExpression(DisjType expression, List<Expression> expressionList) {
-		this.checkBinaryList(expressionList, disjunction, true)
+		this.checkBinaryList(expressionList, exception.handling.xml2vave.ExceptionHandlerConstraints.DISJUNCTION, true)
 	}
 
 	def dispatch checkExpression(EqType expression, List<Expression> expressionList) {
-		this.checkBinaryList(expressionList, equivalence, true)
+		this.checkBinaryList(expressionList, exception.handling.xml2vave.ExceptionHandlerConstraints.EQUIVALENCE, true)
 	}
 
 	def dispatch checkExpression(NotType expression, List<Expression> expressionList) {
-		this.checkBinaryList(expressionList, not, false)
+		this.checkBinaryList(expressionList, exception.handling.xml2vave.ExceptionHandlerConstraints.NOT, false)
 	}
 	
 	def dispatch checkExpression(Expression expression, List<Expression> expressionList) {
 		throw new IllegalArgumentException("Expression type not supported");
 	}
-	
-	//TODO: fall back
 
 	def checkBinaryList(List<Expression> list, String expression, boolean binary) {
 		var maximalLength = binary ? 2 : 1;
@@ -50,9 +48,12 @@ class ExceptionHandlerConstraints {
 			} else if (list.length == maximalLength) {
 				return
 			} else if (list.length < maximalLength) {
-				throw new IllegalArgumentException(expression + " is a binary expression it needs two terms") //TODO
-			} else
+				throw new IllegalArgumentException(expression + " is a binary expression it needs two terms")
+			} else {
 				throw new IllegalArgumentException(expression + " has more then two terms this is not allowed")
+            }	
 	}
+	
+	
 
 }

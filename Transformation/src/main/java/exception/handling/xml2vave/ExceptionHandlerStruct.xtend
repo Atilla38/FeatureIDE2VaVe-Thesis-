@@ -4,26 +4,26 @@ import FeatureIDEXSD.AndType
 import FeatureIDEXSD.OrType
 import FeatureIDEXSD.AltType
 import FeatureIDEXSD.Node
-import org.eclipse.emf.common.util.EList
+import java.util.List
 
 class ExceptionHandlerStruct {
-	String and = "AND"
-	String or = "OR"
-	String alt = "ALT"
+	static val String AND = "AND"
+	static val String OR = "OR"
+	static val String ALT = "ALT"
 
-	def dispatch checkNode(AndType node, EList<Node> nodeList) {
-		this.checkBinaryList(nodeList, and, false)
+	def dispatch checkNode(AndType node, List<Node> nodeList) {
+		this.checkBinaryList(nodeList, exception.handling.xml2vave.ExceptionHandlerStruct.AND, false)
 	}
 
-	def dispatch checkNode(OrType node, EList<Node> nodeList) {
-		this.checkBinaryList(nodeList, or, true)
+	def dispatch checkNode(OrType node, List<Node> nodeList) {
+		this.checkBinaryList(nodeList, exception.handling.xml2vave.ExceptionHandlerStruct.OR, true)
 	}
 
-	def dispatch checkNode(AltType node, EList<Node> nodeList) {
-		this.checkBinaryList(nodeList, alt, true)
+	def dispatch checkNode(AltType node, List<Node> nodeList) {
+		this.checkBinaryList(nodeList, exception.handling.xml2vave.ExceptionHandlerStruct.ALT, true)
 	}
 
-	def checkBinaryList(EList<Node> list, String node, boolean binary) {
+	def checkBinaryList(List<Node> list, String node, boolean binary) {
 
 		if (binary) {
 			if (list === null || list.get(0) === null) {
