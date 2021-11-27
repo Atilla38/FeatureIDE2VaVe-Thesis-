@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
@@ -31,14 +32,14 @@ class TransformationTests {
 		comparator.generateRoundTripXMLFiles();
 		compareFiles(comparator);
 	}
-	
+
 	@Test
 	void vave2XMLTest() throws SAXException, IOException {
 		Vave2XMLComparator comparator = new Vave2XMLComparator();
 		comparator.generateVave2XMLFiles();
 		compareFiles(comparator);
 	}
-	
+
 	private void compareFiles(XMLComparator comparator) throws SAXException, IOException {
 		{
 			int totalIdenticalDifferences = 0;
@@ -49,29 +50,29 @@ class TransformationTests {
 			String targetFolderFeatureIDE = comparator.getTargetFolderFeatureIDE();
 			Printer printer = new Printer();
 			FeatureIDEFeatureCounter counter = new FeatureIDEFeatureCounter();
-			
+
 			for (File file : fileList) {
 				totalFeatures = totalFeatures + counter.countFeatures(file, true);
-				totalNotAbstractAndHiddenFeatures = totalNotAbstractAndHiddenFeatures + counter.countFeatures(file, false);
-				FileInputStream fis1 = new FileInputStream(file.getPath());
-				FileInputStream fis2 = new FileInputStream(targetFolderFeatureIDE + file.getName());
+				totalNotAbstractAndHiddenFeatures = totalNotAbstractAndHiddenFeatures
+						+ counter.countFeatures(file, false);
 
-				FileInputStream similarFis1 = new FileInputStream(file.getPath());
-				FileInputStream similarFis2 = new FileInputStream(targetFolderFeatureIDE + file.getName());
+				BufferedReader source = createBufferedReader(file.getPath());
+				BufferedReader target = createBufferedReader(targetFolderFeatureIDE + file.getName());
 
-				BufferedReader source = new BufferedReader(new InputStreamReader(fis1));
-				BufferedReader target = new BufferedReader(new InputStreamReader(fis2));
-
-				BufferedReader similarSource = new BufferedReader(new InputStreamReader(similarFis1));
-				BufferedReader similarTarget = new BufferedReader(new InputStreamReader(similarFis2));
+				BufferedReader similarSource = createBufferedReader(file.getPath());
+				BufferedReader similarTarget = createBufferedReader(targetFolderFeatureIDE + file.getName());
 				XMLUnit.setIgnoreWhitespace(true);
-
+				createBufferedReader(file.getPath());
+				createBufferedReader(targetFolderFeatureIDE + file.getName());
 				DifferenceListener identicalListener = new IgnoreNotTransformableFeatureModelChildren();
-				DifferenceListener similarListener = new IgnoreNotTransformableAttributes(); // Extends the IgnoreNotTransformableFeatureModelChildren listener.
+				DifferenceListener similarListener = new IgnoreNotTransformableAttributes(); // Extends the
+																								// IgnoreNotTransformableFeatureModelChildren
+																								// listener.
 
 				// comparing two XML using XMLUnit in Java
 				List<Difference> identicalDifferences = comparator.compareXML(source, target, identicalListener);
-				List<Difference> similarDifferences = comparator.compareXML(similarSource, similarTarget, similarListener);
+				List<Difference> similarDifferences = comparator.compareXML(similarSource, similarTarget,
+						similarListener);
 				// showing differences found in two xml files
 				printer.printDifferences(file.getName(), identicalDifferences, similarDifferences);
 
@@ -83,10 +84,16 @@ class TransformationTests {
 
 			}
 
-			printer.printResult(fileList.size(), totalIdenticalDifferences, totalSimilarDifferences, totalFeatures, totalNotAbstractAndHiddenFeatures);
-			
+			printer.printResult(fileList.size(), totalIdenticalDifferences, totalSimilarDifferences, totalFeatures,
+					totalNotAbstractAndHiddenFeatures);
+
 			assertEquals(0, totalSimilarDifferences);
 		}
+	}
+
+	private BufferedReader createBufferedReader(String path) throws FileNotFoundException {
+		FileInputStream fis1 = new FileInputStream(path);
+		return new BufferedReader(new InputStreamReader(fis1));
 	}
 
 }
