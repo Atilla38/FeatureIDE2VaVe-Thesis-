@@ -46,7 +46,7 @@ class StructTransformation {
 	 */
 	def dispatch private void parseFeature(OrType or, vavemodel.Feature parent,
 		vavemodel.TreeConstraint treeConstrParent) {
-		var vavemodel.Feature feature = this.createFeature(or)
+		var vavemodel.Feature feature = this.createFeature(or) //TODO: 
 		var TreeConstraint treeconstr = this.
 			addTreeConstraintAndCreateTreeConstraint(or, feature, parent, treeConstrParent, GroupType::OR); // Tree constraint with type OR = or feature.
 		this.tranformChildFeatures(or, null, feature, treeconstr)
@@ -93,7 +93,7 @@ class StructTransformation {
 
 	def dispatch private void parseFeature(Node node, vavemodel.Feature parent,
 		vavemodel.TreeConstraint treeConstrParent) {
-		throw new Exception("Unsupported node type");
+		throw new IllegalArgumentException("Unsupported node type");
 	}
 
 	/**
@@ -102,7 +102,7 @@ class StructTransformation {
 	 * @param containment The containment which should be added to the container.
 	 * @param structFeature The type of the containment. "feature" for a feature and "treeconstraint" for treeconstraint.
 	 */
-	@SuppressWarnings("unchecked") def private void addContainment(EObject container, EObject containment,
+	def private void addContainment(EObject container, EObject containment,
 		String structFeature) {
 		var EStructuralFeature eStructFeature = container.eClass().getEStructuralFeature(structFeature)
 		var List<EObject> features = (container.eGet(eStructFeature) as List<EObject>)
