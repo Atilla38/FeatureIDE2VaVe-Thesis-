@@ -1,4 +1,4 @@
-package tests.transformation;
+package transformations.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
