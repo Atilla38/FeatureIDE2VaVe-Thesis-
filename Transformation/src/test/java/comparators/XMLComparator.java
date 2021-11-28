@@ -11,6 +11,11 @@ import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.DifferenceListener;
 import org.xml.sax.SAXException;
 
+/**
+ * Compares two XML-Files.
+ * @author Atilla
+ *
+ */
 public abstract class XMLComparator {
 	protected List<File> fileList = new ArrayList<File>();
 	protected String sourceFolderFeatureIDE;
@@ -28,6 +33,15 @@ public abstract class XMLComparator {
 	}
 	
 
+	/**
+	 * Compares the source and the target XML-Files and returns the differences found by the DifferenceListener.
+	 * @param source The source XML-File.
+	 * @param target The target XML-File.
+	 * @param listener The DifferenceListener.
+	 * @return Returns the differences found by the DifferenceListener.
+	 * @throws SAXException
+	 * @throws IOException
+	 */
 	public List<org.custommonkey.xmlunit.Difference> compareXML(BufferedReader source, BufferedReader target,
 			DifferenceListener listener) throws SAXException, IOException {
 
