@@ -24,6 +24,13 @@ import differenceListeners.IgnoreNotTransformableAttributes;
 import differenceListeners.IgnoreNotTransformableFeatureModelChildren;
 import printer.Printer;
 
+/**
+ * Tests the implemented transformations by comparing the XML-Files with the
+ * XMLComparators.
+ * 
+ * @author Atilla Ates
+ *
+ */
 class TransformationTests {
 
 	@Test
@@ -40,6 +47,13 @@ class TransformationTests {
 		compareFiles(comparator);
 	}
 
+	/**
+	 * Compares the XML-Files.
+	 * 
+	 * @param comparator The comparator which compares the XML-Files.
+	 * @throws SAXException
+	 * @throws IOException
+	 */
 	private void compareFiles(XMLComparator comparator) throws SAXException, IOException {
 		{
 			int totalIdenticalDifferences = 0;
@@ -91,6 +105,13 @@ class TransformationTests {
 		}
 	}
 
+	/**
+	 * Creates a BufferedReader and returns it.
+	 * 
+	 * @param path The path of the file.
+	 * @return Returns the generated BufferedReader.
+	 * @throws FileNotFoundException
+	 */
 	private BufferedReader createBufferedReader(String path) throws FileNotFoundException {
 		FileInputStream fis1 = new FileInputStream(path);
 		return new BufferedReader(new InputStreamReader(fis1));

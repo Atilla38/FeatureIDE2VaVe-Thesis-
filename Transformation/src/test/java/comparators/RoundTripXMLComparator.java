@@ -15,13 +15,14 @@ import transformations.Main;
 public class RoundTripXMLComparator extends XMLComparator {
 	protected String sourceFolderFeatureIDE = "src/test/resource/roundTrip/";
 	private String targetFolderVave = "target/src/test/resource/models/vave/";
-	
 
 	/**
-	 * Generates VaVemodels, by transforming FeatureIDE-Models in
-	 * the source FeatureIDE folder(default: src/test/resource/roundTrip/) to VaVemodels. Transforms then the VaVemodels to FeatureIDE-Models.
-	 * The default folder for the generated VaVemodels is target/src/test/resource/models/vave/.
-	 * The default folder for the generated FeatureIDE-Model XML-Files is target/src/test/resource/models/FeatureIDE/.
+	 * Generates VaVemodels, by transforming FeatureIDE-Models in the source
+	 * FeatureIDE folder(default: src/test/resource/roundTrip/) to VaVemodels.
+	 * Transforms then the VaVemodels to FeatureIDE-Models. The default folder for
+	 * the generated VaVemodels is target/src/test/resource/models/vave/. The
+	 * default folder for the generated FeatureIDE-Model XML-Files is
+	 * target/src/test/resource/models/FeatureIDE/.
 	 */
 	public void generateRoundTripXMLFiles() {
 		addFilesToList(fileList, "xml", sourceFolderFeatureIDE);
