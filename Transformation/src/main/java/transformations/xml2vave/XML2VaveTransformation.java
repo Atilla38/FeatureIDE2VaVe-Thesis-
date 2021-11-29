@@ -32,6 +32,7 @@ public class XML2VaveTransformation {
 	private Path projectFolder = Paths.get(".").normalize().toAbsolutePath();
 	private StructTransformation structTransformation;
 	private CrossTreeConstraintTransformation constraintTransformation;
+	private Resource resource;
 
 	private String fileName = "xml2vave";
 	private String targetFolder = "target/src/test/resource/models/vave/";
@@ -78,7 +79,7 @@ public class XML2VaveTransformation {
 		Map<String, Object> map = registry.getExtensionToFactoryMap();
 		map.put("vavemodel", new XMIResourceFactoryImpl());
 		ResourceSet resSet = new ResourceSetImpl();
-		Resource resource = resSet.createResource(URI.createFileURI(
+		this.resource = resSet.createResource(URI.createFileURI(
 				this.projectFolder.resolve(this.targetFolder + this.fileName + ".vavemodel").toString()));
 		resource.getContents().add(system);
 
@@ -97,6 +98,10 @@ public class XML2VaveTransformation {
 
 	public void setTargetFolder(String targetFolder) {
 		this.targetFolder = targetFolder;
+	}
+	
+	public Resource getResource() {
+		return this.resource;
 	}
 
 }
