@@ -33,6 +33,7 @@ public class Vave2XMLTransformation {
 	private StructTransformation structTransformation;
 	private CrossTreeConstraintTransformation constraintTransformation;
 	private DocumentRoot documentRoot;
+	private Resource resource;
 
 	private String fileName = "vave2xml";
 	private String targetFolder = "target/src/test/resource/models/FeatureIDE/";
@@ -84,7 +85,7 @@ public class Vave2XMLTransformation {
 		Map<String, Object> map = registry.getExtensionToFactoryMap(); 
 		map.put("xml", new FeatureIDEXSDResourceFactoryImpl());
 		ResourceSet resSet = new ResourceSetImpl();
-		Resource resource = resSet.createResource(
+		this.resource = resSet.createResource(
 				URI.createFileURI(this.projectFolder.resolve(this.targetFolder + this.fileName + ".xml").toString()));
 		resource.getContents().add(documentRoot);
 
@@ -103,6 +104,10 @@ public class Vave2XMLTransformation {
 
 	public void setTargetFolder(String targetFolder) {
 		this.targetFolder = targetFolder;
+	}
+	
+	public Resource getResource() {
+		return this.resource;
 	}
 
 }
