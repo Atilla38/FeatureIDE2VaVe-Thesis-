@@ -25,6 +25,7 @@ import vavemodel.VavemodelPackage;
 public class Main {
 	private static XML2VaveTransformation xml2vaveTransformation;
 	private static Vave2XMLTransformation vave2xmlTransformation;
+	private Resource resource;
 
 	public static void main(String[] args) {
 		String featureIDEFilePath = args[0];
@@ -69,7 +70,7 @@ public class Main {
 	 * @param fileName The name of the generated Vavemodel.
 	 * @param folder The folder, in which the generated XML-File should be saved.
 	 */
-	public static void generateVaveModel(File featureIDEXML, String fileName, String folder) {
+	public static Resource generateVaveModel(File featureIDEXML, String fileName, String folder) {
 		xml2vaveTransformation = new XML2VaveTransformation();
 
 		if (!fileName.equals("null")) {
@@ -83,6 +84,7 @@ public class Main {
 		Resource resource = loadFeatureIDEXMLFile(featureIDEXML);
 		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
 		xml2vaveTransformation.start(root);
+		return xml2vaveTransformation.getResource();
 	}
 
 	/**
@@ -116,6 +118,10 @@ public class Main {
 		resSet.getPackageRegistry().put(vavePackage.getNsURI(), vavePackage);
 		// Get the resource
 		return resSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
+	}
+	
+	public Resource getResource() {
+		return this.resource;
 	}
 
 }
