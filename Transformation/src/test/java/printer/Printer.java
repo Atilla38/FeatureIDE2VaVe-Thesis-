@@ -49,9 +49,9 @@ public class Printer {
 			int totalNotAbstractAndHiddenFeatures) {
 		System.out.println("Number of compared XML-Files:" + size);
 
-		System.out.println("Sum of all total identical differnces: " + totalIdenticalDifferences);
+		System.out.println("Sum of all total identical differences: " + totalIdenticalDifferences);
 
-		System.out.println("Sum of all total similar differnces: " + totalSimilarDifferences);
+		System.out.println("Sum of all total similar differences: " + totalSimilarDifferences);
 
 		System.out.println("Total deviation: " + (totalIdenticalDifferences - totalSimilarDifferences));
 
