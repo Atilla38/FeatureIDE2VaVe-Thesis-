@@ -16,71 +16,79 @@ import java.util.ArrayList
 import java.util.List
 
 class ChangeResolutionPrinter {
-	List<String> changeList = new ArrayList<String>();
+	List<String> changeList;
 	
-	def void print(VitruviusChange vitruviusChange) {
+	def List<String> print(VitruviusChange vitruviusChange) {
+		changeList = new ArrayList<String>();
 		printSeperator()
 		for(EChange change : vitruviusChange.EChanges) {
-			var String output = printChange(change)
-			changeList.add(output);
+			if(!(change instanceof RemoveRootEObject) && !(change instanceof InsertRootEObject)) {
+			println(printChange(change))
+			changeList.add(printChange(change))
+			}
 		}
+		return changeList
 	}
 	
 	def dispatch String printChange(RemoveRootEObject<EObject> object) {
+		//IGNORE
 	}
 	
 	def dispatch String printChange(InsertRootEObject<EObject> object) {
+		//IGNORE
 	}
 	
 	def dispatch String printChange(CreateEObject<EObject> object) {
 		if(object.affectedEObject instanceof Feature) {
-			return println("Create Feature: " + (object.affectedEObject as Feature).name)
+			return "Create Feature: " + (object.affectedEObject as Feature).name
 		}
 		
 		if(object.affectedEObject instanceof TreeConstraint) {
-			return println("Create TreeConstraint: " + (object.affectedEObject as TreeConstraint).type)
+			return "Create Feature: " + (object.affectedEObject as Feature).name
 		}
 	}
 
 	def dispatch String printChange(DeleteEObject<EObject> object) {
+		var String output;
 		if(object.affectedEObject instanceof Feature) {
-			return println("Delete Feature: " + (object.affectedEObject as Feature).name)
+			return "Delete Feature: " + (object.affectedEObject as Feature).name
 		}
 		
 		if(object.affectedEObject instanceof TreeConstraint) {
-			return println("Delete TreeConstraint: " + (object.affectedEObject as TreeConstraint).type)
+			return "Delete TreeConstraint: " + (object.affectedEObject as TreeConstraint).type
 		}
 	}
 
 	def dispatch String printChange(ReplaceSingleValuedEAttribute object) {
-		return println("Replace attribute of: " + (object.affectedEObject as Feature).name + " from " + object.oldValue + " to " + object.newValue)
+		return "Replace attribute of: " + (object.affectedEObject as Feature).name + " from " + object.oldValue + " to " + object.newValue
 	}
 	
 	def dispatch String printChange(InsertEReference<EObject,EObject> object) {
-		return printInsertOrRemoveReference("Insert", object.newValue, object.affectedEObject);
+		return printInsertOrRemoveReference("Insert", "to", object.newValue, object.affectedEObject);
 	}
 	
 	def dispatch String printChange(RemoveEReference<EObject, EObject> object) {
-		return printInsertOrRemoveReference("Remove", object.oldValue, object.affectedEObject);
+		return printInsertOrRemoveReference("Remove", "from", object.oldValue, object.affectedEObject);
 	}
 	
-	def String printInsertOrRemoveReference(String comand, EObject objectValue, EObject affectedEObject) {
+	def String printInsertOrRemoveReference(String comand, String fromOrTo, EObject objectValue, EObject affectedEObject) {
+		var String output
 		if(objectValue instanceof Feature && affectedEObject instanceof vavemodel.System) {
-			return println(comand + " reference of: " + (objectValue as Feature).name + " in System")
+			return comand + " reference of: " + (objectValue as Feature).name + " " + fromOrTo +" System"
 		}
 		
 		if(objectValue instanceof TreeConstraint && affectedEObject instanceof Feature) {
-			return println(comand + " reference of: TreeConstraint(" + (objectValue as TreeConstraint).type + ")" + " in " + (affectedEObject as Feature).name)
+			return comand + " reference of: TreeConstraint(" + (objectValue as TreeConstraint).type + ") "+ fromOrTo + " " + (affectedEObject as Feature).name 
 		}
 		
 		if(objectValue instanceof Feature && affectedEObject instanceof TreeConstraint) {
-			return println(comand + " reference of: " + (objectValue as Feature).name + " in TreeConstraint(" + (affectedEObject as TreeConstraint).type +")")
+			return comand + " reference of: " + (objectValue as Feature).name + " " + fromOrTo + " TreeConstraint(" + (affectedEObject as TreeConstraint).type +")"
 		}
 		
 		throw new IllegalArgumentException("NOT SUPPORTED REMOVE OR INSERT REFERENCE");
 	}
 	
-	private def String printSeperator() {
+	 def String printSeperator() {
 		println("==============================================================")
 		println("Changes")
 		println("==============================================================")
