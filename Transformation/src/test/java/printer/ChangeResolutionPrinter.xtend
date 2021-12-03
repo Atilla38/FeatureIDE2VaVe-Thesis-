@@ -14,83 +14,138 @@ import org.eclipse.emf.ecore.EObject
 import vavemodel.TreeConstraint
 import java.util.ArrayList
 import java.util.List
+import counter.EvolutionClassStatisticCounter
 
 class ChangeResolutionPrinter {
 	List<String> changeList;
-	
-	def List<String> print(VitruviusChange vitruviusChange) {
+
+	def List<String> print(VitruviusChange vitruviusChange, String newStateFileName, String oldStateFileName) {
 		changeList = new ArrayList<String>();
-		printSeperator()
-		for(EChange change : vitruviusChange.EChanges) {
-			if(!(change instanceof RemoveRootEObject) && !(change instanceof InsertRootEObject)) {
-			println(printChange(change))
-			changeList.add(printChange(change))
+		printSeperator(newStateFileName, oldStateFileName)
+		for (EChange change : vitruviusChange.EChanges) {
+			if (!(change instanceof RemoveRootEObject) && !(change instanceof InsertRootEObject)) {
+				println(printChange(change))
+				changeList.add(printChange(change))
 			}
 		}
 		return changeList
 	}
-	
+
 	def dispatch String printChange(RemoveRootEObject<EObject> object) {
-		//IGNORE
+		// IGNORE
 	}
-	
+
 	def dispatch String printChange(InsertRootEObject<EObject> object) {
-		//IGNORE
+		// IGNORE
 	}
-	
+
 	def dispatch String printChange(CreateEObject<EObject> object) {
-		if(object.affectedEObject instanceof Feature) {
+		if (object.affectedEObject instanceof Feature) {
 			return "Create Feature: " + (object.affectedEObject as Feature).name
 		}
-		
-		if(object.affectedEObject instanceof TreeConstraint) {
-			return "Create Feature: " + (object.affectedEObject as Feature).name
+
+		if (object.affectedEObject instanceof TreeConstraint) {
+			return "Create TreeConstraint: " + (object.affectedEObject as TreeConstraint).type
 		}
 	}
 
 	def dispatch String printChange(DeleteEObject<EObject> object) {
-		var String output;
-		if(object.affectedEObject instanceof Feature) {
+		if (object.affectedEObject instanceof Feature) {
 			return "Delete Feature: " + (object.affectedEObject as Feature).name
 		}
-		
-		if(object.affectedEObject instanceof TreeConstraint) {
+
+		if (object.affectedEObject instanceof TreeConstraint) {
 			return "Delete TreeConstraint: " + (object.affectedEObject as TreeConstraint).type
 		}
 	}
 
 	def dispatch String printChange(ReplaceSingleValuedEAttribute object) {
-		return "Replace attribute of: " + (object.affectedEObject as Feature).name + " from " + object.oldValue + " to " + object.newValue
+		var String comand = "Replace attribute of: ";
+		var String fromTo = ") from " + object.oldValue + " to " + object.newValue;
+		if (object.affectedEObject instanceof Feature) {
+			return comand + "Feature(" + (object.affectedEObject as Feature).name + fromTo
+		}
+
+		if (object.affectedEObject instanceof TreeConstraint) {
+			return comand + "TreeConstraint(" + (object.affectedEObject as TreeConstraint).type + fromTo
+		}
 	}
-	
-	def dispatch String printChange(InsertEReference<EObject,EObject> object) {
+
+	def dispatch String printChange(InsertEReference<EObject, EObject> object) {
 		return printInsertOrRemoveReference("Insert", "to", object.newValue, object.affectedEObject);
 	}
-	
+
 	def dispatch String printChange(RemoveEReference<EObject, EObject> object) {
 		return printInsertOrRemoveReference("Remove", "from", object.oldValue, object.affectedEObject);
 	}
-	
-	def String printInsertOrRemoveReference(String comand, String fromOrTo, EObject objectValue, EObject affectedEObject) {
-		var String output
-		if(objectValue instanceof Feature && affectedEObject instanceof vavemodel.System) {
-			return comand + " reference of: " + (objectValue as Feature).name + " " + fromOrTo +" System"
+
+	def String printInsertOrRemoveReference(String comand, String fromOrTo, EObject objectValue,
+		EObject affectedEObject) {
+		if (objectValue instanceof Feature && affectedEObject instanceof vavemodel.System) {
+			return comand + " reference of: Feature(" + (objectValue as Feature).name + ") " + fromOrTo + " System"
 		}
-		
-		if(objectValue instanceof TreeConstraint && affectedEObject instanceof Feature) {
-			return comand + " reference of: TreeConstraint(" + (objectValue as TreeConstraint).type + ") "+ fromOrTo + " " + (affectedEObject as Feature).name 
+
+		if (objectValue instanceof TreeConstraint && affectedEObject instanceof Feature) {
+			return comand + " reference of: TreeConstraint(" + (objectValue as TreeConstraint).type + ") " + fromOrTo +
+				" Feature(" + (affectedEObject as Feature).name + ")"
 		}
-		
-		if(objectValue instanceof Feature && affectedEObject instanceof TreeConstraint) {
-			return comand + " reference of: " + (objectValue as Feature).name + " " + fromOrTo + " TreeConstraint(" + (affectedEObject as TreeConstraint).type +")"
+
+		if (objectValue instanceof Feature && affectedEObject instanceof TreeConstraint) {
+			return comand + " reference of: Feature(" + (objectValue as Feature).name + ") " + fromOrTo +
+				" TreeConstraint(" + (affectedEObject as TreeConstraint).type + ")"
 		}
-		
+
 		throw new IllegalArgumentException("NOT SUPPORTED REMOVE OR INSERT REFERENCE");
 	}
-	
-	 def String printSeperator() {
+
+	def void printResult(EvolutionClassStatisticCounter totalCounter,
+		EvolutionClassStatisticCounter specializationCounter, EvolutionClassStatisticCounter generalizationCounter) {
+		var float totalPercentage = 0
+		var float specializationPercentage = 0
+		var float generalizationPercentage = 0
+
+		if (totalCounter.totalChangeResolutions > 0) {
+			totalPercentage = totalCounter.correctChangeResolutions / totalCounter.totalChangeResolutions * 100
+		}
+
+		if (specializationCounter.totalChangeResolutions > 0) {
+			specializationPercentage = specializationCounter.correctChangeResolutions /
+				specializationCounter.totalChangeResolutions * 100
+		}
+
+		if (generalizationCounter.totalChangeResolutions > 0) {
+			generalizationPercentage = generalizationCounter.correctChangeResolutions /
+				generalizationCounter.totalChangeResolutions * 100
+		}
+
 		println("==============================================================")
-		println("Changes")
+		println("Total change resolutions: " + totalCounter.totalChangeResolutions)
+		println("Total correct change resolutions: " + totalCounter.correctChangeResolutions)
+		println("Total incorrect change resolutions: " + totalCounter.incorrectChangeResolutions)
+		println(totalPercentage + "% of the total derived change resolutions are correct.")
+
+		println("--------------------------------------------------------------")
+
+		println("Specialization change resolutions: " + specializationCounter.totalChangeResolutions)
+		println("Specialization correct change resolutions: " + specializationCounter.correctChangeResolutions)
+		println("Specialization incorrect change resolutions: " + specializationCounter.incorrectChangeResolutions)
+		println(specializationPercentage +
+			"% of the derived change resolutions, from the specialization evolution class, are correct.")
+
+		println("--------------------------------------------------------------")
+
+		println("Generalization change resolutions: " + generalizationCounter.totalChangeResolutions)
+		println("Generalization correct change resolutions: " + generalizationCounter.correctChangeResolutions)
+		println("Generalization incorrect change resolutions: " + generalizationCounter.incorrectChangeResolutions)
+		println(generalizationPercentage +
+			"% of the derived change resolutions, from the generalization evolution class, are correct.")
+
+		println("==============================================================")
+	}
+
+	def void printSeperator(String newStateFileName, String oldStateFileName) {
+		println("==============================================================")
+		println("Changes between: " + oldStateFileName + " and " + newStateFileName)
 		println("==============================================================")
 	}
 }
