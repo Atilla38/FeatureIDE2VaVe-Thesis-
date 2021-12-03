@@ -27,8 +27,8 @@ import tools.vitruv.framework.domains.StateBasedChangeResolutionStrategy;
 import transformations.Main;
 
 class ChangeResolutionTest {
-	private static String targetFolderOldStateVave = "src/test/resource/changeResolution/vave/oldState/";
-	private static String targetFolderNewStateVave = "src/test/resource/changeResolution/vave/newState/";
+	private static String targetFolderOldStateVave = "target/src/test/resource/models/changeResolution/vave/oldState/";
+	private static String targetFolderNewStateVave = "target/src/test/resource/models/changeResolution/vave/newState/";
 	private static String sourceFolderNewStateFeatureIDESpecialisation = "src/test/resource/changeResolution/FeatureIDE/newState/specialization/";
 	private static String sourceFolderUserChanges = "src/test/resource/changeResolution/userChanges/";
 
