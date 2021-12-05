@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and mandatory="true" name="Elevator">
+			<and mandatory="true" name="Module">
+				<graphics key="collapsed" value="false"/>
+				<alt mandatory="true" name="Modes">
+					<graphics key="collapsed" value="false"/>
+					<feature name="Sabbath"/>
+					<feature name="FIFO"/>
+				</alt>
+				<or name="Behavior">
+					<graphics key="collapsed" value="false"/>
+					<feature name="Service"/>
+					<feature name="Call Buttons"/>
+				</or>
+			</and>
+			<alt mandatory="true" name="Produktgruppen">
+				<graphics key="collapsed" value="false"/>
+				<alt name="Elevator mit Sabbath">
+					<graphics key="collapsed" value="false"/>
+					<feature name="Produkt 1a"/>
+					<feature name="Produkt 1b"/>
+				</alt>
+				<alt name="Elevator mit FIFO">
+					<graphics key="collapsed" value="false"/>
+					<feature name="Produkt 2a"/>
+					<feature name="Produkt 2b"/>
+				</alt>
+				<alt name="NewFeature">
+					<feature name="NewFeature2"/>
+					<feature name="NewFeature3"/>
+				</alt>
+			</alt>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<disj>
+				<var>Call Buttons</var>
+				<var>Sabbath</var>
+			</disj>
+		</rule>
+		<rule>
+			<imp>
+				<var>Elevator mit Sabbath</var>
+				<var>Sabbath</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Elevator mit FIFO</var>
+				<var>FIFO</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Produkt 1a</var>
+				<not>
+					<var>Behavior</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Produkt 1b</var>
+				<conj>
+					<not>
+						<var>Service</var>
+					</not>
+					<var>Call Buttons</var>
+				</conj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Produkt 2a</var>
+				<not>
+					<var>Service</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Produkt 2b</var>
+				<var>Service</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

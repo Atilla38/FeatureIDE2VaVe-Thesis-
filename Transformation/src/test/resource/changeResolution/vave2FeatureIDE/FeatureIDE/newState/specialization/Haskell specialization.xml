@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and mandatory="true" name="Arith">
+			<feature mandatory="true" name="Base"/>
+			<feature name="Bool"/>
+			<feature name="BoolBinOp"/>
+			<feature name="BinOp"/>
+			<feature name="BoolUnOp"/>
+			<feature name="UnOp"/>
+			<feature name="Let"/>
+			<feature name="BinOp_Vars"/>
+			<feature name="UnOp_Vars"/>
+			<feature name="ITE"/>
+			<feature name="ITE_Vars"/>
+			<feature name="Lambda"/>
+		</and>
+	</struct>
+</featureModel>

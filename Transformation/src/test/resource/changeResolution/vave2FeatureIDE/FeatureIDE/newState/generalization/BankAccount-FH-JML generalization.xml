@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and mandatory="true" name="BankAccount">
+			<feature name="DailyLimit"/>
+			<and name="Interest">
+				<graphics key="collapsed" value="false"/>
+				<feature name="InterestEstimation"/>
+			</and>
+			<feature name="Overdraft"/>
+			<feature name="CreditWorthiness"/>
+			<and name="Lock">
+				<graphics key="collapsed" value="false"/>
+				<feature name="Transaction"/>
+				<feature name="NewFeature"/>
+			</and>
+		</and>
+	</struct>
+</featureModel>

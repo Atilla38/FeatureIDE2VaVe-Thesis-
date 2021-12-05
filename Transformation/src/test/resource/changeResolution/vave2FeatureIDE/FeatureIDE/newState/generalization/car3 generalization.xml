@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureModel>
+  <struct>
+    <and mandatory="true" name="Car">
+      <or mandatory="true" name="Engine Type">
+        <feature name="Gasoline"/>
+        <feature name="Electric"/>
+      </or>
+      <feature name="Smog Control"/>
+    </and>
+  </struct>
+</featureModel>
