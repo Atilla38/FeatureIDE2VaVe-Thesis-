@@ -1,2 +1,2 @@
-Specialization: Change mandatory Feature(UserLevels) to optional
+Specialization: Change optional Feature(UserLevels) to mandatory
 Generalization: Create optional Feature(net) and add to Feature(src) / src -> (optional) net

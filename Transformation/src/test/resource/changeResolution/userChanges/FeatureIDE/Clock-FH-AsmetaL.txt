@@ -1,2 +1,2 @@
 Specialization: Deleted Feature(Seconds)
-Generalization: Create optional Feature(NewFeature) and add to Base, Create Feature(NewFeature2) and add to alt Feature(NewFeature), Create Feature(NewFeature3) and add to alt Feature(NewFeature) / Base -> Seconds(op) to Base -> Seconds(op) (NewFeature(op) -> NewFeature2 alt NewFeature3)
+Generalization: Create optional Feature(NewFeature) and add to ClockFHAsmetaL, Create Feature(NewFeature2) and add to alt Feature(NewFeature), Create Feature(NewFeature3) and add to OR Feature(NewFeature) / ClockFHAsmetal -> Base(op) to ClockFHAsmetal -> Base(op) (NewFeature(op) -> NewFeature2 or NewFeature3)
