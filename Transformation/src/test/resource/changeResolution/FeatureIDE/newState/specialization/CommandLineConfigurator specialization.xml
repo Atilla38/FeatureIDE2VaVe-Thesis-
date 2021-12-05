@@ -20,7 +20,7 @@
 					<feature name="Sabbath"/>
 					<feature name="FIFO"/>
 				</alt>
-				<or name="Behavior">
+				<or mandatory="true" name="Behavior">
 					<feature name="Service"/>
 					<feature name="Call Buttons"/>
 				</or>

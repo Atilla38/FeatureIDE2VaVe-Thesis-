@@ -34,11 +34,11 @@
 					<feature name="Produkt 2a"/>
 					<feature name="Produkt 2b"/>
 				</alt>
+				<alt name="NewFeature">
+					<feature name="NewFeature2"/>
+					<feature name="NewFeature3"/>
+				</alt>
 			</alt>
-			<or name="NewFeature">
-				<feature name="NewFeature2"/>
-				<feature name="NewFeature3"/>
-			</or>
 		</and>
 	</struct>
 	<constraints>
@@ -110,5 +110,8 @@
 		<feature name="Behavior"/>
 		<feature name="Produkt 2a"/>
 		<feature name="Produkt 2b"/>
+		<feature name="NewFeature"/>
+		<feature name="NewFeature2"/>
+		<feature name="NewFeature3"/>
 	</featureOrder>
 </featureModel>
