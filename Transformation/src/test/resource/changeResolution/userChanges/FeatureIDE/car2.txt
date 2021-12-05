@@ -1,0 +1,2 @@
+Specialization: Change Feature OR(Car) to ALT(Car)
+Generalization: Create Feature(NewFeature3) and add to Feature(Car) / Car (or) -> NewFeature, NewFeature2, NewFeature3

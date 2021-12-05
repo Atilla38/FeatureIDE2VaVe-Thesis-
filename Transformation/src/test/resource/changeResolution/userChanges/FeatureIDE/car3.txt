@@ -1,0 +1,2 @@
+Specialization: Delete Feature(Electric)
+Generalization: Create optional Feature(NewFeature) and add to Feature(Smog Control) / Smog Control -> (optional) NewFeature

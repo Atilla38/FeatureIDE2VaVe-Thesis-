@@ -1,0 +1,3 @@
+Specialization: Deleted Feature(CMDLine) and Feature(Vars)
+Generalization: Changed Feature(Base) form mandatory to optional 
+                Created new optional Feature(BoolPin) / BoolBinOP -> BoolBin(optional)

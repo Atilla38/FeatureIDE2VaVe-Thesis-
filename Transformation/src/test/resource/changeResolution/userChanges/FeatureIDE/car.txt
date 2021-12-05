@@ -1,0 +1,2 @@
+Specialization: Delete Feature(Smog Control)
+Generalization: Create Feature(New Gasoline) / Gasoline ->(mandatory) New Gasoline

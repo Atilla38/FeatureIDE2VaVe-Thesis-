@@ -1,0 +1,2 @@
+Specialization: DailyLimit(optional) to DailyLimit(mandatory)
+Generalization: Create Feature(NewFeature) and add to Lock / Lock -> Transaction(optional) to Lock -> Transaction(op) NewFeature(op)
