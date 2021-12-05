@@ -17,9 +17,7 @@
 				</and>
 				<feature name="Electric"/>
 			</or>
-			<and name="Smog Control">
-				<feature name="NewFeature"/>
-			</and>
+			<feature name="Smog Control"/>
 		</and>
 	</struct>
 </featureModel>
