@@ -29,8 +29,8 @@ import transformations.Main;
 class ChangeResolutionTest {
 	private static String targetFolderOldStateVave = "target/src/test/resource/models/changeResolution/vave/oldState/";
 	private static String targetFolderNewStateVave = "target/src/test/resource/models/changeResolution/vave/newState/";
-	private static String sourceFolderNewStateFeatureIDESpecialisation = "src/test/resource/changeResolution/FeatureIDE/newState/specialization/";
-	private static String sourceFolderUserChanges = "src/test/resource/changeResolution/userChanges/";
+	private static String sourceFolderNewStateFeatureIDE = "src/test/resource/changeResolution/FeatureIDE/newState/";
+	private static String sourceFolderUserChanges = "src/test/resource/changeResolution/userChanges/vave/";
 
 	private StateBasedChangeResolutionStrategy strategy;
 	private ChangeResolutionPrinter printer;
@@ -56,16 +56,25 @@ class ChangeResolutionTest {
 
 		fileReader.addFilesToList(oldStateFileList, "xml", "src/test/resource/changeResolution/FeatureIDE/oldState/");
 		fileReader.addFilesToList(newStateFileList, "xml", "src/test/resource/changeResolution/FeatureIDE/newState/");
-		fileReader.addFilesToList(userChangesFileList, "txt", "src/test/resource/changeResolution/userChanges/");
-
+		fileReader.addFilesToList(userChangesFileList, "txt", "src/test/resource/changeResolution/userChanges/vave/");
+		
+		/*File oldStateFile = new File("src/test/resource/changeResolution/FeatureIDE/oldState/car3.xml");
+		File newStateFile = new File("src/test/resource/changeResolution/FeatureIDE/newState/specialization/car3.xml");
+		
+		Resource oldState = Main.generateVaveModel(oldStateFile, "car3", targetFolderOldStateVave);
+		Resource newState = Main.generateVaveModel(newStateFile, "car3generalization", targetFolderNewStateVave);
+		
+		VitruviusChange change = strategy.getChangeSequenceBetween(newState, oldState);
+		System.out.println();*/
 		for (File file : oldStateFileList) {
 			String fileName = file.getName();
 			String name = fileName.substring(0, fileName.lastIndexOf("."));
 			Resource oldState = Main.generateVaveModel(file, name, targetFolderOldStateVave);
 
 			this.changeResolutionEvolutionClass(oldState, name, "specialization");
+			this.changeResolutionEvolutionClass(oldState, name, "generalization");
 
-			this.totalCounter.increaseTotalChangeResolutions();
+			
 
 		}
 		this.printer.printResult(this.totalCounter, this.specializationCounter, this.generalizationCounter);
@@ -75,10 +84,11 @@ class ChangeResolutionTest {
 	private void changeResolutionEvolutionClass(Resource oldState, String name, String evolutionClass)
 			throws IOException {
 		Resource newState = Main.generateVaveModel(
-				new File(sourceFolderNewStateFeatureIDESpecialisation + name + " " + evolutionClass + ".xml"),
+				new File(sourceFolderNewStateFeatureIDE + evolutionClass +"/"+ name + " " + evolutionClass + ".xml"),
 				name + evolutionClass, targetFolderNewStateVave);
 
 		VitruviusChange change = strategy.getChangeSequenceBetween(newState, oldState);
+		this.totalCounter.increaseTotalChangeResolutions();
 		boolean checkChangeResolution = this.checkChangeResolution(change, name, evolutionClass);
 		this.documentStatistic(checkChangeResolution, evolutionClass);
 	}
@@ -101,6 +111,7 @@ class ChangeResolutionTest {
 				this.generalizationCounter.increaseIncorrectChangeResolutions();
 			}
 			this.generalizationCounter.increaseTotalChangeResolutions();
+			break;
 		default:
 			throw new IllegalArgumentException("Unsupported evolution class");
 		}
