@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
+  <feature name="Car">
+    <treeconstraint type="OR" feature="//@feature.1 //@feature.2"/>
+  </feature>
+  <feature name="NewFeature"/>
+  <feature name="NewFeature2"/>
+</vavemodel:System>

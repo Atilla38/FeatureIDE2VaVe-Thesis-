@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
+  <feature name="Arith">
+    <treeconstraint feature="//@feature.1"/>
+    <treeconstraint type="XORNONE" feature="//@feature.2"/>
+    <treeconstraint type="XORNONE" feature="//@feature.3"/>
+    <treeconstraint type="XORNONE" feature="//@feature.4"/>
+    <treeconstraint type="XORNONE" feature="//@feature.5"/>
+    <treeconstraint type="XORNONE" feature="//@feature.6"/>
+    <treeconstraint type="XORNONE" feature="//@feature.7"/>
+    <treeconstraint type="XORNONE" feature="//@feature.8"/>
+    <treeconstraint type="XORNONE" feature="//@feature.9"/>
+    <treeconstraint type="XORNONE" feature="//@feature.10"/>
+    <treeconstraint type="XORNONE" feature="//@feature.11"/>
+    <treeconstraint type="XORNONE" feature="//@feature.12"/>
+    <treeconstraint type="XORNONE" feature="//@feature.13"/>
+    <treeconstraint type="XORNONE" feature="//@feature.14"/>
+  </feature>
+  <feature name="Base"/>
+  <feature name="Bool"/>
+  <feature name="BoolBinOp"/>
+  <feature name="BinOp"/>
+  <feature name="BoolUnOp"/>
+  <feature name="UnOp"/>
+  <feature name="Let"/>
+  <feature name="BinOp_Vars"/>
+  <feature name="UnOp_Vars"/>
+  <feature name="ITE"/>
+  <feature name="ITE_Vars"/>
+  <feature name="Lambda"/>
+  <feature name="CmdLine"/>
+  <feature name="Vars"/>
+</vavemodel:System>

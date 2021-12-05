@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
+  <constraint>
+    <expression xsi:type="vavemodel:Disjunction">
+      <term xsi:type="vavemodel:Variable" option="//@feature.7"/>
+      <term xsi:type="vavemodel:Variable" option="//@feature.3"/>
+    </expression>
+  </constraint>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.9"/>
+      <term xsi:type="vavemodel:Variable" option="//@feature.3"/>
+    </expression>
+  </constraint>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.12"/>
+      <term xsi:type="vavemodel:Variable" option="//@feature.4"/>
+    </expression>
+  </constraint>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.10"/>
+      <term xsi:type="vavemodel:Not">
+        <term xsi:type="vavemodel:Variable" option="//@feature.5"/>
+      </term>
+    </expression>
+  </constraint>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.11"/>
+      <term xsi:type="vavemodel:Conjunction">
+        <term xsi:type="vavemodel:Not">
+          <term xsi:type="vavemodel:Variable" option="//@feature.6"/>
+        </term>
+        <term xsi:type="vavemodel:Variable" option="//@feature.7"/>
+      </term>
+    </expression>
+  </constraint>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.13"/>
+      <term xsi:type="vavemodel:Not">
+        <term xsi:type="vavemodel:Variable" option="//@feature.6"/>
+      </term>
+    </expression>
+  </constraint>
+  <constraint>
+    <expression xsi:type="vavemodel:Implication">
+      <term xsi:type="vavemodel:Variable" option="//@feature.14"/>
+      <term xsi:type="vavemodel:Variable" option="//@feature.6"/>
+    </expression>
+  </constraint>
+  <feature name="Elevator">
+    <treeconstraint feature="//@feature.1"/>
+    <treeconstraint feature="//@feature.8"/>
+  </feature>
+  <feature name="Module">
+    <treeconstraint feature="//@feature.2"/>
+    <treeconstraint type="XORNONE" feature="//@feature.5"/>
+  </feature>
+  <feature name="Modes">
+    <treeconstraint feature="//@feature.3 //@feature.4"/>
+  </feature>
+  <feature name="Sabbath"/>
+  <feature name="FIFO"/>
+  <feature name="Behavior">
+    <treeconstraint type="OR" feature="//@feature.6 //@feature.7"/>
+  </feature>
+  <feature name="Service"/>
+  <feature name="Call Buttons"/>
+  <feature name="Produktgruppen">
+    <treeconstraint feature="//@feature.9 //@feature.12"/>
+  </feature>
+  <feature name="Elevator mit Sabbath">
+    <treeconstraint feature="//@feature.10 //@feature.11"/>
+  </feature>
+  <feature name="Produkt 1a"/>
+  <feature name="Produkt 1b"/>
+  <feature name="Elevator mit FIFO">
+    <treeconstraint feature="//@feature.13 //@feature.14"/>
+  </feature>
+  <feature name="Produkt 2a"/>
+  <feature name="Produkt 2b"/>
+</vavemodel:System>

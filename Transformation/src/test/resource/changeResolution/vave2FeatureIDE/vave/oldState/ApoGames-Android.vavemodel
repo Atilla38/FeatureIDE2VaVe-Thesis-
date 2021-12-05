@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
+  <feature name="ApoGame">
+    <treeconstraint feature="//@feature.1"/>
+    <treeconstraint feature="//@feature.2"/>
+    <treeconstraint feature="//@feature.3"/>
+    <treeconstraint feature="//@feature.7"/>
+    <treeconstraint type="XORNONE" feature="//@feature.10"/>
+  </feature>
+  <feature name="src"/>
+  <feature name="res"/>
+  <feature name="Base">
+    <treeconstraint feature="//@feature.4 //@feature.6"/>
+  </feature>
+  <feature name="ApoSnake">
+    <treeconstraint type="XORNONE" feature="//@feature.5"/>
+  </feature>
+  <feature name="MoveCounter"/>
+  <feature name="ApoDice"/>
+  <feature name="DemoLevels">
+    <treeconstraint type="XORNONE" feature="//@feature.8"/>
+  </feature>
+  <feature name="StandardLevels">
+    <treeconstraint type="XORNONE" feature="//@feature.9"/>
+  </feature>
+  <feature name="ProLevels"/>
+  <feature name="UserLevels">
+    <treeconstraint type="XORNONE" feature="//@feature.11"/>
+  </feature>
+  <feature name="LevelEditor">
+    <treeconstraint type="XORNONE" feature="//@feature.12"/>
+  </feature>
+  <feature name="LevelUpload"/>
+</vavemodel:System>

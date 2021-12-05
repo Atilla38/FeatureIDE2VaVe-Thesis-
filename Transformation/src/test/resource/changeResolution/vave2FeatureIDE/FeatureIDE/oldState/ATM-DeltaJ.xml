@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureModel>
+  <struct>
+    <and mandatory="true" name="ATM">
+      <alt mandatory="true" name="Feature">
+        <feature name="Balance"/>
+        <feature name="Cash"/>
+      </alt>
+      <alt mandatory="true" name="Language">
+        <feature name="English"/>
+        <feature name="German"/>
+      </alt>
+    </and>
+  </struct>
+</featureModel>

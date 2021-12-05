@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureModel>
+  <struct>
+    <and mandatory="true" name="BankAccount">
+      <feature name="DailyLimit"/>
+      <and name="Interest">
+        <feature name="InterestEstimation"/>
+      </and>
+      <feature name="Overdraft"/>
+      <feature name="CreditWorthiness"/>
+      <and name="Lock">
+        <feature name="Transaction"/>
+      </and>
+    </and>
+  </struct>
+</featureModel>

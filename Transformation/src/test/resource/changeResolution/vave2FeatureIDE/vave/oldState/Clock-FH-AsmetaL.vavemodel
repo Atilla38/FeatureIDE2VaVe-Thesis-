@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
+  <feature name="ClockFHAsmetaL">
+    <treeconstraint type="XORNONE" feature="//@feature.1"/>
+  </feature>
+  <feature name="Base">
+    <treeconstraint type="XORNONE" feature="//@feature.2"/>
+  </feature>
+  <feature name="Seconds"/>
+</vavemodel:System>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureModel>
+  <struct>
+    <or mandatory="true" name="Car">
+      <feature name="NewFeature"/>
+      <feature name="NewFeature2"/>
+    </or>
+  </struct>
+</featureModel>

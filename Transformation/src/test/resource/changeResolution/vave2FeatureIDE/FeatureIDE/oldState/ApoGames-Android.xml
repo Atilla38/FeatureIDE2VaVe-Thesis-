@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureModel>
+  <struct>
+    <and mandatory="true" name="ApoGame">
+      <feature mandatory="true" name="src"/>
+      <feature mandatory="true" name="res"/>
+      <alt mandatory="true" name="Base">
+        <and name="ApoSnake">
+          <feature name="MoveCounter"/>
+        </and>
+        <feature name="ApoDice"/>
+      </alt>
+      <and mandatory="true" name="DemoLevels">
+        <and name="StandardLevels">
+          <feature name="ProLevels"/>
+        </and>
+      </and>
+      <and name="UserLevels">
+        <and name="LevelEditor">
+          <feature name="LevelUpload"/>
+        </and>
+      </and>
+    </and>
+  </struct>
+</featureModel>

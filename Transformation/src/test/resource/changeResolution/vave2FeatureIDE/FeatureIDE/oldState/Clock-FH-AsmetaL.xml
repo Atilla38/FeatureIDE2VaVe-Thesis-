@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<featureModel>
+  <struct>
+    <and mandatory="true" name="ClockFHAsmetaL">
+      <and name="Base">
+        <feature name="Seconds"/>
+      </and>
+    </and>
+  </struct>
+</featureModel>
