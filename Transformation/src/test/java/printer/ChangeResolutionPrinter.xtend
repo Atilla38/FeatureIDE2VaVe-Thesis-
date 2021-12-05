@@ -22,7 +22,7 @@ class ChangeResolutionPrinter {
 
 	def List<String> print(VitruviusChange vitruviusChange, String newStateFileName, String oldStateFileName) {
 		changeList = new ArrayList<String>();
-		printSeperator(newStateFileName, oldStateFileName)
+		printChangeBetween(newStateFileName, oldStateFileName)
 		for (EChange change : vitruviusChange.EChanges) {
 			if (!(change instanceof RemoveRootEObject) && !(change instanceof InsertRootEObject)) {
 				var String print = printChange(change);
@@ -105,7 +105,8 @@ class ChangeResolutionPrinter {
 	}
 
 	def void printResult(EvolutionClassStatisticCounter totalCounter,
-		EvolutionClassStatisticCounter specializationCounter, EvolutionClassStatisticCounter generalizationCounter) {
+		EvolutionClassStatisticCounter specializationCounter, EvolutionClassStatisticCounter generalizationCounter,
+		List<String> resultList) {
 		var double totalPercentage = 0
 		var double specializationPercentage = 0
 		var double generalizationPercentage = 0
@@ -125,7 +126,12 @@ class ChangeResolutionPrinter {
 				generalizationCounter.totalChangeResolutions as double * 100
 		}
 
-		println("==============================================================")
+        this.printSeperator
+        for(String result : resultList) {
+        	println(result)
+        }
+        
+		this.printSeperator
 		println("Total change resolutions: " + totalCounter.totalChangeResolutions)
 		println("Total correct change resolutions: " + totalCounter.correctChangeResolutions)
 		println("Total incorrect change resolutions: " + totalCounter.incorrectChangeResolutions)
@@ -148,12 +154,16 @@ class ChangeResolutionPrinter {
 		System.out.printf("%.2f", generalizationPercentage)
 		println(" % of the derived change resolutions, from the generalization evolution class, are correct.")
 
+		this.printSeperator
+	}
+	
+	def void printSeperator() {
 		println("==============================================================")
 	}
 
-	def void printSeperator(String newStateFileName, String oldStateFileName) {
-		println("==============================================================")
+	def void printChangeBetween(String newStateFileName, String oldStateFileName) {
+		this.printSeperator
 		println("Changes between: " + oldStateFileName + " and " + newStateFileName)
-		println("==============================================================")
+		this.printSeperator
 	}
 }
