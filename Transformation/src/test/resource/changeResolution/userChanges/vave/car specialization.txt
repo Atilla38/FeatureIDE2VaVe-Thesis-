@@ -1,5 +1,5 @@
 Remove reference of: Feature(Smog Control) from TreeConstraint(XORNONE)
 Remove reference of: Feature(Smog Control) from System
-Delete Feature: Smog Control
+Delete: Feature(Smog Control)
 Remove reference of: TreeConstraint(XORNONE) from Feature(Car)
-Delete TreeConstraint: XORNONE
+Delete: TreeConstraint(XORNONE)

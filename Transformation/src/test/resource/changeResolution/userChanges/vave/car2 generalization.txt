@@ -1,0 +1,4 @@
+Create: Feature(NewFeature3)
+Insert reference of: Feature(NewFeature3) to System
+Replace attribute of: Feature(NewFeature3) from null to NewFeature3
+Insert reference of: Feature(NewFeature3) to TreeConstraint(OR)
