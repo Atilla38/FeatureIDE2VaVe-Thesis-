@@ -59,7 +59,8 @@ public class ChangeResolutionFeatureIDE2VaveTest extends ChangeResolutionTest {
 		Resource newState = Main.generateVaveModel(newStateFile, "test", targetFolderNewStateVave);
 		
 		VitruviusChange change = strategy.getChangeSequenceBetween(newState, oldState);
-		change.unresolve().resolveAndApply(oldState.getResourceSet());
+		VitruviusChange unresolvedChange = change.unresolve();
+		unresolvedChange.resolveAndApply(oldState.getResourceSet());
 		
 		
 		System.out.println(oldState.getContents());
@@ -69,23 +70,5 @@ public class ChangeResolutionFeatureIDE2VaveTest extends ChangeResolutionTest {
 		} catch (IOException exception) {
 			exception.printStackTrace();
 		}
-	}
-	
-	private void saveFile(Resource oldState, String fileName) {
-		Resource.Factory.Registry registry = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> map = registry.getExtensionToFactoryMap();
-		map.put("vavemodel", new XMIResourceFactoryImpl());
-		ResourceSet resSet = new ResourceSetImpl();
-		Resource resource = resSet.createResource(URI.createFileURI(
-				this.projectFolder.resolve("target/" + fileName + ".vavemodel").toString()));
-		resource.getContents().add(oldState.getContents().get(0));
-
-		try {
-			resource.save(Collections.EMPTY_MAP);
-		} catch (IOException exception) {
-			exception.printStackTrace();
-		}
-
-		System.out.println("FOLDER: " + this.projectFolder + "/" + this.targetFolder + fileName + ".vavemodel");
 	}
 }
