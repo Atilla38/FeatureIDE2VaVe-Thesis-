@@ -62,7 +62,7 @@ public class ChangeResolutionFeatureIDE2VaveTest extends ChangeResolutionTest {
 		change.unresolve().resolveAndApply(oldState.getResourceSet());
 		
 		
-		System.out.println(oldState.getAllContents());
+		System.out.println(oldState.getContents());
 		
 		try {
 			oldState.save(Collections.EMPTY_MAP);
