@@ -24,7 +24,7 @@ import tools.vitruv.framework.domains.StateBasedChangeResolutionStrategy;
 import transformations.Main;
 
 class ChangeResolutionTest {
-	private static String targetFolderNewStateVave = "target/src/test/resource/models/changeResolution/vave/newState/";
+	protected static String targetFolderNewStateVave = "target/src/test/resource/models/changeResolution/vave/newState/";
 	protected static String sourceFolderNewStateFeatureIDE;
 	private static String sourceFolderUserChanges = "src/test/resource/changeResolution/userChanges/vave/";
 
@@ -53,6 +53,7 @@ class ChangeResolutionTest {
 				name + evolutionClass, targetFolderNewStateVave);
 
 		VitruviusChange change = strategy.getChangeSequenceBetween(newState, oldState);
+		
 		totalCounter.increaseTotalChangeResolutions();
 		boolean checkChangeResolution = this.checkChangeResolution(change, name, evolutionClass);
 		this.documentStatistic(checkChangeResolution, evolutionClass);
