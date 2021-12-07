@@ -36,6 +36,7 @@ class ChangeResolutionTest {
 	protected static EvolutionClassStatisticCounter generalizationCounter;
 	protected static EvolutionClassStatisticCounter arbitraryCounter;
 	protected static List<String> results;
+	private static List<EvolutionClassStatisticCounter> counterList = new ArrayList<EvolutionClassStatisticCounter>();;
 
 	@BeforeAll
 	protected static void initialize() {
@@ -46,6 +47,16 @@ class ChangeResolutionTest {
 		generalizationCounter = new EvolutionClassStatisticCounter();
 		arbitraryCounter = new EvolutionClassStatisticCounter();
 		results = new ArrayList<String>();
+
+		totalCounter.setName("Total");
+		specializationCounter.setName("Specialization");
+		generalizationCounter.setName("genera,lization");
+		arbitraryCounter.setName("Arbitrary");
+
+		counterList.add(totalCounter);
+		counterList.add(specializationCounter);
+		counterList.add(generalizationCounter);
+		counterList.add(arbitraryCounter);
 	}
 
 	protected void changeResolutionEvolutionClass(Resource oldState, String name, String evolutionClass)
@@ -121,11 +132,10 @@ class ChangeResolutionTest {
 			return true;
 		}
 	}
-	
+
 	@AfterAll
 	protected static void evaluateTest() {
-		printer.printResult(totalCounter, specializationCounter, generalizationCounter,
-				results);
+		printer.printResult(counterList, results);
 		assertEquals(0, totalCounter.getIncorrectChangeResolutions());
 	}
 }

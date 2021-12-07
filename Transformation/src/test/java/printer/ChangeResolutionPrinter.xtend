@@ -104,59 +104,27 @@ class ChangeResolutionPrinter {
 		throw new IllegalArgumentException("NOT SUPPORTED REMOVE OR INSERT REFERENCE");
 	}
 
-	def void printResult(EvolutionClassStatisticCounter totalCounter,
-		EvolutionClassStatisticCounter specializationCounter, EvolutionClassStatisticCounter generalizationCounter,
-		List<String> resultList) {
-		var double totalPercentage = 0
-		var double specializationPercentage = 0
-		var double generalizationPercentage = 0
-
-		if (totalCounter.totalChangeResolutions > 0) {
-			totalPercentage = (totalCounter.correctChangeResolutions as double /
-				totalCounter.totalChangeResolutions as double) * 100
-		}
-
-		if (specializationCounter.totalChangeResolutions > 0) {
-			specializationPercentage = specializationCounter.correctChangeResolutions as double /
-				specializationCounter.totalChangeResolutions as double * 100
-		}
-
-		if (generalizationCounter.totalChangeResolutions > 0) {
-			generalizationPercentage = generalizationCounter.correctChangeResolutions as double /
-				generalizationCounter.totalChangeResolutions as double * 100
-		}
-
-        this.printSeperator
-        for(String result : resultList) {
-        	println(result)
-        }
-        
+	def void printResult(List<EvolutionClassStatisticCounter> counterList, List<String> resultList) {
 		this.printSeperator
-		println("Total change resolutions: " + totalCounter.totalChangeResolutions)
-		println("Total correct change resolutions: " + totalCounter.correctChangeResolutions)
-		println("Total incorrect change resolutions: " + totalCounter.incorrectChangeResolutions)
-		System.out.printf("%.2f", totalPercentage)
-		println(" % of the total derived change resolutions are correct.")
+		for (String result : resultList) {
+			println(result)
+		}
 
-		println("--------------------------------------------------------------")
+		this.printSeperator
 
-		println("Specialization change resolutions: " + specializationCounter.totalChangeResolutions)
-		println("Specialization correct change resolutions: " + specializationCounter.correctChangeResolutions)
-		println("Specialization incorrect change resolutions: " + specializationCounter.incorrectChangeResolutions)
-		System.out.printf("%.2f", specializationPercentage)
-		println(" % of the derived change resolutions, from the specialization evolution class, are correct.")
+		for (EvolutionClassStatisticCounter counter : counterList) {
+			println(counter.name + " change resolutions: " + counter.totalChangeResolutions)
+			println(counter.name + " correct change resolutions: " + counter.correctChangeResolutions)
+			println(counter.name + " incorrect change resolutions: " + counter.incorrectChangeResolutions)
+			System.out.printf("%.2f", counter.getTotalPercentage())
+			println(" % of the " + counter.name + " derived change resolutions are correct.")
 
-		println("--------------------------------------------------------------")
-
-		println("Generalization change resolutions: " + generalizationCounter.totalChangeResolutions)
-		println("Generalization correct change resolutions: " + generalizationCounter.correctChangeResolutions)
-		println("Generalization incorrect change resolutions: " + generalizationCounter.incorrectChangeResolutions)
-		System.out.printf("%.2f", generalizationPercentage)
-		println(" % of the derived change resolutions, from the generalization evolution class, are correct.")
+			println("--------------------------------------------------------------")
+		}
 
 		this.printSeperator
 	}
-	
+
 	def void printSeperator() {
 		println("==============================================================")
 	}
