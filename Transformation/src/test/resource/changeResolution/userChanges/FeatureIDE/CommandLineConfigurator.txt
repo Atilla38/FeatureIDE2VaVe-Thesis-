@@ -1,3 +1,4 @@
 Specialization: Changed Feature(Behavior) from optional to mandatory
 Generalization: Created alt Feature(NewFeature) and add to Feature(Produktgruppen), Created Feature(NewFeature2) and added to alt Feature(NewFeature),  Created Feature(NewFeature3) and added to alt Feature(NewFeature)
                 Produktgruppen (alt)-> Feature(Elevator mit Sabbath) Feature(Elevator mit FIFO) Feature(NewFeature)
+Arbitrary: Specialization and Generalization

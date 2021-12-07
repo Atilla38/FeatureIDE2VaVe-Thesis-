@@ -1,2 +1,5 @@
 Specialization: Delete Feature(English) / Language -> (English alt German) to Language -> German (optional)
 Generalization: Language -> (English alt German) to Language -> (English or German)
+Arbitrary: Delete Feature(English) / Language -> (English alt German) to Language -> German (optional)
+           Create Feature(NewFeature) and add to OR Feature(German), Create Feature(NewFeature2) and add to OR Feature(German)
+           / Feature(German) -> Feature(NewFeature) OR Feature(NewFeature2)

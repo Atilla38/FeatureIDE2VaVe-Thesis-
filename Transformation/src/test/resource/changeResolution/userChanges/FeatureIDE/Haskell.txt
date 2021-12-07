@@ -1,3 +1,4 @@
 Specialization: Deleted Feature(CMDLine) and Feature(Vars)
 Generalization: Changed Feature(Base) from mandatory to optional 
                 Created new optional Feature(BoolPin) / BoolBinOP -> BoolBin(optional)
+Arbitrary: Specialization and Generalization
