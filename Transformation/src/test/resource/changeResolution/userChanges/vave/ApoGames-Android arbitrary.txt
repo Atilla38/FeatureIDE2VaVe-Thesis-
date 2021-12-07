@@ -1,0 +1,13 @@
+Create: TreeConstraint(XOR)
+Insert reference of: TreeConstraint(XOR) to Feature(ApoGame)
+Insert reference of: Feature(UserLevels) to TreeConstraint(XOR)
+Remove reference of: Feature(UserLevels) from TreeConstraint(XORNONE)
+Remove reference of: TreeConstraint(XORNONE) from Feature(ApoGame)
+Delete: TreeConstraint(XORNONE)
+Create: Feature(net)
+Insert reference of: Feature(net) to System
+Replace attribute of: Feature(net) from null to net
+Create: TreeConstraint(XOR)
+Replace attribute of: TreeConstraint(XOR) from XOR to XORNONE
+Insert reference of: Feature(net) to TreeConstraint(XORNONE)
+Insert reference of: TreeConstraint(XORNONE) to Feature(src)
