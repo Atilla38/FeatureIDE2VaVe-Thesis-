@@ -36,4 +36,13 @@ class EvolutionClassStatisticCounter {
 	def void increaseIncorrectChangeResolutions() {
 		this.incorrectChangeResolutions++
 	}
+	
+	def double getTotalPercentage() {
+		var double totalPercentage = 0;
+		if (this.totalChangeResolutions > 0) {
+			totalPercentage = (this.correctChangeResolutions as double /
+				this.totalChangeResolutions as double) * 100
+		}
+		return totalPercentage;
+	}
 }
