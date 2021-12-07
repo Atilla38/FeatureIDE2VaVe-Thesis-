@@ -1,6 +1,7 @@
 package changeResolution.test;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,23 +35,24 @@ public class ChangeResolutionFeatureIDE2VaveTest extends ChangeResolutionTest {
 
 			this.changeResolutionEvolutionClass(oldState, name, "specialization");
 			this.changeResolutionEvolutionClass(oldState, name, "generalization");
+			this.changeResolutionEvolutionClass(oldState, name, "arbitrary");
 
 		}
 
 		/*
 		 * File oldStateFile = new
-		 * File("src/test/resource/changeResolution/FeatureIDE/oldState/car3.xml"); File
-		 * newStateFile = new File(
-		 * "src/test/resource/changeResolution/FeatureIDE/newState/specialization/car3.xml"
-		 * );
+		 * File("src/test/resource/changeResolution/FeatureIDE/failed/oldState/car.xml")
+		 * ; File newStateFile = new File(
+		 * "src/test/resource/changeResolution/FeatureIDE/failed/newState/car.xml");
 		 * 
 		 * Resource oldState = Main.generateVaveModel(oldStateFile, "car3",
 		 * targetFolderOldStateVave); Resource newState =
-		 * Main.generateVaveModel(newStateFile, "car3generalization",
+		 * Main.generateVaveModel(newStateFile, "car3arbitrary",
 		 * targetFolderNewStateVave);
 		 * 
 		 * VitruviusChange change = strategy.getChangeSequenceBetween(newState,
 		 * oldState); System.out.println();
 		 */
+
 	}
 }

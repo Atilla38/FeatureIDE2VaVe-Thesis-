@@ -34,6 +34,7 @@ class ChangeResolutionTest {
 	protected static EvolutionClassStatisticCounter totalCounter;
 	protected static EvolutionClassStatisticCounter specializationCounter;
 	protected static EvolutionClassStatisticCounter generalizationCounter;
+	protected static EvolutionClassStatisticCounter arbitraryCounter;
 	protected static List<String> results;
 
 	@BeforeAll
@@ -43,6 +44,7 @@ class ChangeResolutionTest {
 		totalCounter = new EvolutionClassStatisticCounter();
 		specializationCounter = new EvolutionClassStatisticCounter();
 		generalizationCounter = new EvolutionClassStatisticCounter();
+		arbitraryCounter = new EvolutionClassStatisticCounter();
 		results = new ArrayList<String>();
 	}
 
@@ -76,6 +78,14 @@ class ChangeResolutionTest {
 				generalizationCounter.increaseIncorrectChangeResolutions();
 			}
 			generalizationCounter.increaseTotalChangeResolutions();
+			break;
+		case "arbitrary":
+			if (checkChangeResolution) {
+				arbitraryCounter.increaseCorrectChangeResolutions();
+			} else {
+				arbitraryCounter.increaseIncorrectChangeResolutions();
+			}
+			arbitraryCounter.increaseTotalChangeResolutions();
 			break;
 		default:
 			throw new IllegalArgumentException("Unsupported evolution class");
