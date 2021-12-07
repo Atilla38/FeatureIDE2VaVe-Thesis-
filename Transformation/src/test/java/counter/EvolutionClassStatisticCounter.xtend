@@ -1,10 +1,18 @@
 package counter
 
 class EvolutionClassStatisticCounter {
+	String name;
 	int totalChangeResolutions
 	int correctChangeResolutions
 	int incorrectChangeResolutions
 
+    def String getName() {
+    	return name;
+    }
+    
+    def setName(String name) {
+    	this.name = name;
+    }
 	def int getTotalChangeResolutions() {
 		return totalChangeResolutions
 	}
