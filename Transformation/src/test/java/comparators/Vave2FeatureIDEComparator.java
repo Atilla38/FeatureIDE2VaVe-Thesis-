@@ -13,7 +13,7 @@ import transformations.Main;
  * @author Atilla
  *
  */
-public class Vave2XMLComparator extends XMLComparator {
+public class Vave2FeatureIDEComparator extends XMLComparator {
 	protected String sourceFolderFeatureIDE = "src/test/resource/vave2xml/FeatureIDE/";
 	private String sourceFolderVave = "src/test/resource/vave2xml/vave/";
 	protected String targetFolderFeatureIDE = "target/src/test/resource/models/FeatureIDE/";

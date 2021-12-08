@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
 
 import comparators.RoundTripXMLComparator;
-import comparators.Vave2XMLComparator;
+import comparators.Vave2FeatureIDEComparator;
 import comparators.XMLComparator;
 import counter.FeatureIDEFeatureCounter;
 import differenceListeners.IgnoreNotTransformableAttributes;
@@ -42,7 +42,7 @@ class TransformationTests {
 
 	@Test
 	void vave2XMLTest() throws SAXException, IOException {
-		Vave2XMLComparator comparator = new Vave2XMLComparator();
+		Vave2FeatureIDEComparator comparator = new Vave2FeatureIDEComparator();
 		comparator.generateVave2XMLFiles();
 		compareFiles(comparator);
 	}
