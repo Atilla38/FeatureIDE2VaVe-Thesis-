@@ -17,9 +17,20 @@ import java.util.ArrayList
 import java.util.List
 import counter.EvolutionClassStatisticCounter
 
+/**
+ * Prints a user-friendly derived change resolution of the Vitruvius strategy.
+ * @author Atilla Ates
+ */
 class ChangeResolutionPrinter {
 	List<String> changeList;
 
+	/**
+	 * Prints a user-friendly Vitruvius change resolution.
+	 * @param vitruviusChange The change resolution which should be printed.
+	 * @param newStateFileName The name of the new state file.
+	 * @param oldStateFileName The name of the old state file.
+	 * @return Returns the printed user-friendly change resolution.
+	 */
 	def List<String> print(VitruviusChange vitruviusChange, String newStateFileName, String oldStateFileName) {
 		changeList = new ArrayList<String>();
 		printChangeBetween(newStateFileName, oldStateFileName)
@@ -105,12 +116,12 @@ class ChangeResolutionPrinter {
 	}
 
 	def void printResult(List<EvolutionClassStatisticCounter> counterList, List<String> resultList) {
-		this.printSeperator
+		this.printSeparator
 		for (String result : resultList) {
 			println(result)
 		}
 
-		this.printSeperator
+		this.printSeparator
 
 		for (EvolutionClassStatisticCounter counter : counterList) {
 			println(counter.name + " change resolutions: " + counter.totalChangeResolutions)
@@ -122,16 +133,16 @@ class ChangeResolutionPrinter {
 			println("--------------------------------------------------------------")
 		}
 
-		this.printSeperator
+		this.printSeparator
 	}
 
-	def void printSeperator() {
+	def void printSeparator() {
 		println("==============================================================")
 	}
 
 	def void printChangeBetween(String newStateFileName, String oldStateFileName) {
-		this.printSeperator
+		this.printSeparator
 		println("Changes between: " + oldStateFileName + " and " + newStateFileName)
-		this.printSeperator
+		this.printSeparator
 	}
 }
