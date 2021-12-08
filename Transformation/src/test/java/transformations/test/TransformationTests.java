@@ -22,7 +22,7 @@ import comparators.XMLComparator;
 import counter.FeatureIDEFeatureCounter;
 import differenceListeners.IgnoreNotTransformableAttributes;
 import differenceListeners.IgnoreNotTransformableFeatureModelChildren;
-import printer.Printer;
+import printer.XMLComparatorPrinter;
 
 /**
  * Tests the implemented transformations by comparing the XML-Files with the
@@ -62,7 +62,7 @@ class TransformationTests {
 			int totalNotAbstractAndHiddenFeatures = 0;
 			List<File> fileList = comparator.getFileList();
 			String targetFolderFeatureIDE = comparator.getTargetFolderFeatureIDE();
-			Printer printer = new Printer();
+			XMLComparatorPrinter printer = new XMLComparatorPrinter();
 			FeatureIDEFeatureCounter counter = new FeatureIDEFeatureCounter();
 
 			for (File file : fileList) {
@@ -90,7 +90,7 @@ class TransformationTests {
 				// showing differences found in two xml files
 				printer.printDifferences(file.getName(), identicalDifferences, similarDifferences);
 
-				printer.printSeperator();
+				printer.printSeparator();
 
 				totalIdenticalDifferences = totalIdenticalDifferences + identicalDifferences.size();
 
