@@ -1,4 +1,4 @@
-package transformations.xml2vave
+package transformations.featureIDE2vave
 
 import java.util.List
 

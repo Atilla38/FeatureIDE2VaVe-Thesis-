@@ -2,6 +2,8 @@ package transformations.featureIDE2vave;
 
 import java.io.IOException;
 
+
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
@@ -17,8 +19,6 @@ import FeatureIDEXSD.ConstraintsType;
 import FeatureIDEXSD.DocumentRoot;
 import FeatureIDEXSD.FeatureModelType;
 import FeatureIDEXSD.StructType;
-import transformations.xml2vave.CrossTreeConstraintTransformation;
-import transformations.xml2vave.StructTransformation;
 import vavemodel.VavemodelFactory;
 
 /**
@@ -28,7 +28,7 @@ import vavemodel.VavemodelFactory;
  * @author Atilla
  *
  */
-public class XML2VaveTransformation {
+public class FeatureIDE2VaveTransformation {
 
 	private vavemodel.System system;
 	private Path projectFolder = Paths.get(".").normalize().toAbsolutePath();
@@ -39,7 +39,7 @@ public class XML2VaveTransformation {
 	private String fileName = "xml2vave";
 	private String targetFolder = "target/src/test/resource/models/vave/";
 
-	public XML2VaveTransformation() {
+	public FeatureIDE2VaveTransformation() {
 		this.system = VavemodelFactory.eINSTANCE.createSystem();
 		this.structTransformation = new StructTransformation(system);
 		this.constraintTransformation = new CrossTreeConstraintTransformation(system);

@@ -1,4 +1,4 @@
-package transformations.xml2vave
+package transformations.featureIDE2vave
 
 import org.eclipse.emf.common.util.BasicEList
 import org.eclipse.emf.common.util.EList
