@@ -27,8 +27,8 @@ public class ChangeResolutionVave2FeatureIDETest extends ChangeResolutionTest {
 			String fileName = file.getName();
 			String name = fileName.substring(0, fileName.lastIndexOf("."));
 			Resource oldState = Main.loadVavemodel(file);
-			this.changeResolutionEvolutionClass(oldState, name, "specialization");
-			this.changeResolutionEvolutionClass(oldState, name, "generalization");
+			this.changeResolutionEvolutionClass(oldState, name, specializationCounter);
+			this.changeResolutionEvolutionClass(oldState, name, generalizationCounter);
 		}
 	}
 }

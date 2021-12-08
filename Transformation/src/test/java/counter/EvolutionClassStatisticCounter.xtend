@@ -6,13 +6,14 @@ class EvolutionClassStatisticCounter {
 	int correctChangeResolutions
 	int incorrectChangeResolutions
 
-    def String getName() {
-    	return name;
-    }
-    
-    def setName(String name) {
-    	this.name = name;
-    }
+	def String getName() {
+		return name;
+	}
+
+	def setName(String name) {
+		this.name = name;
+	}
+
 	def int getTotalChangeResolutions() {
 		return totalChangeResolutions
 	}
@@ -36,12 +37,11 @@ class EvolutionClassStatisticCounter {
 	def void increaseIncorrectChangeResolutions() {
 		this.incorrectChangeResolutions++
 	}
-	
+
 	def double getTotalPercentage() {
 		var double totalPercentage = 0;
 		if (this.totalChangeResolutions > 0) {
-			totalPercentage = (this.correctChangeResolutions as double /
-				this.totalChangeResolutions as double) * 100
+			totalPercentage = (this.correctChangeResolutions as double / this.totalChangeResolutions as double) * 100
 		}
 		return totalPercentage;
 	}

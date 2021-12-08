@@ -15,8 +15,6 @@ import transformations.Main;
 
 public class ChangeResolutionFeatureIDE2VaveTest extends ChangeResolutionTest {
 
-	private static String targetFolderOldStateVave = "target/src/test/resource/models/changeResolution/vave/oldState/";
-
 	@Test
 	void testDefaultStateBasedChangeResolutionStrategyFeatureIDE2Vave() throws IOException {
 
@@ -33,10 +31,7 @@ public class ChangeResolutionFeatureIDE2VaveTest extends ChangeResolutionTest {
 			String name = fileName.substring(0, fileName.lastIndexOf("."));
 			Resource oldState = Main.generateVaveModel(file, name, targetFolderOldStateVave);
 
-			this.changeResolutionEvolutionClass(oldState, name, "specialization");
-			this.changeResolutionEvolutionClass(oldState, name, "generalization");
-			this.changeResolutionEvolutionClass(oldState, name, "arbitrary");
-
+			this.changeResolutionEvolutionClass(oldState, name, specializationCounter);
 		}
 
 		/*
