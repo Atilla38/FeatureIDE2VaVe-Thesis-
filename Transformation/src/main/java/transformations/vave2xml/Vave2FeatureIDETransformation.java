@@ -26,7 +26,7 @@ import vavemodel.Feature;
  * @author Atilla
  *
  */
-public class Vave2XMLTransformation {
+public class Vave2FeatureIDETransformation {
 
 	private FeatureModelType featureModel;
 	private Path projectFolder = Paths.get(".").normalize().toAbsolutePath();
@@ -38,7 +38,7 @@ public class Vave2XMLTransformation {
 	private String fileName = "vave2xml";
 	private String targetFolder = "target/src/test/resource/models/FeatureIDE/";
 
-	public Vave2XMLTransformation() {
+	public Vave2FeatureIDETransformation() {
 		this.documentRoot = FeatureIDEXSDFactory.eINSTANCE.createDocumentRoot();
 		this.featureModel = FeatureIDEXSDFactory.eINSTANCE.createFeatureModelType();
 		this.structTransformation = new StructTransformation(featureModel);

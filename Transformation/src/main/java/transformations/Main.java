@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import FeatureIDEXSD.DocumentRoot;
 import FeatureIDEXSD.util.FeatureIDEXSDResourceFactoryImpl;
-import transformations.vave2xml.Vave2XMLTransformation;
+import transformations.vave2xml.Vave2FeatureIDETransformation;
 import transformations.xml2vave.XML2VaveTransformation;
 import vavemodel.VavemodelPackage;
 
@@ -24,7 +24,7 @@ import vavemodel.VavemodelPackage;
  */
 public class Main {
 	private static XML2VaveTransformation xml2vaveTransformation;
-	private static Vave2XMLTransformation vave2xmlTransformation;
+	private static Vave2FeatureIDETransformation vave2xmlTransformation;
 	private Resource resource;
 
 	public static void main(String[] args) {
@@ -50,7 +50,7 @@ public class Main {
 	 * @param folder The folder, in which the generated XML-File should be saved.
 	 */
 	public static void generateFeatureIDEXMLFile(File vavemodel, String fileName, String folder) {
-		vave2xmlTransformation = new Vave2XMLTransformation();
+		vave2xmlTransformation = new Vave2FeatureIDETransformation();
 		if (!fileName.equals("null")) {
 			vave2xmlTransformation.setFileName(fileName);
 		}
