@@ -4,7 +4,21 @@ import java.util.List;
 
 import org.custommonkey.xmlunit.Difference;
 
-public class Printer {
+/**
+ * Prints the result and the differences of the XML comparison.
+ * 
+ * @author Atilla Ates
+ *
+ */
+public class XMLComparatorPrinter {
+
+	/**
+	 * Prints the differences of the XML comparison.
+	 * 
+	 * @param fileName             The name of the compared XML-File.
+	 * @param identicalDifferences The list of identical differences.
+	 * @param similarDifferences   The list of similar differences.
+	 */
 	public void printDifferences(String fileName, List<Difference> identicalDifferences,
 			List<Difference> similarDifferences) {
 		int numberOfIdenticalDifferences = identicalDifferences.size();
@@ -36,7 +50,10 @@ public class Printer {
 		System.out.println("================================");
 	}
 
-	public void printSeperator() {
+	/**
+	 * Prints a separator.
+	 */
+	public void printSeparator() {
 		System.out
 				.println("*******************************************************************************************");
 		System.out
@@ -45,6 +62,19 @@ public class Printer {
 				.println("*******************************************************************************************");
 	}
 
+	/**
+	 * Prints the result.
+	 * 
+	 * @param size                              The number of compared XML-Files.
+	 * @param totalIdenticalDifferences         The number of total identical
+	 *                                          differences.
+	 * @param totalSimilarDifferences           The number of total similar
+	 *                                          differences.
+	 * @param totalFeatures                     The number of total compared
+	 *                                          Features.
+	 * @param totalNotAbstractAndHiddenFeatures The number of total not abstract and
+	 *                                          hidden features.
+	 */
 	public void printResult(int size, int totalIdenticalDifferences, int totalSimilarDifferences, int totalFeatures,
 			int totalNotAbstractAndHiddenFeatures) {
 		System.out.println("Number of compared XML-Files:" + size);
