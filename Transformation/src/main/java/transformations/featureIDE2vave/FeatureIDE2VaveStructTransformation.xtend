@@ -20,7 +20,7 @@ import vavemodel.GroupType
 /**
  * Implements the structural transformation from xml to vave of the FeatureIDE Feature-Model.
  */
-class StructTransformation {
+class FeatureIDE2VaveStructTransformation {
 	vavemodel.System system
 	ExceptionHandlerStruct exceptionHandler
 
