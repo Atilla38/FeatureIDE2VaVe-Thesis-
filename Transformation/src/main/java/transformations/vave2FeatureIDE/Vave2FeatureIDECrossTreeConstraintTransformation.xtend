@@ -32,7 +32,7 @@ import vavemodel.Expression
 /**
  * Implements the constraint transformation from a feature-model in VaVe to a FeatureIDE feature-model.
  */
-class CrossTreeConstraintTransformation {
+class Vave2FeatureIDECrossTreeConstraintTransformation {
 	ConstraintsType constraint
 	FeatureModelType featureModel
 

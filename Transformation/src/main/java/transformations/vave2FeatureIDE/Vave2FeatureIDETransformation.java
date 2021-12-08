@@ -33,7 +33,7 @@ public class Vave2FeatureIDETransformation {
 	private FeatureModelType featureModel;
 	private Path projectFolder = Paths.get(".").normalize().toAbsolutePath();
 	private Vave2FeatureIDEStructTransformation structTransformation;
-	private CrossTreeConstraintTransformation constraintTransformation;
+	private Vave2FeatureIDECrossTreeConstraintTransformation constraintTransformation;
 	private DocumentRoot documentRoot;
 	private Resource resource;
 
@@ -44,7 +44,7 @@ public class Vave2FeatureIDETransformation {
 		this.documentRoot = FeatureIDEXSDFactory.eINSTANCE.createDocumentRoot();
 		this.featureModel = FeatureIDEXSDFactory.eINSTANCE.createFeatureModelType();
 		this.structTransformation = new Vave2FeatureIDEStructTransformation(featureModel);
-		this.constraintTransformation = new CrossTreeConstraintTransformation(featureModel);
+		this.constraintTransformation = new Vave2FeatureIDECrossTreeConstraintTransformation(featureModel);
 	}
 
 	/**
