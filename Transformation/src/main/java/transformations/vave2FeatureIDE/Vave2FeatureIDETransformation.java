@@ -3,6 +3,7 @@ package transformations.vave2FeatureIDE;
 import java.io.IOException;
 
 
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
@@ -18,7 +19,6 @@ import FeatureIDEXSD.DocumentRoot;
 import FeatureIDEXSD.FeatureIDEXSDFactory;
 import FeatureIDEXSD.FeatureModelType;
 import FeatureIDEXSD.util.FeatureIDEXSDResourceFactoryImpl;
-import transformations.vave2FeatureIDE.CrossTreeConstraintTransformation;
 import vavemodel.CrossTreeConstraint;
 import vavemodel.Feature;
 
@@ -32,7 +32,7 @@ public class Vave2FeatureIDETransformation {
 
 	private FeatureModelType featureModel;
 	private Path projectFolder = Paths.get(".").normalize().toAbsolutePath();
-	private StructTransformation structTransformation;
+	private Vave2FeatureIDEStructTransformation structTransformation;
 	private CrossTreeConstraintTransformation constraintTransformation;
 	private DocumentRoot documentRoot;
 	private Resource resource;
@@ -43,7 +43,7 @@ public class Vave2FeatureIDETransformation {
 	public Vave2FeatureIDETransformation() {
 		this.documentRoot = FeatureIDEXSDFactory.eINSTANCE.createDocumentRoot();
 		this.featureModel = FeatureIDEXSDFactory.eINSTANCE.createFeatureModelType();
-		this.structTransformation = new StructTransformation(featureModel);
+		this.structTransformation = new Vave2FeatureIDEStructTransformation(featureModel);
 		this.constraintTransformation = new CrossTreeConstraintTransformation(featureModel);
 	}
 

@@ -24,12 +24,12 @@ import vavemodel.TreeConstraint;
 /**
  * Implements the structural transformation from a VaVemodel to XML.
  */
-public class StructTransformation {
+public class Vave2FeatureIDEStructTransformation {
 
 	private FeatureModelType featureModel;
 	private StructTypeImpl struct;
 
-	public StructTransformation(FeatureModelType featureModel) {
+	public Vave2FeatureIDEStructTransformation(FeatureModelType featureModel) {
 		this.featureModel = featureModel;
 		this.struct = (StructTypeImpl) FeatureIDEXSDFactory.eINSTANCE.createStructType();
 	}
