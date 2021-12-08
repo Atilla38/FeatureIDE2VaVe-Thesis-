@@ -16,7 +16,17 @@ import FeatureIDEXSD.UnaryNodeType
 import FeatureIDEXSD.util.FeatureIDEXSDResourceFactoryImpl
 import java.util.stream.Collectors
 
+/**
+ * Counts the features in a FeatureIDE Feature-Model.
+ */
 class FeatureIDEFeatureCounter {
+	
+	/**
+	 * Counts the features in a FeatureIDE Feature-Model.
+	 * @param file The FeatureIDE-Model in which the features are counted.
+	 * @param countAbstractAndHiddenFeatures True if abstract and hidden features should also be counted. Else false.
+	 * @returns Returns the counted features.
+	 */
 	def int countFeatures(File file, boolean countAbstractAndHiddenFeatures) {
 		var Resource resource = this.loadFeatureIDEXMLFile(file)
 		var DocumentRoot root = (resource.getContents().get(0) as DocumentRoot)

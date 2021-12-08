@@ -23,6 +23,12 @@ import tools.vitruv.framework.domains.DefaultStateBasedChangeResolutionStrategy;
 import tools.vitruv.framework.domains.StateBasedChangeResolutionStrategy;
 import transformations.Main;
 
+/**
+ * The super class of the change resolution tests.
+ * It starts the change resolution and sets the statistic of the evolution class.
+ * @author Atilla Ates
+ *
+ */
 class ChangeResolutionTest {
 	private static String targetFolderNewStateVave = "target/src/test/resource/models/changeResolution/vave/newState/";
 	protected static String targetFolderOldStateVave = "target/src/test/resource/models/changeResolution/vave/oldState/";
@@ -65,6 +71,13 @@ class ChangeResolutionTest {
 		counterList.add(refactoringCounter);
 	}
 
+	/**
+	 * Starts the Vitruvius state based change resolution.
+	 * @param oldState The old state of the model.
+	 * @param name The name of the old state model.
+	 * @param counter The evolution statistic counter.
+	 * @throws IOException
+	 */
 	protected void changeResolutionEvolutionClass(Resource oldState, String name,
 			EvolutionClassStatisticCounter counter) throws IOException {
 		String evolutionClass = counter.getName().toLowerCase();
@@ -78,6 +91,11 @@ class ChangeResolutionTest {
 		this.documentStatistic(checkChangeResolution, counter);
 	}
 
+	/**
+	 * Documents the statistic of the evolution classes.
+	 * @param checkChangeResolution True if the change resolution was correct.
+	 * @param counter The evolution counter which should hold the statistics.
+	 */
 	protected void documentStatistic(boolean checkChangeResolution, EvolutionClassStatisticCounter counter) {
 		if (checkChangeResolution) {
 			counter.increaseCorrectChangeResolutions();
@@ -87,6 +105,14 @@ class ChangeResolutionTest {
 		counter.increaseTotalChangeResolutions();
 	}
 
+	/**
+	 * Checks if the change resolution is correct.
+	 * @param change The derived Vitruvius change resolution.
+	 * @param name The name of the old state model.
+	 * @param evolutionClass The evolution class name.
+	 * @return Returns true if the change resolution is correct. False else.
+	 * @throws IOException
+	 */
 	private boolean checkChangeResolution(VitruviusChange change, String name, String evolutionClass)
 			throws IOException {
 		List<String> vitruviusChangeList = printer.print(change, name + " " + evolutionClass, name);

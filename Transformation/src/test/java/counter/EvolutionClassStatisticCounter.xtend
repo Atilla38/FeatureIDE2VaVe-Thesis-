@@ -1,5 +1,9 @@
 package counter
 
+/**
+ * Holds the statistic of the evolution class.
+ * @author Atilla Ates
+ */
 class EvolutionClassStatisticCounter {
 	String name;
 	int totalChangeResolutions

@@ -13,6 +13,7 @@ import org.xml.sax.SAXException;
 
 /**
  * Compares two XML-Files.
+ * 
  * @author Atilla
  *
  */
@@ -20,7 +21,7 @@ public abstract class XMLComparator {
 	protected List<File> fileList = new ArrayList<File>();
 	protected String sourceFolderFeatureIDE;
 	protected String targetFolderFeatureIDE = "target/src/test/resource/models/FeatureIDE/";
-	
+
 	public void addFilesToList(List<File> list, String ending, String folderPath) {
 		File folder = new File(folderPath);
 		File[] listOfFiles = folder.listFiles();
@@ -31,12 +32,13 @@ public abstract class XMLComparator {
 			}
 		}
 	}
-	
 
 	/**
-	 * Compares the source and the target XML-Files and returns the differences found by the DifferenceListener.
-	 * @param source The source XML-File.
-	 * @param target The target XML-File.
+	 * Compares the source and the target XML-Files and returns the differences
+	 * found by the DifferenceListener.
+	 * 
+	 * @param source   The source XML-File.
+	 * @param target   The target XML-File.
 	 * @param listener The DifferenceListener.
 	 * @return Returns the differences found by the DifferenceListener.
 	 * @throws SAXException
@@ -53,15 +55,15 @@ public abstract class XMLComparator {
 		detailXmlDiff.overrideDifferenceListener(listener);
 		return detailXmlDiff.getAllDifferences();
 	}
-	
+
 	public List<File> getFileList() {
 		return this.fileList;
 	}
-	
+
 	public String getSourceFolder() {
 		return this.sourceFolderFeatureIDE;
 	}
-	
+
 	public String getTargetFolderFeatureIDE() {
 		return this.targetFolderFeatureIDE;
 	}

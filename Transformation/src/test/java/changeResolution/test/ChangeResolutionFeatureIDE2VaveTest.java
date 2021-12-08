@@ -13,6 +13,13 @@ import comparators.RoundTripXMLComparator;
 import comparators.XMLComparator;
 import transformations.Main;
 
+/**
+ * Tests the default Vitruvius state based change resolution strategy, for the
+ * transformed FeatureIDE Feature-Models.
+ * 
+ * @author Atilla Ates
+ *
+ */
 public class ChangeResolutionFeatureIDE2VaveTest extends ChangeResolutionTest {
 
 	@Test
@@ -33,21 +40,5 @@ public class ChangeResolutionFeatureIDE2VaveTest extends ChangeResolutionTest {
 
 			this.changeResolutionEvolutionClass(oldState, name, specializationCounter);
 		}
-
-		/*
-		 * File oldStateFile = new
-		 * File("src/test/resource/changeResolution/FeatureIDE/failed/oldState/car.xml")
-		 * ; File newStateFile = new File(
-		 * "src/test/resource/changeResolution/FeatureIDE/failed/newState/car.xml");
-		 * 
-		 * Resource oldState = Main.generateVaveModel(oldStateFile, "car3",
-		 * targetFolderOldStateVave); Resource newState =
-		 * Main.generateVaveModel(newStateFile, "car3arbitrary",
-		 * targetFolderNewStateVave);
-		 * 
-		 * VitruviusChange change = strategy.getChangeSequenceBetween(newState,
-		 * oldState); System.out.println();
-		 */
-
 	}
 }

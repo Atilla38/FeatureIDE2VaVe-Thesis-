@@ -12,6 +12,13 @@ import comparators.RoundTripXMLComparator;
 import comparators.XMLComparator;
 import transformations.Main;
 
+/**
+ * Test the Vitruvius default state based change resolution strategy for the
+ * transformed FeatureIDE Feature-Models with refactoring as evolution class.
+ * 
+ * @author Atilla Ates
+ *
+ */
 public class ChangeResolutionRefactoringTest extends ChangeResolutionTest {
 
 	@Test
