@@ -33,7 +33,7 @@ public class FeatureIDE2VaveTransformation {
 	private vavemodel.System system;
 	private Path projectFolder = Paths.get(".").normalize().toAbsolutePath();
 	private StructTransformation structTransformation;
-	private CrossTreeConstraintTransformation constraintTransformation;
+	private FeatureIDE2VaveCrossTreeConstraintTransformation constraintTransformation;
 	private Resource resource;
 
 	private String fileName = "xml2vave";
@@ -42,7 +42,7 @@ public class FeatureIDE2VaveTransformation {
 	public FeatureIDE2VaveTransformation() {
 		this.system = VavemodelFactory.eINSTANCE.createSystem();
 		this.structTransformation = new StructTransformation(system);
-		this.constraintTransformation = new CrossTreeConstraintTransformation(system);
+		this.constraintTransformation = new FeatureIDE2VaveCrossTreeConstraintTransformation(system);
 
 	}
 

@@ -23,7 +23,7 @@ import exception.handling.xml2vave.ExceptionHandlerConstraints
 /**
  * Implements the constraint transformation from xml to vave of the FeatureIDE Feature-Model.
  */
-class CrossTreeConstraintTransformation {
+class FeatureIDE2VaveCrossTreeConstraintTransformation {
 	vavemodel.System system
 	ExceptionHandlerConstraints exceptionHandler;
 
