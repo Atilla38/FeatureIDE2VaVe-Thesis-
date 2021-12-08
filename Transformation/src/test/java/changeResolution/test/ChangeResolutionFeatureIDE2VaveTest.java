@@ -39,6 +39,8 @@ public class ChangeResolutionFeatureIDE2VaveTest extends ChangeResolutionTest {
 			Resource oldState = Main.generateVaveModel(file, name, targetFolderOldStateVave);
 
 			this.changeResolutionEvolutionClass(oldState, name, specializationCounter);
+			this.changeResolutionEvolutionClass(oldState, name, generalizationCounter);
+			this.changeResolutionEvolutionClass(oldState, name, arbitraryCounter);
 		}
 	}
 }
