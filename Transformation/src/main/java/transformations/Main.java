@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import FeatureIDEXSD.DocumentRoot;
 import FeatureIDEXSD.util.FeatureIDEXSDResourceFactoryImpl;
+import transformations.featureIDE2vave.XML2VaveTransformation;
 import transformations.vave2FeatureIDE.Vave2FeatureIDETransformation;
-import transformations.xml2vave.XML2VaveTransformation;
 import vavemodel.VavemodelPackage;
 
 /**

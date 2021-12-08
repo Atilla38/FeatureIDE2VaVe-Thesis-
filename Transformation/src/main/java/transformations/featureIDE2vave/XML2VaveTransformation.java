@@ -1,4 +1,4 @@
-package transformations.xml2vave;
+package transformations.featureIDE2vave;
 
 import java.io.IOException;
 
@@ -17,6 +17,8 @@ import FeatureIDEXSD.ConstraintsType;
 import FeatureIDEXSD.DocumentRoot;
 import FeatureIDEXSD.FeatureModelType;
 import FeatureIDEXSD.StructType;
+import transformations.xml2vave.CrossTreeConstraintTransformation;
+import transformations.xml2vave.StructTransformation;
 import vavemodel.VavemodelFactory;
 
 /**
