@@ -76,9 +76,13 @@ public class XMLComparatorPrinter {
 	 *                                          hidden features.
 	 */
 	public void printResult(int size, int totalIdenticalDifferences, int totalSimilarDifferences, int totalFeatures,
-			int totalNotAbstractAndHiddenFeatures) {
+			int totalNotAbstractAndHiddenFeatures, int numberOfIdenticals, int numberOfSimilars) {
 		System.out.println("Number of compared XML-Files:" + size);
-
+		
+		System.out.println("Number of identicals:" + numberOfIdenticals);
+		
+		System.out.println("Number of similars:" + numberOfSimilars);
+		
 		System.out.println("Sum of all total identical differences: " + totalIdenticalDifferences);
 
 		System.out.println("Sum of all total similar differences: " + totalSimilarDifferences);

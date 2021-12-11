@@ -40,7 +40,7 @@ class TransformationTests {
 		compareFiles(comparator);
 	}
 
-	@Test
+	
 	void vave2XMLTest() throws SAXException, IOException {
 		Vave2FeatureIDEComparator comparator = new Vave2FeatureIDEComparator();
 		comparator.generateVave2XMLFiles();
@@ -60,6 +60,8 @@ class TransformationTests {
 			int totalSimilarDifferences = 0;
 			int totalFeatures = 0;
 			int totalNotAbstractAndHiddenFeatures = 0;
+			int numberOfIdenticals = 0;
+			int numberOfSimilars = 0;
 			List<File> fileList = comparator.getFileList();
 			String targetFolderFeatureIDE = comparator.getTargetFolderFeatureIDE();
 			XMLComparatorPrinter printer = new XMLComparatorPrinter();
@@ -95,11 +97,19 @@ class TransformationTests {
 				totalIdenticalDifferences = totalIdenticalDifferences + identicalDifferences.size();
 
 				totalSimilarDifferences = totalSimilarDifferences + similarDifferences.size();
+				
+				if(identicalDifferences.size() == 0) {
+					numberOfIdenticals++;
+				}
+				
+				if(similarDifferences.size() == 0) {
+					numberOfSimilars++;
+				}
 
 			}
 
 			printer.printResult(fileList.size(), totalIdenticalDifferences, totalSimilarDifferences, totalFeatures,
-					totalNotAbstractAndHiddenFeatures);
+					totalNotAbstractAndHiddenFeatures, numberOfIdenticals, numberOfSimilars);
 
 			assertEquals(0, totalSimilarDifferences);
 		}
