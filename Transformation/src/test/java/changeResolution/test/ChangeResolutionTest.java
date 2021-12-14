@@ -24,8 +24,9 @@ import tools.vitruv.framework.domains.StateBasedChangeResolutionStrategy;
 import transformations.Transformation;
 
 /**
- * The super class of the change resolution tests.
- * It starts the change resolution and sets the statistic of the evolution class.
+ * The super class of the change resolution tests. It starts the change
+ * resolution and sets the statistic of the evolution class.
+ * 
  * @author Atilla Ates
  *
  */
@@ -33,7 +34,8 @@ class ChangeResolutionTest {
 	private static String targetFolderNewStateVave = "target/src/test/resource/models/changeResolution/vave/newState/";
 	protected static String targetFolderOldStateVave = "target/src/test/resource/models/changeResolution/vave/oldState/";
 	protected static String sourceFolderNewStateFeatureIDE;
-	private static String sourceFolderUserChanges = "src/test/resource/changeResolution/userChanges/vave/";
+	private static String sourceFolderUserChangesNotMinimal = "src/test/resource/changeResolution/userChanges/vave/not minimal/";
+	private static String sourceFolderUserChangesMinimal = "src/test/resource/changeResolution/userChanges/vave/minimal/";;
 
 	protected static StateBasedChangeResolutionStrategy strategy;
 	protected static ChangeResolutionPrinter printer;
@@ -73,9 +75,10 @@ class ChangeResolutionTest {
 
 	/**
 	 * Starts the Vitruvius state based change resolution.
+	 * 
 	 * @param oldState The old state of the model.
-	 * @param name The name of the old state model.
-	 * @param counter The evolution statistic counter.
+	 * @param name     The name of the old state model.
+	 * @param counter  The evolution statistic counter.
 	 * @throws IOException
 	 */
 	protected void changeResolutionEvolutionClass(Resource oldState, String name,
@@ -87,14 +90,16 @@ class ChangeResolutionTest {
 
 		VitruviusChange change = strategy.getChangeSequenceBetween(newState, oldState);
 		totalCounter.increaseTotalChangeResolutions();
-		boolean checkChangeResolution = this.checkChangeResolution(change, name, evolutionClass);
-		this.documentStatistic(checkChangeResolution, counter);
+		counter.increaseTotalChangeResolutions();
+		this.checkChangeResolution(change, name, counter);
 	}
 
 	/**
 	 * Documents the statistic of the evolution classes.
+	 * 
 	 * @param checkChangeResolution True if the change resolution was correct.
-	 * @param counter The evolution counter which should hold the statistics.
+	 * @param counter               The evolution counter which should hold the
+	 *                              statistics.
 	 */
 	protected void documentStatistic(boolean checkChangeResolution, EvolutionClassStatisticCounter counter) {
 		if (checkChangeResolution) {
@@ -107,39 +112,63 @@ class ChangeResolutionTest {
 
 	/**
 	 * Checks if the change resolution is correct.
-	 * @param change The derived Vitruvius change resolution.
-	 * @param name The name of the old state model.
-	 * @param evolutionClass The evolution class name.
+	 * 
+	 * @param change         The derived Vitruvius change resolution.
+	 * @param name           The name of the old state model.
+	 * @param evolutionClass The evolution class.
 	 * @return Returns true if the change resolution is correct. False else.
 	 * @throws IOException
 	 */
-	private boolean checkChangeResolution(VitruviusChange change, String name, String evolutionClass)
-			throws IOException {
-		List<String> vitruviusChangeList = printer.print(change, name + " " + evolutionClass, name);
-		Path path = Paths.get(sourceFolderUserChanges + name + " " + evolutionClass + ".txt");
+	private void checkChangeResolution(VitruviusChange change, String name,
+			EvolutionClassStatisticCounter evolutionClassCounter) throws IOException {
+		String evolutionClassName = evolutionClassCounter.getName();
+		List<String> vitruviusChangeList = printer.print(change, name + " " + evolutionClassName, name);
+		Path path = Paths.get(sourceFolderUserChangesNotMinimal + name + " " + evolutionClassName + ".txt");
 		String content = Files.readString(path, StandardCharsets.US_ASCII);
 		Stream<String> stream = content.lines();
 		List<String> userChangeList = stream.collect(Collectors.toList());
-		String changeBetween = "(" + name + ", " + name + " " + evolutionClass + ")";
+		String changeBetween = "(" + name + ", " + name + " " + evolutionClassName + ")";
+
+		Path pathMinimal = Paths.get(sourceFolderUserChangesMinimal + name + " " + evolutionClassName + ".txt");
+		String contentMinimal = Files.readString(pathMinimal, StandardCharsets.US_ASCII);
+		Stream<String> streamMinimal = contentMinimal.lines();
+		List<String> userChangeListMinimal = streamMinimal.collect(Collectors.toList());
+
+		int operationDifference = vitruviusChangeList.size() - userChangeListMinimal.size();
+		evolutionClassCounter.increaseOperationDifference(operationDifference);
+
+		String resolutionMinimalOrNot = "minimal";
+		if (operationDifference > 0) {
+			resolutionMinimalOrNot = "not minimal";
+			totalCounter.increaseTotalNotMinimalChangeResolutions();
+			evolutionClassCounter.increaseTotalNotMinimalChangeResolutions();
+		} else {
+			totalCounter.increaseTotalMinimalChangeResolutions();
+			evolutionClassCounter.increaseTotalMinimalChangeResolutions();
+		}
 
 		if (vitruviusChangeList.equals(userChangeList)) {
-			System.out.println("Change Resolution is CONSERVATIVE");
+			System.out.println("Change Resolution is co");
 			totalCounter.increaseCorrectChangeResolutions();
-			results.add(changeBetween + "[CORRECT]");
-			return true;
+			evolutionClassCounter.increaseCorrectChangeResolutions();
+			results.add(changeBetween + "Diff: " + operationDifference + "[CORRECT "
+					+ resolutionMinimalOrNot.toUpperCase() + " ]");
+			return;
 		} else {
 			for (String changeString : vitruviusChangeList) {
 				if (!userChangeList.contains(changeString)) {
-					System.out.println("Change resolution is not CONSERVATIVE or ADMISSIBLE");
-					totalCounter.increaseIncorrectChangeResolutions();
-					results.add(changeBetween + "[X]");
-					return false;
+					System.out.println("Change resolution is not minimal");
+					totalCounter.increaseCorrectChangeResolutions();
+					evolutionClassCounter.increaseCorrectChangeResolutions();
+					results.add(changeBetween + "[CORRECT X]");
+					return;
 				}
 			}
 			System.out.println("Change resolution is ADMISSIBLE");
 			totalCounter.increaseCorrectChangeResolutions();
-			results.add(changeBetween + "[CORRECT]");
-			return true;
+			evolutionClassCounter.increaseCorrectChangeResolutions();
+			results.add(changeBetween + "Diff: " + operationDifference + "[CORRECT "
+					+ resolutionMinimalOrNot.toUpperCase() + " ]");
 		}
 	}
 

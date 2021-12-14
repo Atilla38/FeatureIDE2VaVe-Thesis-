@@ -33,21 +33,29 @@ public class ChangeResolutionFeatureIDE2VaveTest extends ChangeResolutionTest {
 		List<File> oldStateFileList = new ArrayList<File>();
 
 		fileReader.addFilesToList(oldStateFileList, "xml", "src/test/resource/changeResolution/FeatureIDE/oldState/");
-		File oldFile = new File("src/test/resource/changeResolution/FeatureIDE/not automated/oldState/car4.3.xml");
-		File newFile = new File("src/test/resource/changeResolution/FeatureIDE/not automated/newState/car4.3.xml");
-		Resource oldState = Transformation.generateVaveModel(oldFile, "car4Old", targetFolderOldStateVave);
-		Resource newState = Transformation.generateVaveModel(newFile, "car4New", targetFolderOldStateVave);
+		/*
+		 * File oldFile = new
+		 * File("src/test/resource/changeResolution/FeatureIDE/not automated/oldState/car4.xml"
+		 * ); File newFile = new
+		 * File("src/test/resource/changeResolution/FeatureIDE/not automated/newState/car4.xml"
+		 * ); Resource oldState = Transformation.generateVaveModel(oldFile, "car4Old",
+		 * targetFolderOldStateVave); Resource newState =
+		 * Transformation.generateVaveModel(newFile, "car4New",
+		 * targetFolderOldStateVave);
+		
 
 		VitruviusChange change = strategy.getChangeSequenceBetween(newState, oldState);
-		System.out.println(change);
-		/*
-		 * for (File file : oldStateFileList) { String fileName = file.getName(); String
-		 * name = fileName.substring(0, fileName.lastIndexOf(".")); Resource oldState =
-		 * Main.generateVaveModel(file, name, targetFolderOldStateVave);
-		 * 
-		 * this.changeResolutionEvolutionClass(oldState, name, specializationCounter);
-		 * this.changeResolutionEvolutionClass(oldState, name, generalizationCounter);
-		 * this.changeResolutionEvolutionClass(oldState, name, arbitraryCounter); }
-		 */
+		System.out.println(change);*/
+
+		for (File file : oldStateFileList) {
+			String fileName = file.getName();
+			String name = fileName.substring(0, fileName.lastIndexOf("."));
+			Resource oldState = Transformation.generateVaveModel(file, name, targetFolderOldStateVave);
+
+			this.changeResolutionEvolutionClass(oldState, name, specializationCounter);
+			this.changeResolutionEvolutionClass(oldState, name, generalizationCounter);
+			this.changeResolutionEvolutionClass(oldState, name, arbitraryCounter);
+		}
+
 	}
 }

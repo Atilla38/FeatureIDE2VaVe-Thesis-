@@ -9,6 +9,9 @@ class EvolutionClassStatisticCounter {
 	int totalChangeResolutions
 	int correctChangeResolutions
 	int incorrectChangeResolutions
+	int totalOperationDifference
+	int totalMinimalChangeResolutions
+	int totalNotMinimalChangeResolutions
 
 	def String getName() {
 		return name;
@@ -42,10 +45,42 @@ class EvolutionClassStatisticCounter {
 		this.incorrectChangeResolutions++
 	}
 
-	def double getTotalPercentage() {
+	def void increaseOperationDifference(int totalOperationDifference) {
+		this.totalOperationDifference = this.totalOperationDifference + totalOperationDifference
+	}
+
+	def int getTotalOperationDifference() {
+		return this.totalOperationDifference;
+	}
+
+	def int getTotalMinimalChangeResolutions() {
+		return this.totalMinimalChangeResolutions
+	}
+
+	def void increaseTotalMinimalChangeResolutions() {
+		this.totalMinimalChangeResolutions++
+	}
+
+	def int getTotalNotMinimalChangeResolutions() {
+		return this.totalNotMinimalChangeResolutions
+	}
+
+	def void increaseTotalNotMinimalChangeResolutions() {
+		this.totalNotMinimalChangeResolutions++
+	}
+
+	def double getTotalPercentageCorrect() {
 		var double totalPercentage = 0;
 		if (this.totalChangeResolutions > 0) {
 			totalPercentage = (this.correctChangeResolutions as double / this.totalChangeResolutions as double) * 100
+		}
+		return totalPercentage;
+	}
+
+	def double getTotalPercentageMinimal() {
+		var double totalPercentage = 0;
+		if (this.totalChangeResolutions > 0) {
+			totalPercentage = (this.totalMinimalChangeResolutions as double / this.totalChangeResolutions as double) * 100
 		}
 		return totalPercentage;
 	}
