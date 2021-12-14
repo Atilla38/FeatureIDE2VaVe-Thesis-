@@ -8,7 +8,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.junit.jupiter.api.Test;
 
-import comparators.RoundTripXMLComparator;
+import comparators.RoundTripFeatureIDEXMLComparator;
 import comparators.XMLComparator;
 import transformations.Main;
 
@@ -26,7 +26,7 @@ public class ChangeResolutionRefactoringTest extends ChangeResolutionTest {
 
 		sourceFolderNewStateFeatureIDE = "src/test/resource/changeResolution/refactoring/FeatureIDE/newState/";
 
-		XMLComparator fileReader = new RoundTripXMLComparator();
+		XMLComparator fileReader = new RoundTripFeatureIDEXMLComparator();
 
 		List<File> oldStateFileList = new ArrayList<File>();
 

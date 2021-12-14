@@ -12,10 +12,13 @@ import transformations.Main;
  * @author Atilla
  *
  */
-public class RoundTripXMLComparator extends XMLComparator {
-	protected String sourceFolderFeatureIDE = "src/test/resource/roundTrip/";
+public class RoundTripFeatureIDEXMLComparator extends XMLComparator {
+	private String sourceFolderFeatureIDE = "src/test/resource/roundTrip/";
 	private String targetFolderVave = "target/src/test/resource/models/vave/";
 
+	public RoundTripFeatureIDEXMLComparator() {
+		this.targetFolder = "target/src/test/resource/models/FeatureIDE/";
+	}
 	/**
 	 * Generates VaVemodels, by transforming FeatureIDE-Models in the source
 	 * FeatureIDE folder(default: src/test/resource/roundTrip/) to VaVemodels.
@@ -37,7 +40,7 @@ public class RoundTripXMLComparator extends XMLComparator {
 		for (File file : vaveFileList) { // Generate for all .vavemodel files in the list a XML file with the same name.
 			String fileName = file.getName();
 			String name = fileName.substring(0, fileName.lastIndexOf("."));
-			Main.generateFeatureIDEXMLFile(file, name, targetFolderFeatureIDE);
+			Main.generateFeatureIDEXMLFile(file, name, targetFolder);
 		}
 	}
 

@@ -16,10 +16,12 @@ import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
 
-import comparators.RoundTripXMLComparator;
-import comparators.Vave2FeatureIDEComparator;
+import comparators.RoundTripFeatureIDEXMLComparator;
+import comparators.RoundTripVaveComparator;
 import comparators.XMLComparator;
+import counter.Counter;
 import counter.FeatureIDEFeatureCounter;
+import counter.VavemodelFeatureCounter;
 import differenceListeners.IgnoreNotTransformableAttributes;
 import differenceListeners.IgnoreNotTransformableFeatureModelChildren;
 import printer.XMLComparatorPrinter;
@@ -34,17 +36,18 @@ import printer.XMLComparatorPrinter;
 class TransformationTests {
 
 	@Test
-	void roundTripTest() throws SAXException, IOException {
-		RoundTripXMLComparator comparator = new RoundTripXMLComparator();
+	void roundTripTestFeatureIDE() throws SAXException, IOException {
+		RoundTripFeatureIDEXMLComparator comparator = new RoundTripFeatureIDEXMLComparator();
 		comparator.generateRoundTripXMLFiles();
-		compareFiles(comparator);
+		FeatureIDEFeatureCounter counter = new FeatureIDEFeatureCounter();
+		compareFiles(comparator, counter);
 	}
 
-	
-	void vave2XMLTest() throws SAXException, IOException {
-		Vave2FeatureIDEComparator comparator = new Vave2FeatureIDEComparator();
+	void RoundTripTestVave() throws SAXException, IOException {
+		RoundTripVaveComparator comparator = new RoundTripVaveComparator();
 		comparator.generateVave2XMLFiles();
-		compareFiles(comparator);
+		Counter counter = new VavemodelFeatureCounter();
+		compareFiles(comparator, counter);
 	}
 
 	/**
@@ -54,7 +57,7 @@ class TransformationTests {
 	 * @throws SAXException
 	 * @throws IOException
 	 */
-	private void compareFiles(XMLComparator comparator) throws SAXException, IOException {
+	private void compareFiles(XMLComparator comparator, Counter counter) throws SAXException, IOException {
 		{
 			int totalIdenticalDifferences = 0;
 			int totalSimilarDifferences = 0;
@@ -63,9 +66,8 @@ class TransformationTests {
 			int numberOfIdenticals = 0;
 			int numberOfSimilars = 0;
 			List<File> fileList = comparator.getFileList();
-			String targetFolderFeatureIDE = comparator.getTargetFolderFeatureIDE();
+			String targetFolder = comparator.getTargetFolder();
 			XMLComparatorPrinter printer = new XMLComparatorPrinter();
-			FeatureIDEFeatureCounter counter = new FeatureIDEFeatureCounter();
 
 			for (File file : fileList) {
 				totalFeatures = totalFeatures + counter.countFeatures(file, true);
@@ -73,13 +75,13 @@ class TransformationTests {
 						+ counter.countFeatures(file, false);
 
 				BufferedReader source = createBufferedReader(file.getPath());
-				BufferedReader target = createBufferedReader(targetFolderFeatureIDE + file.getName());
+				BufferedReader target = createBufferedReader(targetFolder + file.getName());
 
 				BufferedReader similarSource = createBufferedReader(file.getPath());
-				BufferedReader similarTarget = createBufferedReader(targetFolderFeatureIDE + file.getName());
+				BufferedReader similarTarget = createBufferedReader(targetFolder + file.getName());
 				XMLUnit.setIgnoreWhitespace(true);
 				createBufferedReader(file.getPath());
-				createBufferedReader(targetFolderFeatureIDE + file.getName());
+				createBufferedReader(targetFolder + file.getName());
 				DifferenceListener identicalListener = new IgnoreNotTransformableFeatureModelChildren();
 				DifferenceListener similarListener = new IgnoreNotTransformableAttributes(); // Extends the
 																								// IgnoreNotTransformableFeatureModelChildren
@@ -97,12 +99,12 @@ class TransformationTests {
 				totalIdenticalDifferences = totalIdenticalDifferences + identicalDifferences.size();
 
 				totalSimilarDifferences = totalSimilarDifferences + similarDifferences.size();
-				
-				if(identicalDifferences.size() == 0) {
+
+				if (identicalDifferences.size() == 0) {
 					numberOfIdenticals++;
 				}
-				
-				if(similarDifferences.size() == 0) {
+
+				if (similarDifferences.size() == 0) {
 					numberOfSimilars++;
 				}
 

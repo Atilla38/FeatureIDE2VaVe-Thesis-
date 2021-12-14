@@ -19,28 +19,27 @@ import java.util.stream.Collectors
 /**
  * Counts the features in a FeatureIDE Feature-Model.
  */
-class FeatureIDEFeatureCounter {
-	
+class FeatureIDEFeatureCounter extends Counter {
+
 	/**
 	 * Counts the features in a FeatureIDE Feature-Model.
 	 * @param file The FeatureIDE-Model in which the features are counted.
 	 * @param countAbstractAndHiddenFeatures True if abstract and hidden features should also be counted. Else false.
-	 * @returns Returns the counted features.
+	 * @returns Returns the number of counted features.
 	 */
-	def int countFeatures(File file, boolean countAbstractAndHiddenFeatures) {
+	override countFeatures(File file, Boolean countAbstractAndHiddenFeatures) {
 		var Resource resource = this.loadFeatureIDEXMLFile(file)
 		var DocumentRoot root = (resource.getContents().get(0) as DocumentRoot)
 		var FeatureModelType featureModel = root.getFeatureModel()
 		var StructType struct = featureModel.getStruct()
-		
-		if(countAbstractAndHiddenFeatures) {
+
+		if (countAbstractAndHiddenFeatures) {
 			return this.count(1, struct.getNodeList(), countAbstractAndHiddenFeatures)
-		} else if(struct.getNodeList().isAbstract || struct.getNodeList().isHidden) {
+		} else if (struct.getNodeList().isAbstract || struct.getNodeList().isHidden) {
 			return this.count(0, struct.getNodeList(), countAbstractAndHiddenFeatures)
 		} else {
 			return this.count(1, struct.getNodeList(), countAbstractAndHiddenFeatures)
 		}
-		
 	}
 
 	def dispatch int count(int counter_final_param, BinaryNodeType node, boolean countAbstractAndHiddenFeatures) {
@@ -50,9 +49,7 @@ class FeatureIDEFeatureCounter {
 		if (countAbstractAndHiddenFeatures) {
 			counter = counter + nodeList.size();
 		} else {
-			filteredList = nodeList.stream()
-			                       .filter([n |!n.isHidden() && !n.isAbstract()])
-			                       .collect(Collectors.toList());
+			filteredList = nodeList.stream().filter([n|!n.isHidden() && !n.isAbstract()]).collect(Collectors.toList());
 			counter = counter + filteredList.size();
 		}
 
@@ -69,9 +66,7 @@ class FeatureIDEFeatureCounter {
 		if (countAbstractAndHiddenFeatures) {
 			counter = counter + nodeList.size();
 		} else {
-			filteredList = nodeList.stream()
-			                       .filter([n |!n.isHidden() && !n.isAbstract()])
-			                       .collect(Collectors.toList());
+			filteredList = nodeList.stream().filter([n|!n.isHidden() && !n.isAbstract()]).collect(Collectors.toList());
 			counter = counter + filteredList.size();
 		}
 		for (Node child : nodeList) {
@@ -93,4 +88,5 @@ class FeatureIDEFeatureCounter {
 			new FeatureIDEXSDResourceFactoryImpl())
 		return resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true)
 	}
+
 }

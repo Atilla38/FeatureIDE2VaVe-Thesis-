@@ -8,7 +8,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.junit.jupiter.api.Test;
 
-import comparators.RoundTripXMLComparator;
+import comparators.RoundTripFeatureIDEXMLComparator;
 import comparators.XMLComparator;
 import transformations.Main;
 
@@ -23,7 +23,7 @@ public class ChangeResolutionVave2FeatureIDETest extends ChangeResolutionTest {
 
 	@Test
 	void testDefaultStateBasedChangeResolutionStrategyVaVe2FeatureIDE() throws IOException {
-		XMLComparator fileReader = new RoundTripXMLComparator();
+		XMLComparator fileReader = new RoundTripFeatureIDEXMLComparator();
 		List<File> oldStateFileList = new ArrayList<File>();
 		sourceFolderNewStateFeatureIDE = "src/test/resource/changeResolution/vave2FeatureIDE/FeatureIDE/newState/";
 

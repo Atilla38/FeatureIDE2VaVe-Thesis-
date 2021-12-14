@@ -19,8 +19,8 @@ import org.xml.sax.SAXException;
  */
 public abstract class XMLComparator {
 	protected List<File> fileList = new ArrayList<File>();
-	protected String sourceFolderFeatureIDE;
-	protected String targetFolderFeatureIDE = "target/src/test/resource/models/FeatureIDE/";
+	protected String sourceFolder;
+	protected String targetFolder;
 
 	public void addFilesToList(List<File> list, String ending, String folderPath) {
 		File folder = new File(folderPath);
@@ -61,10 +61,10 @@ public abstract class XMLComparator {
 	}
 
 	public String getSourceFolder() {
-		return this.sourceFolderFeatureIDE;
+		return this.sourceFolder;
 	}
 
-	public String getTargetFolderFeatureIDE() {
-		return this.targetFolderFeatureIDE;
+	public String getTargetFolder() {
+		return this.targetFolder;
 	}
 }
