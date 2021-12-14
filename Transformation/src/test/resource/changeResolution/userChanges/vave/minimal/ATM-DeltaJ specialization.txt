@@ -1,0 +1,5 @@
+Replace attribute of: TreeConstraint(XORNONE) from XOR to XORNONE
+Insert reference of: Feature(German) to TreeConstraint(XORNONE)
+Remove reference of: Feature(English) from TreeConstraint(XORNONE)
+Remove reference of: Feature(English) from System
+Delete: Feature(English)

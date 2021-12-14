@@ -1,0 +1,8 @@
+Replace attribute of: TreeConstraint(XOR) from XORNONE to XOR
+Create: Feature(net)
+Insert reference of: Feature(net) to System
+Replace attribute of: Feature(net) from null to net
+Create: TreeConstraint(XOR)
+Replace attribute of: TreeConstraint(XOR) from XOR to XORNONE
+Insert reference of: Feature(net) to TreeConstraint(XORNONE)
+Insert reference of: TreeConstraint(XORNONE) to Feature(src)

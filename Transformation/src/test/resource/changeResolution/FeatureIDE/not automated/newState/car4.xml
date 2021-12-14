@@ -9,15 +9,10 @@
 		<graphics key="layoutalgorithm" value="1"/>
 	</properties>
 	<struct>
-		<and mandatory="true" name="Car">
+		<or mandatory="true" name="Car">
 			<graphics key="collapsed" value="false"/>
 			<feature name="Engine Type"/>
-			<and mandatory="true" name="Smog Control">
-				<feature name="NewFeature"/>
-			</and>
-			<and name="Tire">
-				<feature name="NewFeature2"/>
-			</and>
-		</and>
+			<feature name="NewFeature"/>
+		</or>
 	</struct>
 </featureModel>

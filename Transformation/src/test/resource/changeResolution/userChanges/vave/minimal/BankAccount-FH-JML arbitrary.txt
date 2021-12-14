@@ -1,0 +1,8 @@
+Replace attribute of: TreeConstraint(XOR) from XORNONE to XOR
+Create: Feature(NewFeature)
+Insert reference of: Feature(NewFeature) to System
+Replace attribute of: Feature(NewFeature) from null to NewFeature
+Create: TreeConstraint(XORNONE)
+Insert reference of: TreeConstraint(XORNONE) to Feature(Lock)
+Replace attribute of: TreeConstraint(XORNONE) from XOR to XORNONE
+Insert reference of: Feature(NewFeature) to TreeConstraint(XORNONE)

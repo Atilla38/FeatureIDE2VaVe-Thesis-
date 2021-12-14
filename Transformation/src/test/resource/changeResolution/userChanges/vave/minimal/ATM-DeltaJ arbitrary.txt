@@ -1,0 +1,16 @@
+Create: Feature(NewFeature)
+Insert reference of: Feature(NewFeature) to System
+Replace attribute of: Feature(NewFeature) from null to NewFeature
+Create: TreeConstraint(OR)
+Insert reference of: TreeConstraint(OR) to Feature(German)
+Replace attribute of: TreeConstraint(OR) from XOR to OR
+Insert reference of: Feature(NewFeature) to TreeConstraint(OR)
+Create: Feature(NewFeature2)
+Insert reference of: Feature(NewFeature2) to System
+Replace attribute of: Feature(NewFeature2) from null to NewFeature2
+Insert reference of: Feature(NewFeature2) to TreeConstraint(OR)
+Replace attribute of: TreeConstraint(XORNONE) from XOR to XORNONE
+Insert reference of: Feature(German) to TreeConstraint(XORNONE)
+Remove reference of: Feature(English) from TreeConstraint(XORNONE)
+Remove reference of: Feature(English) from System
+Delete: Feature(English)

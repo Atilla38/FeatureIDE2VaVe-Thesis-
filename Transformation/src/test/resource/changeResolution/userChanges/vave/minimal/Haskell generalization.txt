@@ -1,0 +1,8 @@
+Replace attribute of: TreeConstraint(XORNONE) from XOR to XORNONE
+Create: Feature(BoolBin) 
+Insert reference of: Feature(BoolBin) to System
+Replace attribute of: Feature(BoolBin) from null to BoolBin
+Create: TreeConstraint(XORNONE)
+Replace attribute of: TreeConstraint(XORNONE) from XOR to XORNONE
+Insert reference of: Feature(BoolBin) to TreeConstraint(XORNONE)
+Insert reference of: TreeConstraint(XORNONE) to Feature(BoolBinOp)

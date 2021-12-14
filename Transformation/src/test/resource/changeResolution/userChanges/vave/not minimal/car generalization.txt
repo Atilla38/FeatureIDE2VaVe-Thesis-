@@ -1,0 +1,6 @@
+Create: Feature(New Gasoline)
+Insert reference of: Feature(New Gasoline) to System
+Replace attribute of: Feature(New Gasoline) from null to New Gasoline
+Create: TreeConstraint(XOR)
+Insert reference of: Feature(New Gasoline) to TreeConstraint(XOR)
+Insert reference of: TreeConstraint(XOR) to Feature(Gasoline)

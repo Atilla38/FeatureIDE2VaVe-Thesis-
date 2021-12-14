@@ -9,10 +9,11 @@
 		<graphics key="layoutalgorithm" value="1"/>
 	</properties>
 	<struct>
-		<alt mandatory="true" name="Car">
+		<and mandatory="true" name="Car">
 			<graphics key="collapsed" value="false"/>
 			<feature name="Engine Type"/>
-			<feature name="NewFeature"/>
-		</alt>
+			<feature name="Smog Control"/>
+			<feature name="Tire"/>
+		</and>
 	</struct>
 </featureModel>

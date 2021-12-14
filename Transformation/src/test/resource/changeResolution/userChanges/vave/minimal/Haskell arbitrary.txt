@@ -1,0 +1,18 @@
+Remove reference of: Feature(Vars) from TreeConstraint(XORNONE)
+Remove reference of: Feature(Vars) from System
+Delete: Feature(Vars)
+Remove reference of: TreeConstraint(XORNONE) from Feature(Arith)
+Delete: TreeConstraint(XORNONE)
+Remove reference of: Feature(CmdLine) from TreeConstraint(XORNONE)
+Remove reference of: Feature(CmdLine) from System
+Delete: Feature(CmdLine)
+Remove reference of: TreeConstraint(XORNONE) from Feature(Arith)
+Delete: TreeConstraint(XORNONE)
+Replace attribute of: TreeConstraint(XORNONE) from XOR to XORNONE
+Create: Feature(BoolBin) 
+Insert reference of: Feature(BoolBin) to System
+Replace attribute of: Feature(BoolBin) from null to BoolBin
+Create: TreeConstraint(XORNONE)
+Replace attribute of: TreeConstraint(XORNONE) from XOR to XORNONE
+Insert reference of: Feature(BoolBin) to TreeConstraint(XORNONE)
+Insert reference of: TreeConstraint(XORNONE) to Feature(BoolBinOp)
