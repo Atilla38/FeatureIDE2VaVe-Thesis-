@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import transformations.Main;
+import transformations.Transformation;
 
 /**
  * Compares two XML-Files.
@@ -32,7 +32,7 @@ public class RoundTripFeatureIDEXMLComparator extends XMLComparator {
 		for (File file : fileList) { // Generate for all XML files in the list a VaVe-Model with the same name.
 			String fileName = file.getName();
 			String name = fileName.substring(0, fileName.lastIndexOf("."));
-			Main.generateVaveModel(file, name, targetFolderVave);
+			Transformation.generateVaveModel(file, name, targetFolderVave);
 		}
 
 		List<File> vaveFileList = new ArrayList<File>();
@@ -40,7 +40,7 @@ public class RoundTripFeatureIDEXMLComparator extends XMLComparator {
 		for (File file : vaveFileList) { // Generate for all .vavemodel files in the list a XML file with the same name.
 			String fileName = file.getName();
 			String name = fileName.substring(0, fileName.lastIndexOf("."));
-			Main.generateFeatureIDEXMLFile(file, name, targetFolder);
+			Transformation.generateFeatureIDEXMLFile(file, name, targetFolder);
 		}
 	}
 

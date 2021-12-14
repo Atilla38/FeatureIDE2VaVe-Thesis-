@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import comparators.RoundTripFeatureIDEXMLComparator;
 import comparators.XMLComparator;
-import transformations.Main;
+import transformations.Transformation;
 
 /**
  * Test the Vitruvius state based change resolution with a Vitruvius model as
@@ -33,7 +33,7 @@ public class ChangeResolutionVave2FeatureIDETest extends ChangeResolutionTest {
 		for (File file : oldStateFileList) {
 			String fileName = file.getName();
 			String name = fileName.substring(0, fileName.lastIndexOf("."));
-			Resource oldState = Main.loadVavemodel(file);
+			Resource oldState = Transformation.loadVavemodel(file);
 			this.changeResolutionEvolutionClass(oldState, name, specializationCounter);
 			this.changeResolutionEvolutionClass(oldState, name, generalizationCounter);
 		}

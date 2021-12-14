@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import comparators.RoundTripFeatureIDEXMLComparator;
 import comparators.XMLComparator;
 import tools.vitruv.framework.change.description.VitruviusChange;
-import transformations.Main;
+import transformations.Transformation;
 
 /**
  * Tests the default Vitruvius state based change resolution strategy, for the
@@ -35,8 +35,8 @@ public class ChangeResolutionFeatureIDE2VaveTest extends ChangeResolutionTest {
 		fileReader.addFilesToList(oldStateFileList, "xml", "src/test/resource/changeResolution/FeatureIDE/oldState/");
 		File oldFile = new File("src/test/resource/changeResolution/FeatureIDE/not automated/oldState/car4.3.xml");
 		File newFile = new File("src/test/resource/changeResolution/FeatureIDE/not automated/newState/car4.3.xml");
-		Resource oldState = Main.generateVaveModel(oldFile, "car4Old", targetFolderOldStateVave);
-		Resource newState = Main.generateVaveModel(newFile, "car4New", targetFolderOldStateVave);
+		Resource oldState = Transformation.generateVaveModel(oldFile, "car4Old", targetFolderOldStateVave);
+		Resource newState = Transformation.generateVaveModel(newFile, "car4New", targetFolderOldStateVave);
 
 		VitruviusChange change = strategy.getChangeSequenceBetween(newState, oldState);
 		System.out.println(change);

@@ -21,7 +21,7 @@ import printer.ChangeResolutionPrinter;
 import tools.vitruv.framework.change.description.VitruviusChange;
 import tools.vitruv.framework.domains.DefaultStateBasedChangeResolutionStrategy;
 import tools.vitruv.framework.domains.StateBasedChangeResolutionStrategy;
-import transformations.Main;
+import transformations.Transformation;
 
 /**
  * The super class of the change resolution tests.
@@ -81,7 +81,7 @@ class ChangeResolutionTest {
 	protected void changeResolutionEvolutionClass(Resource oldState, String name,
 			EvolutionClassStatisticCounter counter) throws IOException {
 		String evolutionClass = counter.getName().toLowerCase();
-		Resource newState = Main.generateVaveModel(
+		Resource newState = Transformation.generateVaveModel(
 				new File(sourceFolderNewStateFeatureIDE + evolutionClass + "/" + name + " " + evolutionClass + ".xml"),
 				name + evolutionClass, targetFolderNewStateVave);
 
