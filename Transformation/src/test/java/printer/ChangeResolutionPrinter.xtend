@@ -131,9 +131,12 @@ class ChangeResolutionPrinter {
 			println(" % of the " + counter.name + " derived change resolutions are correct.")
 			println(counter.name + " minimal change resolutions: " + counter.totalMinimalChangeResolutions)
 			println(counter.name + " not minimal change resolutions: " + counter.totalNotMinimalChangeResolutions)
+			println(counter.name + " less operation change resolutions: " + counter.totalLessOperationChangeResolutions)
 			
 			System.out.printf("%.2f", counter.getTotalPercentageMinimal())
 			println(" % of the " + counter.name + " derived change resolutions are minimal.")
+			
+			println(counter.name + " operation difference: " + counter.totalOperationDifference);
 
 			println("--------------------------------------------------------------")
 		}

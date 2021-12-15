@@ -135,6 +135,7 @@ class ChangeResolutionTest {
 		List<String> userChangeListMinimal = streamMinimal.collect(Collectors.toList());
 
 		int operationDifference = vitruviusChangeList.size() - userChangeListMinimal.size();
+		totalCounter.increaseOperationDifference(operationDifference);
 		evolutionClassCounter.increaseOperationDifference(operationDifference);
 
 		String resolutionMinimalOrNot = "minimal";
@@ -142,13 +143,17 @@ class ChangeResolutionTest {
 			resolutionMinimalOrNot = "not minimal";
 			totalCounter.increaseTotalNotMinimalChangeResolutions();
 			evolutionClassCounter.increaseTotalNotMinimalChangeResolutions();
+		} else if (operationDifference < 0) {
+			resolutionMinimalOrNot = "less operations";
+			totalCounter.increaseTotalLessOperationChangeResolutions();
+			evolutionClassCounter.increaseTotalLessOperationChangeResolutions();
 		} else {
 			totalCounter.increaseTotalMinimalChangeResolutions();
 			evolutionClassCounter.increaseTotalMinimalChangeResolutions();
 		}
-		
+
 		String correctMinimalOutput = changeBetween + " Diff:" + operationDifference + " [CORRECT "
-				+ resolutionMinimalOrNot.toUpperCase() + " ]";
+				+ resolutionMinimalOrNot.toUpperCase() + "]";
 
 		if (vitruviusChangeList.equals(userChangeList)) {
 			System.out.println("Change Resolution is correct");
