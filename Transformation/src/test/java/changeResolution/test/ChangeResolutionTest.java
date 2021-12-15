@@ -146,29 +146,30 @@ class ChangeResolutionTest {
 			totalCounter.increaseTotalMinimalChangeResolutions();
 			evolutionClassCounter.increaseTotalMinimalChangeResolutions();
 		}
+		
+		String correctMinimalOutput = changeBetween + " Diff:" + operationDifference + " [CORRECT "
+				+ resolutionMinimalOrNot.toUpperCase() + " ]";
 
 		if (vitruviusChangeList.equals(userChangeList)) {
-			System.out.println("Change Resolution is co");
+			System.out.println("Change Resolution is correct");
 			totalCounter.increaseCorrectChangeResolutions();
 			evolutionClassCounter.increaseCorrectChangeResolutions();
-			results.add(changeBetween + "Diff: " + operationDifference + "[CORRECT "
-					+ resolutionMinimalOrNot.toUpperCase() + " ]");
+			results.add(correctMinimalOutput);
 			return;
 		} else {
 			for (String changeString : vitruviusChangeList) {
 				if (!userChangeList.contains(changeString)) {
-					System.out.println("Change resolution is not minimal");
+					System.out.println("Change resolution is not minimal correct");
 					totalCounter.increaseCorrectChangeResolutions();
 					evolutionClassCounter.increaseCorrectChangeResolutions();
 					results.add(changeBetween + "[CORRECT X]");
 					return;
 				}
 			}
-			System.out.println("Change resolution is ADMISSIBLE");
+			System.out.println("Change resolution is correct");
 			totalCounter.increaseCorrectChangeResolutions();
 			evolutionClassCounter.increaseCorrectChangeResolutions();
-			results.add(changeBetween + "Diff: " + operationDifference + "[CORRECT "
-					+ resolutionMinimalOrNot.toUpperCase() + " ]");
+			results.add(correctMinimalOutput);
 		}
 	}
 
