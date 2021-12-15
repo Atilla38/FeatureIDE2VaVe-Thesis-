@@ -10,11 +10,11 @@
 	</properties>
 	<struct>
 		<and abstract="true" mandatory="true" name="Root">
-			<feature name="Base"/>
 			<or name="NewFeature3">
-				<feature name="NewFeature2"/>
 				<feature name="NewFeature"/>
+				<feature name="NewFeature2"/>
 			</or>
+			<feature name="Base"/>
 		</and>
 	</struct>
 </featureModel>
