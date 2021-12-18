@@ -19,7 +19,7 @@ import transformations.Transformation;
  * @author Atilla Ates
  *
  */
-public class ChangeResolutionRefactoringTest extends ChangeResolutionTest {
+public class ChangeResolutionRefactoringFeatureIDE2VaVeTest extends ChangeResolutionTest {
 
 	@Test
 	void testDefaultStateBasedChangeResolutionStrategyRefactoring() throws IOException {
