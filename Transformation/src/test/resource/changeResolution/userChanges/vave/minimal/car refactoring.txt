@@ -1,0 +1,6 @@
+Remove reference of: Feature(Smog Control) from TreeConstraint(XORNONE)
+Remove reference of: Feature(EngineType) from TreeConstraint(XOR)
+Insert reference of: Feature(Smog Control) to TreeConstraint(XOR)
+Replace attribute of: TreeConstraint(XOR) from XOR to XORNONE
+Insert reference of: Feature(EngineType) to TreeConstraint(XORNONE)
+Replace attribute of: TreeConstraint(XORNONE) from XOR to XORNONE

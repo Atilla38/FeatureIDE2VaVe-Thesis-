@@ -3,3 +3,4 @@ Generalization: Language -> (English alt German) to Language -> (English or Germ
 Arbitrary: Delete Feature(English) / Language -> (English alt German) to Language -> German (optional)
            Create Feature(NewFeature) and add to OR Feature(German), Create Feature(NewFeature2) and add to OR Feature(German)
            / Feature(German) -> Feature(NewFeature) OR Feature(NewFeature2)
+Refactoring: Switch Englisch and German. Switch Feature and Language.

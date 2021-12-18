@@ -1,0 +1,8 @@
+Create: TreeConstraint(XOR)
+Insert reference of: TreeConstraint(XOR) to Feature(Base)
+Insert reference of: Feature(ApoDice) to TreeConstraint(XOR)
+Insert reference of: Feature(ApoSnake) to TreeConstraint(XOR)
+Remove reference of: Feature(ApoSnake) from TreeConstraint(XOR)
+Remove reference of: Feature(ApoDice) from TreeConstraint(XOR)
+Remove reference of: TreeConstraint(XOR) from Feature(Base)
+Delete: TreeConstraint(XOR)
