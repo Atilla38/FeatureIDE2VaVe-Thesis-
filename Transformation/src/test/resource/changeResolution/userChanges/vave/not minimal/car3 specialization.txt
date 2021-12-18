@@ -1,7 +1,7 @@
 Create: TreeConstraint(XORNONE)
+Insert reference of: TreeConstraint(XORNONE) to Feature(Engine Type)
 Replace attribute of: TreeConstraint(XORNONE) from XOR to XORNONE
 Insert reference of: Feature(Gasoline) to TreeConstraint(XORNONE)
-Insert reference of: TreeConstraint(XORNONE) to Feature(Engine Type)
 Remove reference of: Feature(Gasoline) from TreeConstraint(OR)
 Remove reference of: Feature(Electric) from TreeConstraint(OR)
 Remove reference of: TreeConstraint(OR) from Feature(Engine Type)

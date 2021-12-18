@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vavemodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vavemodel="http://tools.vitruv/Vave/1.0">
+  <feature name="ATM">
+    <treeconstraint feature="//@feature.1"/>
+    <treeconstraint feature="//@feature.4"/>
+  </feature>
+  <feature name="Feature">
+    <treeconstraint feature="//@feature.2 //@feature.3"/>
+  </feature>
+  <feature name="Balance"/>
+  <feature name="Cash"/>
+  <feature name="Language">
+    <treeconstraint feature="//@feature.5 //@feature.6"/>
+  </feature>
+  <feature name="English"/>
+  <feature name="German"/>
+</vavemodel:System>

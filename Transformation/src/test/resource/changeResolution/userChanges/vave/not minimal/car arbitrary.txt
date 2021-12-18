@@ -1,11 +1,11 @@
-Remove reference of: Feature(Smog Control) from TreeConstraint(XORNONE)
-Remove reference of: Feature(Smog Control) from System
-Delete: Feature(Smog Control)
-Remove reference of: TreeConstraint(XORNONE) from Feature(Car)
-Delete: TreeConstraint(XORNONE)
 Create: Feature(New Gasoline)
 Insert reference of: Feature(New Gasoline) to System
 Replace attribute of: Feature(New Gasoline) from null to New Gasoline
 Create: TreeConstraint(XOR)
-Insert reference of: Feature(New Gasoline) to TreeConstraint(XOR)
 Insert reference of: TreeConstraint(XOR) to Feature(Gasoline)
+Insert reference of: Feature(New Gasoline) to TreeConstraint(XOR)
+Remove reference of: Feature(Smog Control) from TreeConstraint(XORNONE)
+Remove reference of: TreeConstraint(XORNONE) from Feature(Car)
+Delete: TreeConstraint(XORNONE)
+Remove reference of: Feature(Smog Control) from System
+Delete: Feature(Smog Control)

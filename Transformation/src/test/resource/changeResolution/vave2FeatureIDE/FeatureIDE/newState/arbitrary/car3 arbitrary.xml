@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and mandatory="true" name="Car">
+			<graphics key="collapsed" value="false"/>
+			<and mandatory="true" name="Engine Type">
+				<feature name="Gasoline"/>
+			</and>
+			<and name="Smog Control">
+				<feature name="NewFeature"/>
+			</and>
+		</and>
+	</struct>
+</featureModel>
