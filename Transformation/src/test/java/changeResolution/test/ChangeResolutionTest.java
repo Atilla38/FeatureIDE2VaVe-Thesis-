@@ -156,25 +156,16 @@ class ChangeResolutionTest {
 				+ resolutionMinimalOrNot.toUpperCase() + "]";
 
 		if (vitruviusChangeList.equals(userChangeList)) {
-			System.out.println("Change Resolution is correct");
+			System.out.println("Change Resolution is resolutionMinimalOrNot correct");
 			totalCounter.increaseCorrectChangeResolutions();
 			evolutionClassCounter.increaseCorrectChangeResolutions();
 			results.add(correctMinimalOutput);
 			return;
 		} else {
-			for (String changeString : vitruviusChangeList) {
-				if (!userChangeList.contains(changeString)) {
-					System.out.println("Change resolution is not minimal correct");
-					totalCounter.increaseCorrectChangeResolutions();
-					evolutionClassCounter.increaseCorrectChangeResolutions();
-					results.add(changeBetween + "[CORRECT X]");
-					return;
-				}
-			}
-			System.out.println("Change resolution is correct");
-			totalCounter.increaseCorrectChangeResolutions();
-			evolutionClassCounter.increaseCorrectChangeResolutions();
-			results.add(correctMinimalOutput);
+			System.out.println("Change resolution is not correct");
+			totalCounter.increaseIncorrectChangeResolutions();
+			evolutionClassCounter.increaseIncorrectChangeResolutions();
+			results.add(changeBetween + "[CORRECT X]");
 		}
 	}
 
