@@ -70,7 +70,8 @@ class TransformationTests {
 			XMLComparatorPrinter printer = new XMLComparatorPrinter();
 
 			for (File file : fileList) {
-				totalFeatures = totalFeatures + counter.countFeatures(file, true);
+				int numberOfFeatures = counter.countFeatures(file, true);
+				totalFeatures = totalFeatures + numberOfFeatures;
 				totalNotAbstractAndHiddenFeatures = totalNotAbstractAndHiddenFeatures
 						+ counter.countFeatures(file, false);
 
@@ -92,7 +93,7 @@ class TransformationTests {
 				List<Difference> similarDifferences = comparator.compareXML(similarSource, similarTarget,
 						similarListener);
 				// showing differences found in two xml files
-				printer.printDifferences(file.getName(), identicalDifferences, similarDifferences);
+				printer.printDifferences(file.getName(), identicalDifferences, similarDifferences, numberOfFeatures);
 
 				printer.printSeparator();
 

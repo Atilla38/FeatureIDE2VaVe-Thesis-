@@ -18,9 +18,10 @@ public class XMLComparatorPrinter {
 	 * @param fileName             The name of the compared XML-File.
 	 * @param identicalDifferences The list of identical differences.
 	 * @param similarDifferences   The list of similar differences.
+	 * @param totalFeatures        The number of total features in the Feature-Model.
 	 */
 	public void printDifferences(String fileName, List<Difference> identicalDifferences,
-			List<Difference> similarDifferences) {
+			List<Difference> similarDifferences, int totalFeatures) {
 		int numberOfIdenticalDifferences = identicalDifferences.size();
 		System.out.println("===============================");
 		System.out.println("Identical differences : " + numberOfIdenticalDifferences);
@@ -47,6 +48,7 @@ public class XMLComparatorPrinter {
 		System.out.println("Identical differences : " + numberOfIdenticalDifferences);
 		System.out.println("Similar differences : " + numberOfSimilarDifferences);
 		System.out.println("Deviation : " + differences);
+		System.out.println("Number of Features : " + totalFeatures);
 		System.out.println("================================");
 	}
 
