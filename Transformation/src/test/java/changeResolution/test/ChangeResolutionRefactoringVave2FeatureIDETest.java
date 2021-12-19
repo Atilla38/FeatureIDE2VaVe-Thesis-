@@ -12,6 +12,13 @@ import comparators.RoundTripFeatureIDEXMLComparator;
 import comparators.XMLComparator;
 import transformations.Transformation;
 
+/**
+ * Test the Vitruvius state based change resolution with a Vitruvius model as
+ * the old state and a transformed FeatureIDE Feature-Model as the new state.
+ * 
+ * @author Atilla Ates
+ *
+ */
 public class ChangeResolutionRefactoringVave2FeatureIDETest extends ChangeResolutionTest {
 	@Test
 	void testDefaultStateBasedChangeResolutionStrategyRefactoring() throws IOException {
