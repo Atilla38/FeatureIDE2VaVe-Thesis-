@@ -136,6 +136,8 @@ class ChangeResolutionPrinter {
 			System.out.printf("%.2f", counter.getTotalPercentageMinimal())
 			println(" % of the " + counter.name + " derived change resolutions are minimal.")
 			
+			println(counter.name + " number of user change operations: " + counter.totalUserChangeResolutions);
+			println(counter.name + " number of resolution operations: " + counter.totalResolutionOperations);
 			println(counter.name + " operation difference: " + counter.totalOperationDifference);
 
 			println("--------------------------------------------------------------")

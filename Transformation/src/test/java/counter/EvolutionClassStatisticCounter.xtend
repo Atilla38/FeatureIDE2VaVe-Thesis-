@@ -13,6 +13,8 @@ class EvolutionClassStatisticCounter {
 	int totalMinimalChangeResolutions
 	int totalNotMinimalChangeResolutions
 	int totalLessOperationChangeResolutions
+	int totalUserChangeOperations
+	int totalResolutionOperations
 
 	def String getName() {
 		return name;
@@ -76,6 +78,22 @@ class EvolutionClassStatisticCounter {
 	
 	def int getTotalLessOperationChangeResolutions() {
 		return this.totalLessOperationChangeResolutions;
+	}
+	
+	def void increaseTotalUserChangeResolution(int numberOfOperations) {
+		this.totalUserChangeOperations = this.totalUserChangeOperations + numberOfOperations
+	}
+	
+	def int getTotalUserChangeResolutions() {
+		return this.totalUserChangeOperations;
+	}
+	
+	def void increaseTotalResolutionOperations(int numberOfOperations) {
+		this.totalResolutionOperations = this.totalResolutionOperations + numberOfOperations
+	}
+	
+	def int getTotalResolutionOperations() {
+		return this.totalResolutionOperations
 	}
 
 	def double getTotalPercentageCorrect() {
