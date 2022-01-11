@@ -1,0 +1,9 @@
+Insert reference of: Feature(NewFeature) to TreeConstraint(XORNONE)
+Remove reference of: Feature(Seconds) from TreeConstraint(XORNONE)
+Remove reference of: Feature(NewFeature) from TreeConstraint(XORNONE)
+Remove reference of: TreeConstraint(XORNONE) from Feature(Base)
+Insert reference of: TreeConstraint(XORNONE) to Feature(ClockFHAsmetaL)
+Remove reference of: TreeConstraint(XORNONE) from Feature(ClockFHAsmetaL)
+Delete: TreeConstraint(XORNONE)
+Remove reference of: Feature(Seconds) from System
+Delete: Feature(Seconds)
