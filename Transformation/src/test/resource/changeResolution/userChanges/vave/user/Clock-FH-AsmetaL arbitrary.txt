@@ -1,0 +1,13 @@
+Remove reference of: Feature(Seconds) from TreeConstraint(XORNONE)
+Remove reference of: Feature(Seconds) from System
+Delete: Feature(Seconds)
+Remove reference of: TreeConstraint(XORNONE) form Feature(Base)
+Delete: TreeConstraint(XORNONE)
+Create: TreeConstraint(XOR)
+Insert reference of: TreeConstraint(XOR) to Feature(NewFeature)
+Create: Feature(NewFeature2)
+Replace attribute of: Feature(NewFeature2) from null to NewFeature2
+Insert reference of: Feature(NewFeature2) to TreeConstraint(XOR)
+Create: Feature(NewFeature3)
+Replace attribute of: Feature(NewFeature3) from null to NewFeature3
+Insert reference of: Feature(NewFeature3) to TreeConstraint(XOR)
