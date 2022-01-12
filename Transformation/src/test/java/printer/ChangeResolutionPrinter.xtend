@@ -136,11 +136,11 @@ class ChangeResolutionPrinter {
 			System.out.printf("%.2f", counter.getTotalPercentageRedundancyFree())
 			println(" % of the " + counter.name + " derived change resolutions are redundancy free.")
 
-			println(counter.name + " number of redundancy free sequence change operations: " +
+			println(counter.name + " number of redundancy free operations in the correct change sequences: " +
 				counter.totalRedundancyFreeSequenzOperations);
-			println(counter.name + " number of resolution change operations of the strategy: " +
+			println(counter.name + " number of total operations of the strategy in the correct change sequences: " +
 				counter.totalResolutionOperations);
-			println(counter.name + " redundant operation difference: " + counter.getTotalRedundancyOperationDifference);
+			println(counter.name + " number of redundant operations in the correct sequences: " + counter.getTotalRedundancyOperationDifference);
 
 			println("--------------------------------------------------------------")
 		}

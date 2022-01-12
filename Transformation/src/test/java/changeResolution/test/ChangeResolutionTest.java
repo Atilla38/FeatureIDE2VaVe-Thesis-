@@ -137,29 +137,30 @@ class ChangeResolutionTest {
 		Stream<String> streamRedundancyFreeChangeSequenz = redundancyFreeChangeSequenz.lines();
 		List<String> redundancyFreeChangeSequenzList = streamRedundancyFreeChangeSequenz.collect(Collectors.toList());
 
-		int operationDifference = strategyChangeSequenzList.size() - redundancyFreeChangeSequenzList.size();
-		evolutionClassCounter.increaseTotalResolutionOperations(strategyChangeSequenzList.size());
-		evolutionClassCounter
-				.increaseTotalRedundancyFreeSequenceChangeOperations(redundancyFreeChangeSequenzList.size());
-		totalCounter.increaseTotalResolutionOperations(strategyChangeSequenzList.size());
-		totalCounter.increaseTotalRedundancyFreeSequenceChangeOperations(redundancyFreeChangeSequenzList.size());
-
-		String redundancy = "redundancy free";
-		if (operationDifference > 0) {
-			redundancy = "not redundancy free";
-			totalCounter.increaseTotalNotRedundancyFreeChangeResolutions();
-			evolutionClassCounter.increaseTotalNotRedundancyFreeChangeResolutions();
-		} else if (operationDifference == 0) {
-			totalCounter.increaseTotalRedundancyFreeChangeResolutions();
-			evolutionClassCounter.increaseTotalRedundancyFreeChangeResolutions();
-		} else {
-			redundancy = "";
-		}
-
-		String correctRedundancyOutput = changeBetween + " Diff:" + operationDifference + " [CORRECT "
-				+ redundancy.toUpperCase() + "]";
-
 		if (strategyChangeSequenzList.equals(strategyChangeList)) {
+			evolutionClassCounter.increaseTotalResolutionOperations(strategyChangeSequenzList.size());
+			evolutionClassCounter
+					.increaseTotalRedundancyFreeSequenceChangeOperations(redundancyFreeChangeSequenzList.size());
+			totalCounter.increaseTotalResolutionOperations(strategyChangeSequenzList.size());
+			totalCounter.increaseTotalRedundancyFreeSequenceChangeOperations(redundancyFreeChangeSequenzList.size());
+			
+			int operationDifference = strategyChangeSequenzList.size() - redundancyFreeChangeSequenzList.size();
+
+			String redundancy = "redundancy free";
+			if (operationDifference > 0) {
+				redundancy = "not redundancy free";
+				totalCounter.increaseTotalNotRedundancyFreeChangeResolutions();
+				evolutionClassCounter.increaseTotalNotRedundancyFreeChangeResolutions();
+			} else if (operationDifference == 0) {
+				totalCounter.increaseTotalRedundancyFreeChangeResolutions();
+				evolutionClassCounter.increaseTotalRedundancyFreeChangeResolutions();
+			} else {
+				redundancy = "";
+			}
+
+			String correctRedundancyOutput = changeBetween + " Diff:" + operationDifference + " [CORRECT "
+					+ redundancy.toUpperCase() + "]";
+			
 			System.out.println("Change Resolution is " + redundancy + " correct");
 			totalCounter.increaseCorrectChangeResolutions();
 			evolutionClassCounter.increaseCorrectChangeResolutions();

@@ -9,10 +9,11 @@
 		<graphics key="layoutalgorithm" value="1"/>
 	</properties>
 	<struct>
-		<and mandatory="true" name="ClockFHAsmetaL">
+		<and abstract="true" mandatory="true" name="ClockFHAsmetaL">
 			<feature name="Base">
 				<graphics key="collapsed" value="false"/>
 			</feature>
+			<feature name="NewFeature"/>
 		</and>
 	</struct>
 </featureModel>
