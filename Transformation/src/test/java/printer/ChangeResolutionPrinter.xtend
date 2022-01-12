@@ -129,16 +129,18 @@ class ChangeResolutionPrinter {
 			println(counter.name + " incorrect change resolutions: " + counter.incorrectChangeResolutions)
 			System.out.printf("%.2f", counter.getTotalPercentageCorrect())
 			println(" % of the " + counter.name + " derived change resolutions are correct.")
-			println(counter.name + " minimal change resolutions: " + counter.totalMinimalChangeResolutions)
-			println(counter.name + " not minimal change resolutions: " + counter.totalNotMinimalChangeResolutions)
-			println(counter.name + " less operation change resolutions: " + counter.totalLessOperationChangeResolutions)
-			
-			System.out.printf("%.2f", counter.getTotalPercentageMinimal())
-			println(" % of the " + counter.name + " derived change resolutions are minimal.")
-			
-			println(counter.name + " number of user change operations: " + counter.totalUserChangeResolutions);
-			println(counter.name + " number of resolution operations: " + counter.totalResolutionOperations);
-			println(counter.name + " operation difference: " + counter.totalOperationDifference);
+			println(counter.name + " redundancy free resolutions: " + counter.totalRedundancyFreeChangeResolutions)
+			println(counter.name + " not redundancy free change resolutions: " +
+				counter.totalNotRedundancyFreeChangeResolutions)
+
+			System.out.printf("%.2f", counter.getTotalPercentageRedundancyFree())
+			println(" % of the " + counter.name + " derived change resolutions are redundancy free.")
+
+			println(counter.name + " number of redundancy free sequence change operations: " +
+				counter.totalRedundancyFreeSequenzOperations);
+			println(counter.name + " number of resolution change operations of the strategy: " +
+				counter.totalResolutionOperations);
+			println(counter.name + " redundant operation difference: " + counter.getTotalRedundancyOperationDifference);
 
 			println("--------------------------------------------------------------")
 		}

@@ -9,11 +9,10 @@ class EvolutionClassStatisticCounter {
 	int totalChangeResolutions
 	int correctChangeResolutions
 	int incorrectChangeResolutions
-	int totalOperationDifference
-	int totalMinimalChangeResolutions
-	int totalNotMinimalChangeResolutions
-	int totalLessOperationChangeResolutions
-	int totalUserChangeOperations
+	int totalRedundancyOperationDifference
+	int totalRedundancyFreeChangeResolutions
+	int totalNotRedundancyFreeChangeResolutions
+	int totalRedundancyFreeSequenceOperations
 	int totalResolutionOperations
 
 	def String getName() {
@@ -48,50 +47,42 @@ class EvolutionClassStatisticCounter {
 		this.incorrectChangeResolutions++
 	}
 
-	def void increaseOperationDifference(int totalOperationDifference) {
-		this.totalOperationDifference = this.totalOperationDifference + totalOperationDifference
+	def void increaseRedundancyOperationDifference(int totalOperationDifference) {
+		this.totalRedundancyOperationDifference = this.totalRedundancyOperationDifference + totalOperationDifference
 	}
 
-	def int getTotalOperationDifference() {
-		return this.totalOperationDifference;
+	def int getTotalRedundancyOperationDifference() {
+		return this.totalRedundancyOperationDifference;
 	}
 
-	def int getTotalMinimalChangeResolutions() {
-		return this.totalMinimalChangeResolutions
+	def int getTotalRedundancyFreeChangeResolutions() {
+		return this.totalRedundancyFreeChangeResolutions
 	}
 
-	def void increaseTotalMinimalChangeResolutions() {
-		this.totalMinimalChangeResolutions++
+	def void increaseTotalRedundancyFreeChangeResolutions() {
+		this.totalRedundancyFreeChangeResolutions++
 	}
 
-	def int getTotalNotMinimalChangeResolutions() {
-		return this.totalNotMinimalChangeResolutions
+	def int getTotalNotRedundancyFreeChangeResolutions() {
+		return this.totalNotRedundancyFreeChangeResolutions
 	}
 
-	def void increaseTotalNotMinimalChangeResolutions() {
-		this.totalNotMinimalChangeResolutions++
+	def void increaseTotalNotRedundancyFreeChangeResolutions() {
+		this.totalNotRedundancyFreeChangeResolutions++
 	}
-	
-	def void increaseTotalLessOperationChangeResolutions() {
-		this.totalLessOperationChangeResolutions++;
+
+	def void increaseTotalRedundancyFreeSequenceChangeOperations(int numberOfOperations) {
+		this.totalRedundancyFreeSequenceOperations = this.totalRedundancyFreeSequenceOperations + numberOfOperations
 	}
-	
-	def int getTotalLessOperationChangeResolutions() {
-		return this.totalLessOperationChangeResolutions;
+
+	def int getTotalRedundancyFreeSequenzOperations() {
+		return this.totalRedundancyFreeSequenceOperations;
 	}
-	
-	def void increaseTotalUserChangeResolution(int numberOfOperations) {
-		this.totalUserChangeOperations = this.totalUserChangeOperations + numberOfOperations
-	}
-	
-	def int getTotalUserChangeResolutions() {
-		return this.totalUserChangeOperations;
-	}
-	
+
 	def void increaseTotalResolutionOperations(int numberOfOperations) {
 		this.totalResolutionOperations = this.totalResolutionOperations + numberOfOperations
 	}
-	
+
 	def int getTotalResolutionOperations() {
 		return this.totalResolutionOperations
 	}
@@ -104,10 +95,11 @@ class EvolutionClassStatisticCounter {
 		return totalPercentage;
 	}
 
-	def double getTotalPercentageMinimal() {
+	def double getTotalPercentageRedundancyFree() {
 		var double totalPercentage = 0;
 		if (this.totalChangeResolutions > 0) {
-			totalPercentage = (this.totalMinimalChangeResolutions as double / this.totalChangeResolutions as double) * 100
+			totalPercentage = (this.totalRedundancyFreeChangeResolutions as double /
+				this.totalChangeResolutions as double) * 100
 		}
 		return totalPercentage;
 	}

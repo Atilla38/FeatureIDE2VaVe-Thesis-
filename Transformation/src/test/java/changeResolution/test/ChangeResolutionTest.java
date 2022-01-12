@@ -34,8 +34,8 @@ class ChangeResolutionTest {
 	private static String targetFolderNewStateVave = "target/src/test/resource/models/changeResolution/vave/newState/";
 	protected static String targetFolderOldStateVave = "target/src/test/resource/models/changeResolution/vave/oldState/";
 	protected static String sourceFolderNewStateFeatureIDE;
-	private static String sourceFolderUserChangesNotMinimal = "src/test/resource/changeResolution/userChanges/vave/not minimal/";
-	private static String sourceFolderUserChangesMinimal = "src/test/resource/changeResolution/userChanges/vave/minimal/";;
+	private static String sourceFolderUserChangesStrategy = "src/test/resource/changeResolution/userChanges/vave/strategy/";
+	private static String sourceFolderRedundancyFreeSequenz = "src/test/resource/changeResolution/userChanges/vave/redundancy free/";
 
 	protected static StateBasedChangeResolutionStrategy strategy;
 	protected static ChangeResolutionPrinter printer;
@@ -122,48 +122,50 @@ class ChangeResolutionTest {
 	private void checkChangeResolution(VitruviusChange change, String name,
 			EvolutionClassStatisticCounter evolutionClassCounter) throws IOException {
 		String evolutionClassName = evolutionClassCounter.getName();
-		List<String> vitruviusChangeList = printer.print(change, name + " " + evolutionClassName, name);
-		Path path = Paths.get(sourceFolderUserChangesNotMinimal + name + " " + evolutionClassName + ".txt");
-		String content = Files.readString(path, StandardCharsets.US_ASCII);
-		Stream<String> stream = content.lines();
-		List<String> userChangeList = stream.collect(Collectors.toList());
+		List<String> strategyChangeSequenzList = printer.print(change, name + " " + evolutionClassName, name);
+		Path pathVaveUserChangeSequenz = Paths
+				.get(sourceFolderUserChangesStrategy + name + " " + evolutionClassName + ".txt");
+		String vaveUserChangeSequenz = Files.readString(pathVaveUserChangeSequenz, StandardCharsets.US_ASCII);
+		Stream<String> streamVaveUserChangeSequenz = vaveUserChangeSequenz.lines();
+		List<String> strategyChangeList = streamVaveUserChangeSequenz.collect(Collectors.toList());
 		String changeBetween = "(" + name + ", " + name + " " + evolutionClassName + ")";
 
-		Path pathMinimal = Paths.get(sourceFolderUserChangesMinimal + name + " " + evolutionClassName + ".txt");
-		String contentMinimal = Files.readString(pathMinimal, StandardCharsets.US_ASCII);
-		Stream<String> streamMinimal = contentMinimal.lines();
-		List<String> userChangeListMinimal = streamMinimal.collect(Collectors.toList());
+		Path pathRedundancyFreeChangeSequenz = Paths
+				.get(sourceFolderRedundancyFreeSequenz + name + " " + evolutionClassName + ".txt");
+		String redundancyFreeChangeSequenz = Files.readString(pathRedundancyFreeChangeSequenz,
+				StandardCharsets.US_ASCII);
+		Stream<String> streamRedundancyFreeChangeSequenz = redundancyFreeChangeSequenz.lines();
+		List<String> redundancyFreeChangeSequenzList = streamRedundancyFreeChangeSequenz.collect(Collectors.toList());
 
-		int operationDifference = vitruviusChangeList.size() - userChangeListMinimal.size();
-		evolutionClassCounter.increaseTotalResolutionOperations(vitruviusChangeList.size());
-		evolutionClassCounter.increaseTotalUserChangeResolution(userChangeListMinimal.size());
-		totalCounter.increaseTotalResolutionOperations(vitruviusChangeList.size());
-		totalCounter.increaseTotalUserChangeResolution(userChangeListMinimal.size());
-		
-		String resolutionMinimalOrNot = "minimal";
+		int operationDifference = strategyChangeSequenzList.size() - redundancyFreeChangeSequenzList.size();
+		evolutionClassCounter.increaseTotalResolutionOperations(strategyChangeSequenzList.size());
+		evolutionClassCounter
+				.increaseTotalRedundancyFreeSequenceChangeOperations(redundancyFreeChangeSequenzList.size());
+		totalCounter.increaseTotalResolutionOperations(strategyChangeSequenzList.size());
+		totalCounter.increaseTotalRedundancyFreeSequenceChangeOperations(redundancyFreeChangeSequenzList.size());
+
+		String redundancy = "redundancy free";
 		if (operationDifference > 0) {
-			resolutionMinimalOrNot = "not minimal";
-			totalCounter.increaseTotalNotMinimalChangeResolutions();
-			evolutionClassCounter.increaseTotalNotMinimalChangeResolutions();
-		} else if (operationDifference < 0) {
-			resolutionMinimalOrNot = "less operations";
-			totalCounter.increaseTotalLessOperationChangeResolutions();
-			evolutionClassCounter.increaseTotalLessOperationChangeResolutions();
+			redundancy = "not redundancy free";
+			totalCounter.increaseTotalNotRedundancyFreeChangeResolutions();
+			evolutionClassCounter.increaseTotalNotRedundancyFreeChangeResolutions();
+		} else if (operationDifference == 0) {
+			totalCounter.increaseTotalRedundancyFreeChangeResolutions();
+			evolutionClassCounter.increaseTotalRedundancyFreeChangeResolutions();
 		} else {
-			totalCounter.increaseTotalMinimalChangeResolutions();
-			evolutionClassCounter.increaseTotalMinimalChangeResolutions();
+			throw new IllegalArgumentException();
 		}
 
-		String correctMinimalOutput = changeBetween + " Diff:" + operationDifference + " [CORRECT "
-				+ resolutionMinimalOrNot.toUpperCase() + "]";
+		String correctRedundancyOutput = changeBetween + " Diff:" + operationDifference + " [CORRECT "
+				+ redundancy.toUpperCase() + "]";
 
-		if (vitruviusChangeList.equals(userChangeList)) {
-			System.out.println("Change Resolution is " + resolutionMinimalOrNot + " correct");
+		if (strategyChangeSequenzList.equals(strategyChangeList)) {
+			System.out.println("Change Resolution is " + redundancy + " correct");
 			totalCounter.increaseCorrectChangeResolutions();
 			evolutionClassCounter.increaseCorrectChangeResolutions();
-			totalCounter.increaseOperationDifference(operationDifference);
-			evolutionClassCounter.increaseOperationDifference(operationDifference);
-			results.add(correctMinimalOutput);
+			totalCounter.increaseRedundancyOperationDifference(operationDifference);
+			evolutionClassCounter.increaseRedundancyOperationDifference(operationDifference);
+			results.add(correctRedundancyOutput);
 			return;
 		} else {
 			System.out.println("Change resolution is not correct");
