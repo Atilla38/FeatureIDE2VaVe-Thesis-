@@ -1,0 +1,21 @@
+Create: Feature(NewFeature)
+Insert reference of: Feature(NewFeature) to System
+Replace attribute of: Feature(NewFeature) from null to NewFeature
+Insert reference of: Feature(NewFeature) to TreeConstraint(XORNONE)
+Remove reference of: Feature(Smog Control) from TreeConstraint(XORNONE)
+Remove reference of: TreeConstraint(XORNONE) from Feature(Car)
+Insert reference of: TreeConstraint(XORNONE) to Feature(Smog Control)
+Create: TreeConstraint(XORNONE)
+Insert reference of: TreeConstraint(XORNONE) to Feature(Engine Type)
+Replace attribute of: TreeConstraint(XORNONE) from XOR to XORNONE
+Insert reference of: Feature(Gasoline) to TreeConstraint(XORNONE)
+Remove reference of: Feature(Gasoline) from TreeConstraint(OR)
+Remove reference of: Feature(Electric) from TreeConstraint(OR)
+Remove reference of: TreeConstraint(OR) from Feature(Engine Type)
+Delete: TreeConstraint(OR)
+Create: TreeConstraint(XORNONE)
+Insert reference of: TreeConstraint(XORNONE) to Feature(Car)
+Replace attribute of: TreeConstraint(XORNONE) from XOR to XORNONE
+Insert reference of: Feature(Smog Control) to TreeConstraint(XORNONE)
+Remove reference of: Feature(Electric) from System
+Delete: Feature(Electric)

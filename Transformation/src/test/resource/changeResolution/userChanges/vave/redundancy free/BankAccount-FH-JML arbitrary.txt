@@ -1,0 +1,10 @@
+Create: Feature(NewFeature)
+Insert reference of: Feature(NewFeature) to System
+Replace attribute of: Feature(NewFeature) from null to NewFeature
+Insert reference of: Feature(NewFeature) to TreeConstraint(XORNONE)
+Remove reference of: Feature(DailyLimit) from TreeConstraint(XORNONE)
+Remove reference of: TreeConstraint(XORNONE) from Feature(BankAccount)
+Insert reference of: TreeConstraint(XORNONE) to Feature(Lock)
+Create: TreeConstraint(XOR)
+Insert reference of: TreeConstraint(XOR) to Feature(BankAccount)
+Insert reference of: Feature(DailyLimit) to TreeConstraint(XOR)

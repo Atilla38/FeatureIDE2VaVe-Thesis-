@@ -1,0 +1,22 @@
+Create: Feature(NewFeature2)
+Insert reference of: Feature(NewFeature2) to System
+Replace attribute of: Feature(NewFeature2) from null to NewFeature2
+Create: Feature(NewFeature)
+Insert reference of: Feature(NewFeature) to System
+Replace attribute of: Feature(NewFeature) from null to NewFeature
+Create: TreeConstraint(XOR)
+Insert reference of: TreeConstraint(XOR) to Feature(NewFeature)
+Insert reference of: Feature(NewFeature2) to TreeConstraint(XOR)
+Create: Feature(NewFeature3)
+Insert reference of: Feature(NewFeature3) to System
+Replace attribute of: Feature(NewFeature3) from null to NewFeature3
+Insert reference of: Feature(NewFeature3) to TreeConstraint(XOR)
+Create: TreeConstraint(XOR)
+Insert reference of: TreeConstraint(XOR) to Feature(Produktgruppen)
+Insert reference of: Feature(Elevator mit Sabbath) to TreeConstraint(XOR)
+Insert reference of: Feature(Elevator mit FIFO) to TreeConstraint(XOR)
+Insert reference of: Feature(NewFeature) to TreeConstraint(XOR)
+Remove reference of: Feature(Elevator mit Sabbath) from TreeConstraint(XOR)
+Remove reference of: Feature(Elevator mit FIFO) from TreeConstraint(XOR)
+Remove reference of: TreeConstraint(XOR) from Feature(Produktgruppen)
+Delete: TreeConstraint(XOR)
