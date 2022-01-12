@@ -153,7 +153,7 @@ class ChangeResolutionTest {
 			totalCounter.increaseTotalRedundancyFreeChangeResolutions();
 			evolutionClassCounter.increaseTotalRedundancyFreeChangeResolutions();
 		} else {
-			throw new IllegalArgumentException();
+			redundancy = "";
 		}
 
 		String correctRedundancyOutput = changeBetween + " Diff:" + operationDifference + " [CORRECT "
