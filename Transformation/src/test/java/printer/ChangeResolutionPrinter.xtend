@@ -35,21 +35,19 @@ class ChangeResolutionPrinter {
 		changeList = new ArrayList<String>();
 		printChangeBetween(newStateFileName, oldStateFileName)
 		for (EChange change : vitruviusChange.EChanges) {
-			if (!(change instanceof RemoveRootEObject) && !(change instanceof InsertRootEObject)) {
 				var String print = printChange(change);
 				println(print)
 				changeList.add(print)
-			}
 		}
 		return changeList
 	}
 
 	def dispatch String printChange(RemoveRootEObject<EObject> object) {
-		// IGNORE
+		return "Remove Root System"
 	}
 
 	def dispatch String printChange(InsertRootEObject<EObject> object) {
-		// IGNORE
+		return "Insert Root System"
 	}
 
 	def dispatch String printChange(CreateEObject<EObject> object) {
