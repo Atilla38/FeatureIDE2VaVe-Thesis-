@@ -5,7 +5,6 @@ package FeatureIDEXSD.impl;
 import FeatureIDEXSD.FeatureIDEXSDPackage;
 import FeatureIDEXSD.Node;
 import FeatureIDEXSD.UnaryNodeType;
-import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -145,10 +144,6 @@ public class UnaryNodeTypeImpl extends NodeImpl implements UnaryNodeType {
 			case FeatureIDEXSDPackage.UNARY_NODE_TYPE__NODE_LIST_GROUP:
 				((FeatureMap.Internal)getNodeListGroup()).set(newValue);
 				return;
-			case FeatureIDEXSDPackage.UNARY_NODE_TYPE__NODE_LIST:
-				getNodeList().clear();
-				getNodeList().addAll((Collection<? extends Node>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -166,9 +161,6 @@ public class UnaryNodeTypeImpl extends NodeImpl implements UnaryNodeType {
 				return;
 			case FeatureIDEXSDPackage.UNARY_NODE_TYPE__NODE_LIST_GROUP:
 				getNodeListGroup().clear();
-				return;
-			case FeatureIDEXSDPackage.UNARY_NODE_TYPE__NODE_LIST:
-				getNodeList().clear();
 				return;
 		}
 		super.eUnset(featureID);

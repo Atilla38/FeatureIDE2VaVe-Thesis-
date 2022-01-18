@@ -58,7 +58,7 @@ public interface BinaryNodeType extends Node {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Node List</em>' containment reference list.
 	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getBinaryNodeType_NodeList()
-	 * @model containment="true" lower="2" transient="true" volatile="true" derived="true"
+	 * @model containment="true" lower="2" transient="true" changeable="false" volatile="true" derived="true"
 	 *        extendedMetaData="kind='element' name='nodeList' namespace='##targetNamespace' group='nodeList:group'"
 	 * @generated
 	 */

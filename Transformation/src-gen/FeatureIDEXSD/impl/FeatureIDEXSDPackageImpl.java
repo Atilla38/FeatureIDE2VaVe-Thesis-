@@ -1669,8 +1669,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 
 		initEClass(binaryExpressionTypeEClass, BinaryExpressionType.class, "BinaryExpressionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBinaryExpressionType_ExpressionGroup(), ecorePackage.getEFeatureMapEntry(), "expressionGroup", null, 0, -1, BinaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBinaryExpressionType_ExpressionListGroup(), ecorePackage.getEFeatureMapEntry(), "expressionListGroup", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryExpressionType_ExpressionList(), this.getExpression(), null, "expressionList", null, 0, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBinaryExpressionType_ExpressionListGroup(), ecorePackage.getEFeatureMapEntry(), "expressionListGroup", null, 2, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExpressionType_ExpressionList(), this.getExpression(), null, "expressionList", null, 2, 2, BinaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(binaryExtendedNodeTypeEClass, BinaryExtendedNodeType.class, "BinaryExtendedNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBinaryExtendedNodeType_ExtendedNodeGroup(), ecorePackage.getEFeatureMapEntry(), "extendedNodeGroup", null, 0, -1, BinaryExtendedNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1682,7 +1682,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		initEClass(binaryNodeTypeEClass, BinaryNodeType.class, "BinaryNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBinaryNodeType_NodeGroup(), ecorePackage.getEFeatureMapEntry(), "nodeGroup", null, 0, -1, BinaryNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBinaryNodeType_NodeListGroup(), ecorePackage.getEFeatureMapEntry(), "nodeListGroup", null, 2, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryNodeType_NodeList(), this.getNode(), null, "nodeList", null, 2, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryNodeType_NodeList(), this.getNode(), null, "nodeList", null, 2, -1, BinaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(calculationsTypeEClass, CalculationsType.class, "CalculationsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCalculationsType_Key(), theXMLTypePackage.getString(), "key", null, 1, 1, CalculationsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1784,12 +1784,12 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 
 		initEClass(ruleTypeEClass, RuleType.class, "RuleType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRuleType_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRuleType_ExpressionListGroup(), ecorePackage.getEFeatureMapEntry(), "expressionListGroup", null, 0, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRuleType_ExpressionList(), this.getExpression(), null, "expressionList", null, 0, 1, RuleType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRuleType_ExpressionListGroup(), ecorePackage.getEFeatureMapEntry(), "expressionListGroup", null, 1, 1, RuleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuleType_ExpressionList(), this.getExpression(), null, "expressionList", null, 1, 1, RuleType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(structTypeEClass, StructType.class, "StructType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStructType_NodeListGroup(), ecorePackage.getEFeatureMapEntry(), "nodeListGroup", null, 1, 1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructType_NodeList(), this.getNode(), null, "nodeList", null, 1, 1, StructType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getStructType_NodeList(), this.getNode(), null, "nodeList", null, 1, 1, StructType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(structType1EClass, StructType1.class, "StructType1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructType1_Feature(), this.getExtendedLeafType(), null, "feature", null, 0, 1, StructType1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1798,8 +1798,8 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		initEReference(getStructType1_And(), this.getUnaryExtendedNodeType(), null, "and", null, 0, 1, StructType1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unaryExpressionTypeEClass, UnaryExpressionType.class, "UnaryExpressionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUnaryExpressionType_ExpressionListGroup(), ecorePackage.getEFeatureMapEntry(), "expressionListGroup", null, 0, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUnaryExpressionType_ExpressionList(), this.getExpression(), null, "expressionList", null, 0, 1, UnaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnaryExpressionType_ExpressionListGroup(), ecorePackage.getEFeatureMapEntry(), "expressionListGroup", null, 1, 1, UnaryExpressionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryExpressionType_ExpressionList(), this.getExpression(), null, "expressionList", null, 1, 1, UnaryExpressionType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(unaryExtendedNodeTypeEClass, UnaryExtendedNodeType.class, "UnaryExtendedNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnaryExtendedNodeType_ExtendedNodeGroup(), ecorePackage.getEFeatureMapEntry(), "extendedNodeGroup", null, 0, -1, UnaryExtendedNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1811,7 +1811,7 @@ public class FeatureIDEXSDPackageImpl extends EPackageImpl implements FeatureIDE
 		initEClass(unaryNodeTypeEClass, UnaryNodeType.class, "UnaryNodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnaryNodeType_NodeGroup(), ecorePackage.getEFeatureMapEntry(), "nodeGroup", null, 0, -1, UnaryNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnaryNodeType_NodeListGroup(), ecorePackage.getEFeatureMapEntry(), "nodeListGroup", null, 1, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getUnaryNodeType_NodeList(), this.getNode(), null, "nodeList", null, 1, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getUnaryNodeType_NodeList(), this.getNode(), null, "nodeList", null, 1, -1, UnaryNodeType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(varTypeEClass, VarType.class, "VarType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVarType_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, VarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

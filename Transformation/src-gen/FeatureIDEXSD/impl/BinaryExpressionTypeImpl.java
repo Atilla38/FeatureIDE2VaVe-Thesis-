@@ -5,7 +5,6 @@ package FeatureIDEXSD.impl;
 import FeatureIDEXSD.BinaryExpressionType;
 import FeatureIDEXSD.Expression;
 import FeatureIDEXSD.FeatureIDEXSDPackage;
-import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -141,10 +140,6 @@ public class BinaryExpressionTypeImpl extends ExpressionImpl implements BinaryEx
 			case FeatureIDEXSDPackage.BINARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP:
 				((FeatureMap.Internal)getExpressionListGroup()).set(newValue);
 				return;
-			case FeatureIDEXSDPackage.BINARY_EXPRESSION_TYPE__EXPRESSION_LIST:
-				getExpressionList().clear();
-				getExpressionList().addAll((Collection<? extends Expression>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -162,9 +157,6 @@ public class BinaryExpressionTypeImpl extends ExpressionImpl implements BinaryEx
 				return;
 			case FeatureIDEXSDPackage.BINARY_EXPRESSION_TYPE__EXPRESSION_LIST_GROUP:
 				getExpressionListGroup().clear();
-				return;
-			case FeatureIDEXSDPackage.BINARY_EXPRESSION_TYPE__EXPRESSION_LIST:
-				getExpressionList().clear();
 				return;
 		}
 		super.eUnset(featureID);

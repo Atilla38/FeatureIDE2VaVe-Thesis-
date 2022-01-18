@@ -43,6 +43,7 @@ class TransformationTests {
 		compareFiles(comparator, counter);
 	}
 
+	@Test
 	void RoundTripTestVave() throws SAXException, IOException {
 		RoundTripVaveComparator comparator = new RoundTripVaveComparator();
 		comparator.generateVave2XMLFiles();

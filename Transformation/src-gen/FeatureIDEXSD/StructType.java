@@ -41,22 +41,11 @@ public interface StructType extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Node List</em>' containment reference.
-	 * @see #setNodeList(Node)
 	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getStructType_NodeList()
-	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
+	 * @model containment="true" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        extendedMetaData="kind='element' name='nodeList' namespace='##targetNamespace' group='nodeList:group'"
 	 * @generated
 	 */
 	Node getNodeList();
-
-	/**
-	 * Sets the value of the '{@link FeatureIDEXSD.StructType#getNodeList <em>Node List</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Node List</em>' containment reference.
-	 * @see #getNodeList()
-	 * @generated
-	 */
-	void setNodeList(Node value);
 
 } // StructType

@@ -44,7 +44,7 @@ public interface BinaryExpressionType extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Expression List Group</em>' attribute list.
 	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getBinaryExpressionType_ExpressionListGroup()
-	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" upper="2" transient="true" volatile="true" derived="true"
+	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" lower="2" upper="2" transient="true" volatile="true" derived="true"
 	 *        extendedMetaData="kind='group' name='expressionList:group' namespace='##targetNamespace' group='ExpressionGroup:0'"
 	 * @generated
 	 */
@@ -57,7 +57,7 @@ public interface BinaryExpressionType extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Expression List</em>' containment reference list.
 	 * @see FeatureIDEXSD.FeatureIDEXSDPackage#getBinaryExpressionType_ExpressionList()
-	 * @model containment="true" upper="2" transient="true" volatile="true" derived="true"
+	 * @model containment="true" lower="2" upper="2" transient="true" changeable="false" volatile="true" derived="true"
 	 *        extendedMetaData="kind='element' name='expressionList' namespace='##targetNamespace' group='expressionList:group'"
 	 * @generated
 	 */

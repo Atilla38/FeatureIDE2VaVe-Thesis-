@@ -92,15 +92,6 @@ public class StructTypeImpl extends MinimalEObjectImpl.Container implements Stru
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNodeList(Node newNodeList) {
-		((FeatureMap.Internal)getNodeListGroup()).set(FeatureIDEXSDPackage.Literals.STRUCT_TYPE__NODE_LIST, newNodeList);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -140,9 +131,6 @@ public class StructTypeImpl extends MinimalEObjectImpl.Container implements Stru
 			case FeatureIDEXSDPackage.STRUCT_TYPE__NODE_LIST_GROUP:
 				((FeatureMap.Internal)getNodeListGroup()).set(newValue);
 				return;
-			case FeatureIDEXSDPackage.STRUCT_TYPE__NODE_LIST:
-				setNodeList((Node)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -157,9 +145,6 @@ public class StructTypeImpl extends MinimalEObjectImpl.Container implements Stru
 		switch (featureID) {
 			case FeatureIDEXSDPackage.STRUCT_TYPE__NODE_LIST_GROUP:
 				getNodeListGroup().clear();
-				return;
-			case FeatureIDEXSDPackage.STRUCT_TYPE__NODE_LIST:
-				setNodeList((Node)null);
 				return;
 		}
 		super.eUnset(featureID);
