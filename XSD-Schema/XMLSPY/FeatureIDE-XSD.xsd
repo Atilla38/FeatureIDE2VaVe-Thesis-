@@ -165,16 +165,16 @@
 	<xs:element name="disj" type="disjType" substitutionGroup="expressionList"/>
 	<xs:element name="expressionList" type="expression" abstract="true"/>
 	<xs:group name="expressionGroup">
-		<xs:choice>
+		<xs:sequence>
 			<xs:element ref="expressionList"/>
-		</xs:choice>
+		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="unaryExpressionType">
 		<xs:complexContent>
 			<xs:extension base="expression">
-				<xs:choice>
+				<xs:sequence>
 					<xs:group ref="expressionGroup"/>
-				</xs:choice>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -188,9 +188,9 @@
 	<xs:complexType name="binaryExpressionType">
 		<xs:complexContent>
 			<xs:extension base="expression">
-				<xs:choice>
+				<xs:sequence>
 					<xs:group ref="expressionGroup" minOccurs="2" maxOccurs="2"/>
-				</xs:choice>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -249,9 +249,9 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="description" minOccurs="0"/>
-				<xs:choice>
+				<xs:sequence>
 					<xs:group ref="expressionGroup"/>
-				</xs:choice>
+				</xs:sequence>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
